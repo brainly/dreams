@@ -1,6 +1,6 @@
-# dedi
+# Dreams
 
-> Collaboration between Designers and Developers made easy. Dedi cool!
+> Collaboration between Designers and Developers made easy.
 
 # Intro
 
