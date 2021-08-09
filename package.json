@@ -1,5 +1,5 @@
 {
-  "name": "figma-dedi",
+  "name": "dreams",
   "private": true,
   "workspaces": [
     "packages/*"
