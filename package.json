@@ -1,0 +1,9 @@
+{
+  "name": "figma-dedi",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "git@github.com:coderitual/dedi.git",
+  "author": "coderitual <skowronkow@gmail.com>"
+}
