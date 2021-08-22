@@ -2,7 +2,9 @@
   "name": "dreams",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "plugin",
+    "style-guide"
   ],
   "repository": "git@github.com:coderitual/dedi.git",
   "author": "coderitual <skowronkow@gmail.com>"
