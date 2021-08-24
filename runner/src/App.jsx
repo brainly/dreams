@@ -25,7 +25,6 @@ import LogoPage from './components/Logo';
 
 import './styles/app.css';
 
-//import FixesLoader from './fixes/FixesLoader';
 const FixesLoader = React.lazy(() => import('./fixes/FixesLoader'));
 
 const App = () => (
@@ -52,9 +51,9 @@ const App = () => (
     <TextareasPage />
     <LabelsPage />
 
-    {/* document */}
     <TextPage />
     <ColorsPage />
+
     <React.Suspense fallback={<div>Loading fixes...</div>}>
       <FixesLoader />
     </React.Suspense>
