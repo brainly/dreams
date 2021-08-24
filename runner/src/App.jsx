@@ -22,7 +22,11 @@ import BoxesPage from './components/Box';
 import BubblesPage from './components/Bubble';
 import RatingPage from './components/Rating';
 import LogoPage from './components/Logo';
+
 import './styles/app.css';
+
+//import FixesLoader from './fixes/FixesLoader';
+const FixesLoader = React.lazy(() => import('./fixes/FixesLoader'));
 
 const App = () => (
   <div>
@@ -51,6 +55,9 @@ const App = () => (
     {/* document */}
     <TextPage />
     <ColorsPage />
+    <React.Suspense fallback={<div>Loading fixes...</div>}>
+      <FixesLoader />
+    </React.Suspense>
   </div>
 );
 
