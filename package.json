@@ -4,7 +4,7 @@
   "workspaces": [
     "packages/*",
     "plugin",
-    "style-guide"
+    "runner"
   ],
   "repository": "git@github.com:coderitual/dedi.git",
   "author": "coderitual <skowronkow@gmail.com>"
