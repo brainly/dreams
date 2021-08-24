@@ -1,0 +1,665 @@
+{
+  "name": "Pencil-Components",
+  "lastModified": "2021-08-20T09:32:08Z",
+  "thumbnailUrl": "https://s3-alpha-sig.figma.com/thumbnails/7c54e8ce-f86b-4fda-96d3-f2bf6c764af7?Expires=1630886400&Signature=CnK-oocK2At6c1l8S~iqSqcBbVE5AbXn-VNHSbaO3CNyDzdFrPuRPO3rareYbA1Gn1XDy8iyhrzSgDq96W0dAqz6zKM76KZzKrDydLOIFPJfMzqJSGBYb0jFG2uk5RVO-1IYGvv2gGfapkvlLH8D2v~CLoY4Jkg1gmveY77AO~4fCwIM3~XI7dlofx0uIe7WhUvNimkra--E1Y7MuKF0VycwYgI3a4PaR9vQsQwJbH1YoSBdrLxy7yF5bE9TNKTENJIVSS0yZjjthoQP6srbQQz-~hGzuaG9~lIfna1NfKePkcZtURwMm6wNvEK4r7dLXuz1lkSQSREL5B~B1ob-sw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
+  "version": "1068002784",
+  "role": "editor",
+  "nodes": {
+    "393:3499": {
+      "document": {
+        "id": "393:3499",
+        "name": "flashmessage",
+        "type": "COMPONENT_SET",
+        "blendMode": "PASS_THROUGH",
+        "children": [
+          {
+            "id": "393:3495",
+            "name": "type=default",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "393:3488",
+                "name": "Example flash message text",
+                "type": "TEXT",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": 1020.5,
+                  "y": -134,
+                  "width": 189,
+                  "height": 20
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "relativeTransform": [
+                  [1, 0, 16],
+                  [0, 1, 6]
+                ],
+                "size": {
+                  "x": 189,
+                  "y": 20
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 1
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "CENTER",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:2"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "characters": "Example flash message text",
+                "style": {
+                  "fontFamily": "ProximaNova",
+                  "fontPostScriptName": "ProximaNova-Bold",
+                  "fontWeight": 700,
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 15,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0,
+                  "lineHeightPx": 20,
+                  "lineHeightPercent": 113.77777862548828,
+                  "lineHeightPercentFontSize": 133.3333282470703,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {}
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 1004.5,
+              "y": -140,
+              "width": 221,
+              "height": 32
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "CENTER"
+            },
+            "relativeTransform": [
+              [1, 0, 549.5],
+              [0, 1, 20]
+            ],
+            "size": {
+              "x": 221,
+              "y": 32
+            },
+            "clipsContent": false,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.7254902124404907,
+                  "g": 0.886274516582489,
+                  "b": 0.9960784316062927,
+                  "a": 1
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.7254902124404907,
+                  "g": 0.886274516582489,
+                  "b": 0.9960784316062927,
+                  "a": 1
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0.7254902124404907,
+              "g": 0.886274516582489,
+              "b": 0.9960784316062927,
+              "a": 1
+            },
+            "styles": {
+              "fills": "5:10"
+            },
+            "layoutMode": "VERTICAL",
+            "counterAxisSizingMode": "FIXED",
+            "counterAxisAlignItems": "CENTER",
+            "primaryAxisAlignItems": "CENTER",
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "effects": []
+          },
+          {
+            "id": "585:3144",
+            "name": "type=warning",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "585:3145",
+                "name": "Example flash message text",
+                "type": "TEXT",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": 1021,
+                  "y": -76,
+                  "width": 189,
+                  "height": 20
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "relativeTransform": [
+                  [1, 0, 16],
+                  [0, 1, 6]
+                ],
+                "size": {
+                  "x": 189,
+                  "y": 20
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 1
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "CENTER",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:2"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "characters": "Example flash message text",
+                "style": {
+                  "fontFamily": "ProximaNova",
+                  "fontPostScriptName": "ProximaNova-Bold",
+                  "fontWeight": 700,
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 15,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0,
+                  "lineHeightPx": 20,
+                  "lineHeightPercent": 113.77777862548828,
+                  "lineHeightPercentFontSize": 133.3333282470703,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {}
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 1005,
+              "y": -82,
+              "width": 221,
+              "height": 32
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "CENTER"
+            },
+            "relativeTransform": [
+              [1, 0, 550],
+              [0, 1, 78]
+            ],
+            "size": {
+              "x": 221,
+              "y": 32
+            },
+            "clipsContent": false,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 0.7803921699523926,
+                  "b": 0.7490196228027344,
+                  "a": 1
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 0.7803921699523926,
+                  "b": 0.7490196228027344,
+                  "a": 1
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 1,
+              "g": 0.7803921699523926,
+              "b": 0.7490196228027344,
+              "a": 1
+            },
+            "styles": {
+              "fills": "5:21"
+            },
+            "layoutMode": "VERTICAL",
+            "counterAxisSizingMode": "FIXED",
+            "counterAxisAlignItems": "CENTER",
+            "primaryAxisAlignItems": "CENTER",
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "effects": []
+          },
+          {
+            "id": "585:3148",
+            "name": "type=info",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "585:3149",
+                "name": "Example flash message text",
+                "type": "TEXT",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": 1020,
+                  "y": -18,
+                  "width": 189,
+                  "height": 20
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "relativeTransform": [
+                  [1, 0, 16],
+                  [0, 1, 6]
+                ],
+                "size": {
+                  "x": 189,
+                  "y": 20
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 1
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "CENTER",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:2"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "characters": "Example flash message text",
+                "style": {
+                  "fontFamily": "ProximaNova",
+                  "fontPostScriptName": "ProximaNova-Bold",
+                  "fontWeight": 700,
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 15,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0,
+                  "lineHeightPx": 20,
+                  "lineHeightPercent": 113.77777862548828,
+                  "lineHeightPercentFontSize": 133.3333282470703,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {}
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 1004,
+              "y": -24,
+              "width": 221,
+              "height": 32
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "CENTER"
+            },
+            "relativeTransform": [
+              [1, 0, 549],
+              [0, 1, 136]
+            ],
+            "size": {
+              "x": 221,
+              "y": 32
+            },
+            "clipsContent": false,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.9960784316062927,
+                  "g": 0.8666666746139526,
+                  "b": 0.5568627715110779,
+                  "a": 1
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.9960784316062927,
+                  "g": 0.8666666746139526,
+                  "b": 0.5568627715110779,
+                  "a": 1
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0.9960784316062927,
+              "g": 0.8666666746139526,
+              "b": 0.5568627715110779,
+              "a": 1
+            },
+            "styles": {
+              "fills": "5:26"
+            },
+            "layoutMode": "VERTICAL",
+            "counterAxisSizingMode": "FIXED",
+            "counterAxisAlignItems": "CENTER",
+            "primaryAxisAlignItems": "CENTER",
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "effects": []
+          },
+          {
+            "id": "585:3152",
+            "name": "type=success",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "585:3153",
+                "name": "Example flash message text",
+                "type": "TEXT",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": 1020,
+                  "y": 40,
+                  "width": 189,
+                  "height": 20
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "relativeTransform": [
+                  [1, 0, 16],
+                  [0, 1, 6]
+                ],
+                "size": {
+                  "x": 189,
+                  "y": 20
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 1
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "CENTER",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:2"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "characters": "Example flash message text",
+                "style": {
+                  "fontFamily": "ProximaNova",
+                  "fontPostScriptName": "ProximaNova-Bold",
+                  "fontWeight": 700,
+                  "textAutoResize": "WIDTH_AND_HEIGHT",
+                  "fontSize": 15,
+                  "textAlignHorizontal": "CENTER",
+                  "textAlignVertical": "CENTER",
+                  "letterSpacing": 0,
+                  "lineHeightPx": 20,
+                  "lineHeightPercent": 113.77777862548828,
+                  "lineHeightPercentFontSize": 133.3333282470703,
+                  "lineHeightUnit": "PIXELS"
+                },
+                "characterStyleOverrides": [],
+                "styleOverrideTable": {}
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 1004,
+              "y": 34,
+              "width": 221,
+              "height": 32
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "CENTER"
+            },
+            "relativeTransform": [
+              [1, 0, 549],
+              [0, 1, 194]
+            ],
+            "size": {
+              "x": 221,
+              "y": 32
+            },
+            "clipsContent": false,
+            "background": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.6117647290229797,
+                  "g": 0.9098039269447327,
+                  "b": 0.7607843279838562,
+                  "a": 1
+                }
+              }
+            ],
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 0.6117647290229797,
+                  "g": 0.9098039269447327,
+                  "b": 0.7607843279838562,
+                  "a": 1
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0.6117647290229797,
+              "g": 0.9098039269447327,
+              "b": 0.7607843279838562,
+              "a": 1
+            },
+            "styles": {
+              "fills": "5:6"
+            },
+            "layoutMode": "VERTICAL",
+            "counterAxisSizingMode": "FIXED",
+            "counterAxisAlignItems": "CENTER",
+            "primaryAxisAlignItems": "CENTER",
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "paddingTop": 6,
+            "paddingBottom": 6,
+            "effects": []
+          }
+        ],
+        "absoluteBoundingBox": {
+          "x": 455,
+          "y": -160,
+          "width": 1514,
+          "height": 270
+        },
+        "constraints": {
+          "vertical": "TOP",
+          "horizontal": "LEFT"
+        },
+        "relativeTransform": [
+          [1, 0, 455],
+          [0, 1, -160]
+        ],
+        "size": {
+          "x": 1514,
+          "y": 270
+        },
+        "clipsContent": true,
+        "background": [],
+        "fills": [],
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.48235294222831726,
+              "g": 0.3803921639919281,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ],
+        "cornerRadius": 5,
+        "strokeWeight": 1,
+        "strokeAlign": "INSIDE",
+        "backgroundColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0
+        },
+        "effects": []
+      },
+      "components": {
+        "393:3495": {
+          "key": "b9e9e79e019d4c6ad0de004169a367e0ed434eb6",
+          "name": "type=default",
+          "description": "",
+          "documentationLinks": []
+        },
+        "585:3144": {
+          "key": "1015310cf962b72d939f01d8fc350089f1aa22f4",
+          "name": "type=warning",
+          "description": "",
+          "documentationLinks": []
+        },
+        "585:3148": {
+          "key": "372b84bbe89cfa750d5ada1c3ebe7895bd38939c",
+          "name": "type=info",
+          "description": "",
+          "documentationLinks": []
+        },
+        "585:3152": {
+          "key": "e31a256a3e5dd6e66b3c1f10d58d0c89835d95f2",
+          "name": "type=success",
+          "description": "",
+          "documentationLinks": []
+        }
+      },
+      "schemaVersion": 0,
+      "styles": {
+        "5:2": {
+          "key": "0d307b6ad9641c22e258b2d20a98b4222ad56474",
+          "name": "Core/500 Black Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:10": {
+          "key": "f758e6372de3db5514d09ca8462c4a0200e127a4",
+          "name": "Core/500 Blue Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:21": {
+          "key": "b07f793cfb263fb25528556a22561ae09feea0a8",
+          "name": "Additional/500 Peach Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:26": {
+          "key": "95bb33f746e2b50e15b925b1244c02076e8f8627",
+          "name": "Additional/500 Mustard Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:6": {
+          "key": "81f8138e505c85f8865b372750f79da1a79e1323",
+          "name": "Core/500 Mint Base",
+          "styleType": "FILL",
+          "description": ""
+        }
+      }
+    }
+  }
+}

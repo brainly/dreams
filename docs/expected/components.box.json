@@ -1,0 +1,1835 @@
+{
+  "name": "Pencil-Components",
+  "lastModified": "2021-08-20T09:32:08Z",
+  "thumbnailUrl": "https://s3-alpha-sig.figma.com/thumbnails/7c54e8ce-f86b-4fda-96d3-f2bf6c764af7?Expires=1630886400&Signature=CnK-oocK2At6c1l8S~iqSqcBbVE5AbXn-VNHSbaO3CNyDzdFrPuRPO3rareYbA1Gn1XDy8iyhrzSgDq96W0dAqz6zKM76KZzKrDydLOIFPJfMzqJSGBYb0jFG2uk5RVO-1IYGvv2gGfapkvlLH8D2v~CLoY4Jkg1gmveY77AO~4fCwIM3~XI7dlofx0uIe7WhUvNimkra--E1Y7MuKF0VycwYgI3a4PaR9vQsQwJbH1YoSBdrLxy7yF5bE9TNKTENJIVSS0yZjjthoQP6srbQQz-~hGzuaG9~lIfna1NfKePkcZtURwMm6wNvEK4r7dLXuz1lkSQSREL5B~B1ob-sw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
+  "version": "1068002784",
+  "role": "editor",
+  "nodes": {
+    "241:1264": {
+      "document": {
+        "id": "241:1264",
+        "name": "box",
+        "type": "COMPONENT_SET",
+        "blendMode": "PASS_THROUGH",
+        "children": [
+          {
+            "id": "0:7888",
+            "name": "color=peach-300",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7889",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 968,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 0.9098039269447327,
+                      "b": 0.8980392217636108,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:22"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 968,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 1796]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7886",
+            "name": "color=peach-500",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7887",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 857,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 0.7803921699523926,
+                      "b": 0.7490196228027344,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:21"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 857,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 1685]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7884",
+            "name": "color=peach-700",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7885",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 746,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 0.4745098054409027,
+                      "b": 0.40784314274787903,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:20"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 746,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 1574]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7882",
+            "name": "color=mustard-300",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7883",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 635,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 0.9529411792755127,
+                      "b": 0.8392156958580017,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:27"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 635,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 1463]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7880",
+            "name": "color=mustard-700",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7881",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 524,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9843137264251709,
+                      "g": 0.7450980544090271,
+                      "b": 0.18039216101169586,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:25"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 524,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 1352]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7870",
+            "name": "color=mint-100",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7871",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 413,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9411764740943909,
+                      "g": 0.9803921580314636,
+                      "b": 0.9607843160629272,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:8"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 413,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 1241]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7868",
+            "name": "color=mint-300",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7869",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 302,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.8901960849761963,
+                      "g": 0.9686274528503418,
+                      "b": 0.929411768913269,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:7"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 302,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 1130]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7866",
+            "name": "color=mint-500",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7867",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 191,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.6117647290229797,
+                      "g": 0.9098039269447327,
+                      "b": 0.7607843279838562,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:6"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 191,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 1019]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7864",
+            "name": "color=mint-700",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7865",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": 80,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.3764705955982208,
+                      "g": 0.8274509906768799,
+                      "b": 0.6000000238418579,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:5"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": 80,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 908]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7858",
+            "name": "color=white",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7859",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": -31,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:3"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": -31,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 797]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7862",
+            "name": "color=lavender-700",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7863",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": -142,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.4274509847164154,
+                      "g": 0.5137255191802979,
+                      "b": 0.9529411792755127,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:15"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": -142,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 686]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7878",
+            "name": "color=gray-100",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7879",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": -253,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9607843160629272,
+                      "g": 0.9725490212440491,
+                      "b": 0.9803921580314636,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:32"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": -253,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 575]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7876",
+            "name": "color=gray-300",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7877",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": -364,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.9215686321258545,
+                      "g": 0.9490196108818054,
+                      "b": 0.9686274528503418,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:31"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": -364,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 464]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7856",
+            "name": "color=gray-500",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7857",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": -475,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7647058963775635,
+                      "g": 0.8196078538894653,
+                      "b": 0.8666666746139526,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "255:4278"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": -475,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 353]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7874",
+            "name": "color=blue-300",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7875",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": -586,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.8509804010391235,
+                      "g": 0.9411764740943909,
+                      "b": 1,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:11"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": -586,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 242]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7872",
+            "name": "color=blue-500",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7873",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": -697,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.7254902124404907,
+                      "g": 0.886274516582489,
+                      "b": 0.9960784316062927,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:10"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": -697,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 131]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:7860",
+            "name": "color=blue-700",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:7861",
+                "name": "Rectangle",
+                "type": "RECTANGLE",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": -125,
+                  "y": -808,
+                  "width": 250,
+                  "height": 48
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 250,
+                  "y": 48
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.30980393290519714,
+                      "g": 0.7019608020782471,
+                      "b": 0.9647058844566345,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M0 8C0 3.58172 3.58172 0 8 0L242 0C246.418 0 250 3.58172 250 8L250 40C250 44.4183 246.418 48 242 48L8 48C3.58172 48 0 44.4183 0 40L0 8Z",
+                    "windingRule": "NONZERO"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "INSIDE",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:9"
+                },
+                "exportSettings": [],
+                "effects": [],
+                "cornerRadius": 8
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -125,
+              "y": -808,
+              "width": 250,
+              "height": 48
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 20]
+            ],
+            "size": {
+              "x": 250,
+              "y": 48
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          }
+        ],
+        "absoluteBoundingBox": {
+          "x": -145,
+          "y": -828,
+          "width": 290,
+          "height": 1911
+        },
+        "constraints": {
+          "vertical": "TOP",
+          "horizontal": "LEFT"
+        },
+        "relativeTransform": [
+          [1, 0, -145],
+          [0, 1, -828]
+        ],
+        "size": {
+          "x": 290,
+          "y": 1911
+        },
+        "clipsContent": true,
+        "background": [],
+        "fills": [],
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.48235294222831726,
+              "g": 0.3803921639919281,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ],
+        "cornerRadius": 5,
+        "strokeWeight": 1,
+        "strokeAlign": "INSIDE",
+        "backgroundColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0
+        },
+        "effects": []
+      },
+      "components": {
+        "0:7888": {
+          "key": "0fc85c54e8d09801e2a786a8abf990eea56fd9ac",
+          "name": "color=peach-300",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7886": {
+          "key": "2d3884ee2073e3a13fb7b4f2472e9ec8f98b2807",
+          "name": "color=peach-500",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7884": {
+          "key": "c38c48a678d4faa81a2b49fa1dbbe6f65c60afed",
+          "name": "color=peach-700",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7882": {
+          "key": "84f45831a95f44b3eb1ffc9a562a9f420db08942",
+          "name": "color=mustard-300",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7880": {
+          "key": "c9c2d4eb8c5bca92673b70bc1e765a5e78f64b82",
+          "name": "color=mustard-700",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7870": {
+          "key": "58024a0351af7f6498507a0ed86ad7d71ab82de0",
+          "name": "color=mint-100",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7868": {
+          "key": "e8e5d880223e53389eb6a04f51f9b85e0aa730e8",
+          "name": "color=mint-300",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7866": {
+          "key": "5f4dac6130c666ca5f6218f34ffa95a30cbbc0f1",
+          "name": "color=mint-500",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7864": {
+          "key": "d07fd16b792800e0e3125b10015e87fd9df27239",
+          "name": "color=mint-700",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7858": {
+          "key": "420acdae33774cc2749a04077db4058b73458cbc",
+          "name": "color=white",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7862": {
+          "key": "4441c88112a67e739a8bab041fd996940f00f0c9",
+          "name": "color=lavender-700",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7878": {
+          "key": "b137e084ed4555d90d9140b14c3cead7500e5050",
+          "name": "color=gray-100",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7876": {
+          "key": "6c4776f0f5f50b970bba767389156f1919abd3ed",
+          "name": "color=gray-300",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7856": {
+          "key": "c7e7550a74f57eaee912b3851a189c01d60fbdc2",
+          "name": "color=gray-500",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7874": {
+          "key": "1ecad21ce55acc1a7b45ad2c6934cb8196af0a45",
+          "name": "color=blue-300",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7872": {
+          "key": "5dd674ecb34b3da2d8496c0b896a776dc3dc698f",
+          "name": "color=blue-500",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:7860": {
+          "key": "764d806d0d6688028acdca9428f97f0c9932b258",
+          "name": "color=blue-700",
+          "description": "",
+          "documentationLinks": []
+        }
+      },
+      "schemaVersion": 0,
+      "styles": {
+        "5:22": {
+          "key": "e4e05d26fa18b6423099001f24b6b3e390aa23e3",
+          "name": "Additional/300 Peach Light",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:21": {
+          "key": "b07f793cfb263fb25528556a22561ae09feea0a8",
+          "name": "Additional/500 Peach Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:20": {
+          "key": "e6fc702e08c2de1344e19b7e5d680ac8a2494ace",
+          "name": "Additional/700 Peach Dark",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:27": {
+          "key": "8004d83440047faf3c39caf513a35458e7f6d927",
+          "name": "Additional/300 Mustard Light",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:25": {
+          "key": "fe3745f672a96ad95c63c74ab24259a504c53e22",
+          "name": "Additional/700 Mustard Dark",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:8": {
+          "key": "688150f47ead930dfd1094ded935faa6587b8f0e",
+          "name": "Core/100 Mint Light",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:7": {
+          "key": "f8eb541e3c2e219508d8bd6b917da63d02ae2881",
+          "name": "Core/300 MInt Light",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:6": {
+          "key": "81f8138e505c85f8865b372750f79da1a79e1323",
+          "name": "Core/500 Mint Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:5": {
+          "key": "e4f7623ae705a4e793ee70b1e95b5d573b1958d7",
+          "name": "Core/700 Mint Dark",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:3": {
+          "key": "1e5a62b038902510da57f45cbfb669fa5988c586",
+          "name": "Core/500 White Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:15": {
+          "key": "cbdf5f4128cc615493aec145dae37a6ef2948298",
+          "name": "Additional/700 Lavender Dark",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:32": {
+          "key": "fc6ab33cd85fe6ec8015dae36f7e0b77861207d7",
+          "name": "Neutrals/100 Gray Light",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:31": {
+          "key": "1a75ab68c1c53d0b135b094233d77060bec0ccaf",
+          "name": "Neutrals/300 Gray Light",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "255:4278": {
+          "key": "920ba9711ee04e0c9fc4ca248c8c7e72c27df2f9",
+          "name": "Neutrals/500 Gray Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:11": {
+          "key": "ebdf28807d861f394cb39a1e8506157cfb857bb9",
+          "name": "Core/300 Blue Light",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:10": {
+          "key": "f758e6372de3db5514d09ca8462c4a0200e127a4",
+          "name": "Core/500 Blue Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:9": {
+          "key": "e4c6d1973c2bcfec94a0294b03d0970a261a934c",
+          "name": "Core/700 Blue Dark",
+          "styleType": "FILL",
+          "description": ""
+        }
+      }
+    }
+  }
+}
