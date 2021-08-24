@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    href="https://styleguide.brainly.com/${props.version}/style-guide.css"
-    rel="stylesheet" />
+      href="https://styleguide.brainly.com/<%= htmlWebpackPlugin.options.version %>/style-guide.css"
+      rel="stylesheet"
+    />
     <script
       src="https://styleguide.brainly.com/images/icons-272e81b518.js"
       defer
@@ -28,7 +29,6 @@
       defer
     ></script>
     <script src="../utils/pseudo-elements-bubbles-hack.js" defer></script>
-    <link href="../partials/head.css" rel="stylesheet" />
     <title>Brainly Style Guide Components</title>
     <meta
       name="description"
@@ -36,6 +36,6 @@
     />
   </head>
   <body>
-    <div class="sg-root">
+    <div id="sg-root"></div>
   </body>
 </html>

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const sgPackageJson = require('brainly-style-guide/package.json');
 
 module.exports = {
   entry: {
@@ -27,5 +28,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  plugins: [new HtmlWebpackPlugin({ template: './src/templates/index.html' })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/templates/index.html',
+      version: sgPackageJson.version,
+    }),
+  ],
 };

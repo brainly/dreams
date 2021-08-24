@@ -1,5 +1,4 @@
 import React from 'react';
-import packageJSON from 'brainly-style-guide/package.json';
 import ColorMasksPage from './components/ColorMasks.jsx';
 import TextPage from './components/Text.jsx';
 import AvatarsPage from './components/Avatar.jsx';
@@ -23,6 +22,7 @@ import BoxesPage from './components/Box';
 import BubblesPage from './components/Bubble';
 import RatingPage from './components/Rating';
 import LogoPage from './components/Logo';
+import './styles/app.css';
 
 const App = () => (
   <div>
