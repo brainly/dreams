@@ -1,0 +1,3253 @@
+{
+  "name": "Pencil-Components",
+  "lastModified": "2021-08-20T09:32:08Z",
+  "thumbnailUrl": "https://s3-alpha-sig.figma.com/thumbnails/7c54e8ce-f86b-4fda-96d3-f2bf6c764af7?Expires=1630886400&Signature=CnK-oocK2At6c1l8S~iqSqcBbVE5AbXn-VNHSbaO3CNyDzdFrPuRPO3rareYbA1Gn1XDy8iyhrzSgDq96W0dAqz6zKM76KZzKrDydLOIFPJfMzqJSGBYb0jFG2uk5RVO-1IYGvv2gGfapkvlLH8D2v~CLoY4Jkg1gmveY77AO~4fCwIM3~XI7dlofx0uIe7WhUvNimkra--E1Y7MuKF0VycwYgI3a4PaR9vQsQwJbH1YoSBdrLxy7yF5bE9TNKTENJIVSS0yZjjthoQP6srbQQz-~hGzuaG9~lIfna1NfKePkcZtURwMm6wNvEK4r7dLXuz1lkSQSREL5B~B1ob-sw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
+  "version": "1068002784",
+  "role": "editor",
+  "nodes": {
+    "286:1730": {
+      "document": {
+        "id": "286:1730",
+        "name": "subject-icon/geometry",
+        "type": "COMPONENT_SET",
+        "blendMode": "PASS_THROUGH",
+        "children": [
+          {
+            "id": "0:12442",
+            "name": "size=64, color=mono",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "285:33",
+                "name": "Vector",
+                "type": "VECTOR",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": 4597.33349609375,
+                  "y": 431.3359375,
+                  "width": 52.66976547241211,
+                  "height": 52.664608001708984
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 5.3333282470703125],
+                  [0, 1, 5.3359375]
+                ],
+                "size": {
+                  "x": 52.66976547241211,
+                  "y": 52.664608001708984
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.19607843458652496,
+                      "g": 0.23529411852359772,
+                      "b": 0.2705882489681244,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M21.0679 36.8652L47.4028 36.8652C50.3117 36.8652 52.6698 34.5074 52.6698 31.5988L52.6698 5.26646C52.6698 2.35787 50.3117 0 47.4028 0L21.0679 0C18.159 0 15.8009 2.35787 15.8009 5.26646L15.8009 31.5988C15.8009 34.5074 18.159 36.8652 21.0679 36.8652ZM21.0679 31.5988L21.0679 5.26646L47.4028 5.26646L47.4028 31.5988L21.0679 31.5988Z",
+                    "windingRule": "EVENODD"
+                  },
+                  {
+                    "path": "M11.877 10.3223C12.167 10.5593 12.5296 10.6894 12.9041 10.6909C13.3647 10.6972 13.8059 10.5054 14.1155 10.1643L19.6195 3.71285C19.9064 3.39943 20.0412 2.97582 19.9882 2.55423C19.9665 2.14523 19.7757 1.76367 19.4615 1.50094C18.7916 0.951337 17.809 1.02069 17.223 1.65894L11.719 8.08402C11.4396 8.40295 11.2976 8.81944 11.324 9.24264C11.3654 9.65942 11.563 10.0451 11.877 10.3223ZM1.60643 22.3035C1.8819 22.5676 2.252 22.7099 2.63349 22.6984C3.10737 22.6682 3.54253 22.4265 3.81856 22.0401L7.24209 18.0376C7.51968 17.7206 7.65914 17.3059 7.62947 16.8856C7.5998 16.4653 7.40346 16.0743 7.08408 15.7994C6.37708 15.2954 5.40101 15.4217 4.84562 16.089L1.42208 20.0915C1.15697 20.4172 1.02522 20.8312 1.0534 21.2502C1.07136 21.6662 1.27417 22.0524 1.60643 22.3035ZM11.0606 13.1662C11.0606 14.0387 10.3532 14.7461 9.48056 14.7461C8.6079 14.7461 7.90046 14.0387 7.90046 13.1662C7.90046 12.2936 8.6079 11.5862 9.48056 11.5862C10.3532 11.5862 11.0606 12.2936 11.0606 13.1662ZM33.2083 22.3298C33.4936 22.5749 33.8593 22.7062 34.2353 22.6984C34.7092 22.6682 35.1444 22.4265 35.4204 22.0401L38.844 18.0376C39.1215 17.7206 39.261 17.3059 39.2313 16.8856C39.2017 16.4653 39.0053 16.0743 38.6859 15.7994C37.9789 15.2954 37.0029 15.4217 36.4475 16.089L33.0239 20.0915C32.7495 20.4119 32.6145 20.8287 32.6491 21.2491C32.6838 21.6695 32.8851 22.0587 33.2083 22.3298ZM44.506 10.6909C44.1314 10.6894 43.7688 10.5593 43.4789 10.3223C43.1595 10.0474 42.9632 9.65636 42.9335 9.23606C42.9038 8.81576 43.0433 8.40102 43.3209 8.08402L48.8249 1.65894C49.4109 1.02069 50.3935 0.951337 51.0633 1.50094C51.379 1.77378 51.5693 2.16386 51.59 2.58057C51.6424 2.99411 51.5072 3.40942 51.2213 3.71285L45.7174 10.1643C45.4078 10.5054 44.9666 10.6972 44.506 10.6909ZM41.0824 14.7461C41.9551 14.7461 42.6625 14.0387 42.6625 13.1662C42.6625 12.2936 41.9551 11.5862 41.0824 11.5862C40.2098 11.5862 39.5023 12.2936 39.5023 13.1662C39.5023 14.0387 40.2098 14.7461 41.0824 14.7461ZM34.367 51.4533C33.9399 51.4606 33.5292 51.2887 33.2346 50.9793C32.6324 50.365 32.6324 49.3818 33.2346 48.7674L36.8688 45.0282C37.5026 44.4491 38.4735 44.4491 39.1073 45.0282C39.7127 45.6515 39.7127 46.6432 39.1073 47.2665L35.3677 50.9793C35.1084 51.2613 34.7495 51.4313 34.367 51.4533ZM43.9529 38.7085C43.9803 39.5695 44.6719 40.2611 45.533 40.2884C45.934 40.2802 46.3143 40.1091 46.5864 39.8144L51.432 34.9956C51.7225 34.7013 51.8836 34.3032 51.8797 33.8897C51.8623 33.2748 51.4896 32.726 50.9244 32.483C50.3593 32.24 49.7045 32.3471 49.2462 32.7574L44.4269 37.5762C44.1228 37.8743 43.9518 38.2826 43.9529 38.7085ZM43.4262 42.4213C43.4262 43.2939 42.7188 44.0013 41.8461 44.0013C40.9735 44.0013 40.266 43.2939 40.266 42.4213C40.266 41.5488 40.9735 40.8414 41.8461 40.8414C42.7188 40.8414 43.4262 41.5488 43.4262 42.4213ZM1.50109 51.19C1.80817 51.4773 2.21292 51.6373 2.63349 51.6377C3.07997 51.6676 3.51591 51.4933 3.81856 51.1637L7.50544 47.4508C7.79594 47.1564 7.95706 46.7584 7.95313 46.3449C7.96044 45.9178 7.78853 45.5071 7.47911 45.2126C6.85918 44.6241 5.88691 44.6241 5.26698 45.2126L1.50109 48.9518C0.895662 49.575 0.895662 50.5667 1.50109 51.19ZM13.7205 40.3938C13.3069 40.3977 12.9088 40.2366 12.6144 39.9461C12.3169 39.6497 12.1497 39.247 12.1497 38.827C12.1497 38.407 12.3169 38.0043 12.6144 37.7079L17.302 32.968C17.9308 32.3761 18.9117 32.3761 19.5405 32.968C20.1459 33.5913 20.1459 34.583 19.5405 35.2063L14.8529 39.9461C14.573 40.2262 14.1954 40.3867 13.7995 40.3938L13.7205 40.3938ZM10.1653 44.0013C11.0379 44.0013 11.7454 43.2939 11.7454 42.4213L11.8244 42.4213C11.8249 41.9883 11.6476 41.574 11.334 41.2753C11.0203 40.9766 10.5978 40.8198 10.1653 40.8414C9.2926 40.8414 8.58517 41.5488 8.58517 42.4213C8.58517 43.2939 9.2926 44.0013 10.1653 44.0013Z",
+                    "windingRule": "EVENODD"
+                  },
+                  {
+                    "path": "M5.26698 52.6646L31.6019 52.6646C34.5107 52.6646 36.8688 50.3067 36.8688 47.3981L36.8688 23.6991C36.8688 20.7905 34.5107 18.4326 31.6019 18.4326L5.26698 18.4326C2.35811 18.4326 0 20.7905 0 23.6991L0 47.3981C0 50.3067 2.35811 52.6646 5.26698 52.6646ZM5.26698 47.3981L5.26698 23.6991L31.6019 23.6991L31.6019 47.3981L5.26698 47.3981Z",
+                    "windingRule": "EVENODD"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "CENTER",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:0"
+                },
+                "effects": []
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 4592,
+              "y": 426,
+              "width": 64,
+              "height": 64
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 446]
+            ],
+            "size": {
+              "x": 64,
+              "y": 64
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:12463",
+            "name": "size=64, color=color",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:12464",
+                "name": "Group",
+                "type": "GROUP",
+                "blendMode": "PASS_THROUGH",
+                "children": [
+                  {
+                    "id": "0:12467",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12465",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4613.13427734375,
+                          "y": 317.3359375,
+                          "width": 36.86882400512695,
+                          "height": 36.86522674560547
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 0],
+                          [0, 1, 0]
+                        ],
+                        "size": {
+                          "x": 36.86882400512695,
+                          "y": 36.86522674560547
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12466",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4618.4013671875,
+                          "y": 322.6023864746094,
+                          "width": 26.33487319946289,
+                          "height": 26.332304000854492
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 5.266974925994873],
+                          [0, 1, 5.26646089553833]
+                        ],
+                        "size": {
+                          "x": 26.33487319946289,
+                          "y": 26.332304000854492
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4613.13427734375,
+                      "y": 317.3359375,
+                      "width": 36.86882400512695,
+                      "height": 36.86522674560547
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 15.800924301147461],
+                      [0, 1, 0]
+                    ],
+                    "size": {
+                      "x": 36.86882400512695,
+                      "y": 36.86522674560547
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M5.26697 36.8652L31.6018 36.8652C34.5107 36.8652 36.8688 34.5074 36.8688 31.5988L36.8688 5.26646C36.8688 2.35787 34.5107 0 31.6018 0L5.26697 0C2.3581 0 0 2.35787 0 5.26646L0 31.5988C0 34.5074 2.3581 36.8652 5.26697 36.8652ZM5.26697 31.5988L5.26697 5.26646L31.6018 5.26646L31.6018 31.5988L5.26697 31.5988Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:2"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12482",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12480",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4598.38037109375,
+                          "y": 362.10711669921875,
+                          "width": 6.906337738037109,
+                          "height": 6.86978006362915
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, -2.923758416481444e-16],
+                          [0, 1, 12.247063636779785]
+                        ],
+                        "size": {
+                          "x": 6.906337738037109,
+                          "y": 6.86978006362915
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12481",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4609.48291015625,
+                          "y": 349.86004638671875,
+                          "width": 7.844881534576416,
+                          "height": 7.869704723358154
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 11.102646827697754],
+                          [0, 1, -5.846946144514675e-16]
+                        ],
+                        "size": {
+                          "x": 7.844881534576416,
+                          "y": 7.869704723358154
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12483",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4605.91845703125,
+                          "y": 358.17535400390625,
+                          "width": 3.2391908168792725,
+                          "height": 3.1618549823760986
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 7.538150787353516],
+                          [0, 1, 8.315305709838867]
+                        ],
+                        "size": {
+                          "x": 3.2391908168792725,
+                          "y": 3.1618549823760986
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4598.38037109375,
+                      "y": 349.86004638671875,
+                      "width": 18.947528839111328,
+                      "height": 19.116844177246094
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 1.0470181703567505],
+                      [0, 1, 32.52412033081055]
+                    ],
+                    "size": {
+                      "x": 18.947528839111328,
+                      "y": 19.116844177246094
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.30980393290519714,
+                          "g": 0.7019608020782471,
+                          "b": 0.9647058844566345,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M12.6735 7.86963C12.2599 7.87356 11.8618 7.71245 11.5674 7.42199C11.2699 7.12553 11.1026 6.72284 11.1026 6.30286C11.1026 5.88289 11.2699 5.48019 11.5674 5.18374L16.255 0.443925C16.8837 -0.147975 17.8647 -0.147975 18.4935 0.443925C19.0989 1.06721 19.0989 2.05889 18.4935 2.68217L13.8059 7.42199C13.526 7.70208 13.1483 7.86258 12.7525 7.86963L12.6735 7.86963ZM1.58647 19.1135C1.1659 19.1132 0.76115 18.9532 0.45407 18.6659C-0.151357 18.0426 -0.151357 17.0509 0.45407 16.4276L4.21996 12.6884C4.83989 12.0999 5.81216 12.0999 6.43209 12.6884C6.7415 12.983 6.91342 13.3936 6.90611 13.8207C6.91004 14.2343 6.74892 14.6323 6.45842 14.9267L2.77154 18.6395C2.46889 18.9691 2.03295 19.1435 1.58647 19.1135ZM9.11824 11.4772C9.9909 11.4772 10.6983 10.7698 10.6983 9.89722L10.7773 9.89722C10.7779 9.46414 10.6006 9.04983 10.287 8.75115C9.97333 8.45248 9.55082 8.29563 9.11824 8.31728C8.24558 8.31728 7.53815 9.02465 7.53815 9.89722C7.53815 10.7698 8.24558 11.4772 9.11824 11.4772Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:9"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12478",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12476",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4630.1162109375,
+                          "y": 361.9298400878906,
+                          "width": 6.7784271240234375,
+                          "height": 6.859647750854492
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 5.847516832962888e-16],
+                          [0, 1, 12.239431381225586]
+                        ],
+                        "size": {
+                          "x": 6.7784271240234375,
+                          "y": 6.859647750854492
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12477",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4641.2861328125,
+                          "y": 349.6903991699219,
+                          "width": 7.926872253417969,
+                          "height": 7.933957576751709
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 11.16996955871582],
+                          [0, 1, -7.308682680643344e-17]
+                        ],
+                        "size": {
+                          "x": 7.926872253417969,
+                          "y": 7.933957576751709
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12479",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4637.59912109375,
+                          "y": 358.1773376464844,
+                          "width": 3.160184860229492,
+                          "height": 3.159876585006714
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 7.483092308044434],
+                          [0, 1, 8.48693561553955]
+                        ],
+                        "size": {
+                          "x": 3.160184860229492,
+                          "y": 3.159876585006714
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4630.1162109375,
+                      "y": 349.6903991699219,
+                      "width": 19.09691047668457,
+                      "height": 19.099079132080078
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 32.782928466796875],
+                      [0, 1, 32.354469299316406]
+                    ],
+                    "size": {
+                      "x": 19.09691047668457,
+                      "y": 19.099079132080078
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.3764705955982208,
+                          "g": 0.8274509906768799,
+                          "b": 0.6000000238418579,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M12.7501 7.93396C11.889 7.9066 11.1973 7.21501 11.17 6.35402C11.1689 5.92813 11.3398 5.51985 11.644 5.22173L16.4633 0.402918C16.9216 -0.00739465 17.5764 -0.114455 18.1415 0.128527C18.7066 0.371508 19.0793 0.920355 19.0968 1.53521C19.1007 1.94875 18.9396 2.34679 18.6491 2.64116L13.8035 7.45998C13.5314 7.75462 13.151 7.92576 12.7501 7.93396ZM1.58408 19.0989C1.15693 19.1062 0.746246 18.9343 0.451681 18.6249C-0.15056 18.0105 -0.15056 17.0273 0.451681 16.413L4.08589 12.6738C4.71966 12.0947 5.69059 12.0947 6.32436 12.6738C6.92978 13.2971 6.92978 14.2887 6.32436 14.912L2.58481 18.6249C2.32547 18.9068 1.96656 19.0768 1.58408 19.0989ZM9.06318 11.6468C9.93585 11.6468 10.6433 10.9394 10.6433 10.0669C10.6433 9.1943 9.93585 8.48694 9.06318 8.48694C8.19052 8.48694 7.48309 9.1943 7.48309 10.0669C7.48309 10.9394 8.19052 11.6468 9.06318 11.6468Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:5"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12474",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12472",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4629.97705078125,
+                          "y": 332.82708740234375,
+                          "width": 6.591445446014404,
+                          "height": 7.207619667053223
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, -2.1699768616375865e-15],
+                          [0, 1, 14.360732078552246]
+                        ],
+                        "size": {
+                          "x": 6.591445446014404,
+                          "y": 7.207619667053223
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12473",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4640.2626953125,
+                          "y": 318.46636962890625,
+                          "width": 8.671525001525879,
+                          "height": 9.560644149780273
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 10.285771369934082],
+                          [0, 1, 1.4617365361286689e-16]
+                        ],
+                        "size": {
+                          "x": 8.671525001525879,
+                          "y": 9.560644149780273
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12475",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4636.83544921875,
+                          "y": 328.9221496582031,
+                          "width": 3.160184860229492,
+                          "height": 3.159876585006714
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 6.858516216278076],
+                          [0, 1, 10.455793380737305]
+                        ],
+                        "size": {
+                          "x": 3.160184860229492,
+                          "y": 3.159876585006714
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4629.97705078125,
+                      "y": 318.46636962890625,
+                      "width": 18.95729637145996,
+                      "height": 21.56835174560547
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 32.643795013427734],
+                      [0, 1, 1.1304203271865845]
+                    ],
+                    "size": {
+                      "x": 18.95729637145996,
+                      "y": 21.56835174560547
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.9843137264251709,
+                          "g": 0.7450980544090271,
+                          "b": 0.18039216101169586,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M11.8621 9.5605C11.4876 9.55902 11.125 9.42887 10.8351 9.19184C10.5157 8.91698 10.3194 8.52594 10.2897 8.10564C10.26 7.68534 10.3995 7.2706 10.6771 6.9536L16.1811 0.528515C16.7671 -0.109732 17.7497 -0.179083 18.4195 0.370521C18.7352 0.643355 18.9255 1.03344 18.9462 1.45015C18.9986 1.86369 18.8634 2.279 18.5775 2.58243L13.0735 9.03385C12.7639 9.37496 12.3228 9.56675 11.8621 9.5605ZM1.59154 21.568C1.21547 21.5758 0.849758 21.4445 0.564481 21.1994C0.241291 20.9282 0.039961 20.5391 0.00533505 20.1187C-0.0292909 19.6983 0.105663 19.2815 0.380137 18.9611L3.80367 14.9586C4.35906 14.2912 5.33513 14.1649 6.04213 14.669C6.36151 14.9438 6.55785 15.3349 6.58752 15.7552C6.61719 16.1755 6.47774 16.5902 6.20014 16.9072L2.77661 20.9097C2.50058 21.2961 2.06542 21.5378 1.59154 21.568ZM8.43861 13.6157C9.31127 13.6157 10.0187 12.9083 10.0187 12.0357C10.0187 11.1632 9.31127 10.4558 8.43861 10.4558C7.56595 10.4558 6.85852 11.1632 6.85852 12.0357C6.85852 12.9083 7.56595 13.6157 8.43861 13.6157Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:25"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12470",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12468",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4598.38330078125,
+                          "y": 332.82708740234375,
+                          "width": 6.583738327026367,
+                          "height": 7.207939147949219
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 5.459205166205995e-16],
+                          [0, 1, 14.360732078552246]
+                        ],
+                        "size": {
+                          "x": 6.583738327026367,
+                          "y": 7.207939147949219
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12469",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4608.654296875,
+                          "y": 318.46636962890625,
+                          "width": 8.678632736206055,
+                          "height": 9.560644149780273
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 10.27121639251709],
+                          [0, 1, -4.3852097407349046e-16]
+                        ],
+                        "size": {
+                          "x": 8.678632736206055,
+                          "y": 9.560644149780273
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12471",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4605.23388671875,
+                          "y": 328.9221496582031,
+                          "width": 3.160184860229492,
+                          "height": 3.159876585006714
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 6.850808620452881],
+                          [0, 1, 10.455793380737305]
+                        ],
+                        "size": {
+                          "x": 3.160184860229492,
+                          "y": 3.159876585006714
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4598.38330078125,
+                      "y": 318.46636962890625,
+                      "width": 18.949848175048828,
+                      "height": 21.56867027282715
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 1.0496537685394287],
+                      [0, 1, 1.1304203271865845]
+                    ],
+                    "size": {
+                      "x": 18.949848175048828,
+                      "y": 21.56867027282715
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1,
+                          "g": 0.4745098054409027,
+                          "b": 0.40784314274787903,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M11.8544 9.5605C11.4799 9.55902 11.1173 9.42887 10.8274 9.19184C10.5133 8.91468 10.3158 8.529 10.2743 8.11222C10.2479 7.68902 10.3899 7.27253 10.6694 6.9536L16.1734 0.528515C16.7594 -0.109732 17.7419 -0.179083 18.4118 0.370521C18.7261 0.633245 18.9169 1.01481 18.9385 1.42381C18.9916 1.8454 18.8568 2.26901 18.5698 2.58243L13.0658 9.03385C12.7562 9.37496 12.3151 9.56675 11.8544 9.5605ZM1.58383 21.568C1.20234 21.5795 0.832247 21.4372 0.556774 21.173C0.224513 20.922 0.0217077 20.5358 0.00374119 20.1197C-0.0244341 19.7008 0.107319 19.2868 0.372429 18.9611L3.79596 14.9586C4.35136 14.2912 5.32743 14.1649 6.03443 14.669C6.3538 14.9438 6.55014 15.3349 6.57981 15.7552C6.60948 16.1755 6.47003 16.5902 6.19244 16.9072L2.7689 20.9097C2.49287 21.2961 2.05772 21.5378 1.58383 21.568ZM8.4309 13.6157C9.30356 13.6157 10.011 12.9083 10.011 12.0357C10.011 11.1632 9.30356 10.4558 8.4309 10.4558C7.55824 10.4558 6.85081 11.1632 6.85081 12.0357C6.85081 12.9083 7.55824 13.6157 8.4309 13.6157Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:20"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12486",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12484",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4597.33349609375,
+                          "y": 335.7685546875,
+                          "width": 36.86882400512695,
+                          "height": 34.23199462890625
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 0],
+                          [0, 1, 0]
+                        ],
+                        "size": {
+                          "x": 36.86882400512695,
+                          "y": 34.23199462890625
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12485",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4602.6005859375,
+                          "y": 341.0350036621094,
+                          "width": 26.33487319946289,
+                          "height": 23.699073791503906
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 5.266974925994873],
+                          [0, 1, 5.26646089553833]
+                        ],
+                        "size": {
+                          "x": 26.33487319946289,
+                          "y": 23.699073791503906
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4597.33349609375,
+                      "y": 335.7685546875,
+                      "width": 36.86882400512695,
+                      "height": 34.23199462890625
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 0],
+                      [0, 1, 18.432613372802734]
+                    ],
+                    "size": {
+                      "x": 36.86882400512695,
+                      "y": 34.23199462890625
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M5.26697 34.232L31.6018 34.232C34.5107 34.232 36.8688 31.8741 36.8688 28.9655L36.8688 5.26646C36.8688 2.35787 34.5107 0 31.6018 0L5.26697 0C2.3581 0 0 2.35787 0 5.26646L0 28.9655C0 31.8741 2.3581 34.232 5.26697 34.232ZM5.26697 28.9655L5.26697 5.26646L31.6018 5.26646L31.6018 28.9655L5.26697 28.9655Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:2"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  }
+                ],
+                "absoluteBoundingBox": {
+                  "x": 4597.33349609375,
+                  "y": 317.3359375,
+                  "width": 52.66974639892578,
+                  "height": 52.664608001708984
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "relativeTransform": [
+                  [1, 0, 5.3333282470703125],
+                  [0, 1, 5.3359375]
+                ],
+                "size": {
+                  "x": 52.66974639892578,
+                  "y": 52.664608001708984
+                },
+                "clipsContent": false,
+                "background": [
+                  {
+                    "blendMode": "NORMAL",
+                    "visible": false,
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "visible": false,
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 0
+                },
+                "exportSettings": [],
+                "effects": []
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 4592,
+              "y": 312,
+              "width": 64,
+              "height": 64
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 332]
+            ],
+            "size": {
+              "x": 64,
+              "y": 64
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:12397",
+            "name": "size=32, color=mono",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "303:1587",
+                "name": "Vector",
+                "type": "VECTOR",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": 4594.66650390625,
+                  "y": 232.6640625,
+                  "width": 26.33745765686035,
+                  "height": 26.34259796142578
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 2.6666641235351562],
+                  [0, 1, 2.6640625]
+                ],
+                "size": {
+                  "x": 26.33745765686035,
+                  "y": 26.34259796142578
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.19607843458652496,
+                      "g": 0.23529411852359772,
+                      "b": 0.2705882489681244,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M10.535 18.4398L23.7037 18.4398C25.1583 18.4398 26.3375 17.2604 26.3375 15.8056L26.3375 2.63426C26.3375 1.1794 25.1583 0 23.7037 0L10.535 0C9.08041 0 7.90124 1.1794 7.90124 2.63426L7.90124 15.8056C7.90124 17.2604 9.08041 18.4398 10.535 18.4398ZM10.535 15.8056L10.535 2.63426L23.7037 2.63426L23.7037 15.8056L10.535 15.8056Z",
+                    "windingRule": "EVENODD"
+                  },
+                  {
+                    "path": "M5.9391 5.16315C6.08408 5.28171 6.26541 5.34681 6.45268 5.34755C6.68302 5.35068 6.90362 5.25474 7.05844 5.08412L9.8107 1.85715C9.95418 1.70038 10.0216 1.48849 9.99507 1.27762C9.98424 1.07304 9.88883 0.882177 9.73169 0.750764C9.39672 0.475854 8.90539 0.510544 8.61235 0.829792L5.86008 4.04359C5.72034 4.20312 5.64934 4.41144 5.66255 4.62313C5.68327 4.8316 5.78206 5.02451 5.9391 5.16315ZM0.803293 11.1561C0.941043 11.2882 1.12611 11.3594 1.31687 11.3537C1.55384 11.3385 1.77144 11.2176 1.90947 11.0244L3.6214 9.02234C3.76021 8.86378 3.82994 8.65633 3.81511 8.44609C3.80027 8.23586 3.70209 8.04027 3.54239 7.90278C3.18885 7.65067 2.70077 7.71385 2.42305 8.04766L0.711111 10.0497C0.578543 10.2126 0.51266 10.4197 0.526749 10.6292C0.535733 10.8373 0.637146 11.0305 0.803293 11.1561ZM5.53087 6.58565C5.53087 7.02211 5.17712 7.37593 4.74074 7.37593C4.30437 7.37593 3.95062 7.02211 3.95062 6.58565C3.95062 6.14919 4.30437 5.79537 4.74074 5.79537C5.17712 5.79537 5.53087 6.14919 5.53087 6.58565ZM16.6058 11.1693C16.7484 11.2919 16.9313 11.3575 17.1193 11.3537C17.3563 11.3385 17.5739 11.2176 17.7119 11.0244L19.4239 9.02234C19.5627 8.86378 19.6324 8.65633 19.6176 8.44609C19.6027 8.23586 19.5046 8.04027 19.3449 7.90278C18.9913 7.65067 18.5032 7.71385 18.2255 8.04766L16.5136 10.0497C16.3763 10.2099 16.3089 10.4184 16.3262 10.6287C16.3435 10.839 16.4442 11.0336 16.6058 11.1693ZM22.2552 5.34755C22.0679 5.34681 21.8866 5.28171 21.7416 5.16315C21.5819 5.02566 21.4837 4.83007 21.4689 4.61983C21.454 4.4096 21.5238 4.20215 21.6626 4.04359L24.4148 0.829792C24.7079 0.510544 25.1992 0.475854 25.5342 0.750764C25.692 0.887235 25.7872 1.08235 25.7975 1.29079C25.8237 1.49764 25.7561 1.70538 25.6132 1.85715L22.8609 5.08412C22.7061 5.25474 22.4855 5.35068 22.2552 5.34755ZM20.5432 7.37593C20.9796 7.37593 21.3333 7.02211 21.3333 6.58565C21.3333 6.14919 20.9796 5.79537 20.5432 5.79537C20.1068 5.79537 19.7531 6.14919 19.7531 6.58565C19.7531 7.02211 20.1068 7.37593 20.5432 7.37593ZM17.1852 25.7367C16.9716 25.7404 16.7662 25.6544 16.6189 25.4996C16.3178 25.1923 16.3178 24.7005 16.6189 24.3932L18.4362 22.5229C18.7531 22.2332 19.2386 22.2332 19.5556 22.5229C19.8583 22.8347 19.8583 23.3307 19.5556 23.6425L17.6856 25.4996C17.5559 25.6407 17.3765 25.7257 17.1852 25.7367ZM21.9786 19.3618C21.9923 19.7925 22.3382 20.1384 22.7687 20.1521C22.9692 20.148 23.1594 20.0624 23.2955 19.915L25.7185 17.5047C25.8638 17.3574 25.9444 17.1583 25.9424 16.9515C25.9337 16.6439 25.7473 16.3694 25.4647 16.2478C25.1821 16.1263 24.8547 16.1799 24.6255 16.3851L22.2156 18.7954C22.0635 18.9446 21.9781 19.1488 21.9786 19.3618ZM21.7152 21.219C21.7152 21.6554 21.3615 22.0092 20.9251 22.0092C20.4887 22.0092 20.135 21.6554 20.135 21.219C20.135 20.7825 20.4887 20.4287 20.9251 20.4287C21.3615 20.4287 21.7152 20.7825 21.7152 21.219ZM0.750618 25.605C0.904173 25.7487 1.10657 25.8288 1.31687 25.8289C1.54014 25.8439 1.75813 25.7567 1.90947 25.5918L3.75309 23.7347C3.89835 23.5874 3.97892 23.3883 3.97696 23.1815C3.98061 22.9678 3.89464 22.7624 3.73992 22.6151C3.42992 22.3207 2.94374 22.3207 2.63375 22.6151L0.750618 24.4854C0.447875 24.7972 0.447875 25.2932 0.750618 25.605ZM6.86091 20.2048C6.6541 20.2067 6.45504 20.1262 6.30782 19.9809C6.15905 19.8326 6.07543 19.6312 6.07543 19.4211C6.07543 19.211 6.15905 19.0096 6.30782 18.8613L8.65185 16.4905C8.96626 16.1944 9.45679 16.1944 9.7712 16.4905C10.0739 16.8022 10.0739 17.2983 9.7712 17.61L7.42716 19.9809C7.28723 20.121 7.09838 20.2012 6.90041 20.2048L6.86091 20.2048ZM5.08313 22.0092C5.5195 22.0092 5.87325 21.6554 5.87325 21.219L5.91276 21.219C5.91303 21.0023 5.82438 20.7951 5.66755 20.6457C5.51071 20.4963 5.29944 20.4179 5.08313 20.4287C4.64676 20.4287 4.29301 20.7825 4.29301 21.219C4.29301 21.6554 4.64676 22.0092 5.08313 22.0092Z",
+                    "windingRule": "EVENODD"
+                  },
+                  {
+                    "path": "M2.63375 26.3426L15.8025 26.3426C17.2571 26.3426 18.4362 25.1632 18.4362 23.7083L18.4362 11.8542C18.4362 10.3993 17.2571 9.21991 15.8025 9.21991L2.63375 9.21991C1.17917 9.21991 0 10.3993 0 11.8542L0 23.7083C0 25.1632 1.17917 26.3426 2.63375 26.3426ZM2.63375 23.7083L2.63375 11.8542L15.8025 11.8542L15.8025 23.7083L2.63375 23.7083Z",
+                    "windingRule": "EVENODD"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "CENTER",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:0"
+                },
+                "effects": []
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 4592,
+              "y": 230,
+              "width": 32,
+              "height": 32
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 250]
+            ],
+            "size": {
+              "x": 32,
+              "y": 32
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:12418",
+            "name": "size=32, color=color",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:12419",
+                "name": "Group",
+                "type": "GROUP",
+                "blendMode": "PASS_THROUGH",
+                "children": [
+                  {
+                    "id": "0:12422",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12420",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4602.56787109375,
+                          "y": 150.6640625,
+                          "width": 18.436199188232422,
+                          "height": 18.439807891845703
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 0],
+                          [0, 1, 0]
+                        ],
+                        "size": {
+                          "x": 18.436199188232422,
+                          "y": 18.439807891845703
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12421",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4605.20166015625,
+                          "y": 153.29832458496094,
+                          "width": 13.16871452331543,
+                          "height": 13.17129135131836
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.6337428092956543],
+                          [0, 1, 2.634258270263672]
+                        ],
+                        "size": {
+                          "x": 13.16871452331543,
+                          "y": 13.17129135131836
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4602.56787109375,
+                      "y": 150.6640625,
+                      "width": 18.436199188232422,
+                      "height": 18.439807891845703
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 7.901228427886963],
+                      [0, 1, 0]
+                    ],
+                    "size": {
+                      "x": 18.436199188232422,
+                      "y": 18.439807891845703
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M2.63374 18.4398L15.8025 18.4398C17.257 18.4398 18.4362 17.2604 18.4362 15.8055L18.4362 2.63426C18.4362 1.1794 17.257 0 15.8025 0L2.63374 0C1.17917 0 0 1.1794 0 2.63426L0 15.8055C0 17.2604 1.17917 18.4398 2.63374 18.4398ZM2.63374 15.8055L2.63374 2.63426L15.8025 2.63426L15.8025 15.8055L2.63374 15.8055Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:2"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12437",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12435",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4595.18994140625,
+                          "y": 173.05838012695312,
+                          "width": 3.4535038471221924,
+                          "height": 3.4362306594848633
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, -1.462020953910489e-16],
+                          [0, 1, 6.125922203063965]
+                        ],
+                        "size": {
+                          "x": 3.4535038471221924,
+                          "y": 3.4362306594848633
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12436",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4600.74169921875,
+                          "y": 166.93246459960938,
+                          "width": 3.922821044921875,
+                          "height": 3.9363882541656494
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 5.551861763000488],
+                          [0, 1, -2.924614184455967e-16]
+                        ],
+                        "size": {
+                          "x": 3.922821044921875,
+                          "y": 3.9363882541656494
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12438",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4598.95947265625,
+                          "y": 171.09173583984375,
+                          "width": 1.6197525262832642,
+                          "height": 1.5815445184707642
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 3.7694408893585205],
+                          [0, 1, 4.159275531768799]
+                        ],
+                        "size": {
+                          "x": 1.6197525262832642,
+                          "y": 1.5815445184707642
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4595.18994140625,
+                      "y": 166.93246459960938,
+                      "width": 9.474682807922363,
+                      "height": 9.562152862548828
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 0.5235598683357239],
+                      [0, 1, 16.268407821655273]
+                    ],
+                    "size": {
+                      "x": 9.474682807922363,
+                      "y": 9.562152862548828
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.30980393290519714,
+                          "g": 0.7019608020782471,
+                          "b": 0.9647058844566345,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M6.33734 3.93635C6.13053 3.93832 5.93147 3.85773 5.78425 3.71244C5.63548 3.56416 5.55186 3.36273 5.55186 3.15266C5.55186 2.94259 5.63548 2.74117 5.78425 2.59288L8.12829 0.222049C8.44269 -0.0740163 8.93322 -0.0740163 9.24763 0.222049C9.55037 0.533813 9.55037 1.02985 9.24763 1.34161L6.90359 3.71244C6.76367 3.85254 6.57481 3.93282 6.37685 3.93635L6.33734 3.93635ZM0.793312 9.56049C0.583008 9.56034 0.380612 9.48031 0.227057 9.33658C-0.0756856 9.02482 -0.0756856 8.52879 0.227057 8.21702L2.11018 6.3467C2.42018 6.05233 2.90636 6.05233 3.21636 6.3467C3.37108 6.49403 3.45705 6.69943 3.45339 6.91306C3.45536 7.11992 3.37479 7.31901 3.22952 7.46626L1.3859 9.32341C1.23457 9.48827 1.01657 9.57548 0.793312 9.56049ZM4.55956 5.74082C4.99594 5.74082 5.34969 5.387 5.34969 4.95054L5.38919 4.95054C5.38946 4.73392 5.30082 4.52668 5.14398 4.37728C4.98715 4.22789 4.77587 4.14943 4.55956 4.16026C4.12319 4.16026 3.76944 4.51408 3.76944 4.95054C3.76944 5.387 4.12319 5.74082 4.55956 5.74082Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:9"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12433",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12431",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4611.0595703125,
+                          "y": 172.96971130371094,
+                          "width": 3.3895423412323,
+                          "height": 3.4311623573303223
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.924041907820978e-16],
+                          [0, 1, 6.122104167938232]
+                        ],
+                        "size": {
+                          "x": 3.3895423412323,
+                          "y": 3.4311623573303223
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12432",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4616.64501953125,
+                          "y": 166.8476104736328,
+                          "width": 3.963820695877075,
+                          "height": 3.96852707862854
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 5.585526466369629],
+                          [0, 1, -3.6557677305699586e-17]
+                        ],
+                        "size": {
+                          "x": 3.963820695877075,
+                          "y": 3.96852707862854
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12434",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4614.80126953125,
+                          "y": 171.0927276611328,
+                          "width": 1.5802457332611084,
+                          "height": 1.5805549621582031
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 3.7419090270996094],
+                          [0, 1, 4.245124340057373]
+                        ],
+                        "size": {
+                          "x": 1.5802457332611084,
+                          "y": 1.5805549621582031
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4611.0595703125,
+                      "y": 166.8476104736328,
+                      "width": 9.549381256103516,
+                      "height": 9.553266525268555
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 16.393054962158203],
+                      [0, 1, 16.183547973632812]
+                    ],
+                    "size": {
+                      "x": 9.549381256103516,
+                      "y": 9.553266525268555
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.3764705955982208,
+                          "g": 0.8274509906768799,
+                          "b": 0.6000000238418579,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M6.37565 3.96853C5.94507 3.95484 5.59921 3.60891 5.58553 3.17825C5.58499 2.96522 5.67046 2.761 5.82257 2.61188L8.23244 0.201538C8.46161 -0.00369877 8.78903 -0.0572496 9.07163 0.0642885C9.35422 0.185827 9.5406 0.460357 9.54931 0.767903C9.55128 0.974754 9.47071 1.17385 9.32544 1.3211L6.9024 3.73144C6.76635 3.87882 6.57616 3.96443 6.37565 3.96853ZM0.792117 9.55315C0.578522 9.55681 0.373159 9.47083 0.225862 9.31607C-0.0752874 9.00878 -0.0752874 8.51698 0.225862 8.20968L2.04314 6.33936C2.36006 6.04969 2.84557 6.04969 3.16249 6.33936C3.46523 6.65112 3.46523 7.14716 3.16249 7.45892L1.29253 9.31607C1.16285 9.45711 0.983378 9.54214 0.792117 9.55315ZM4.53203 5.82568C4.9684 5.82568 5.32215 5.47186 5.32215 5.0354C5.32215 4.59894 4.9684 4.24512 4.53203 4.24512C4.09566 4.24512 3.74191 4.59894 3.74191 5.0354C3.74191 5.47186 4.09566 5.82568 4.53203 5.82568Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:5"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12429",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12427",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4610.98974609375,
+                          "y": 158.41265869140625,
+                          "width": 3.2960424423217773,
+                          "height": 3.6052165031433105
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, -1.0850936746624896e-15],
+                          [0, 1, 7.183168411254883]
+                        ],
+                        "size": {
+                          "x": 3.2960424423217773,
+                          "y": 3.6052165031433105
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12428",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4616.13330078125,
+                          "y": 151.2294921875,
+                          "width": 4.336183071136475,
+                          "height": 4.7821879386901855
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 5.1433844566345215],
+                          [0, 1, 7.311535461139917e-17]
+                        ],
+                        "size": {
+                          "x": 4.336183071136475,
+                          "y": 4.7821879386901855
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12430",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4614.41943359375,
+                          "y": 156.4594268798828,
+                          "width": 1.5802457332611084,
+                          "height": 1.5805549621582031
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 3.4295907020568848],
+                          [0, 1, 5.229937553405762]
+                        ],
+                        "size": {
+                          "x": 1.5802457332611084,
+                          "y": 1.5805549621582031
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4610.98974609375,
+                      "y": 151.2294921875,
+                      "width": 9.479567527770996,
+                      "height": 10.788385391235352
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 16.3234806060791],
+                      [0, 1, 0.565430760383606]
+                    ],
+                    "size": {
+                      "x": 9.479567527770996,
+                      "y": 10.788385391235352
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.9843137264251709,
+                          "g": 0.7450980544090271,
+                          "b": 0.18039216101169586,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M5.93165 4.78211C5.74438 4.78138 5.56305 4.71627 5.41807 4.59772C5.25836 4.46023 5.16018 4.26463 5.14535 4.0544C5.13051 3.84417 5.20025 3.63672 5.33905 3.47816L8.09132 0.264361C8.38435 -0.0548873 8.87569 -0.0895767 9.21066 0.185333C9.36851 0.321803 9.46367 0.516923 9.47403 0.725356C9.50023 0.932209 9.4326 1.13995 9.28967 1.29172L6.53741 4.51869C6.38259 4.68931 6.16199 4.78524 5.93165 4.78211ZM0.795848 10.7882C0.607794 10.7921 0.42492 10.7264 0.282268 10.6038C0.120657 10.4682 0.0199824 10.2736 0.00266779 10.0633C-0.0146469 9.85299 0.0528364 9.6445 0.190087 9.48426L1.90202 7.48223C2.17974 7.14841 2.66783 7.08524 3.02136 7.33734C3.18106 7.47483 3.27924 7.67043 3.29408 7.88066C3.30892 8.09089 3.23918 8.29834 3.10037 8.4569L1.38844 10.4589C1.25041 10.6522 1.03281 10.7731 0.795848 10.7882ZM4.21971 6.81049C4.65609 6.81049 5.00984 6.45667 5.00984 6.02022C5.00984 5.58376 4.65609 5.22994 4.21971 5.22994C3.78334 5.22994 3.42959 5.58376 3.42959 6.02022C3.42959 6.45667 3.78334 6.81049 4.21971 6.81049Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:25"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12425",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12423",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4595.19140625,
+                          "y": 158.41265869140625,
+                          "width": 3.2921884059906006,
+                          "height": 3.6053762435913086
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.7298672808990143e-16],
+                          [0, 1, 7.183168411254883]
+                        ],
+                        "size": {
+                          "x": 3.2921884059906006,
+                          "y": 3.6053762435913086
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12424",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4600.32763671875,
+                          "y": 151.2294921875,
+                          "width": 4.339737415313721,
+                          "height": 4.7821879386901855
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 5.136106491088867],
+                          [0, 1, -2.1934606383419751e-16]
+                        ],
+                        "size": {
+                          "x": 4.339737415313721,
+                          "y": 4.7821879386901855
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12426",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4598.6171875,
+                          "y": 156.4594268798828,
+                          "width": 1.5802457332611084,
+                          "height": 1.5805549621582031
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 3.425736427307129],
+                          [0, 1, 5.229937553405762]
+                        ],
+                        "size": {
+                          "x": 1.5802457332611084,
+                          "y": 1.5805549621582031
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4595.19140625,
+                      "y": 151.2294921875,
+                      "width": 9.47584342956543,
+                      "height": 10.788544654846191
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 0.5248777866363525],
+                      [0, 1, 0.565430760383606]
+                    ],
+                    "size": {
+                      "x": 9.47584342956543,
+                      "y": 10.788544654846191
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1,
+                          "g": 0.4745098054409027,
+                          "b": 0.40784314274787903,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M5.92779 4.78211C5.74052 4.78138 5.5592 4.71627 5.41421 4.59772C5.25718 4.45908 5.15839 4.26616 5.13767 4.05769C5.12445 3.84601 5.19546 3.63768 5.3352 3.47816L8.08746 0.264361C8.3805 -0.0548873 8.87183 -0.0895767 9.2068 0.185333C9.36394 0.316746 9.45935 0.507605 9.47018 0.712184C9.4967 0.92306 9.42929 1.13495 9.28581 1.29172L6.53355 4.51869C6.37874 4.68931 6.15814 4.78524 5.92779 4.78211ZM0.791994 10.7882C0.60123 10.794 0.416164 10.7228 0.278414 10.5907C0.112268 10.4651 0.0108549 10.2719 0.00187078 10.0638C-0.0122183 9.85425 0.0536648 9.64715 0.186233 9.48426L1.89817 7.48223C2.17589 7.14841 2.66397 7.08524 3.01751 7.33734C3.17721 7.47483 3.27539 7.67043 3.29023 7.88066C3.30506 8.09089 3.23533 8.29834 3.09652 8.4569L1.38459 10.4589C1.24656 10.6522 1.02896 10.7731 0.791994 10.7882ZM4.21586 6.81049C4.65223 6.81049 5.00598 6.45667 5.00598 6.02022C5.00598 5.58376 4.65223 5.22994 4.21586 5.22994C3.77949 5.22994 3.42574 5.58376 3.42574 6.02022C3.42574 6.45667 3.77949 6.81049 4.21586 6.81049Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:20"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12441",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12439",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4594.66650390625,
+                          "y": 159.88397216796875,
+                          "width": 18.436199188232422,
+                          "height": 17.122678756713867
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 0],
+                          [0, 1, 0]
+                        ],
+                        "size": {
+                          "x": 18.436199188232422,
+                          "y": 17.122678756713867
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12440",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4597.30029296875,
+                          "y": 162.5182342529297,
+                          "width": 13.16871452331543,
+                          "height": 11.854162216186523
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.6337428092956543],
+                          [0, 1, 2.634258270263672]
+                        ],
+                        "size": {
+                          "x": 13.16871452331543,
+                          "y": 11.854162216186523
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4594.66650390625,
+                      "y": 159.88397216796875,
+                      "width": 18.436199188232422,
+                      "height": 17.122678756713867
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 0],
+                      [0, 1, 9.219903945922852]
+                    ],
+                    "size": {
+                      "x": 18.436199188232422,
+                      "y": 17.122678756713867
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M2.63374 17.1227L15.8025 17.1227C17.257 17.1227 18.4362 15.9433 18.4362 14.4884L18.4362 2.63426C18.4362 1.1794 17.257 0 15.8025 0L2.63374 0C1.17917 0 0 1.1794 0 2.63426L0 14.4884C0 15.9433 1.17917 17.1227 2.63374 17.1227ZM2.63374 14.4884L2.63374 2.63426L15.8025 2.63426L15.8025 14.4884L2.63374 14.4884Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:2"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  }
+                ],
+                "absoluteBoundingBox": {
+                  "x": 4594.66650390625,
+                  "y": 150.6640625,
+                  "width": 26.337427139282227,
+                  "height": 26.34258270263672
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "relativeTransform": [
+                  [1, 0, 2.6666717529296875],
+                  [0, 1, 2.6640625]
+                ],
+                "size": {
+                  "x": 26.337427139282227,
+                  "y": 26.34258270263672
+                },
+                "clipsContent": false,
+                "background": [
+                  {
+                    "blendMode": "NORMAL",
+                    "visible": false,
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "visible": false,
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 0
+                },
+                "exportSettings": [],
+                "effects": []
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 4592,
+              "y": 148,
+              "width": 32,
+              "height": 32
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 168]
+            ],
+            "size": {
+              "x": 32,
+              "y": 32
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:12352",
+            "name": "size=24, color=mono",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "303:1586",
+                "name": "Vector",
+                "type": "VECTOR",
+                "blendMode": "PASS_THROUGH",
+                "absoluteBoundingBox": {
+                  "x": 4594,
+                  "y": 76,
+                  "width": 20,
+                  "height": 20
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 2],
+                  [0, 1, 2]
+                ],
+                "size": {
+                  "x": 20,
+                  "y": 20
+                },
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "type": "SOLID",
+                    "color": {
+                      "r": 0.19607843458652496,
+                      "g": 0.23529411852359772,
+                      "b": 0.2705882489681244,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fillGeometry": [
+                  {
+                    "path": "M8 14L18 14C19.1046 14 20 13.1046 20 12L20 2C20 0.89543 19.1046 0 18 0L8 0C6.89543 0 6 0.89543 6 2L6 12C6 13.1046 6.89543 14 8 14ZM8 12L8 2L18 2L18 12L8 12Z",
+                    "windingRule": "EVENODD"
+                  },
+                  {
+                    "path": "M4.51 3.92C4.6201 4.01001 4.75779 4.05944 4.9 4.06C5.07492 4.06238 5.24244 3.98954 5.36 3.86L7.45 1.41C7.55895 1.29097 7.61014 1.1301 7.59 0.97C7.58178 0.814678 7.50932 0.669772 7.39 0.57C7.13563 0.361281 6.76252 0.387618 6.54 0.63L4.45 3.07C4.34388 3.19112 4.28996 3.34928 4.3 3.51C4.31573 3.66828 4.39075 3.81474 4.51 3.92ZM0.61 8.47C0.714604 8.57031 0.855138 8.62436 1 8.62C1.17994 8.60852 1.34518 8.51672 1.45 8.37L2.75 6.85C2.85541 6.72961 2.90836 6.57211 2.8971 6.4125C2.88583 6.25289 2.81127 6.10438 2.69 6C2.42153 5.80859 2.0509 5.85656 1.84 6.11L0.54 7.63C0.439331 7.75366 0.389301 7.9109 0.4 8.07C0.406822 8.22799 0.483833 8.37467 0.61 8.47ZM4.2 5C4.2 5.33137 3.93137 5.6 3.6 5.6C3.26863 5.6 3 5.33137 3 5C3 4.66863 3.26863 4.4 3.6 4.4C3.93137 4.4 4.2 4.66863 4.2 5ZM12.61 8.48C12.7183 8.5731 12.8572 8.62295 13 8.62C13.1799 8.60852 13.3452 8.51672 13.45 8.37L14.75 6.85C14.8554 6.72961 14.9084 6.57211 14.8971 6.4125C14.8858 6.25289 14.8113 6.10438 14.69 6C14.4215 5.80859 14.0509 5.85656 13.84 6.11L12.54 7.63C12.4358 7.75166 12.3845 7.90995 12.3977 8.0696C12.4108 8.22926 12.4873 8.37703 12.61 8.48ZM16.9 4.06C16.7578 4.05944 16.6201 4.01001 16.51 3.92C16.3887 3.81562 16.3142 3.66711 16.3029 3.5075C16.2916 3.34789 16.3446 3.19039 16.45 3.07L18.54 0.63C18.7625 0.387618 19.1356 0.361281 19.39 0.57C19.5099 0.673612 19.5821 0.821752 19.59 0.98C19.6099 1.13705 19.5585 1.29477 19.45 1.41L17.36 3.86C17.2424 3.98954 17.0749 4.06238 16.9 4.06ZM15.6 5.6C15.9314 5.6 16.2 5.33137 16.2 5C16.2 4.66863 15.9314 4.4 15.6 4.4C15.2686 4.4 15 4.66863 15 5C15 5.33137 15.2686 5.6 15.6 5.6ZM13.05 19.54C12.8878 19.5428 12.7319 19.4775 12.62 19.36C12.3913 19.1267 12.3913 18.7533 12.62 18.52L14 17.1C14.2407 16.8801 14.6093 16.8801 14.85 17.1C15.0799 17.3367 15.0799 17.7133 14.85 17.95L13.43 19.36C13.3315 19.4671 13.1952 19.5316 13.05 19.54ZM16.69 14.7C16.7004 15.027 16.963 15.2896 17.29 15.3C17.4423 15.2969 17.5867 15.2319 17.69 15.12L19.53 13.29C19.6403 13.1782 19.7015 13.027 19.7 12.87C19.6934 12.6365 19.5519 12.4281 19.3373 12.3358C19.1227 12.2435 18.874 12.2842 18.7 12.44L16.87 14.27C16.7545 14.3832 16.6896 14.5383 16.69 14.7ZM16.49 16.11C16.49 16.4414 16.2214 16.71 15.89 16.71C15.5586 16.71 15.29 16.4414 15.29 16.11C15.29 15.7786 15.5586 15.51 15.89 15.51C16.2214 15.51 16.49 15.7786 16.49 16.11ZM0.57 19.44C0.686606 19.5491 0.840301 19.6099 1 19.61C1.16954 19.6214 1.33508 19.5552 1.45 19.43L2.85 18.02C2.96031 17.9082 3.02149 17.757 3.02 17.6C3.02277 17.4378 2.95749 17.2819 2.84 17.17C2.6046 16.9465 2.2354 16.9465 2 17.17L0.57 18.59C0.340105 18.8267 0.340105 19.2033 0.57 19.44ZM5.21 15.34C5.05295 15.3415 4.90179 15.2803 4.79 15.17C4.67703 15.0574 4.61353 14.9045 4.61353 14.745C4.61353 14.5855 4.67703 14.4326 4.79 14.32L6.57 12.52C6.80875 12.2952 7.18125 12.2952 7.42 12.52C7.6499 12.7567 7.6499 13.1333 7.42 13.37L5.64 15.17C5.53374 15.2764 5.39033 15.3373 5.24 15.34L5.21 15.34ZM3.86 16.71C4.19137 16.71 4.46 16.4414 4.46 16.11L4.49 16.11C4.49021 15.9455 4.42289 15.7882 4.30379 15.6748C4.1847 15.5613 4.02426 15.5018 3.86 15.51C3.52863 15.51 3.26 15.7786 3.26 16.11C3.26 16.4414 3.52863 16.71 3.86 16.71Z",
+                    "windingRule": "EVENODD"
+                  },
+                  {
+                    "path": "M2 20L12 20C13.1046 20 14 19.1046 14 18L14 9C14 7.89543 13.1046 7 12 7L2 7C0.89543 7 0 7.89543 0 9L0 18C0 19.1046 0.89543 20 2 20ZM2 18L2 9L12 9L12 18L2 18Z",
+                    "windingRule": "EVENODD"
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 0,
+                "strokeAlign": "CENTER",
+                "strokeGeometry": [],
+                "styles": {
+                  "fill": "5:0"
+                },
+                "effects": []
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 4592,
+              "y": 74,
+              "width": 24,
+              "height": 24
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 94]
+            ],
+            "size": {
+              "x": 24,
+              "y": 24
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          },
+          {
+            "id": "0:12373",
+            "name": "size=24, color=color",
+            "type": "COMPONENT",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "0:12374",
+                "name": "Group",
+                "type": "GROUP",
+                "blendMode": "PASS_THROUGH",
+                "children": [
+                  {
+                    "id": "0:12377",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12375",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4600,
+                          "y": 2,
+                          "width": 14,
+                          "height": 14
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 0],
+                          [0, 1, 0]
+                        ],
+                        "size": {
+                          "x": 14,
+                          "y": 14
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12376",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4602,
+                          "y": 4,
+                          "width": 10,
+                          "height": 10
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2],
+                          [0, 1, 2]
+                        ],
+                        "size": {
+                          "x": 10,
+                          "y": 10
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4600,
+                      "y": 2,
+                      "width": 14,
+                      "height": 14
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 6],
+                      [0, 1, 0]
+                    ],
+                    "size": {
+                      "x": 14,
+                      "y": 14
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M2 14L12 14C13.1046 14 14 13.1046 14 12L14 2C14 0.89543 13.1046 0 12 0L2 0C0.89543 0 0 0.89543 0 2L0 12C0 13.1046 0.89543 14 2 14ZM2 12L2 2L12 2L12 12L2 12Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:2"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12392",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12390",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4594.3974609375,
+                          "y": 19.00238037109375,
+                          "width": 2.6225063800811768,
+                          "height": 2.6088790893554688
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, -1.1102230246251565e-16],
+                          [0, 1, 4.650965690612793]
+                        ],
+                        "size": {
+                          "x": 2.6225063800811768,
+                          "y": 2.6088790893554688
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12391",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4598.61328125,
+                          "y": 14.351414680480957,
+                          "width": 2.9788944721221924,
+                          "height": 2.988612174987793
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 4.215948104858398],
+                          [0, 1, -2.220446049250313e-16]
+                        ],
+                        "size": {
+                          "x": 2.9788944721221924,
+                          "y": 2.988612174987793
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12393",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4597.259765625,
+                          "y": 17.509248733520508,
+                          "width": 1.2300004959106445,
+                          "height": 1.2007513046264648
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.8624215126037598],
+                          [0, 1, 3.15783429145813]
+                        ],
+                        "size": {
+                          "x": 1.2300004959106445,
+                          "y": 1.2007513046264648
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4594.3974609375,
+                      "y": 14.351414680480957,
+                      "width": 7.19484281539917,
+                      "height": 7.259844779968262
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 0.39757856726646423],
+                      [0, 1, 12.351414680480957]
+                    ],
+                    "size": {
+                      "x": 7.19484281539917,
+                      "y": 7.259844779968262
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.30980393290519714,
+                          "g": 0.7019608020782471,
+                          "b": 0.9647058844566345,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M4.81242 2.98859C4.65538 2.99008 4.50421 2.92889 4.39242 2.81859C4.27945 2.706 4.21595 2.55308 4.21595 2.39359C4.21595 2.23409 4.27945 2.08117 4.39242 1.96859L6.17242 0.168586C6.41117 -0.0561952 6.78367 -0.0561952 7.02242 0.168586C7.25232 0.405285 7.25232 0.781886 7.02242 1.01859L5.24242 2.81859C5.13616 2.92496 4.99275 2.98591 4.84242 2.98859L4.81242 2.98859ZM0.602421 7.25859C0.442722 7.25847 0.289027 7.1977 0.172421 7.08859C-0.0574738 6.85189 -0.0574738 6.47529 0.172421 6.23859L1.60242 4.81859C1.83782 4.59509 2.20702 4.59509 2.44242 4.81859C2.55992 4.93044 2.6252 5.08639 2.62242 5.24859C2.62391 5.40563 2.56273 5.55679 2.45242 5.66859L1.05242 7.07859C0.937499 7.20375 0.771962 7.26997 0.602421 7.25859ZM3.46242 4.35859C3.79379 4.35859 4.06242 4.08996 4.06242 3.75859L4.09242 3.75859C4.09263 3.59412 4.02531 3.43678 3.90622 3.32335C3.78712 3.20993 3.62668 3.15036 3.46242 3.15859C3.13105 3.15859 2.86242 3.42721 2.86242 3.75859C2.86242 4.08996 3.13105 4.35859 3.46242 4.35859Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:9"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12388",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12386",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4606.4482421875,
+                          "y": 18.935054779052734,
+                          "width": 2.5739357471466064,
+                          "height": 2.6050312519073486
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.220446049250313e-16],
+                          [0, 1, 4.648066520690918]
+                        ],
+                        "size": {
+                          "x": 2.5739357471466064,
+                          "y": 2.6050312519073486
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12387",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4610.68994140625,
+                          "y": 14.2869873046875,
+                          "width": 3.010028600692749,
+                          "height": 3.0130128860473633
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 4.241512298583984],
+                          [0, 1, -2.7755575615628914e-17]
+                        ],
+                        "size": {
+                          "x": 3.010028600692749,
+                          "y": 3.0130128860473633
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12389",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4609.28955078125,
+                          "y": 17.510000228881836,
+                          "width": 1.2000000476837158,
+                          "height": 1.2000000476837158
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.8415143489837646],
+                          [0, 1, 3.223012924194336]
+                        ],
+                        "size": {
+                          "x": 1.2000000476837158,
+                          "y": 1.2000000476837158
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4606.4482421875,
+                      "y": 14.2869873046875,
+                      "width": 7.2515668869018555,
+                      "height": 7.253098011016846
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 12.448485374450684],
+                      [0, 1, 12.2869873046875]
+                    ],
+                    "size": {
+                      "x": 7.2515668869018555,
+                      "y": 7.253098011016846
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.3764705955982208,
+                          "g": 0.8274509906768799,
+                          "b": 0.6000000238418579,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M4.84151 3.01301C4.51454 3.00262 4.2519 2.73998 4.24151 2.41301C4.24111 2.25128 4.30601 2.09623 4.42151 1.98301L6.25151 0.153013C6.42554 -0.0028082 6.67418 -0.0434654 6.88877 0.0488095C7.10336 0.141085 7.2449 0.349516 7.25151 0.583013C7.25301 0.740059 7.19182 0.891219 7.08151 1.00301L5.24151 2.83301C5.1382 2.94491 4.99378 3.0099 4.84151 3.01301ZM0.601514 7.25301C0.439316 7.25579 0.283368 7.19051 0.171514 7.07301C-0.0571714 6.83971 -0.0571714 6.46632 0.171514 6.23301L1.55151 4.81301C1.79217 4.59308 2.16086 4.59308 2.40151 4.81301C2.63141 5.04971 2.63141 5.42631 2.40151 5.66301L0.981514 7.07301C0.883037 7.18009 0.746753 7.24465 0.601514 7.25301ZM3.44151 4.42301C3.77289 4.42301 4.04151 4.15438 4.04151 3.82301C4.04151 3.49164 3.77289 3.22301 3.44151 3.22301C3.11014 3.22301 2.84151 3.49164 2.84151 3.82301C2.84151 4.15438 3.11014 4.42301 3.44151 4.42301Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:5"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12384",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12382",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4606.3955078125,
+                          "y": 7.882946014404297,
+                          "width": 2.502934217453003,
+                          "height": 2.737177848815918
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, -8.239936510889834e-16],
+                          [0, 1, 5.45365571975708]
+                        ],
+                        "size": {
+                          "x": 2.502934217453003,
+                          "y": 2.737177848815918
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12383",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4610.30126953125,
+                          "y": 2.429290294647217,
+                          "width": 3.2927916049957275,
+                          "height": 3.6307661533355713
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 3.9057605266571045],
+                          [0, 1, 5.551115123125783e-17]
+                        ],
+                        "size": {
+                          "x": 3.2927916049957275,
+                          "y": 3.6307661533355713
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12385",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4609,
+                          "y": 6.399999618530273,
+                          "width": 1.2000000476837158,
+                          "height": 1.2000000476837158
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.6043474674224854],
+                          [0, 1, 3.9707095623016357]
+                        ],
+                        "size": {
+                          "x": 1.2000000476837158,
+                          "y": 1.2000000476837158
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4606.3955078125,
+                      "y": 2.429290294647217,
+                      "width": 7.198552131652832,
+                      "height": 8.19083309173584
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 12.395652770996094],
+                      [0, 1, 0.4292903244495392]
+                    ],
+                    "size": {
+                      "x": 7.198552131652832,
+                      "y": 8.19083309173584
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0.9843137264251709,
+                          "g": 0.7450980544090271,
+                          "b": 0.18039216101169586,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M4.50435 3.63071C4.36214 3.63015 4.22444 3.58072 4.11435 3.49071C3.99307 3.38633 3.91852 3.23782 3.90725 3.07821C3.89598 2.9186 3.94894 2.7611 4.05435 2.64071L6.14435 0.20071C6.36687 -0.0416719 6.73998 -0.068009 6.99435 0.14071C7.11422 0.244322 7.18648 0.392462 7.19435 0.55071C7.21424 0.707758 7.16289 0.865477 7.05435 0.98071L4.96435 3.43071C4.84679 3.56025 4.67927 3.63309 4.50435 3.63071ZM0.604347 8.19071C0.461544 8.19366 0.322674 8.14381 0.214347 8.05071C0.091624 7.94774 0.0151742 7.79997 0.00202585 7.64031C-0.0111225 7.48065 0.0401227 7.32237 0.144347 7.20071L1.44435 5.68071C1.65524 5.42727 2.02588 5.3793 2.29435 5.57071C2.41562 5.67509 2.49018 5.8236 2.50144 5.98321C2.51271 6.14282 2.45976 6.30032 2.35435 6.42071L1.05435 7.94071C0.949532 8.08743 0.784292 8.17923 0.604347 8.19071ZM3.20435 5.17071C3.53572 5.17071 3.80435 4.90208 3.80435 4.57071C3.80435 4.23934 3.53572 3.97071 3.20435 3.97071C2.87298 3.97071 2.60435 4.23934 2.60435 4.57071C2.60435 4.90208 2.87298 5.17071 3.20435 5.17071Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:25"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12380",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12378",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4594.3984375,
+                          "y": 7.882946014404297,
+                          "width": 2.500007390975952,
+                          "height": 2.7372989654541016
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.0729945537922845e-16],
+                          [0, 1, 5.45365571975708]
+                        ],
+                        "size": {
+                          "x": 2.500007390975952,
+                          "y": 2.7372989654541016
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12379",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4598.298828125,
+                          "y": 2.429290294647217,
+                          "width": 3.2954905033111572,
+                          "height": 3.6307661533355713
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 3.900233745574951],
+                          [0, 1, -1.6653345369377348e-16]
+                        ],
+                        "size": {
+                          "x": 3.2954905033111572,
+                          "y": 3.6307661533355713
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12381",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4597,
+                          "y": 6.399999618530273,
+                          "width": 1.2000000476837158,
+                          "height": 1.2000000476837158
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2.6014206409454346],
+                          [0, 1, 3.9707095623016357]
+                        ],
+                        "size": {
+                          "x": 1.2000000476837158,
+                          "y": 1.2000000476837158
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4594.3984375,
+                      "y": 2.429290294647217,
+                      "width": 7.195724010467529,
+                      "height": 8.190954208374023
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 0.3985793888568878],
+                      [0, 1, 0.4292903244495392]
+                    ],
+                    "size": {
+                      "x": 7.195724010467529,
+                      "y": 8.190954208374023
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1,
+                          "g": 0.4745098054409027,
+                          "b": 0.40784314274787903,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M4.50142 3.63071C4.35921 3.63015 4.22152 3.58072 4.11142 3.49071C3.99217 3.38545 3.91715 3.23899 3.90142 3.08071C3.89138 2.91999 3.9453 2.76183 4.05142 2.64071L6.14142 0.20071C6.36395 -0.0416719 6.73705 -0.068009 6.99142 0.14071C7.11074 0.240482 7.1832 0.385387 7.19142 0.54071C7.21156 0.700812 7.16037 0.861682 7.05142 0.98071L4.96142 3.43071C4.84386 3.56025 4.67634 3.63309 4.50142 3.63071ZM0.601421 8.19071C0.456559 8.19507 0.316025 8.14102 0.211421 8.04071C0.0852533 7.94538 0.00824295 7.79869 0.00142062 7.64071C-0.00927824 7.48161 0.0407518 7.32437 0.141421 7.20071L1.44142 5.68071C1.65232 5.42727 2.02296 5.3793 2.29142 5.57071C2.41269 5.67509 2.48725 5.8236 2.49852 5.98321C2.50978 6.14282 2.45683 6.30032 2.35142 6.42071L1.05142 7.94071C0.946605 8.08743 0.781365 8.17923 0.601421 8.19071ZM3.20142 5.17071C3.53279 5.17071 3.80142 4.90208 3.80142 4.57071C3.80142 4.23934 3.53279 3.97071 3.20142 3.97071C2.87005 3.97071 2.60142 4.23934 2.60142 4.57071C2.60142 4.90208 2.87005 5.17071 3.20142 5.17071Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:20"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  },
+                  {
+                    "id": "0:12396",
+                    "name": "Vector",
+                    "type": "BOOLEAN_OPERATION",
+                    "blendMode": "PASS_THROUGH",
+                    "booleanOperation": "EXCLUDE",
+                    "children": [
+                      {
+                        "id": "0:12394",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4594,
+                          "y": 9,
+                          "width": 14,
+                          "height": 13
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 0],
+                          [0, 1, 0]
+                        ],
+                        "size": {
+                          "x": 14,
+                          "y": 13
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      },
+                      {
+                        "id": "0:12395",
+                        "name": "Vector",
+                        "type": "VECTOR",
+                        "blendMode": "PASS_THROUGH",
+                        "absoluteBoundingBox": {
+                          "x": 4596,
+                          "y": 11,
+                          "width": 10,
+                          "height": 9
+                        },
+                        "constraints": {
+                          "vertical": "SCALE",
+                          "horizontal": "SCALE"
+                        },
+                        "relativeTransform": [
+                          [1, 0, 2],
+                          [0, 1, 2]
+                        ],
+                        "size": {
+                          "x": 10,
+                          "y": 9
+                        },
+                        "fills": [],
+                        "fillGeometry": [],
+                        "strokes": [],
+                        "strokeWeight": 0,
+                        "strokeAlign": "CENTER",
+                        "strokeGeometry": [],
+                        "exportSettings": [],
+                        "effects": []
+                      }
+                    ],
+                    "absoluteBoundingBox": {
+                      "x": 4594,
+                      "y": 9,
+                      "width": 14,
+                      "height": 13
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 0],
+                      [0, 1, 7]
+                    ],
+                    "size": {
+                      "x": 14,
+                      "y": 13
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M2 13L12 13C13.1046 13 14 12.1046 14 11L14 2C14 0.89543 13.1046 0 12 0L2 0C0.89543 0 0 0.89543 0 2L0 11C0 12.1046 0.89543 13 2 13ZM2 11L2 2L12 2L12 11L2 11Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:2"
+                    },
+                    "exportSettings": [],
+                    "effects": []
+                  }
+                ],
+                "absoluteBoundingBox": {
+                  "x": 4594,
+                  "y": 2,
+                  "width": 20,
+                  "height": 20
+                },
+                "constraints": {
+                  "vertical": "TOP",
+                  "horizontal": "LEFT"
+                },
+                "relativeTransform": [
+                  [1, 0, 2],
+                  [0, 1, 2]
+                ],
+                "size": {
+                  "x": 20,
+                  "y": 20
+                },
+                "clipsContent": false,
+                "background": [
+                  {
+                    "blendMode": "NORMAL",
+                    "visible": false,
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    }
+                  }
+                ],
+                "fills": [
+                  {
+                    "blendMode": "NORMAL",
+                    "visible": false,
+                    "type": "SOLID",
+                    "color": {
+                      "r": 1,
+                      "g": 1,
+                      "b": 1,
+                      "a": 1
+                    }
+                  }
+                ],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 0
+                },
+                "exportSettings": [],
+                "effects": []
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": 4592,
+              "y": 0,
+              "width": 24,
+              "height": 24
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 20],
+              [0, 1, 20]
+            ],
+            "size": {
+              "x": 24,
+              "y": 24
+            },
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "exportSettings": [],
+            "effects": []
+          }
+        ],
+        "absoluteBoundingBox": {
+          "x": 4572,
+          "y": -20,
+          "width": 104,
+          "height": 530
+        },
+        "constraints": {
+          "vertical": "TOP",
+          "horizontal": "LEFT"
+        },
+        "relativeTransform": [
+          [1, 0, 4572],
+          [0, 1, -20]
+        ],
+        "size": {
+          "x": 104,
+          "y": 530
+        },
+        "clipsContent": true,
+        "background": [],
+        "fills": [],
+        "strokes": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.48235294222831726,
+              "g": 0.3803921639919281,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ],
+        "cornerRadius": 5,
+        "strokeWeight": 1,
+        "strokeAlign": "INSIDE",
+        "backgroundColor": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0
+        },
+        "effects": []
+      },
+      "components": {
+        "0:12442": {
+          "key": "2a0cc4792b2dad9edfac59886a47fda5707accc2",
+          "name": "size=64, color=mono",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:12463": {
+          "key": "29db358ddc733dc341add927d748423d9a5438cd",
+          "name": "size=64, color=color",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:12397": {
+          "key": "b27ca155bc989ba02e28357248b78683fe7e9661",
+          "name": "size=32, color=mono",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:12418": {
+          "key": "06f8e5cc169e6a07dec89c460e68ed115f5eb0de",
+          "name": "size=32, color=color",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:12352": {
+          "key": "af67c3cf1b3648310d3b93027e2d7f544cd0b57b",
+          "name": "size=24, color=mono",
+          "description": "",
+          "documentationLinks": []
+        },
+        "0:12373": {
+          "key": "fdfa9c40a45a1f86c87383108de990f3c99461cb",
+          "name": "size=24, color=color",
+          "description": "",
+          "documentationLinks": []
+        }
+      },
+      "schemaVersion": 0,
+      "styles": {
+        "5:0": {
+          "key": "a2048249ce70e5aec695e32fede55ef67eca7204",
+          "name": "Neutrals/900 Gray Dark",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:2": {
+          "key": "0d307b6ad9641c22e258b2d20a98b4222ad56474",
+          "name": "Core/500 Black Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:9": {
+          "key": "e4c6d1973c2bcfec94a0294b03d0970a261a934c",
+          "name": "Core/700 Blue Dark",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:5": {
+          "key": "e4f7623ae705a4e793ee70b1e95b5d573b1958d7",
+          "name": "Core/700 Mint Dark",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:25": {
+          "key": "fe3745f672a96ad95c63c74ab24259a504c53e22",
+          "name": "Additional/700 Mustard Dark",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:20": {
+          "key": "e6fc702e08c2de1344e19b7e5d680ac8a2494ace",
+          "name": "Additional/700 Peach Dark",
+          "styleType": "FILL",
+          "description": ""
+        }
+      }
+    }
+  }
+}
