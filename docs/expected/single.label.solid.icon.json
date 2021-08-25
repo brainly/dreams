@@ -1,0 +1,313 @@
+{
+  "name": "Pencil-Components",
+  "lastModified": "2021-08-25T07:54:09Z",
+  "thumbnailUrl": "https://s3-alpha-sig.figma.com/thumbnails/7c54e8ce-f86b-4fda-96d3-f2bf6c764af7?Expires=1630886400&Signature=CnK-oocK2At6c1l8S~iqSqcBbVE5AbXn-VNHSbaO3CNyDzdFrPuRPO3rareYbA1Gn1XDy8iyhrzSgDq96W0dAqz6zKM76KZzKrDydLOIFPJfMzqJSGBYb0jFG2uk5RVO-1IYGvv2gGfapkvlLH8D2v~CLoY4Jkg1gmveY77AO~4fCwIM3~XI7dlofx0uIe7WhUvNimkra--E1Y7MuKF0VycwYgI3a4PaR9vQsQwJbH1YoSBdrLxy7yF5bE9TNKTENJIVSS0yZjjthoQP6srbQQz-~hGzuaG9~lIfna1NfKePkcZtURwMm6wNvEK4r7dLXuz1lkSQSREL5B~B1ob-sw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
+  "version": "1077741486",
+  "role": "editor",
+  "nodes": {
+    "717:3171": {
+      "document": {
+        "id": "717:3171",
+        "name": "label/solid/blue/true/false",
+        "type": "COMPONENT",
+        "blendMode": "PASS_THROUGH",
+        "children": [
+          {
+            "id": "717:3172",
+            "name": "Frame 1",
+            "type": "FRAME",
+            "blendMode": "PASS_THROUGH",
+            "children": [
+              {
+                "id": "717:3173",
+                "name": "Icon",
+                "type": "INSTANCE",
+                "blendMode": "PASS_THROUGH",
+                "children": [
+                  {
+                    "id": "I717:3173;284:40",
+                    "name": "Vector",
+                    "type": "VECTOR",
+                    "locked": true,
+                    "blendMode": "PASS_THROUGH",
+                    "absoluteBoundingBox": {
+                      "x": -2.6640625,
+                      "y": -291.671875,
+                      "width": 13.3359375,
+                      "height": 11.3359375
+                    },
+                    "constraints": {
+                      "vertical": "SCALE",
+                      "horizontal": "SCALE"
+                    },
+                    "relativeTransform": [
+                      [1, 0, 1.3359375],
+                      [0, 1, 2.328125]
+                    ],
+                    "size": {
+                      "x": 13.3359375,
+                      "y": 11.3359375
+                    },
+                    "fills": [
+                      {
+                        "blendMode": "NORMAL",
+                        "type": "SOLID",
+                        "color": {
+                          "r": 1,
+                          "g": 1,
+                          "b": 1,
+                          "a": 1
+                        }
+                      }
+                    ],
+                    "fillGeometry": [
+                      {
+                        "path": "M9.00781 3.35938L5.66406 6.67188C5.41406 6.92188 4.97656 6.92188 4.72656 6.67188C4.44531 6.39062 4.44531 5.98438 4.72656 5.70312L8.53906 1.92188C9.32031 1.14062 10.6016 1.14062 11.3828 1.92188C12.1953 2.70312 12.1953 3.98438 11.3828 4.76562L7.10156 9.01562C5.78906 10.3281 3.66406 10.3281 2.32031 9.01562C1.00781 7.70312 1.00781 5.60938 2.32031 4.29688L4.22656 2.39062C4.50781 2.14062 4.50781 1.70312 4.22656 1.45312C3.97656 1.20312 3.53906 1.20312 3.28906 1.45312L1.38281 3.35938C-0.460938 5.17188 -0.460938 8.14062 1.38281 9.95312C3.22656 11.7969 6.19531 11.7969 8.03906 9.95312L12.3516 5.70312C13.6641 4.42188 13.6641 2.29688 12.3516 0.984375C11.0391 -0.328125 8.88281 -0.328125 7.57031 0.984375L3.75781 4.76562C3.37803 5.1413 3.16432 5.6533 3.16432 6.1875C3.16432 6.7217 3.37803 7.2337 3.75781 7.60938C4.53906 8.39062 5.82031 8.39062 6.63281 7.60938L9.94531 4.29688C10.2266 4.04688 10.2266 3.60938 9.94531 3.35938C9.69531 3.07812 9.25781 3.07812 9.00781 3.35938Z",
+                        "windingRule": "EVENODD"
+                      }
+                    ],
+                    "strokes": [],
+                    "strokeWeight": 0,
+                    "strokeAlign": "CENTER",
+                    "strokeGeometry": [],
+                    "styles": {
+                      "fill": "5:3"
+                    },
+                    "effects": []
+                  }
+                ],
+                "absoluteBoundingBox": {
+                  "x": -4,
+                  "y": -294,
+                  "width": 16,
+                  "height": 16
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "relativeTransform": [
+                  [1, 0, 0],
+                  [0, 1, 0]
+                ],
+                "size": {
+                  "x": 16,
+                  "y": 16
+                },
+                "layoutAlign": "INHERIT",
+                "layoutGrow": 0,
+                "clipsContent": false,
+                "background": [],
+                "fills": [],
+                "strokes": [],
+                "strokeWeight": 1,
+                "strokeAlign": "INSIDE",
+                "backgroundColor": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 0
+                },
+                "effects": [],
+                "componentId": "0:550"
+              }
+            ],
+            "absoluteBoundingBox": {
+              "x": -4,
+              "y": -294,
+              "width": 24,
+              "height": 16
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "relativeTransform": [
+              [1, 0, 8],
+              [0, 1, 4]
+            ],
+            "size": {
+              "x": 24,
+              "y": 16
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "clipsContent": false,
+            "background": [],
+            "fills": [],
+            "strokes": [],
+            "strokeWeight": 1,
+            "strokeAlign": "INSIDE",
+            "backgroundColor": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
+            },
+            "layoutMode": "HORIZONTAL",
+            "counterAxisAlignItems": "CENTER",
+            "paddingRight": 8,
+            "effects": []
+          },
+          {
+            "id": "717:3174",
+            "name": "text",
+            "type": "TEXT",
+            "blendMode": "PASS_THROUGH",
+            "absoluteBoundingBox": {
+              "x": 20,
+              "y": -296,
+              "width": 33,
+              "height": 20
+            },
+            "constraints": {
+              "vertical": "CENTER",
+              "horizontal": "SCALE"
+            },
+            "relativeTransform": [
+              [1, 0, 32],
+              [0, 1, 2]
+            ],
+            "size": {
+              "x": 33,
+              "y": 20
+            },
+            "layoutAlign": "INHERIT",
+            "layoutGrow": 0,
+            "fills": [
+              {
+                "blendMode": "NORMAL",
+                "type": "SOLID",
+                "color": {
+                  "r": 1,
+                  "g": 1,
+                  "b": 1,
+                  "a": 1
+                }
+              }
+            ],
+            "strokes": [],
+            "strokeWeight": 0,
+            "strokeAlign": "CENTER",
+            "strokeGeometry": [],
+            "styles": {
+              "fill": "5:3"
+            },
+            "effects": [],
+            "characters": "label",
+            "style": {
+              "fontFamily": "ProximaNova",
+              "fontPostScriptName": "ProximaNova-Bold",
+              "fontWeight": 700,
+              "textAutoResize": "WIDTH_AND_HEIGHT",
+              "fontSize": 15,
+              "textAlignHorizontal": "LEFT",
+              "textAlignVertical": "CENTER",
+              "letterSpacing": 0,
+              "lineHeightPx": 20,
+              "lineHeightPercent": 113.77777862548828,
+              "lineHeightPercentFontSize": 133.3333282470703,
+              "lineHeightUnit": "PIXELS"
+            },
+            "characterStyleOverrides": [],
+            "styleOverrideTable": {}
+          }
+        ],
+        "absoluteBoundingBox": {
+          "x": -12,
+          "y": -298,
+          "width": 73,
+          "height": 24
+        },
+        "constraints": {
+          "vertical": "TOP",
+          "horizontal": "LEFT"
+        },
+        "relativeTransform": [
+          [1, 0, -12],
+          [0, 1, -298]
+        ],
+        "size": {
+          "x": 73,
+          "y": 24
+        },
+        "clipsContent": false,
+        "background": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.30980393290519714,
+              "g": 0.7019608020782471,
+              "b": 0.9647058844566345,
+              "a": 1
+            }
+          }
+        ],
+        "fills": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.30980393290519714,
+              "g": 0.7019608020782471,
+              "b": 0.9647058844566345,
+              "a": 1
+            }
+          }
+        ],
+        "strokes": [],
+        "cornerRadius": 6,
+        "rectangleCornerRadii": [6, 6, 6, 6],
+        "strokeWeight": 1,
+        "strokeAlign": "INSIDE",
+        "backgroundColor": {
+          "r": 0.30980393290519714,
+          "g": 0.7019608020782471,
+          "b": 0.9647058844566345,
+          "a": 1
+        },
+        "styles": {
+          "fills": "5:9"
+        },
+        "layoutMode": "HORIZONTAL",
+        "counterAxisAlignItems": "CENTER",
+        "primaryAxisAlignItems": "CENTER",
+        "paddingLeft": 8,
+        "paddingRight": 8,
+        "paddingTop": 2,
+        "paddingBottom": 2,
+        "effects": []
+      },
+      "components": {
+        "0:550": {
+          "key": "78dfad186838d784e2eec5cdfd7f18ba87e73bbc",
+          "name": "size=16",
+          "description": "",
+          "documentationLinks": []
+        },
+        "717:3171": {
+          "key": "d7c6884aa109bd947b665a65170a7ed27fede04f",
+          "name": "label/solid/blue/true/false",
+          "description": "",
+          "documentationLinks": []
+        }
+      },
+      "schemaVersion": 0,
+      "styles": {
+        "5:3": {
+          "key": "1e5a62b038902510da57f45cbfb669fa5988c586",
+          "name": "Core/500 White Base",
+          "styleType": "FILL",
+          "description": ""
+        },
+        "5:9": {
+          "key": "e4c6d1973c2bcfec94a0294b03d0970a261a934c",
+          "name": "Core/700 Blue Dark",
+          "styleType": "FILL",
+          "description": ""
+        }
+      }
+    }
+  }
+}
