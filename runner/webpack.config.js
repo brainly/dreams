@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const sgPackageJson = require('brainly-style-guide/package.json');
 
 module.exports = {
@@ -32,6 +33,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/templates/index.html',
       version: sgPackageJson.version,
+    }),
+    new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
+      SG_VERSION: sgPackageJson.version,
     }),
   ],
 };
