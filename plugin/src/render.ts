@@ -1,7 +1,4 @@
-/**
- * Sigma
- * -----------------------
- */
+// @ts-nocheck
 
 async function traverse(parent, options) {
   if (parent.document) {
