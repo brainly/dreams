@@ -155,19 +155,22 @@ async function createNode(data) {
       // TODO: Check what settings should be placed here instead of assigning all of them twice.
       assignBasicProps(node, data);
 
-      // const family = data.style.fontFamily;
-      // const style = data.style.fontPostScriptName.split('-')[1] || 'Regular';
-      // console.log({
-      //   style,
-      // });
-      // await figma.loadFontAsync({
-      //   family,
-      //   style,
-      // });
-      // node.fontName = {
-      //   family,
-      //   style,
-      // };
+      const family =
+        data.style.fontFamily === 'ProximaNova'
+          ? 'Proxima Nova'
+          : data?.style?.fontFamily || 'Roboto';
+      const style = data.style.fontPostScriptName.split('-')[1] || 'Regular';
+      console.log({
+        style,
+      });
+      await figma.loadFontAsync({
+        family,
+        style,
+      });
+      node.fontName = {
+        family,
+        style,
+      };
 
       node.textAlignHorizontal = data.style.textAlignHorizontal;
       node.textAlignVertical = data.style.textAlignVertical;
