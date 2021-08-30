@@ -29,6 +29,8 @@ async function traverse(parent, options) {
 function mapDataToNodeProps(data) {
   const props = {
     ...data,
+    x: data.absoluteBoundingBox.x,
+    y: data.absoluteBoundingBox.y,
     primaryAxisSizingMode: data.primaryAxisSizingMode ?? 'AUTO',
     counterAxisSizingMode: data.counterAxisSizingMode ?? 'AUTO',
     constraints: {
@@ -72,8 +74,6 @@ function assignBasicProps(node, data) {
 
   // Layout related setters
   node.resize(props.size.x, props.size.y);
-  node.x = props.absoluteBoundingBox.x;
-  node.y = props.absoluteBoundingBox.y;
 
   return node;
 }
