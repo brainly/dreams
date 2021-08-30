@@ -1,6 +1,13 @@
 // @ts-nocheck
 
 async function traverse(parent, options) {
+  console.log('traverse', parent, options);
+  if (parent.nodes) {
+    for (const node of Object.values(parent.nodes)) {
+      await traverse(node, options);
+    }
+  }
+
   if (parent.document) {
     await traverse(
       {
@@ -12,7 +19,7 @@ async function traverse(parent, options) {
   }
 
   if (parent.children) {
-    for (child of parent.children) {
+    for (const child of parent.children) {
       await traverse(
         {
           ...child,
@@ -27,8 +34,11 @@ async function traverse(parent, options) {
 }
 
 function mapDataToNodeProps(data) {
+  // remove read only props
+  const { id, type, children, ...writable } = data;
+
   const props = {
-    ...data,
+    ...writable,
     x: data.absoluteBoundingBox.x,
     y: data.absoluteBoundingBox.y,
     primaryAxisSizingMode: data.primaryAxisSizingMode ?? 'AUTO',
@@ -88,6 +98,10 @@ async function createNode(data) {
     case 'GROUP':
       console.error(`Creating ''${data.type}'' not supported!`);
       return;
+    case 'CANVAS': {
+      node = figma.createPage();
+      break;
+    }
     case 'COMPONENT': {
       node = figma.createComponent();
       break;
@@ -195,14 +209,16 @@ async function createNode(data) {
   return node;
 }
 
-async function render(json) {
+export async function render(json) {
   // Load default font.
   await figma.loadFontAsync({
     family: 'Roboto',
     style: 'Regular',
   });
 
-  nodes = new Map();
+  console.log('render', json);
+
+  const nodes = new Map();
   traverse(json, {
     visit: async (node) => {
       let baseNode;
