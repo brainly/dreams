@@ -150,11 +150,8 @@ async function createNode(data) {
     case 'TEXT': {
       node = figma.createText();
 
-      // Uhm, the order of setting props matters.
-      // We need to duplicate setting some of them before and some after.
-      // TODO: Check what settings should be placed here instead of assigning all of them twice.
-      assignBasicProps(node, data);
-
+      // We need to always set the family and style to something,
+      // otherwise text styles set later will be ignored.
       const family =
         data.style.fontFamily === 'ProximaNova'
           ? 'Proxima Nova'
