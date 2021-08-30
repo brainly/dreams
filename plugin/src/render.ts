@@ -62,9 +62,6 @@ function assignBasicProps(node, data) {
   const props = mapDataToNodeProps(data);
   console.log(props);
 
-  // Layout related setters.
-  node.resize(props.size.x, props.size.y);
-
   // Common props.
   Object.entries(props).forEach(([key, value]) => {
     if (key in node) {
@@ -72,6 +69,11 @@ function assignBasicProps(node, data) {
       node[key] = value;
     }
   });
+
+  // Layout related setters
+  node.resize(props.size.x, props.size.y);
+  node.x = props.absoluteBoundingBox.x;
+  node.y = props.absoluteBoundingBox.y;
 
   return node;
 }
