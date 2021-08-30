@@ -35,7 +35,7 @@ async function traverse(parent, options) {
 
 function mapDataToNodeProps(data) {
   // remove read only props
-  const { id, type, children, ...writable } = data;
+  const { id, type, children, layoutGrids, ...writable } = data;
 
   const props = {
     ...writable,
@@ -45,15 +45,19 @@ function mapDataToNodeProps(data) {
       horizontal: data.constraints.horizontal === 'LEFT' ? 'MIN' : 'MAX',
       vertical: data.constraints.vertical === 'TOP' ? 'MIN' : 'MAX',
     },
-    fills: data.fills.map((fill) => ({
-      ...fill,
-      opacity: fill.color.a,
-      color: {
-        r: fill.color.r,
-        g: fill.color.g,
-        b: fill.color.b,
-      },
-    })),
+    fills: data.fills.map((fill) => {
+      return fill.type === 'SOLID'
+        ? {
+            ...fill,
+            opacity: fill.color.a,
+            color: {
+              r: fill.color.r,
+              g: fill.color.g,
+              b: fill.color.b,
+            },
+          }
+        : fill;
+    }),
     strokes: data.strokes.map((stroke) => ({
       ...stroke,
       opacity: stroke.color.a,
@@ -67,14 +71,22 @@ function mapDataToNodeProps(data) {
       x: data?.size?.x || data.absoluteBoundingBox.width,
       y: data?.size?.y || data.absoluteBoundingBox.height,
     },
+    ...(data.layoutGrids
+      ? {
+          layoutGrids: data.layoutGrids.map(({ offset, ...grid }) => ({
+            ...grid,
+            ...(grid.alignment !== 'CENTER' ? { offset } : {}),
+          })),
+        }
+      : {}),
   };
   return props;
 }
 
 function assignBasicProps(node, data) {
-  console.log(data);
+  console.log('assignBasicProps', data);
   const props = mapDataToNodeProps(data);
-  console.log(props);
+  console.log({ props });
 
   // Common props.
   Object.entries(props).forEach(([key, value]) => {
@@ -157,7 +169,7 @@ async function createNode(data) {
           ? 'Proxima Nova'
           : data?.style?.fontFamily || 'Roboto';
       const style = data.style.fontPostScriptName.split('-')[1] || 'Regular';
-      console.log({
+      console.log('style', {
         style,
       });
       await figma.loadFontAsync({
@@ -186,7 +198,8 @@ async function createNode(data) {
         };
       } else {
         node.lineHeight = {
-          unit: data.style.lineHeightUnit,
+          unit:
+            data.style.lineHeightUnit === 'FONT_SIZE_%' ? 'PERCENT' : 'PIXELS',
           value:
             data.style.lineHeightUnit === 'PIXELS'
               ? data.style.lineHeightPx
@@ -201,7 +214,7 @@ async function createNode(data) {
         const svg = `<path fill-rule="${data.fillGeometry[0].windingRule.toLowerCase()}" d="${
           data.fillGeometry[0].path
         }" fill="currentColor" />`;
-        console.log(svg);
+        console.log('VECTOR case', { svg });
         node = figma.createNodeFromSvg(svg);
       } else {
         node = figma.createVector();
@@ -213,7 +226,9 @@ async function createNode(data) {
     }
   }
 
-  assignBasicProps(node, data);
+  if (data.type !== 'CANVAS') {
+    assignBasicProps(node, data);
+  }
 
   return node;
 }
@@ -231,7 +246,7 @@ export async function render(json) {
   traverse(json, {
     visit: async (node) => {
       let baseNode;
-      if (!['CANVAS', 'DOCUMENT'].includes(node.type)) {
+      if (node.type !== 'DOCUMENT') {
         baseNode = await createNode(node);
         if (!baseNode) {
           return;
