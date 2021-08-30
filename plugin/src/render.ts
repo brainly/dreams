@@ -98,8 +98,11 @@ async function createNode(data) {
     case 'COMPONENT_SET':
     case 'DOCUMENT':
     case 'GROUP':
-      console.error(`Creating ''${data.type}'' not supported!`);
-      return;
+      console.error(
+        `Creating ''${data.type}'' not supported! Frame created instead.`
+      );
+      node = figma.createFrame();
+      break;
     case 'CANVAS': {
       node = figma.createPage();
       break;
