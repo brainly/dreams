@@ -3,10 +3,20 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-console.log(document.domain);
-const App = () => {
-  const [rectCount, setRectCount] = React.useState(5);
+function readTextFile(file: File) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      resolve(reader.result);
+    };
+    reader.onerror = (e) => {
+      reject(e);
+    };
+    reader.readAsText(file);
+  });
+}
 
+const App = () => {
   const onCreate = (element: HTMLElement) => {
     // create file dialog
     const fileDialog = document.createElement('input');
@@ -15,8 +25,16 @@ const App = () => {
     fileDialog.style.display = 'none';
     fileDialog.click();
 
-    fileDialog.addEventListener('change', (e) => {
-      console.log(fileDialog.files);
+    fileDialog.addEventListener('change', async () => {
+      console.log('change', fileDialog.files);
+
+      try {
+        const text = await readTextFile(fileDialog.files[0]);
+        const json = JSON.parse(text);
+        parent.postMessage({ pluginMessage: { type: 'import', json } }, '*');
+      } catch (e) {
+        console.error(e);
+      }
 
       document.body.removeChild(fileDialog);
     });
@@ -24,14 +42,14 @@ const App = () => {
     window.addEventListener(
       'focus',
       () => {
-        if (!fileDialog.files || fileDialog.files.length === 0) {
-          document.body.removeChild(fileDialog);
-        }
+        setTimeout(() => {
+          if (!fileDialog.files || fileDialog.files.length === 0) {
+            document.body.removeChild(fileDialog);
+          }
+        }, 500);
       },
       { once: true }
     );
-
-    parent.postMessage({ pluginMessage: { type: 'import' } }, '*');
   };
 
   return (
