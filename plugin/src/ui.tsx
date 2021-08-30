@@ -7,32 +7,14 @@ const App = () => {
   const [rectCount, setRectCount] = React.useState(5);
 
   const onCreate = (element: HTMLElement) => {
-    const count = parseInt(rectCount, 10);
-    parent.postMessage(
-      { pluginMessage: { type: 'create-rectangles', count } },
-      '*'
-    );
-  };
-
-  const onCancel = () => {
-    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*');
+    parent.postMessage({ pluginMessage: { type: 'import' } }, '*');
   };
 
   return (
     <div>
-      <img src={require('./logo.svg')} />
-      <h2>Rectangle Creators</h2>
-      <p>
-        Count:
-        <input
-          value={rectCount}
-          onChange={(e) => setRectCount(e.target.valueAsNumber)}
-        />
-      </p>
-      <button id="create" onClick={onCreate}>
-        Create
-      </button>
-      <button onClick={onCancel}>Cancel</button>
+      <h2>Brainly Dreams</h2>
+      <p>Open exported json figma file.</p>
+      <button onClick={onCreate}>Open file</button>
     </div>
   );
 };
