@@ -14,6 +14,18 @@ figma.ui.on('message', (msg, props) => {
       importJson(msg.json);
       break;
     }
+    case 'clear': {
+      figma.root.children.forEach((child) => {
+        if (child !== figma.currentPage) {
+          child.remove();
+        } else {
+          child.children.forEach((child) => {
+            child.remove();
+          });
+        }
+      });
+      break;
+    }
 
     default:
       break;

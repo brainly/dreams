@@ -17,7 +17,7 @@ function readTextFile(file: File) {
 }
 
 const App = () => {
-  const onCreate = (element: HTMLElement) => {
+  const handleImport = (element: HTMLElement) => {
     // create file dialog
     const fileDialog = document.createElement('input');
     fileDialog.type = 'file';
@@ -52,11 +52,16 @@ const App = () => {
     );
   };
 
+  const handleClear = () => {
+    parent.postMessage({ pluginMessage: { type: 'clear' } }, '*');
+  };
+
   return (
     <div>
       <h2>Brainly Dreams</h2>
       <p>Open exported json figma file.</p>
-      <button onClick={onCreate}>Open file</button>
+      <button onClick={handleImport}>Import file</button>
+      <button onClick={handleClear}>Clear document</button>
     </div>
   );
 };
