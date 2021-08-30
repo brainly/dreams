@@ -39,8 +39,6 @@ function mapDataToNodeProps(data) {
 
   const props = {
     ...writable,
-    x: data.absoluteBoundingBox.x,
-    y: data.absoluteBoundingBox.y,
     primaryAxisSizingMode: data.primaryAxisSizingMode ?? 'AUTO',
     counterAxisSizingMode: data.counterAxisSizingMode ?? 'AUTO',
     constraints: {
@@ -65,6 +63,10 @@ function mapDataToNodeProps(data) {
         b: stroke.color.b,
       },
     })),
+    size: {
+      x: data?.size?.x || data.absoluteBoundingBox.width,
+      y: data?.size?.y || data.absoluteBoundingBox.height,
+    },
   };
   return props;
 }
@@ -150,19 +152,19 @@ async function createNode(data) {
       // TODO: Check what settings should be placed here instead of assigning all of them twice.
       assignBasicProps(node, data);
 
-      const family = data.style.fontFamily;
-      const style = data.style.fontPostScriptName.split('-')[1] || 'Regular';
-      console.log({
-        style,
-      });
-      await figma.loadFontAsync({
-        family,
-        style,
-      });
-      node.fontName = {
-        family,
-        style,
-      };
+      // const family = data.style.fontFamily;
+      // const style = data.style.fontPostScriptName.split('-')[1] || 'Regular';
+      // console.log({
+      //   style,
+      // });
+      // await figma.loadFontAsync({
+      //   family,
+      //   style,
+      // });
+      // node.fontName = {
+      //   family,
+      //   style,
+      // };
 
       node.textAlignHorizontal = data.style.textAlignHorizontal;
       node.textAlignVertical = data.style.textAlignVertical;
@@ -192,11 +194,15 @@ async function createNode(data) {
       break;
     }
     case 'VECTOR': {
-      const svg = `<path fill-rule="${data.fillGeometry[0].windingRule.toLowerCase()}" d="${
-        data.fillGeometry[0].path
-      }" fill="currentColor" />`;
-      console.log(svg);
-      node = figma.createNodeFromSvg(svg);
+      if (data.fillGeometry?.[0]?.path) {
+        const svg = `<path fill-rule="${data.fillGeometry[0].windingRule.toLowerCase()}" d="${
+          data.fillGeometry[0].path
+        }" fill="currentColor" />`;
+        console.log(svg);
+        node = figma.createNodeFromSvg(svg);
+      } else {
+        node = figma.createVector();
+      }
       break;
     }
     default: {
