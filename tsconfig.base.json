@@ -4,6 +4,7 @@
     "lib": ["es6"],
     "jsx": "react",
     "skipLibCheck": true,
+    "moduleResolution": "node",
     "typeRoots": ["./node_modules/@types", "./node_modules/@figma"]
   }
 }

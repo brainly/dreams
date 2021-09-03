@@ -1,4 +1,4 @@
-import { render } from './render';
+import { render } from '@packages/renderer';
 
 figma.showUI(__html__);
 
