@@ -7,6 +7,18 @@ function importJson(json: unknown) {
   render(json);
 }
 
+function clear() {
+  figma.root.children.forEach((child) => {
+    if (child !== figma.currentPage) {
+      child.remove();
+    } else {
+      child.children.forEach((child) => {
+        child.remove();
+      });
+    }
+  });
+}
+
 figma.ui.on('message', (msg, props) => {
   console.log(msg, props);
   switch (msg.type) {
@@ -15,15 +27,7 @@ figma.ui.on('message', (msg, props) => {
       break;
     }
     case 'clear': {
-      figma.root.children.forEach((child) => {
-        if (child !== figma.currentPage) {
-          child.remove();
-        } else {
-          child.children.forEach((child) => {
-            child.remove();
-          });
-        }
-      });
+      clear();
       break;
     }
 
