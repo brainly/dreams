@@ -7,6 +7,9 @@ package-lock.json
 yarn.lock
 !/yarn.lock
 
+# logs
+*.log
+
 # build artifacts
 dist
 build

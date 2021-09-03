@@ -1,6 +1,11 @@
 {
-  "name": "renderer",
+  "name": "@packages/renderer",
   "version": "1.0.0",
-  "main": "index.js",
-  "private": true
+  "main": "dist/index.js",
+  "module": "index.ts",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc --build"
+  }
 }

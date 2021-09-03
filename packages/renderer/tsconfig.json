@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "outDir": "./lib",
+    "composite": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", "./types"],
+  "exclude": ["node_modules"],
+  "references": []
+}

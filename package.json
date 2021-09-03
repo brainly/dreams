@@ -2,11 +2,10 @@
   "name": "dreams",
   "private": true,
   "workspaces": [
-    "packages/*",
     "plugin",
-    "runner"
+    "runner",
+    "packages/*"
   ],
-  "license": "UNLICENSED",
   "repository": "git@github.com:brainly/dreams.git",
   "author": "coderitual <skowronkow@gmail.com>"
 }
