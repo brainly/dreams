@@ -7,6 +7,5 @@
     "composite": true
   },
   "include": ["**/*.ts", "**/*.tsx", "./types"],
-  "exclude": ["node_modules"],
-  "references": []
+  "exclude": ["node_modules"]
 }
