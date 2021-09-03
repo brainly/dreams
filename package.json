@@ -6,6 +6,7 @@
     "plugin",
     "runner"
   ],
-  "repository": "git@github.com:coderitual/dedi.git",
+  "license": "UNLICENSED",
+  "repository": "git@github.com:brainly/dreams.git",
   "author": "coderitual <skowronkow@gmail.com>"
 }
