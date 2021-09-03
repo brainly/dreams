@@ -3,7 +3,7 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "strictNullChecks": true,
-    "outDir": "./lib",
+    "outDir": "./dist",
     "composite": true
   },
   "include": ["**/*.ts", "**/*.tsx", "./types"],
