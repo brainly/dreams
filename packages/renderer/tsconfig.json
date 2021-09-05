@@ -1,11 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "noImplicitAny": false,
-    "strictNullChecks": true,
-    "outDir": "./dist",
-    "composite": true
+    "outDir": "dist",
+    "rootDir": "src",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "./types"],
+  "include": ["src/**/*", "./types"],
   "exclude": ["node_modules"]
 }
