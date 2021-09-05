@@ -13,3 +13,4 @@ yarn.lock
 # build artifacts
 dist
 build
+*.tsbuildinfo
