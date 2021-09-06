@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     app: './src/index.jsx',
     driver: {
-      import: './driver/index.js',
+      import: './driver/index.ts',
       library: {
         name: 'driver',
         type: 'umd',
@@ -26,6 +26,16 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+            projectReferences: true,
+          },
+        },
       },
       {
         test: /\.css$/,

@@ -1,0 +1,3 @@
+class BaseNode {}
+
+export { BaseNode };
