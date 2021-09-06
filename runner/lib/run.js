@@ -15,7 +15,8 @@ const opts = {
 };
 
 async function startWebpackDevServer() {
-  const compiler = webpack(config);
+  const configuration = { ...config, mode: 'development' };
+  const compiler = webpack(configuration);
   const server = new webpackDevServer(compiler, config.devServer);
   await server.start();
   return server;
