@@ -2,5 +2,5 @@
   "extends": "../tsconfig.base.json",
   "lib": ["dom"],
   "include": ["src/**/*", "./types"],
-  "references": [{ "path": "../packages/renderer" }]
+  "references": [{ "path": "../packages/core" }]
 }
