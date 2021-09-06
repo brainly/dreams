@@ -42,6 +42,16 @@ async function main() {
     waitUntil: 'networkidle2',
   });
 
+  const dimensions = await page.evaluate(() => {
+    return {
+      width: document.documentElement.clientWidth,
+      height: document.documentElement.clientHeight,
+      deviceScaleFactor: window.devicePixelRatio,
+    };
+  });
+
+  console.log('Dimensions:', dimensions);
+
   await server.stop();
   await browser.disconnect();
   await chrome.kill();
