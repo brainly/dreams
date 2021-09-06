@@ -4,11 +4,22 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 
+const webpackDevServer = require('webpack-dev-server');
+const webpack = require('webpack');
+const config = require('../webpack.config.js');
+
 const opts = {
   //chromeFlags: ['--headless'],
   logLevel: 'info',
   output: 'json',
 };
+
+async function startWebpackDevServer() {
+  const compiler = webpack(config);
+  const server = new webpackDevServer(compiler, config.devServer);
+  await server.start();
+  return server;
+}
 
 async function main() {
   const chrome = await chromeLauncher.launch(opts);
@@ -23,11 +34,14 @@ async function main() {
     browserWSEndpoint: webSocketDebuggerUrl,
   });
 
+  const server = await startWebpackDevServer();
+
   const page = await browser.newPage();
-  await page.goto('https://news.ycombinator.com', {
+  await page.goto(`http://localhost:${config.devServer.port}`, {
     waitUntil: 'networkidle2',
   });
 
+  await server.stop();
   await browser.disconnect();
   await chrome.kill();
 }
