@@ -6,6 +6,13 @@ const sgPackageJson = require('brainly-style-guide/package.json');
 module.exports = {
   entry: {
     app: './src/index.jsx',
+    driver: {
+      import: './driver/index.js',
+      library: {
+        name: 'driver',
+        type: 'umd',
+      },
+    },
   },
   output: {
     path: path.join(__dirname, '/dist'),

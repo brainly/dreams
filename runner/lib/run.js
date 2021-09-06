@@ -52,6 +52,12 @@ async function main() {
 
   console.log('Dimensions:', dimensions);
 
+  const figmaDocument = await page.evaluate(() => {
+    return driver.getFigmaDocument();
+  });
+
+  console.log('Figma document:', figmaDocument);
+
   await server.stop();
   await browser.disconnect();
   await chrome.kill();
