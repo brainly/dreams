@@ -5,7 +5,8 @@
     "rootDir": "src",
     "composite": true,
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "lib": ["es6", "DOM"]
   },
   "include": ["src/**/*", "./types"],
   "exclude": ["node_modules"]

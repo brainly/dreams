@@ -1,9 +1,11 @@
-import { BaseNode } from './BaseNode';
+import { SceneNode } from './SceneNode';
 
-class FrameNode extends BaseNode {
+class FrameNode extends SceneNode {
   readonly type = 'frame';
 
   constructor() {
     super();
   }
 }
+
+export { FrameNode };

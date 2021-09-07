@@ -1,0 +1,3 @@
+class SceneNode {}
+
+export { SceneNode };
