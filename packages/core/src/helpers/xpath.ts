@@ -1,5 +1,5 @@
 //https://stackoverflow.com/a/5178132
-export default function createXPathFromElement(elm) {
+export function createXPathFromElement(elm) {
   const allNodes = document.getElementsByTagName('*');
   let segs;
 

@@ -1,4 +1,4 @@
-import { SceneNode } from './SceneNode';
+import { SceneNode } from './scene';
 
 class TextNode extends SceneNode {
   readonly type = 'text';

@@ -1,4 +1,4 @@
-import { SceneNode } from './SceneNode';
+import { SceneNode } from './scene';
 
 class SvgNode extends SceneNode {
   readonly type = 'svg';
