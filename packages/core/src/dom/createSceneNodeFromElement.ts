@@ -1,13 +1,16 @@
-import { SvgNode } from './nodes/svg';
-import { GroupNode } from './nodes/group';
-import { TextNode } from './nodes/text';
-import { createXPathFromElement } from './helpers/xpath';
-import { parseBackgroundImage, getActualImageSize } from './helpers/background';
-import { splitShadowString, shadowStringToObject } from './helpers/shadow';
-import { getSVGString } from './helpers/svg';
-import { getGroupBCR } from './helpers/bcr';
-import { fixWhiteSpace } from './helpers/text';
-import { isNodeVisible, isTextVisible } from './helpers/visibility';
+import { SvgNode } from '../nodes/svg';
+import { GroupNode } from '../nodes/group';
+import { TextNode } from '../nodes/text';
+import { createXPathFromElement } from '../helpers/xpath';
+import {
+  parseBackgroundImage,
+  getActualImageSize,
+} from '../helpers/background';
+import { splitShadowString, shadowStringToObject } from '../helpers/shadow';
+import { getSVGString } from '../helpers/svg';
+import { getGroupBCR } from '../helpers/bcr';
+import { fixWhiteSpace } from '../helpers/text';
+import { isNodeVisible, isTextVisible } from '../helpers/visibility';
 
 const DEFAULT_VALUES = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -56,7 +59,7 @@ function parseFontWeight(fontWeight) {
 }
 
 export default function createSceneNodeFromElement(element, options) {
-  const sceneNode = new GroupNode();
+  let sceneNode = new GroupNode();
   const bcr = element.getBoundingClientRect();
   const { left, top } = bcr;
   const width = bcr.right - bcr.left;
@@ -101,26 +104,23 @@ export default function createSceneNodeFromElement(element, options) {
 
   // skip SVG child nodes as they are already covered by `new SVG(…)`
   if (isSVGDescendant(element)) {
-    return layers;
+    return sceneNode;
   }
 
   if (!isNodeVisible(element, bcr, styles)) {
-    return layers;
+    return sceneNode;
   }
 
-  const shapeGroup = new ShapeGroup({ x: left, y: top, width, height });
-
-  shapeGroup.setName(createXPathFromElement(element));
+  sceneNode.name = createXPathFromElement(element);
+  sceneNode = { sceneNode, ...{ x: left, y: top, width, height } };
 
   const isImage = element.nodeName === 'IMG' && element.currentSrc;
   const isSVG = element.nodeName === 'svg';
 
   // if layer has no background/shadow/border/etc. skip it
   if (isImage || !hasOnlyDefaultStyles(styles)) {
-    const style = new Style();
-
     if (backgroundColor) {
-      style.addColorFill(backgroundColor);
+      sceneNode.addColorFill(backgroundColor);
     }
 
     if (isImage) {
@@ -269,14 +269,14 @@ export default function createSceneNodeFromElement(element, options) {
       }
     }
 
-    layers.push(layer);
+    sceneNode.push(layer);
   }
 
   if (isSVG) {
     // sketch ignores padding and centerging as defined by viewBox and preserveAspectRatio when
     // importing SVG, so instead of using BCR of the SVG, we are using BCR of its children
     const childrenBCR = getGroupBCR(Array.from(element.children));
-    const svgLayer = new SVG({
+    const svgNode = new SvgNode({
       x: childrenBCR.left,
       y: childrenBCR.top,
       width: childrenBCR.width,
@@ -284,13 +284,13 @@ export default function createSceneNodeFromElement(element, options) {
       rawSVGString: getSVGString(element),
     });
 
-    layers.push(svgLayer);
+    sceneNode.appendChild(svgNode);
 
-    return layers;
+    return sceneNode;
   }
 
   if (!isTextVisible(styles)) {
-    return layers;
+    return sceneNode;
   }
 
   const textStyle = new TextStyle({
@@ -334,7 +334,7 @@ export default function createSceneNodeFromElement(element, options) {
 
       const textValue = fixWhiteSpace(textNode.nodeValue, whiteSpace);
 
-      const text = new Text({
+      const text = new TextNode({
         x: textBCR.left,
         y: textBCR.top + fixY,
         width: textBCR.right - textBCR.left,
@@ -348,8 +348,8 @@ export default function createSceneNodeFromElement(element, options) {
         options.onTextGenerate({ layer: text, element: textNode });
       }
 
-      layers.push(text);
+      sceneNode.appendChild(text);
     });
 
-  return layers;
+  return sceneNode;
 }
