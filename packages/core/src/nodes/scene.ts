@@ -1,1 +1,5 @@
-export class SceneNode {}
+export class SceneNode {
+  toJSON() {
+    return {};
+  }
+}

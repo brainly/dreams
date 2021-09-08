@@ -3,16 +3,20 @@ const puppeteer = require('puppeteer');
 const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
-
 const webpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 const config = require('../webpack.config.js');
+
+const saveToJson = require('../lib/save');
 
 const opts = {
   //chromeFlags: ['--headless'],
   logLevel: 'info',
   output: 'json',
 };
+
+const outputDir = path.join(__dirname, '../../output');
+const outputFilename = path.join(outputDir, 'figma-document.json');
 
 async function startWebpackDevServer() {
   const configuration = { ...config, mode: 'development' };
@@ -57,6 +61,8 @@ async function main() {
   });
 
   console.log('Figma document:', figmaDocument);
+
+  saveToJson(outputFilename, figmaDocument);
 
   await server.stop();
   await browser.disconnect();

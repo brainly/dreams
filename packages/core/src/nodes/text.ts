@@ -1,7 +1,7 @@
 import { SceneNode } from './scene';
 
 export class TextNode extends SceneNode {
-  readonly type = 'text';
+  readonly type = 'TEXT';
 
   constructor() {
     super();
