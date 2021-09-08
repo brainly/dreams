@@ -1,3 +1,1 @@
-class SceneNode {}
-
-export { SceneNode };
+export class SceneNode {}

@@ -1,6 +1,6 @@
 import { SceneNode } from './scene';
 
-class FrameNode extends SceneNode {
+export class FrameNode extends SceneNode {
   readonly type = 'frame';
 
   constructor() {
@@ -8,4 +8,6 @@ class FrameNode extends SceneNode {
   }
 }
 
-export { FrameNode };
+export function createFrameNode() {
+  return new FrameNode();
+}

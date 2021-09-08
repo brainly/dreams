@@ -313,6 +313,7 @@ export default function createSceneNodeFromElement(element, options) {
   const rangeHelper = document.createRange();
 
   // Text
+
   Array.from(element.childNodes)
     .filter(
       (child) => child.nodeType === 3 && child.nodeValue.trim().length > 0
