@@ -2,6 +2,7 @@ export class DocumentNode {
   readonly type = 'DOCUMENT';
 
   constructor() {}
+  children: readonly SceneNode[];
 
   toJSON() {
     return {

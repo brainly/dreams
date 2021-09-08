@@ -1,2 +1,3 @@
 export { createSceneNodeFromElement } from './dom/scene-from-element';
-export { FrameNode, createFrameNode } from './nodes/frame';
+export { FrameNode, createFrame } from './nodes/frame';
+export { DocumentNode, createDocument } from './nodes/document';

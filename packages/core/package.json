@@ -7,5 +7,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsc --build"
+  },
+  "dependencies": {
+    "normalize-css-color": "^1.0.2"
   }
 }

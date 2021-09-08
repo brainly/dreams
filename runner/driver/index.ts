@@ -1,5 +1,6 @@
-import { createSceneNodeFromElement } from '@packages/core';
+import { createSceneNodeFromElement, createDocument } from '@packages/core';
 
 export function getFigmaDocument() {
-  return createSceneNodeFromElement();
+  const document = createDocument();
+  return document;
 }
