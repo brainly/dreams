@@ -29,7 +29,7 @@ export class FrameNode extends SceneNode {
 
   visible: boolean;
   locked: boolean;
-  children: readonly globalThis.SceneNode[];
+  children: readonly SceneNode[];
 
   expanded: boolean;
 

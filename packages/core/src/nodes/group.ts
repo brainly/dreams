@@ -7,14 +7,14 @@ export class GroupNode extends SceneNode {
     super();
   }
   id: string;
-  parent: (BaseNode & ChildrenMixin) | null;
+  parent: SceneNode | null;
   name: string;
   removed: boolean;
 
   visible: boolean;
   locked: boolean;
   reactions: readonly Reaction[];
-  children: readonly globalThis.SceneNode[];
+  children: readonly SceneNode[];
 
   expanded: boolean;
 
