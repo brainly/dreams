@@ -2,13 +2,14 @@ import {
   createSceneNodeFromElement,
   createDocument,
   createPage,
+  createFrame,
 } from '@packages/core';
 
 function bemClassToText(bemClass) {
   return bemClass.replace('sg-', '').replace('-', ' ');
 }
 
-function buildLayerNameFromBEM(classes) {
+function buildNameFromBEM(classes) {
   const mainClass = classes[0];
 
   if (mainClass) {
@@ -33,6 +34,48 @@ export function getFigmaDocument() {
       stylesheet.href.match(/\/([0-9]+\.[0-9]+\.[0-9]+)\//)?.[1] ?? '';
   }
 
-  const documentNode = createDocument();
-  return documentNode.toJSON();
+  const figmaDocument = createDocument();
+  const page = createPage();
+  page.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
+
+  Array.from(
+    document.querySelectorAll('section > .item, section > .inline-item')
+  )
+    .map((metaNode) => {
+      const componentNode = metaNode.firstChild;
+      const name = metaNode.title;
+      const {
+        left: x,
+        top: y,
+        width,
+        height,
+      } = componentNode.getBoundingClientRect();
+
+      const frame = createFrame();
+      frame.x = x;
+      frame.y = y;
+      frame.width = width;
+      frame.height = height;
+
+      frame.id = name;
+      frame.name = name;
+
+      const parentAndChildren = [
+        componentNode,
+        ...componentNode.querySelectorAll('*'),
+      ];
+
+      Array.from(parentAndChildren)
+        .map((node) => {
+          const scene = createSceneNodeFromElement(node);
+          scene.name = buildNameFromBEM(node.classList);
+          return scene;
+        })
+        .forEach((scene) => frame.appendChild(scene));
+
+      return frame;
+    })
+    .forEach((frame) => page.appendChild(frame));
+
+  return figmaDocument.toJSON();
 }
