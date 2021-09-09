@@ -36,13 +36,17 @@ export function getFigmaDocument() {
 
   const figmaDocument = createDocument();
   const page = createPage();
+
+  figmaDocument.appendChild(page);
   page.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
 
   Array.from(
-    document.querySelectorAll('section > .item, section > .inline-item')
+    document.querySelectorAll<HTMLElement>(
+      'section > .item, section > .inline-item'
+    )
   )
     .map((metaNode) => {
-      const componentNode = metaNode.firstChild;
+      const componentNode = metaNode.firstChild as Element;
       const name = metaNode.title;
       const {
         left: x,
