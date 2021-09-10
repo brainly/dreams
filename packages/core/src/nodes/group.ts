@@ -14,7 +14,6 @@ export class GroupNode extends SceneNode {
   visible: boolean;
   locked: boolean;
   reactions: readonly Reaction[];
-  children: readonly SceneNode[];
 
   expanded: boolean;
 
@@ -24,13 +23,6 @@ export class GroupNode extends SceneNode {
   effects: readonly Effect[];
   effectStyleId: string;
 
-  absoluteTransform: Transform;
-  relativeTransform: Transform;
-  x: number;
-  y: number;
-  rotation: number;
-  width: number;
-  height: number;
   constrainProportions: boolean;
   layoutAlign: 'MIN' | 'CENTER' | 'MAX' | 'STRETCH' | 'INHERIT';
   layoutGrow: number;

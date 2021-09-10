@@ -66,6 +66,7 @@ export function getFigmaDocument() {
 
       const parentAndChildren = [
         componentNode,
+        // @ts-ignore
         ...componentNode.querySelectorAll('*'),
       ];
 

@@ -8,15 +8,12 @@ export class SvgNode extends SceneNode {
   }
 
   content: string;
-  x: number;
-  y: number;
-  rotation: number;
-  width: number;
-  height: number;
 
   toJSON() {
-    const json = super.toJSON();
-    return json;
+    return {
+      ...super.toJSON(),
+      content: this.content,
+    };
   }
 }
 

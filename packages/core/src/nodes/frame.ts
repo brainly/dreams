@@ -22,17 +22,6 @@ export class FrameNode extends SceneNode {
   clipsContent: boolean;
   guides: readonly Guide[];
 
-  id: string;
-  parent: (BaseNode & ChildrenMixin) | null;
-  name: string;
-  removed: boolean;
-
-  visible: boolean;
-  locked: boolean;
-  children: readonly SceneNode[];
-
-  expanded: boolean;
-
   strokeCap: StrokeCap | typeof figma.mixed;
   strokeMiterLimit: number;
 
@@ -57,13 +46,6 @@ export class FrameNode extends SceneNode {
   effectStyleId: string;
 
   constraints: Constraints;
-  absoluteTransform: Transform;
-  relativeTransform: Transform;
-  x: number;
-  y: number;
-  rotation: number;
-  width: number;
-  height: number;
   constrainProportions: boolean;
   layoutAlign: 'MIN' | 'MAX' | 'CENTER' | 'STRETCH' | 'INHERIT';
   layoutGrow: number;

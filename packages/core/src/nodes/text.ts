@@ -15,13 +15,6 @@ export class TextNode extends SceneNode {
   autoRename: boolean;
   textStyleId: string | typeof figma.mixed;
 
-  id: string;
-  parent: (BaseNode & ChildrenMixin) | null;
-  name: string;
-  removed: boolean;
-
-  visible: boolean;
-  locked: boolean;
   reactions: readonly Reaction[];
   opacity: number;
   blendMode: 'PASS_THROUGH' | BlendMode;
@@ -39,13 +32,6 @@ export class TextNode extends SceneNode {
   dashPattern: readonly number[];
   fills: typeof figma.mixed | readonly Paint[];
   fillStyleId: string | typeof figma.mixed;
-  absoluteTransform: Transform;
-  relativeTransform: Transform;
-  x: number;
-  y: number;
-  rotation: number;
-  width: number;
-  height: number;
   constrainProportions: boolean;
   layoutAlign: 'CENTER' | 'MIN' | 'MAX' | 'STRETCH' | 'INHERIT';
   layoutGrow: number;

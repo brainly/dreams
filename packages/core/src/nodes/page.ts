@@ -1,24 +1,30 @@
+import type { DocumentNode } from './document';
 import { SceneNode } from './scene';
 
-export class PageNode extends SceneNode {
+export class PageNode {
   readonly type = 'PAGE';
 
-  constructor() {
-    super();
+  guides: readonly Guide[] = [];
+  backgrounds: readonly Paint[] = [];
+  id: string = '';
+  parent: DocumentNode | null = null;
+  name: string = '';
+  readonly children: SceneNode[] = [];
+
+  appendChild(child: SceneNode) {
+    this.children.push(child);
+    child.parent = this;
   }
 
-  guides: readonly Guide[];
-  backgrounds: readonly Paint[];
-  id: string;
-  parent: (BaseNode & ChildrenMixin) | null;
-  name: string;
-  removed: boolean;
-
-  children: readonly SceneNode[];
-
   toJSON() {
-    const json = super.toJSON();
-    return json;
+    return {
+      guides: this.guides,
+      backgrounds: this.backgrounds,
+      id: this.id,
+      parent: this.parent,
+      name: this.name,
+      children: this.children.map((child) => child.toJSON()),
+    };
   }
 }
 

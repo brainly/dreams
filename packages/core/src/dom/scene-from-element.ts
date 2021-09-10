@@ -50,7 +50,7 @@ function parseFontWeight(fontWeight) {
   return parseInt(fontWeight, 10);
 }
 
-export function createSceneNodeFromElement(element, options) {
+export function createSceneNodeFromElement(element) {
   let sceneNode = new GroupNode();
   const bcr = element.getBoundingClientRect();
   const { left, top } = bcr;
