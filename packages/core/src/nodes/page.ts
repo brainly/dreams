@@ -20,10 +20,9 @@ export class PageNode {
     return {
       id: this.id,
       name: this.name,
-      type: this.type,
+      type: 'CANVAS',
       guides: this.guides,
       backgrounds: this.backgrounds,
-      parent: this.parent,
       children: this.children.map((child) => child.toJSON()),
     };
   }

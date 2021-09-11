@@ -52,7 +52,6 @@ export class SceneNode {
     return {
       id: this.id,
       name: this.name,
-      parent: this.parent,
       children: this.children.map((child) => child.toJSON()),
       absoluteTransform: this.absoluteTransform,
       relativeTransform: this.relativeTransform,
