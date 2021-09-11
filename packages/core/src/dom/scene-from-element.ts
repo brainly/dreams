@@ -1,4 +1,4 @@
-import { GroupNode } from '../nodes/group';
+import { createFrame } from '../nodes/frame';
 import { TextNode } from '../nodes/text';
 import { createXPathFromElement } from '../helpers/xpath';
 import { getGroupBCR } from '../helpers/bcr';
@@ -51,7 +51,7 @@ function parseFontWeight(fontWeight) {
 }
 
 export function createSceneNodeFromElement(element) {
-  let sceneNode = new GroupNode();
+  let sceneNode = createFrame();
   const bcr = element.getBoundingClientRect();
   const { left, top } = bcr;
   const width = bcr.right - bcr.left;

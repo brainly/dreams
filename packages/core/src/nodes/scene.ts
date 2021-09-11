@@ -2,6 +2,7 @@ import type { DocumentNode } from './document';
 import type { PageNode } from './page';
 
 export class SceneNode {
+  readonly type: string;
   id: string;
   name: string;
   parent: SceneNode | DocumentNode | PageNode | null;
@@ -52,6 +53,7 @@ export class SceneNode {
     return {
       id: this.id,
       name: this.name,
+      type: this.type,
       children: this.children.map((child) => child.toJSON()),
       absoluteTransform: this.absoluteTransform,
       relativeTransform: this.relativeTransform,
