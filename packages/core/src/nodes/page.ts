@@ -18,11 +18,12 @@ export class PageNode {
 
   toJSON() {
     return {
+      id: this.id,
+      name: this.name,
+      type: this.type,
       guides: this.guides,
       backgrounds: this.backgrounds,
-      id: this.id,
       parent: this.parent,
-      name: this.name,
       children: this.children.map((child) => child.toJSON()),
     };
   }
