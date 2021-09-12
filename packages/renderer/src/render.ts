@@ -103,7 +103,7 @@ function assignBasicProps(node, data) {
   });
 
   // Layout related setters
-  if (props.size != null) {
+  if (props.size != null && props.size.x > 0 && props.size.y > 0) {
     node.resize(props.size.x, props.size.y);
   }
 
