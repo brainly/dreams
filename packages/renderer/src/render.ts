@@ -41,35 +41,39 @@ function mapDataToNodeProps(data) {
     ...writable,
     primaryAxisSizingMode: data.primaryAxisSizingMode ?? 'AUTO',
     counterAxisSizingMode: data.counterAxisSizingMode ?? 'AUTO',
-    constraints: {
-      horizontal: data.constraints.horizontal === 'LEFT' ? 'MIN' : 'MAX',
-      vertical: data.constraints.vertical === 'TOP' ? 'MIN' : 'MAX',
-    },
-    fills: data.fills.map((fill) => {
-      return fill.type === 'SOLID'
-        ? {
-            ...fill,
-            opacity: fill.color.a,
-            color: {
-              r: fill.color.r,
-              g: fill.color.g,
-              b: fill.color.b,
-            },
-          }
-        : fill;
-    }),
-    strokes: data.strokes.map((stroke) => ({
-      ...stroke,
-      opacity: stroke.color.a,
-      color: {
-        r: stroke.color.r,
-        g: stroke.color.g,
-        b: stroke.color.b,
+    ...(data.constraints && {
+      constraints: {
+        horizontal: data.constraints.horizontal === 'LEFT' ? 'MIN' : 'MAX',
+        vertical: data.constraints.vertical === 'TOP' ? 'MIN' : 'MAX',
       },
-    })),
+    }),
+    fills:
+      data.fills?.map((fill) => {
+        return fill.type === 'SOLID'
+          ? {
+              ...fill,
+              opacity: fill.color.a,
+              color: {
+                r: fill.color.r,
+                g: fill.color.g,
+                b: fill.color.b,
+              },
+            }
+          : fill;
+      }) ?? [],
+    strokes:
+      data.strokes?.map((stroke) => ({
+        ...stroke,
+        opacity: stroke.color.a,
+        color: {
+          r: stroke.color.r,
+          g: stroke.color.g,
+          b: stroke.color.b,
+        },
+      })) ?? [],
     size: {
-      x: data?.size?.x || data.absoluteBoundingBox.width,
-      y: data?.size?.y || data.absoluteBoundingBox.height,
+      x: data?.size?.x ?? data.absoluteBoundingBox.width ?? 32,
+      y: data?.size?.y ?? data.absoluteBoundingBox.height ?? 32,
     },
     ...(data.layoutGrids
       ? {
