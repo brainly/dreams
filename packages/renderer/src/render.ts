@@ -72,8 +72,8 @@ function mapDataToNodeProps(data) {
         },
       })) ?? [],
     size: {
-      x: data?.size?.x ?? data.absoluteBoundingBox.width ?? 32,
-      y: data?.size?.y ?? data.absoluteBoundingBox.height ?? 32,
+      x: data?.size?.x ?? data.absoluteBoundingBox.width ?? 100,
+      y: data?.size?.y ?? data.absoluteBoundingBox.height ?? 100,
     },
     ...(data.layoutGrids
       ? {

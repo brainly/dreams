@@ -17,8 +17,8 @@ export class SceneNode {
     [0, 1, 0],
   ];
 
-  width: number = 0;
-  height: number = 0;
+  width: number = 100;
+  height: number = 100;
   rotation: number = 0;
 
   get x() {
@@ -55,7 +55,6 @@ export class SceneNode {
       name: this.name,
       type: this.type,
       children: this.children.map((child) => child.toJSON()),
-      absoluteTransform: this.absoluteTransform,
       relativeTransform: this.relativeTransform,
       size: {
         x: this.width,
