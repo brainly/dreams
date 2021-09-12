@@ -5,7 +5,19 @@ export class PageNode {
   readonly type = 'PAGE';
 
   guides: readonly Guide[] = [];
-  backgrounds: readonly Paint[] = [];
+  backgrounds: readonly Paint[] = [
+    {
+      blendMode: 'NORMAL',
+      color: {
+        b: 0.8980392217636108,
+        g: 0.8980392217636108,
+        r: 0.8980392217636108,
+      },
+      opacity: 1,
+      type: 'SOLID',
+      visible: true,
+    },
+  ];
   id: string = '';
   parent: DocumentNode | null = null;
   name: string = '';
