@@ -71,10 +71,12 @@ function mapDataToNodeProps(data) {
           b: stroke.color.b,
         },
       })) ?? [],
-    size: {
-      x: data?.size?.x ?? data.absoluteBoundingBox.width ?? 100,
-      y: data?.size?.y ?? data.absoluteBoundingBox.height ?? 100,
-    },
+    ...(data.size && {
+      size: {
+        x: data.size?.x ?? 100,
+        y: data.size?.y ?? 100,
+      },
+    }),
     ...(data.layoutGrids
       ? {
           layoutGrids: data.layoutGrids.map(({ offset, ...grid }) => ({
@@ -101,7 +103,9 @@ function assignBasicProps(node, data) {
   });
 
   // Layout related setters
-  node.resize(props.size.x, props.size.y);
+  if (props.size != null) {
+    node.resize(props.size.x, props.size.y);
+  }
 
   return node;
 }
@@ -119,7 +123,8 @@ async function createNode(data) {
       );
       node = figma.createFrame();
       break;
-    case 'CANVAS': {
+    case 'CANVAS':
+    case 'PAGE': {
       node = figma.createPage();
       break;
     }
@@ -141,10 +146,6 @@ async function createNode(data) {
     }
     case 'LINE': {
       node = figma.createLine();
-      break;
-    }
-    case 'PAGE': {
-      node = figma.createPage();
       break;
     }
     case 'POLYGON': {
@@ -230,9 +231,8 @@ async function createNode(data) {
     }
   }
 
-  if (data.type !== 'CANVAS') {
-    assignBasicProps(node, data);
-  }
+  console.log('node created', node.type, node.id);
+  assignBasicProps(node, data);
 
   return node;
 }
