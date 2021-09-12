@@ -256,7 +256,7 @@ export async function render(json) {
           return;
         }
 
-        node.id = node.id || nodes.size++;
+        node.id = node.id || nodes.size + 1;
         nodes.set(node.id, baseNode);
         node.children?.forEach((child) => {
           const sceneChild = nodes.get(child.id);
