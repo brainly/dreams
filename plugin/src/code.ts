@@ -8,13 +8,14 @@ function importJson(json: unknown) {
 }
 
 function clear() {
-  figma.root.children.forEach((child) => {
-    if (child !== figma.currentPage) {
-      child.remove();
+  figma.root.children.forEach((page) => {
+    if (page !== figma.currentPage) {
+      page.remove();
     } else {
-      child.children.forEach((child) => {
+      page.children.forEach((child) => {
         child.remove();
       });
+      page.name = 'Page 1';
     }
   });
 }
