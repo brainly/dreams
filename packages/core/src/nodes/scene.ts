@@ -8,7 +8,7 @@ export class SceneNode {
   id: string = `Node:${++SceneNode.#count}`;
   name: string;
   parent: SceneNode | DocumentNode | PageNode | null;
-  readonly children: SceneNode[] = [];
+  children: SceneNode[] = [];
 
   readonly absoluteTransform: Transform = [
     [1, 0, 0],

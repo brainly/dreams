@@ -57,8 +57,53 @@ export class FrameNode extends SceneNode {
   overlayBackgroundInteraction: OverlayBackgroundInteraction;
 
   toJSON() {
-    const json = super.toJSON();
-    return json;
+    return {
+      ...super.toJSON(),
+      layoutMode: this.layoutMode,
+      primaryAxisSizingMode: this.primaryAxisSizingMode,
+      counterAxisSizingMode: this.counterAxisSizingMode,
+      primaryAxisAlignItems: this.primaryAxisAlignItems,
+      counterAxisAlignItems: this.counterAxisAlignItems,
+      paddingLeft: this.paddingLeft,
+      paddingRight: this.paddingRight,
+      paddingTop: this.paddingTop,
+      paddingBottom: this.paddingBottom,
+      itemSpacing: this.itemSpacing,
+      layoutGrids: this.layoutGrids,
+      gridStyleId: this.gridStyleId,
+      clipsContent: this.clipsContent,
+      guides: this.guides,
+      strokeCap: this.strokeCap,
+      strokeMiterLimit: this.strokeMiterLimit,
+      strokes: this.strokes,
+      strokeStyleId: this.strokeStyleId,
+      strokeWeight: this.strokeWeight,
+      strokeJoin: this.strokeJoin,
+      strokeAlign: this.strokeAlign,
+      dashPattern: this.dashPattern,
+      fills: this.fills,
+      fillStyleId: this.fillStyleId,
+      cornerRadius: this.cornerRadius,
+      cornerSmoothing: this.cornerSmoothing,
+      topLeftRadius: this.topLeftRadius,
+      topRightRadius: this.topRightRadius,
+      bottomLeftRadius: this.bottomLeftRadius,
+      bottomRightRadius: this.bottomRightRadius,
+      opacity: this.opacity,
+      blendMode: this.blendMode,
+      isMask: this.isMask,
+      effects: this.effects,
+      effectStyleId: this.effectStyleId,
+      constraints: this.constraints,
+      constrainProportions: this.constrainProportions,
+      layoutAlign: this.layoutAlign,
+      layoutGrow: this.layoutGrow,
+      overflowDirection: this.overflowDirection,
+      numberOfFixedChildren: this.numberOfFixedChildren,
+      overlayPositionType: this.overlayPositionType,
+      overlayBackground: this.overlayBackground,
+      overlayBackgroundInteraction: this.overlayBackgroundInteraction,
+    };
   }
 }
 

@@ -3,6 +3,7 @@ import { TextNode } from '../nodes/text';
 import { createXPathFromElement } from '../helpers/xpath';
 import { getGroupBCR } from '../helpers/bcr';
 import { isNodeVisible, isTextVisible } from '../helpers/visibility';
+import { getRgba } from '../helpers/color';
 
 const DEFAULT_VALUES = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -57,41 +58,6 @@ export function createSceneNodeFromElement(element) {
   const { x, y, width, height } = bcr;
 
   const styles = getComputedStyle(element);
-  const {
-    backgroundColor,
-    backgroundImage,
-    backgroundPositionX,
-    backgroundPositionY,
-    backgroundSize,
-    borderColor,
-    borderWidth,
-    borderTopWidth,
-    borderRightWidth,
-    borderBottomWidth,
-    borderLeftWidth,
-    borderTopColor,
-    borderRightColor,
-    borderBottomColor,
-    borderLeftColor,
-    borderTopLeftRadius,
-    borderTopRightRadius,
-    borderBottomLeftRadius,
-    borderBottomRightRadius,
-    fontFamily,
-    fontWeight,
-    fontSize,
-    lineHeight,
-    letterSpacing,
-    color,
-    textTransform,
-    textDecorationLine,
-    textAlign,
-    justifyContent,
-    display,
-    boxShadow,
-    opacity,
-    whiteSpace,
-  } = styles;
 
   // skip SVG child nodes as they are already covered by `new SVG(…)`
   if (isSVGDescendant(element)) {
@@ -104,11 +70,28 @@ export function createSceneNodeFromElement(element) {
 
   sceneNode.name = createXPathFromElement(element);
 
-  // layout
+  // opaque props
   sceneNode.x = x;
   sceneNode.y = y;
   sceneNode.width = width;
   sceneNode.height = height;
+
+  // fill props
+  const backgroundColor = getRgba(styles.backgroundColor);
+
+  if (backgroundColor) {
+    sceneNode.fills = [
+      {
+        type: 'SOLID',
+        color: {
+          r: backgroundColor.r,
+          g: backgroundColor.g,
+          b: backgroundColor.b,
+        },
+        opacity: backgroundColor.a || 1,
+      },
+    ];
+  }
 
   return sceneNode;
 }
