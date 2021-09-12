@@ -2,7 +2,11 @@ import type { DocumentNode } from './document';
 import { SceneNode } from './scene';
 
 export class PageNode {
+  static #count = 0;
   readonly type = 'PAGE';
+
+  id: string = `Page:${++PageNode.#count}`;
+  name: string = this.id;
 
   guides: readonly Guide[] = [];
   backgrounds: readonly Paint[] = [
@@ -18,9 +22,8 @@ export class PageNode {
       visible: true,
     },
   ];
-  id: string = '';
+
   parent: DocumentNode | null = null;
-  name: string = '';
   readonly children: SceneNode[] = [];
 
   appendChild(child: SceneNode) {

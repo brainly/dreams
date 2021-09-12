@@ -2,8 +2,10 @@ import type { DocumentNode } from './document';
 import type { PageNode } from './page';
 
 export class SceneNode {
+  static #count = 0;
+
   readonly type: string;
-  id: string;
+  id: string = `Node:${++SceneNode.#count}`;
   name: string;
   parent: SceneNode | DocumentNode | PageNode | null;
   readonly children: SceneNode[] = [];
