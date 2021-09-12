@@ -60,6 +60,12 @@ export class SceneNode {
         x: this.width,
         y: this.height,
       },
+      absoluteBoundingBox: {
+        x: this.absoluteTransform[0][2],
+        y: this.absoluteTransform[1][2],
+        width: this.width,
+        height: this.height,
+      },
       visible: this.visible,
       locked: this.locked,
     };
