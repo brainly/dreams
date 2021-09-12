@@ -52,10 +52,9 @@ function parseFontWeight(fontWeight) {
 
 export function createSceneNodeFromElement(element) {
   let sceneNode = createFrame();
+
   const bcr = element.getBoundingClientRect();
-  const { left, top } = bcr;
-  const width = bcr.right - bcr.left;
-  const height = bcr.bottom - bcr.top;
+  const { x, y, width, height } = bcr;
 
   const styles = getComputedStyle(element);
   const {
@@ -104,6 +103,12 @@ export function createSceneNodeFromElement(element) {
   }
 
   sceneNode.name = createXPathFromElement(element);
+
+  // layout
+  sceneNode.x = x;
+  sceneNode.y = y;
+  sceneNode.width = width;
+  sceneNode.height = height;
 
   return sceneNode;
 }
