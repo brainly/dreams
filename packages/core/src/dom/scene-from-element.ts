@@ -21,7 +21,7 @@ function hasOnlyDefaultStyles(styles) {
   });
 }
 
-function fixBorderRadius(borderRadius, width, height) {
+function parseBorderRadius(borderRadius, width, height) {
   const matches = borderRadius.match(/^([0-9.]+)(.+)$/);
 
   if (matches && matches[2] === '%') {
@@ -92,6 +92,31 @@ export function createSceneNodeFromElement(element) {
       },
     ];
   }
+
+  // corners
+  sceneNode.topLeftRadius = parseBorderRadius(
+    styles.borderTopLeftRadius,
+    width,
+    height
+  );
+
+  sceneNode.topRightRadius = parseBorderRadius(
+    styles.borderTopRightRadius,
+    width,
+    height
+  );
+
+  sceneNode.bottomLeftRadius = parseBorderRadius(
+    styles.borderBottomLeftRadius,
+    width,
+    height
+  );
+
+  sceneNode.bottomRightRadius = parseBorderRadius(
+    styles.borderBottomRightRadius,
+    width,
+    height
+  );
 
   return sceneNode;
 }
