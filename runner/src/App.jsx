@@ -29,12 +29,14 @@ const FixesLoader = React.lazy(() => import('./fixes/FixesLoader'));
 
 const App = () => (
   <div>
-    {/* <ColorMasksPage />
-    <IconsPage />
     <LogoPage />
-    <AvatarsPage /> */}
+    {/* 
+    <ColorMasksPage />
+    <IconsPage /> 
+    <LogoPage />
+    <AvatarsPage />
     <BoxesPage />
-    {/* <BubblesPage />
+    <BubblesPage />
     <ButtonsPage />
     <CheckboxesPage />
     <CountersPage />
@@ -52,7 +54,8 @@ const App = () => (
     <LabelsPage />
 
     <TextPage />
-    <ColorsPage /> */}
+    <ColorsPage /> 
+    */}
 
     <React.Suspense fallback={<div>Loading fixes...</div>}>
       <FixesLoader />
