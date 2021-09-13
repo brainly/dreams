@@ -55,7 +55,7 @@ export function getFigmaDocument() {
         height,
       } = componentNode.getBoundingClientRect();
 
-      const frame = createFrame();
+      const frame = createSceneNodeFromElement(componentNode);
       frame.x = x;
       frame.y = y;
       frame.width = width;
@@ -65,7 +65,6 @@ export function getFigmaDocument() {
       frame.name = name;
 
       const parentAndChildren = [
-        componentNode,
         // @ts-ignore
         ...componentNode.querySelectorAll('*'),
       ];
