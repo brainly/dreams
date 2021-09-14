@@ -72,15 +72,16 @@ export function createSceneNodeFromElement(element) {
   const isSVG = element.nodeName === 'svg';
 
   let sceneNode;
+
   if (isSVG) {
     console.log('SVG!!!');
     const childrenBCR = getGroupBCR(Array.from(element.children));
     sceneNode = createSvg();
     sceneNode.content = getSVGString(element);
-    sceneNode.x = childrenBCR.x;
-    sceneNode.y = childrenBCR.y;
-    sceneNode.width = childrenBCR.width;
-    sceneNode.height = childrenBCR.height;
+    x = childrenBCR.x;
+    y = childrenBCR.y;
+    width = childrenBCR.width;
+    height = childrenBCR.height;
   } else {
     console.log('NO SVG!!!');
     sceneNode = createFrame();
