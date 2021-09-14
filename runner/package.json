@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node ./lib/run",
-    "serve": "webpack serve --mode development",
+    "watch": "webpack serve --mode development",
     "build": "webpack --mode production"
   },
   "dependencies": {
