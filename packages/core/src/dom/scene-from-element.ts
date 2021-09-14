@@ -156,12 +156,11 @@ export function createSceneNodeFromElement(element) {
     const borderLeftWidthFloat = parseFloat(styles.borderLeftWidth);
   }
 
-  // text nodes
+  // Text
   if (!isTextVisible(styles)) {
     return sceneNode;
   }
 
-  // Text
   const rangeHelper = document.createRange();
   Array.from(element.childNodes)
     .filter(
