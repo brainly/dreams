@@ -2,10 +2,10 @@ import type { DocumentNode } from './document';
 import { SceneNode } from './scene';
 
 export class PageNode {
-  static #count = 0;
+  static #refcount = 0;
   readonly type = 'PAGE';
 
-  id: string = `Page:${++PageNode.#count}`;
+  id: string = `Page:${++PageNode.#refcount}`;
   name: string = this.id;
 
   guides: readonly Guide[] = [];

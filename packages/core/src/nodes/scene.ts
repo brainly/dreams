@@ -2,10 +2,10 @@ import type { DocumentNode } from './document';
 import type { PageNode } from './page';
 
 export class SceneNode {
-  static #count = 0;
+  static #refcount = 0;
 
   readonly type: string;
-  id: string = `Node:${++SceneNode.#count}`;
+  id: string = `Node:${++SceneNode.#refcount}`;
   name: string;
   parent: SceneNode | DocumentNode | PageNode | null;
   children: SceneNode[] = [];

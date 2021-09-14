@@ -1,6 +1,7 @@
-import { SceneNode } from './scene';
+import { FrameNode } from './frame';
 
-export class SvgNode extends SceneNode {
+export class SvgNode extends FrameNode {
+  // @ts-ignore
   readonly type = 'SVG';
 
   constructor() {
