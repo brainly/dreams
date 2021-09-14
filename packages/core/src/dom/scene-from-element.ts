@@ -3,7 +3,6 @@ import { createSvg } from '../nodes/svg';
 import type { FrameNode } from '../nodes/frame';
 import { TextNode } from '../nodes/text';
 import { createXPathFromElement } from '../helpers/xpath';
-import { getGroupBCR } from '../helpers/bcr';
 import { isNodeVisible, isTextVisible } from '../helpers/visibility';
 import { getRgba } from '../helpers/color';
 import { getSVGString } from '../helpers/svg';
@@ -56,7 +55,7 @@ function parseFontWeight(fontWeight) {
 
 export function createSceneNodeFromElement(element) {
   const bcr = element.getBoundingClientRect();
-  let { x, y, width, height } = bcr;
+  const { x, y, width, height } = bcr;
 
   const styles = getComputedStyle(element);
 
@@ -75,13 +74,8 @@ export function createSceneNodeFromElement(element) {
 
   if (isSVG) {
     console.log('SVG!!!');
-    const childrenBCR = getGroupBCR(Array.from(element.children));
     sceneNode = createSvg();
     sceneNode.content = getSVGString(element);
-    x = childrenBCR.x;
-    y = childrenBCR.y;
-    width = childrenBCR.width;
-    height = childrenBCR.height;
   } else {
     console.log('NO SVG!!!');
     sceneNode = createFrame();
