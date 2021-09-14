@@ -72,9 +72,10 @@ export function getFigmaDocument() {
       Array.from(parentAndChildren)
         .map((node) => {
           const scene = createSceneNodeFromElement(node);
-          scene.name = buildNameFromBEM(node.classList);
+          //scene.name = buildNameFromBEM(node.classList);
           return scene;
         })
+        .filter(Boolean)
         .forEach((scene) => frame.appendChild(scene));
 
       return frame;
