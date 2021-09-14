@@ -38,13 +38,13 @@ export class TextNode extends SceneNode {
 
   constraints: Constraints;
   hasMissingFont: boolean;
-  fontSize: number | typeof figma.mixed;
-  fontName: typeof figma.mixed | FontName;
-  textCase: typeof figma.mixed | TextCase;
-  textDecoration: typeof figma.mixed | TextDecoration;
-  letterSpacing: typeof figma.mixed | LetterSpacing;
-  lineHeight: typeof figma.mixed | LineHeight;
-  hyperlink: typeof figma.mixed | HyperlinkTarget | null;
+  fontSize: number;
+  fontName: FontName;
+  textCase: TextCase;
+  textDecoration: TextDecoration;
+  letterSpacing: LetterSpacing;
+  lineHeight: LineHeight;
+  hyperlink: HyperlinkTarget | null;
   characters: string;
 
   toJSON() {

@@ -1,11 +1,11 @@
 import { createFrame } from '../nodes/frame';
 import { createSvg } from '../nodes/svg';
-import type { FrameNode } from '../nodes/frame';
-import { TextNode } from '../nodes/text';
+import { createText } from '../nodes/text';
 import { createXPathFromElement } from '../helpers/xpath';
 import { isNodeVisible, isTextVisible } from '../helpers/visibility';
 import { getRgba } from '../helpers/color';
 import { getSVGString } from '../helpers/svg';
+import { fixWhiteSpace } from '../helpers/text';
 
 const DEFAULT_VALUES = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -155,6 +155,42 @@ export function createSceneNodeFromElement(element) {
     const borderBottomWidthFloat = parseFloat(styles.borderBottomWidth);
     const borderLeftWidthFloat = parseFloat(styles.borderLeftWidth);
   }
+
+  // text nodes
+  if (!isTextVisible(styles)) {
+    return sceneNode;
+  }
+
+  // Text
+  const rangeHelper = document.createRange();
+  Array.from(element.childNodes)
+    .filter(
+      (child: any) => child.nodeType === 3 && child.nodeValue.trim().length > 0
+    )
+    .forEach((textNode: any) => {
+      rangeHelper.selectNodeContents(textNode);
+      const textRanges = Array.from(rangeHelper.getClientRects());
+      const numberOfLines = textRanges.length;
+      const textBCR = rangeHelper.getBoundingClientRect();
+      const lineHeightInt = parseInt(styles.lineHeight, 10);
+      const textBCRHeight = textBCR.bottom - textBCR.top;
+
+      const textValue = fixWhiteSpace(textNode.nodeValue, styles.whiteSpace);
+
+      const text = createText();
+      text.characters = textValue;
+      text.fontName = {
+        family: styles.fontFamily,
+        style: 'Regular',
+      };
+      text.fontSize = parseFloat(styles.fontSize);
+      text.lineHeight = {
+        value: lineHeightInt,
+        unit: 'PIXELS',
+      };
+
+      sceneNode.appendChild(text);
+    });
 
   return sceneNode;
 }
