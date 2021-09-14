@@ -48,8 +48,45 @@ export class TextNode extends SceneNode {
   characters: string;
 
   toJSON() {
-    const json = super.toJSON();
-    return json;
+    return {
+      ...super.toJSON(),
+      textAlignHorizontal: this.textAlignHorizontal,
+      textAlignVertical: this.textAlignVertical,
+      textAutoResize: this.textAutoResize,
+      paragraphIndent: this.paragraphIndent,
+      paragraphSpacing: this.paragraphSpacing,
+      autoRename: this.autoRename,
+      textStyleId: this.textStyleId,
+      reactions: this.reactions,
+      opacity: this.opacity,
+      blendMode: this.blendMode,
+      isMask: this.isMask,
+      effects: this.effects,
+      effectStyleId: this.effectStyleId,
+      strokeCap: this.strokeCap,
+      strokeMiterLimit: this.strokeMiterLimit,
+      strokes: this.strokes,
+      strokeStyleId: this.strokeStyleId,
+      strokeWeight: this.strokeWeight,
+      strokeJoin: this.strokeJoin,
+      strokeAlign: this.strokeAlign,
+      dashPattern: this.dashPattern,
+      fills: this.fills,
+      fillStyleId: this.fillStyleId,
+      constrainProportions: this.constrainProportions,
+      layoutAlign: this.layoutAlign,
+      layoutGrow: this.layoutGrow,
+      constraints: this.constraints,
+      hasMissingFont: this.hasMissingFont,
+      fontSize: this.fontSize,
+      fontName: this.fontName,
+      textCase: this.textCase,
+      textDecoration: this.textDecoration,
+      letterSpacing: this.letterSpacing,
+      lineHeight: this.lineHeight,
+      hyperlink: this.hyperlink,
+      characters: this.characters,
+    };
   }
 }
 
