@@ -83,13 +83,13 @@ export function createSceneNodeFromElement(element) {
 
   sceneNode.name = createXPathFromElement(element);
 
-  // opaque props
+  // position
   sceneNode.x = x;
   sceneNode.y = y;
   sceneNode.width = width;
   sceneNode.height = height;
 
-  // fill props
+  // background
   const backgroundColor = getRgba(styles.backgroundColor);
 
   if (backgroundColor) {
@@ -106,7 +106,7 @@ export function createSceneNodeFromElement(element) {
     ];
   }
 
-  // corners
+  // border radius
   sceneNode.topLeftRadius = parseBorderRadius(
     styles.borderTopLeftRadius,
     width,
@@ -130,6 +130,31 @@ export function createSceneNodeFromElement(element) {
     width,
     height
   );
+
+  // borders
+  if (!styles.borderWidth.includes(' ')) {
+    const borderColor = getRgba(styles.borderColor);
+    if (borderColor) {
+      sceneNode.strokes = [
+        {
+          type: 'SOLID',
+          color: {
+            r: borderColor.r,
+            g: borderColor.g,
+            b: borderColor.b,
+          },
+          opacity: borderColor.a || 1,
+        },
+      ];
+      sceneNode.strokeWeight = parseFloat(styles.borderWidth);
+    }
+  } else {
+    // TODO(coderitual): one side borders using inset shadow effect
+    const borderTopWidthFloat = parseFloat(styles.borderTopWidth);
+    const borderRightWidthFloat = parseFloat(styles.borderRightWidth);
+    const borderBottomWidthFloat = parseFloat(styles.borderBottomWidth);
+    const borderLeftWidthFloat = parseFloat(styles.borderLeftWidth);
+  }
 
   return sceneNode;
 }
