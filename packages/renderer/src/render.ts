@@ -226,6 +226,10 @@ async function createNode(data) {
       }
       break;
     }
+    case 'SVG': {
+      node = figma.createNodeFromSvg(data.content);
+      break;
+    }
     default: {
       node = figma.createFrame();
     }
