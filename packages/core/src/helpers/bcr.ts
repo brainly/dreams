@@ -47,6 +47,8 @@ export function getGroupBCR(nodes) {
   return {
     left: groupBCR.left,
     top: groupBCR.top,
+    x: groupBCR.left,
+    y: groupBCR.top,
     right: groupBCR.right,
     bottom: groupBCR.bottom,
     width: groupBCR.right - groupBCR.left,

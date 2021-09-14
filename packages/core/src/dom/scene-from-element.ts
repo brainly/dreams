@@ -56,7 +56,7 @@ function parseFontWeight(fontWeight) {
 
 export function createSceneNodeFromElement(element) {
   const bcr = element.getBoundingClientRect();
-  const { x, y, width, height } = bcr;
+  let { x, y, width, height } = bcr;
 
   const styles = getComputedStyle(element);
 
@@ -74,8 +74,13 @@ export function createSceneNodeFromElement(element) {
   let sceneNode;
   if (isSVG) {
     console.log('SVG!!!');
+    const childrenBCR = getGroupBCR(Array.from(element.children));
     sceneNode = createSvg();
     sceneNode.content = getSVGString(element);
+    sceneNode.x = childrenBCR.x;
+    sceneNode.y = childrenBCR.y;
+    sceneNode.width = childrenBCR.width;
+    sceneNode.height = childrenBCR.height;
   } else {
     console.log('NO SVG!!!');
     sceneNode = createFrame();
