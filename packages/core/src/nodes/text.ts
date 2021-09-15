@@ -40,6 +40,7 @@ export class TextNode extends SceneNode {
   hasMissingFont: boolean;
   fontSize: number;
   fontName: FontName;
+  fontWeight: number;
   textCase: TextCase;
   textDecoration: TextDecoration;
   letterSpacing: LetterSpacing;
@@ -50,8 +51,6 @@ export class TextNode extends SceneNode {
   toJSON() {
     return {
       ...super.toJSON(),
-      textAlignHorizontal: this.textAlignHorizontal,
-      textAlignVertical: this.textAlignVertical,
       textAutoResize: this.textAutoResize,
       paragraphIndent: this.paragraphIndent,
       paragraphSpacing: this.paragraphSpacing,
@@ -77,15 +76,28 @@ export class TextNode extends SceneNode {
       layoutAlign: this.layoutAlign,
       layoutGrow: this.layoutGrow,
       constraints: this.constraints,
-      hasMissingFont: this.hasMissingFont,
-      fontSize: this.fontSize,
-      fontName: this.fontName,
-      textCase: this.textCase,
       textDecoration: this.textDecoration,
-      letterSpacing: this.letterSpacing,
-      lineHeight: this.lineHeight,
+
       hyperlink: this.hyperlink,
       characters: this.characters,
+      style: {
+        fontFamily: this.fontName.family,
+        fontWeight: this.fontWeight,
+        textCase: this.textCase,
+        fontSize: this.fontSize,
+        textAlignHorizontal: this.textAlignHorizontal,
+        textAlignVertical: this.textAlignVertical,
+        letterSpacing: this.letterSpacing,
+        lineHeightPx:
+          this.lineHeight.unit === 'PIXELS'
+            ? this.lineHeight.value
+            : this.lineHeight.unit === 'PERCENT'
+            ? this.lineHeight.value * this.fontSize
+            : 0,
+        lineHeightPercent:
+          this.lineHeight.unit === 'PERCENT' ? this.lineHeight.value : 0,
+        lineHeightUnit: this.lineHeight.unit,
+      },
     };
   }
 }
