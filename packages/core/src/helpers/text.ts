@@ -1,3 +1,47 @@
+const SYSTEM_FONTS = [
+  // Apple
+  '-apple-system',
+  'BlinkMacSystemFont',
+
+  // Microsoft
+  'Segoe UI',
+
+  // Android
+  'Roboto',
+];
+
+// INPUT: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif
+// OUTPUT: Helvetica Neue
+export function getFirstFont(fonts) {
+  let regularFont = undefined;
+  let systemFont = undefined;
+
+  fonts.split(',').forEach((font) => {
+    font = font.trim().replace(/^["']+|["']+$/g, '');
+    if (font === '') {
+      return;
+    }
+
+    // See above for a note on OS-specific fonts
+    if (!regularFont && SYSTEM_FONTS.indexOf(font) < 0) {
+      regularFont = font;
+    }
+    if (!systemFont) {
+      systemFont = font;
+    }
+  });
+
+  if (regularFont) {
+    return regularFont;
+  }
+
+  if (systemFont) {
+    return systemFont;
+  }
+
+  return '-apple-system';
+}
+
 export function fixWhiteSpace(text, whiteSpace) {
   switch (whiteSpace) {
     case 'normal':

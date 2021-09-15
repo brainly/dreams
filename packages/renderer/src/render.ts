@@ -1,5 +1,17 @@
 // @ts-nocheck
 
+const fontWeightMap = {
+  '100': 'Thin',
+  '200': 'ExtraLight',
+  '300': 'Light',
+  '400': 'Regular',
+  '500': 'Medium',
+  '600': 'SemiBold',
+  '700': 'Bold',
+  '800': 'ExtraBold',
+  '900': 'Black',
+};
+
 async function traverse(parent, options) {
   console.log('traverse', parent, options);
   if (parent.nodes) {
@@ -173,7 +185,7 @@ async function createNode(data) {
         data.style.fontFamily === 'ProximaNova'
           ? 'Proxima Nova'
           : data?.style?.fontFamily || 'Roboto';
-      const style = data.style.fontPostScriptName.split('-')[1] || 'Regular';
+      const style = fontWeightMap[data?.style?.fontWeight] || 'Regular';
       console.log('style', {
         style,
       });
@@ -186,11 +198,11 @@ async function createNode(data) {
         style,
       };
 
-      node.textAlignHorizontal = data.style.textAlignHorizontal;
-      node.textAlignVertical = data.style.textAlignVertical;
-      node.fontSize = data.style.fontSize;
+      node.textAlignHorizontal = data.style?.textAlignHorizontal ?? 'LEFT';
+      node.textAlignVertical = data.style?.textAlignVertical ?? 'TOP';
+      node.fontSize = data.style?.fontSize ?? 14;
       node.textCase = data.style.textCase ?? 'ORIGINAL';
-      node.textAutoResize = data.style.textAutoResize;
+      node.textAutoResize = data.style?.textAutoResize ?? 'NONE';
 
       node.letterSpacing = {
         unit: 'PIXELS',

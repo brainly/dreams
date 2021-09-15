@@ -87,7 +87,7 @@ export class TextNode extends SceneNode {
         fontSize: this.fontSize,
         textAlignHorizontal: this.textAlignHorizontal,
         textAlignVertical: this.textAlignVertical,
-        letterSpacing: this.letterSpacing,
+        letterSpacing: this.letterSpacing.value,
         lineHeightPx:
           this.lineHeight.unit === 'PIXELS'
             ? this.lineHeight.value

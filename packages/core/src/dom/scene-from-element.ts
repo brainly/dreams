@@ -5,7 +5,7 @@ import { createXPathFromElement } from '../helpers/xpath';
 import { isNodeVisible, isTextVisible } from '../helpers/visibility';
 import { getRgba } from '../helpers/color';
 import { getSVGString } from '../helpers/svg';
-import { fixWhiteSpace } from '../helpers/text';
+import { fixWhiteSpace, getFirstFont } from '../helpers/text';
 
 const DEFAULT_VALUES = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -172,21 +172,49 @@ export function createSceneNodeFromElement(element) {
       const numberOfLines = textRanges.length;
       const textBCR = rangeHelper.getBoundingClientRect();
       const lineHeightInt = parseInt(styles.lineHeight, 10);
-      const textBCRHeight = textBCR.bottom - textBCR.top;
+      const color = getRgba(styles.color);
 
       const textValue = fixWhiteSpace(textNode.nodeValue, styles.whiteSpace);
 
       const text = createText();
+      text.x = textBCR.x;
+      text.y = textBCR.y;
+      text.width = textBCR.width;
+      text.height = textBCR.height;
       text.characters = textValue;
       text.fontName = {
-        family: styles.fontFamily,
+        family: getFirstFont(styles.fontFamily),
         style: 'Regular',
       };
-      text.fontSize = parseFloat(styles.fontSize);
+      text.fontSize = parseInt(styles.fontSize, 10);
       text.lineHeight = {
         value: lineHeightInt,
         unit: 'PIXELS',
       };
+      text.letterSpacing =
+        styles.letterSpacing !== 'normal'
+          ? {
+              value: parseFloat(styles.letterSpacing),
+              unit: 'PIXELS',
+            }
+          : {
+              value: 0,
+              unit: 'PERCENT',
+            };
+      text.fontWeight = parseFontWeight(styles.fontWeight);
+      if (color) {
+        text.fills = [
+          {
+            type: 'SOLID',
+            color: {
+              r: color.r,
+              g: color.g,
+              b: color.b,
+            },
+            opacity: color.a || 1,
+          },
+        ];
+      }
 
       sceneNode.appendChild(text);
     });
