@@ -40,7 +40,7 @@ export class FrameNode extends SceneNode {
   bottomLeftRadius: number;
   bottomRightRadius: number;
   opacity: number;
-  blendMode: 'PASS_THROUGH' | BlendMode;
+  blendMode: 'PASS_THROUGH' | BlendMode = 'PASS_THROUGH';
   isMask: boolean;
   effects: readonly Effect[];
   effectStyleId: string;

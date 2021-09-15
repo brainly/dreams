@@ -17,7 +17,7 @@ export class TextNode extends SceneNode {
 
   reactions: readonly Reaction[];
   opacity: number;
-  blendMode: 'PASS_THROUGH' | BlendMode;
+  blendMode: 'PASS_THROUGH' | BlendMode = 'PASS_THROUGH';
   isMask: boolean;
   effects: readonly Effect[];
   effectStyleId: string;
