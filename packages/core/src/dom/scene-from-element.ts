@@ -105,8 +105,8 @@ export async function createSceneNodeFromElement(element) {
 
   // background image
   if (isImage) {
-    const absoluteUrl = new URL(element.currentSrc, location.href);
-    const imageBase64 = await toDataURL(absoluteUrl);
+    const imageUrl = new URL(element.currentSrc);
+    const imageBase64 = await toDataURL(imageUrl);
     sceneNode.fills = [
       {
         type: 'IMAGE',
