@@ -10,7 +10,7 @@ const config = require('../webpack.config.js');
 const saveToJson = require('../lib/save');
 
 const opts = {
-  chromeFlags: ['--headless'],
+  chromeFlags: ['--headless', '--disable-web-security'],
   logLevel: 'info',
   output: 'json',
 };
