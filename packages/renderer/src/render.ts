@@ -181,21 +181,21 @@ async function createNode(data) {
 
       // We need to always set the family and style to something,
       // otherwise text styles set later will be ignored.
-      const family =
-        data.style.fontFamily === 'ProximaNova'
-          ? 'Proxima Nova'
-          : data?.style?.fontFamily || 'Roboto';
-      const style = fontWeightMap[data?.style?.fontWeight] || 'Regular';
-      console.log('style', {
-        style,
-      });
-      await figma.loadFontAsync({
-        family,
-        style,
-      });
+      // const family =
+      //   data.style.fontFamily === 'ProximaNova'
+      //     ? 'Proxima Nova'
+      //     : data?.style?.fontFamily || 'Roboto';
+      // const style = fontWeightMap[data?.style?.fontWeight] || 'Regular';
+      // console.log('style', {
+      //   style,
+      // });
+      // await figma.loadFontAsync({
+      //   family,
+      //   style,
+      // });
       node.fontName = {
-        family,
-        style,
+        family: 'Roboto',
+        style: 'Regular',
       };
 
       node.textAlignHorizontal = data.style?.textAlignHorizontal ?? 'LEFT';

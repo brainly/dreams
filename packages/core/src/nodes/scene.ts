@@ -39,7 +39,10 @@ export class SceneNode {
     this.relativeTransform[1][2] = value;
   }
 
-  appendChild(child: SceneNode) {
+  appendChild(child: SceneNode | null | undefined) {
+    if (!child) {
+      return;
+    }
     this.children.push(child);
     if (!(child.parent instanceof SceneNode)) {
       child.x -= this.x;

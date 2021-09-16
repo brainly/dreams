@@ -4,6 +4,7 @@ import {
   createPage,
   createFrame,
 } from '@packages/core';
+import 'regenerator-runtime';
 
 function bemClassToText(bemClass) {
   return bemClass.replace('sg-', '').replace('-', ' ');
@@ -25,7 +26,7 @@ function buildNameFromBEM(classes) {
   return 'text';
 }
 
-export function getFigmaDocument() {
+export async function getFigmaDocument() {
   const stylesheet = document.querySelector<HTMLAnchorElement>('head > link');
   let styleGuideVersion = '';
 
@@ -45,7 +46,7 @@ export function getFigmaDocument() {
       'section > .item, section > .inline-item'
     )
   )
-    .map((metaNode) => {
+    .map(async (metaNode) => {
       const componentNode = metaNode.firstChild as Element;
       const name = metaNode.title;
       const {
@@ -55,7 +56,10 @@ export function getFigmaDocument() {
         height,
       } = componentNode.getBoundingClientRect();
 
-      const frame = createSceneNodeFromElement(componentNode);
+      const frame = await createSceneNodeFromElement(componentNode);
+      if (!frame) {
+        return;
+      }
       frame.x = x;
       frame.y = y;
       frame.width = width;
@@ -70,17 +74,16 @@ export function getFigmaDocument() {
       ];
 
       Array.from(parentAndChildren)
-        .map((node) => {
-          const scene = createSceneNodeFromElement(node);
+        .map(async (node) => {
+          const scene = await createSceneNodeFromElement(node);
           //scene.name = buildNameFromBEM(node.classList);
           return scene;
         })
-        .filter(Boolean)
-        .forEach((scene) => frame.appendChild(scene));
+        .forEach(async (scene) => frame.appendChild(await scene));
 
       return frame;
     })
-    .forEach((frame) => page.appendChild(frame));
+    .forEach(async (frame) => page.appendChild(await frame));
 
   return figmaDocument.toJSON();
 }

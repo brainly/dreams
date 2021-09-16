@@ -22,18 +22,18 @@ export class FrameNode extends SceneNode {
   clipsContent: boolean;
   guides: readonly Guide[];
 
-  strokeCap: StrokeCap | typeof figma.mixed;
+  strokeCap: StrokeCap;
   strokeMiterLimit: number;
 
   strokes: readonly Paint[];
   strokeStyleId: string;
   strokeWeight: number;
-  strokeJoin: typeof figma.mixed | StrokeJoin;
+  strokeJoin: StrokeJoin;
   strokeAlign: 'CENTER' | 'INSIDE' | 'OUTSIDE';
   dashPattern: readonly number[];
-  fills: readonly Paint[] | typeof figma.mixed;
-  fillStyleId: string | typeof figma.mixed;
-  cornerRadius: number | typeof figma.mixed;
+  fills: readonly Paint[];
+  fillStyleId: string;
+  cornerRadius: number;
   cornerSmoothing: number;
   topLeftRadius: number;
   topRightRadius: number;
@@ -81,7 +81,16 @@ export class FrameNode extends SceneNode {
       strokeJoin: this.strokeJoin,
       strokeAlign: this.strokeAlign,
       dashPattern: this.dashPattern,
-      fills: this.fills,
+      fills: this.fills?.map((fill) =>
+        fill.type === 'IMAGE'
+          ? {
+              type: fill.type,
+              blendMode: fill.blendMode,
+              scaleMode: fill.scaleMode,
+              imageRef: fill.imageHash,
+            }
+          : fill
+      ),
       fillStyleId: this.fillStyleId,
       cornerRadius: this.cornerRadius,
       cornerSmoothing: this.cornerSmoothing,

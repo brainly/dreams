@@ -1,11 +1,14 @@
 import { createFrame } from '../nodes/frame';
+import type { FrameNode } from '../nodes/frame';
 import { createSvg } from '../nodes/svg';
+import type { SvgNode } from '../nodes/svg';
 import { createText } from '../nodes/text';
 import { createXPathFromElement } from '../helpers/xpath';
 import { isNodeVisible, isTextVisible } from '../helpers/visibility';
 import { getRgba } from '../helpers/color';
 import { getSVGString } from '../helpers/svg';
 import { fixWhiteSpace, getFirstFont } from '../helpers/text';
+import { toDataURL } from '../helpers/image';
 
 const DEFAULT_VALUES = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -39,12 +42,7 @@ function isSVGDescendant(element) {
   return element instanceof SVGElement && element.matches('svg *');
 }
 
-/**
- * @param {string} fontWeight font weight as provided by the browser
- * @return {number} normalized font weight
- */
 function parseFontWeight(fontWeight) {
-  // Support 'bold' and 'normal' for Electron compatibility.
   if (fontWeight === 'bold') {
     return 700;
   } else if (fontWeight === 'normal') {
@@ -53,13 +51,11 @@ function parseFontWeight(fontWeight) {
   return parseInt(fontWeight, 10);
 }
 
-export function createSceneNodeFromElement(element) {
+export async function createSceneNodeFromElement(element) {
   const bcr = element.getBoundingClientRect();
   const { x, y, width, height } = bcr;
-
   const styles = getComputedStyle(element);
 
-  // skip SVG child nodes as they are already covered by `new SVG(…)`
   if (isSVGDescendant(element)) {
     return null;
   }
@@ -69,8 +65,9 @@ export function createSceneNodeFromElement(element) {
   }
 
   const isSVG = element.nodeName === 'svg';
+  const isImage = element.nodeName === 'IMG' && element.currentSrc;
 
-  let sceneNode;
+  let sceneNode: FrameNode | SvgNode;
 
   if (isSVG) {
     console.log('SVG!!!');
@@ -83,13 +80,13 @@ export function createSceneNodeFromElement(element) {
 
   sceneNode.name = createXPathFromElement(element);
 
-  // position
+  // layout
   sceneNode.x = x;
   sceneNode.y = y;
   sceneNode.width = width;
   sceneNode.height = height;
 
-  // background
+  // background color
   const backgroundColor = getRgba(styles.backgroundColor);
 
   if (backgroundColor) {
@@ -102,6 +99,20 @@ export function createSceneNodeFromElement(element) {
           b: backgroundColor.b,
         },
         opacity: backgroundColor.a || 1,
+      },
+    ];
+  }
+
+  // background image
+  if (isImage) {
+    const absoluteUrl = new URL(element.currentSrc, location.href);
+    const imageBase64 = await toDataURL(absoluteUrl);
+    sceneNode.fills = [
+      {
+        type: 'IMAGE',
+        blendMode: 'NORMAL',
+        scaleMode: 'FILL',
+        imageHash: imageBase64 as string,
       },
     ];
   }

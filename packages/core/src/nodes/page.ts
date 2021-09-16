@@ -26,7 +26,10 @@ export class PageNode {
   parent: DocumentNode | null = null;
   readonly children: SceneNode[] = [];
 
-  appendChild(child: SceneNode) {
+  appendChild(child: SceneNode | null | undefined) {
+    if (!child) {
+      return;
+    }
     this.children.push(child);
     child.parent = this;
   }
