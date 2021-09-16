@@ -1,10 +1,9 @@
+import 'regenerator-runtime';
 import {
   createSceneNodeFromElement,
   createDocument,
   createPage,
-  createFrame,
 } from '@packages/core';
-import 'regenerator-runtime';
 
 function bemClassToText(bemClass) {
   return bemClass.replace('sg-', '').replace('-', ' ');
@@ -41,49 +40,47 @@ export async function getFigmaDocument() {
   figmaDocument.appendChild(page);
   page.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
 
-  Array.from(
+  const metaNodes = Array.from(
     document.querySelectorAll<HTMLElement>(
       'section > .item, section > .inline-item'
     )
-  )
-    .map(async (metaNode) => {
-      const componentNode = metaNode.firstChild as Element;
-      const name = metaNode.title;
-      const {
-        left: x,
-        top: y,
-        width,
-        height,
-      } = componentNode.getBoundingClientRect();
+  );
 
-      const frame = await createSceneNodeFromElement(componentNode);
-      if (!frame) {
-        return;
-      }
-      frame.x = x;
-      frame.y = y;
-      frame.width = width;
-      frame.height = height;
+  for (const metaNode of metaNodes) {
+    const componentNode = metaNode.firstChild as Element;
+    const name = metaNode.title;
+    const {
+      left: x,
+      top: y,
+      width,
+      height,
+    } = componentNode.getBoundingClientRect();
 
-      frame.id = name;
-      frame.name = name;
+    const frame = await createSceneNodeFromElement(componentNode);
+    if (!frame) {
+      return;
+    }
+    frame.x = x;
+    frame.y = y;
+    frame.width = width;
+    frame.height = height;
 
-      const parentAndChildren = [
-        // @ts-ignore
-        ...componentNode.querySelectorAll('*'),
-      ];
+    frame.id = name;
+    frame.name = name;
 
-      Array.from(parentAndChildren)
-        .map(async (node) => {
-          const scene = await createSceneNodeFromElement(node);
-          //scene.name = buildNameFromBEM(node.classList);
-          return scene;
-        })
-        .forEach(async (scene) => frame.appendChild(await scene));
+    const parentAndChildren = [
+      // @ts-ignore
+      ...componentNode.querySelectorAll('*'),
+    ];
 
-      return frame;
-    })
-    .forEach(async (frame) => page.appendChild(await frame));
+    for (const node of parentAndChildren) {
+      const scene = await createSceneNodeFromElement(node);
+      //scene.name = buildNameFromBEM(node.classList);
+      frame.appendChild(scene);
+    }
+
+    page.appendChild(frame);
+  }
 
   return figmaDocument.toJSON();
 }
