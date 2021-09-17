@@ -16,14 +16,16 @@ async function createImageHash(base64string) {
   figma.ui.postMessage({ type: 'createImageFromString', data: base64string });
 
   // wait for the ui worker to finish
-  const newBytes: Uint8Array = await new Promise((resolve, reject) => {
-    figma.ui.on('message', function callback(data) {
-      if (data.type === 'createImageFromString') {
-        resolve(data.data);
+  const newBytes: Uint8Array = await new Promise((resolve) => {
+    figma.ui.on('message', function callback(message) {
+      if (message.type === 'createImageFromString') {
+        console.log('createImageFromString', message);
+        resolve(message.imageData);
         figma.ui.off('message', callback);
       }
     });
   });
+  console.log('newBytes', newBytes);
   const { hash } = figma.createImage(newBytes);
   console.log('createImageHash', hash);
   return hash;
@@ -76,7 +78,7 @@ async function mapDataToNodeProps(data) {
         vertical: data.constraints.vertical === 'TOP' ? 'MIN' : 'MAX',
       },
     }),
-    fills:
+    fills: await Promise.all(
       data.fills?.map(async (fill) => {
         return fill.type === 'SOLID'
           ? {
@@ -101,7 +103,8 @@ async function mapDataToNodeProps(data) {
               blendMode: fill.blendMode,
             }
           : fill;
-      }) ?? [],
+      }) ?? []
+    ),
     strokes:
       data.strokes?.map((stroke) => ({
         ...stroke,
