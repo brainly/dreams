@@ -17,11 +17,11 @@ function readTextFile(file: File) {
   });
 }
 
-async function createImageFromString(bytes: string) {
+async function createImageFromString(data: string) {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  const imageData = await decodeBase64(canvas, ctx, bytes);
-  const bytes = await encode(imageData);
+  const imageData = await decodeBase64(canvas, ctx, data);
+  const bytes = await encode(canvas, ctx, imageData);
   return bytes;
 }
 

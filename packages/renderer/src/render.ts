@@ -77,7 +77,7 @@ async function mapDataToNodeProps(data) {
       },
     }),
     fills:
-      data.fills?.map((fill) => {
+      data.fills?.map(async (fill) => {
         return fill.type === 'SOLID'
           ? {
               ...fill,
