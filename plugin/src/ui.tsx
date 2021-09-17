@@ -1,7 +1,8 @@
 //@ts-nocheck
-
+import 'regenerator-runtime';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { decodeBase64, encode } from './canvas';
 
 function readTextFile(file: File) {
   return new Promise((resolve, reject) => {
@@ -14,6 +15,14 @@ function readTextFile(file: File) {
     };
     reader.readAsText(file);
   });
+}
+
+async function createImageFromString(bytes: string) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const imageData = await decodeBase64(canvas, ctx, bytes);
+  const bytes = await encode(imageData);
+  return bytes;
 }
 
 const App = () => {
@@ -55,6 +64,30 @@ const App = () => {
   const handleClear = () => {
     parent.postMessage({ pluginMessage: { type: 'clear' } }, '*');
   };
+
+  React.useEffect(() => {
+    async function messageHandler(e) {
+      const { pluginMessage } = e.data;
+      if (pluginMessage) {
+        switch (pluginMessage.type) {
+          case 'createImageFromString':
+            const imageData = await createImageFromString(pluginMessage.data);
+            parent.postMessage(
+              { pluginMessage: { type: 'createImageFromString', imageData } },
+              '*'
+            );
+            break;
+          default:
+            throw new Error(`Unknown message type: ${pluginMessage.type}`);
+            break;
+        }
+      }
+    }
+    window.addEventListener('message', messageHandler);
+    return () => {
+      window.removeEventListener('message', messageHandler);
+    };
+  });
 
   return (
     <div>

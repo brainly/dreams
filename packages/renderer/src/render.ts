@@ -12,6 +12,23 @@ const fontWeightMap = {
   '900': 'Black',
 };
 
+async function createImageHash(base64string) {
+  figma.ui.postMessage({ type: 'createImageFromString', data: base64string });
+
+  // wait for the ui worker to finish
+  const newBytes: Uint8Array = await new Promise((resolve, reject) => {
+    figma.ui.on('message', function callback(data) {
+      if (data.type === 'createImageFromString') {
+        resolve(data.data);
+        figma.ui.off('message', callback);
+      }
+    });
+  });
+  const { hash } = figma.createImage(newBytes);
+  console.log('createImageHash', hash);
+  return hash;
+}
+
 async function traverse(parent, options) {
   console.log('traverse', parent, options);
   if (parent.nodes) {
@@ -45,7 +62,7 @@ async function traverse(parent, options) {
   parent.type && (await options?.visit(parent));
 }
 
-function mapDataToNodeProps(data) {
+async function mapDataToNodeProps(data) {
   // remove read only props
   const { id, type, children, layoutGrids, ...writable } = data;
 
@@ -70,6 +87,18 @@ function mapDataToNodeProps(data) {
                 g: fill.color.g,
                 b: fill.color.b,
               },
+            }
+          : fill.type === 'IMAGE'
+          ? {
+              type: fill.type,
+              scaleMode: fill.scaleMode,
+              imageHash: await createImageHash(fill.imageRef),
+              scalingFactor: fill.scalingFactor,
+              imageTransform: fill.imageTransform,
+              filters: fill.filters,
+              visible: fill.visible,
+              opacity: fill.opacity,
+              blendMode: fill.blendMode,
             }
           : fill;
       }) ?? [],
@@ -101,9 +130,9 @@ function mapDataToNodeProps(data) {
   return props;
 }
 
-function assignBasicProps(node, data) {
+async function assignBasicProps(node, data) {
   console.log('assignBasicProps', data);
-  const props = mapDataToNodeProps(data);
+  const props = await mapDataToNodeProps(data);
   console.log({ props });
 
   // Common props.
@@ -248,7 +277,7 @@ async function createNode(data) {
   }
 
   console.log('node created', node.type, node.id);
-  assignBasicProps(node, data);
+  await assignBasicProps(node, data);
 
   return node;
 }
