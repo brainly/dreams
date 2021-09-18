@@ -221,15 +221,17 @@ async function createNode(data) {
       console.log('style', {
         style,
       });
+
+      console.log('loading font', family, style);
       await figma.loadFontAsync({
         family,
         style,
       });
-      // Uncomment to use default fonts
-      // node.fontName = {
-      //   family: 'Roboto',
-      //   style: 'Regular',
-      // };
+
+      node.fontName = {
+        family,
+        style,
+      };
 
       node.textAlignHorizontal = data.style?.textAlignHorizontal ?? 'LEFT';
       node.textAlignVertical = data.style?.textAlignVertical ?? 'TOP';
