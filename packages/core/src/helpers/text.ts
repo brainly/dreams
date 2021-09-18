@@ -61,3 +61,16 @@ export function fixWhiteSpace(text, whiteSpace) {
 
   return text;
 }
+
+export function mapTextTransform(textTransform) {
+  switch (textTransform) {
+    case 'capitalize':
+      return 'TITLE';
+    case 'uppercase':
+      return 'UPPER';
+    case 'lowercase':
+      return 'LOWER';
+    default:
+      return 'ORIGINAL';
+  }
+}

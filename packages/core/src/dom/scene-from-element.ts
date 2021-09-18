@@ -7,7 +7,7 @@ import { createXPathFromElement } from '../helpers/xpath';
 import { isNodeVisible, isTextVisible } from '../helpers/visibility';
 import { getRgba } from '../helpers/color';
 import { getSVGString } from '../helpers/svg';
-import { fixWhiteSpace, getFirstFont } from '../helpers/text';
+import { fixWhiteSpace, getFirstFont, mapTextTransform } from '../helpers/text';
 import { toDataURL } from '../helpers/image';
 
 const DEFAULT_VALUES = {
@@ -213,6 +213,7 @@ export async function createSceneNodeFromElement(element) {
               unit: 'PERCENT',
             };
       text.fontWeight = parseFontWeight(styles.fontWeight);
+      text.textCase = mapTextTransform(styles.textTransform);
       if (color) {
         text.fills = [
           {
