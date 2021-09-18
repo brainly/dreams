@@ -111,7 +111,7 @@ export async function createSceneNodeFromElement(element) {
       {
         type: 'IMAGE',
         blendMode: 'NORMAL',
-        scaleMode: 'FILL',
+        scaleMode: 'FIT',
         imageHash: imageBase64 as string,
       },
     ];
