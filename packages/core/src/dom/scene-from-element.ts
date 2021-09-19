@@ -185,7 +185,6 @@ export async function createSceneNodeFromElement(element) {
       const lineHeight = parseInt(styles.lineHeight, 10);
       const fontSize = parseInt(styles.fontSize, 10);
       const color = getRgba(styles.color);
-      const textBCRHeight = textBCR.bottom - textBCR.top;
 
       const textValue = fixWhiteSpace(textNode.nodeValue, styles.whiteSpace);
 
