@@ -68,12 +68,12 @@ export async function getFigmaDocument() {
     frame.id = name;
     frame.name = name;
 
-    const parentAndChildren = [
+    const componentChildren = [
       // @ts-ignore
       ...componentNode.querySelectorAll('*'),
     ];
 
-    for (const node of parentAndChildren) {
+    for (const node of componentChildren) {
       const scene = await createSceneNodeFromElement(node);
       //scene.name = buildNameFromBEM(node.classList);
       frame.appendChild(scene);

@@ -182,8 +182,10 @@ export async function createSceneNodeFromElement(element) {
       const textRanges = Array.from(rangeHelper.getClientRects());
       const numberOfLines = textRanges.length;
       const textBCR = rangeHelper.getBoundingClientRect();
-      const lineHeightInt = parseInt(styles.lineHeight, 10);
+      const lineHeight = parseInt(styles.lineHeight, 10);
+      const fontSize = parseInt(styles.fontSize, 10);
       const color = getRgba(styles.color);
+      const textBCRHeight = textBCR.bottom - textBCR.top;
 
       const textValue = fixWhiteSpace(textNode.nodeValue, styles.whiteSpace);
 
@@ -193,15 +195,23 @@ export async function createSceneNodeFromElement(element) {
       text.width = textBCR.width;
       text.height = textBCR.height;
       text.characters = textValue;
+
       text.fontName = {
         family: getFirstFont(styles.fontFamily),
         style: 'Regular',
       };
-      text.fontSize = parseInt(styles.fontSize, 10);
+      text.fontSize = fontSize;
       text.lineHeight = {
-        value: lineHeightInt,
+        value: lineHeight,
         unit: 'PIXELS',
       };
+      text.fontWeight = parseFontWeight(styles.fontWeight);
+
+      // center text vertically when lineheight is different than font size
+      if (lineHeight !== fontSize) {
+        text.textAlignVertical = 'CENTER';
+      }
+
       text.letterSpacing =
         styles.letterSpacing !== 'normal'
           ? {
@@ -212,7 +222,7 @@ export async function createSceneNodeFromElement(element) {
               value: 0,
               unit: 'PERCENT',
             };
-      text.fontWeight = parseFontWeight(styles.fontWeight);
+
       text.textCase = mapTextTransform(styles.textTransform);
       if (color) {
         text.fills = [
