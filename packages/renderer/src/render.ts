@@ -12,6 +12,8 @@ const fontWeightMap = {
   '900': 'Black',
 };
 
+const loadedFonts = new Set();
+
 async function createImageHash(base64string) {
   figma.ui.postMessage({ type: 'createImageFromString', data: base64string });
 
@@ -222,11 +224,15 @@ async function createNode(data) {
         style,
       });
 
-      console.log('loading font', family, style);
-      await figma.loadFontAsync({
-        family,
-        style,
-      });
+      const fontToLoad = `${family}-${style}`;
+      if (!loadedFonts.has(fontToLoad)) {
+        console.log('loading font', family, style);
+        await figma.loadFontAsync({
+          family,
+          style,
+        });
+        loadedFonts.add(fontToLoad);
+      }
 
       node.fontName = {
         family,
