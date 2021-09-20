@@ -92,13 +92,23 @@ const App = () => {
   });
 
   return (
-    <div>
-      <h2 className="bg-black h-[152px] flex justify-center items-center text-white uppercase font-sans text-xs tracking-wider">
+    <div className="font-sans text-xs">
+      <h2 className="bg-black h-[152px] flex justify-center items-center text-white uppercase text-xs tracking-wider">
         Dreams
       </h2>
-      <p>Open exported json figma file.</p>
-      <button onClick={handleImport}>Import file</button>
-      <button onClick={handleClear}>Clear document</button>
+      <div className="py-2">
+        <div className="grid-components px-2 items-center relative h-8">
+          <div className="col-span-full flex justify-between w-full">
+            <div className="pl-2">Import</div>
+            <button onClick={handleClear}>Clear document</button>
+          </div>
+        </div>
+        <div className="grid-components px-2 items-center relative h-8 ">
+          <button className="col-span-26 col-start-2" onClick={handleImport}>
+            Import file
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
