@@ -77,6 +77,9 @@ module.exports = {
       'Modal shadow': '0px 2px 14px 0px rgba(0,0,0,0.15)',
     },
     extend: {
+      borderRadius: {
+        3: '3px',
+      },
       gridTemplateColumns: {
         components: 'repeat(28,8px)',
       },
