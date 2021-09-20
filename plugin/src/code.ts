@@ -1,6 +1,9 @@
 import { render } from '@packages/renderer';
 
-figma.showUI(__html__);
+figma.showUI(__html__, {
+  width: 240,
+  height: 248,
+});
 
 function importJson(json: unknown) {
   console.log('Import json');
