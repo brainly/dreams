@@ -99,7 +99,7 @@ const App = () => {
           created with ❤️ by coderitual
         </span>
       </h2>
-      <div className="py-2">
+      <div className="py-2 text-black-8">
         <div className="grid grid-cols-components px-2 items-center relative h-8">
           <div className="col-span-full flex justify-between w-full h-8">
             <div className="pl-2 flex items-center font-semibold">Import</div>
