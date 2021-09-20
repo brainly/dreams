@@ -92,19 +92,22 @@ const App = () => {
   });
 
   return (
-    <div className="font-sans text-xs">
+    <div className="font-sans text-ui11">
       <h2 className="bg-black h-[152px] flex justify-center items-center text-white uppercase text-xs tracking-wider">
         Dreams
       </h2>
       <div className="py-2">
-        <div className="grid-components px-2 items-center relative h-8">
-          <div className="col-span-full flex justify-between w-full">
-            <div className="pl-2">Import</div>
+        <div className="grid grid-cols-components px-2 items-center relative h-8">
+          <div className="col-span-full flex justify-between w-full h-8">
+            <div className="pl-2 flex items-center font-semibold">Import</div>
             <button onClick={handleClear}>Clear document</button>
           </div>
         </div>
-        <div className="grid-components px-2 items-center relative h-8 ">
-          <button className="col-span-26 col-start-2" onClick={handleImport}>
+        <div className="grid grid-cols-components px-2 items-center relative h-8 my-2">
+          <button
+            className="col-span-26 col-start-2 h-8 border border-b border-black rounded-md"
+            onClick={handleImport}
+          >
             Import file
           </button>
         </div>
