@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "watch": "webpack --mode=development --watch",
+    "serve": "webpack && webpack serve --mode development",
     "clean": "rm -rf dist"
   },
   "author": "@coderitual",

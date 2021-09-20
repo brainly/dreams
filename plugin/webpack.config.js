@@ -15,6 +15,10 @@ module.exports = (env, argv) => ({
     code: './src/code.ts',
   },
 
+  devServer: {
+    port: 3000,
+  },
+
   module: {
     rules: [
       {
@@ -44,6 +48,7 @@ module.exports = (env, argv) => ({
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '',
   },
 
   plugins: [
