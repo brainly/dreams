@@ -4,6 +4,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { decodeBase64, encode } from './canvas';
 
+import '../styles/global.css';
+
 function readTextFile(file: File) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -91,7 +93,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Brainly Dreams</h2>
+      <h2 className="bg-black">Brainly Dreams</h2>
       <p>Open exported json figma file.</p>
       <button onClick={handleImport}>Import file</button>
       <button onClick={handleClear}>Clear document</button>
