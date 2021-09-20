@@ -93,7 +93,9 @@ const App = () => {
 
   return (
     <div>
-      <h2 className="bg-black">Brainly Dreams</h2>
+      <h2 className="bg-black h-[152px] flex justify-center items-center text-white uppercase font-sans text-xs tracking-wider">
+        Dreams
+      </h2>
       <p>Open exported json figma file.</p>
       <button onClick={handleImport}>Import file</button>
       <button onClick={handleClear}>Clear document</button>
