@@ -51,7 +51,6 @@ export class TextNode extends SceneNode {
   toJSON() {
     return {
       ...super.toJSON(),
-      textAutoResize: this.textAutoResize,
       paragraphIndent: this.paragraphIndent,
       paragraphSpacing: this.paragraphSpacing,
       autoRename: this.autoRename,
@@ -84,6 +83,7 @@ export class TextNode extends SceneNode {
         fontFamily: this.fontName.family,
         fontWeight: this.fontWeight,
         textCase: this.textCase,
+        textAutoResize: this.textAutoResize,
         fontSize: this.fontSize,
         textAlignHorizontal: this.textAlignHorizontal,
         textAlignVertical: this.textAlignVertical,

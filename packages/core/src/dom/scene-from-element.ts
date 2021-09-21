@@ -211,6 +211,10 @@ export async function createSceneNodeFromElement(element) {
         text.textAlignVertical = 'CENTER';
       }
 
+      if (numberOfLines === 1) {
+        text.textAutoResize = 'WIDTH_AND_HEIGHT';
+      }
+
       text.letterSpacing =
         styles.letterSpacing !== 'normal'
           ? {
