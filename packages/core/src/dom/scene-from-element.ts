@@ -191,8 +191,8 @@ export async function createSceneNodeFromElement(element) {
       const text = createText();
       text.x = textBCR.x;
       text.y = textBCR.y;
-      text.width = textBCR.width;
-      text.height = textBCR.height;
+      text.width = Math.ceil(textBCR.width);
+      text.height = Math.ceil(textBCR.height);
       text.characters = textValue;
 
       text.fontName = {
