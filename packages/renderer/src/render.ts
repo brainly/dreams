@@ -243,7 +243,9 @@ async function createNode(data) {
       node.textAlignVertical = data.style?.textAlignVertical ?? 'TOP';
       node.fontSize = data.style?.fontSize ?? 14;
       node.textCase = data.style.textCase ?? 'ORIGINAL';
-      node.textAutoResize = data.style?.textAutoResize ?? 'NONE';
+
+      // We need to explicitly disable autoresize during this phase to keep correct placement after setting x,y props.
+      node.textAutoResize = 'NONE';
 
       node.letterSpacing = {
         unit: 'PIXELS',
@@ -294,6 +296,8 @@ async function createNode(data) {
   return node;
 }
 
+let scrollAndZoom = {};
+
 export async function render(json) {
   // Load default font.
   await figma.loadFontAsync({
@@ -314,6 +318,15 @@ export async function render(json) {
         }
 
         nodes.set(node.id, baseNode);
+
+        if (
+          !baseNode.name.startsWith('id(')
+          // baseNode.name.split('/').length >= 2
+        ) {
+          figma.viewport.scrollAndZoomIntoView([baseNode]);
+          //await new Promise((resolve) => setTimeout(resolve, 0));
+        }
+
         node.children?.forEach((child) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
