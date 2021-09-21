@@ -191,6 +191,7 @@ export async function createSceneNodeFromElement(element) {
       const text = createText();
       text.x = textBCR.x;
       text.y = textBCR.y;
+      // We use next integer value instead of float to avoid rounding errors
       text.width = Math.ceil(textBCR.width);
       text.height = Math.ceil(textBCR.height);
       text.characters = textValue;
