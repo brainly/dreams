@@ -319,14 +319,6 @@ export async function render(json) {
 
         nodes.set(node.id, baseNode);
 
-        if (
-          !baseNode.name.startsWith('id(')
-          // baseNode.name.split('/').length >= 2
-        ) {
-          figma.viewport.scrollAndZoomIntoView([baseNode]);
-          //await new Promise((resolve) => setTimeout(resolve, 0));
-        }
-
         node.children?.forEach((child) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
