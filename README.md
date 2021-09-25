@@ -1,4 +1,4 @@
-![alt text](https://github.com/brainly/dreams/blob/master/docs/Hero.png?raw=true)
+![alt text](https://github.com/brainly/dreams/blob/master/docs/assets/Hero.png?raw=true)
 
 > Collaboration between Designers and Developers made easy.
 
