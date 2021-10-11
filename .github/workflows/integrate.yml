@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-plugin:
-    name: Build Plugins
+    name: Build Plugin
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
