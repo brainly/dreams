@@ -1,0 +1,35 @@
+name: Continuos Integration
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-plugin:
+    name: Build Plugin
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Build Plugin
+        run: yarn workspace plugin build
+
+  execute-runner:
+    name: Execute Runner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Execute Runner
+        run: yarn workspace runner start
