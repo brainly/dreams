@@ -6,6 +6,14 @@
     "runner",
     "packages/*"
   ],
+  "scripts": {
+    "dreams:run": "yarn workspace runner start",
+    "dreams:watch": "yarn workspace runner watch",
+    "dreams:clean": "yarn workspace runner clean",
+    "plugin:build": "yarn workspace plugin build",
+    "plugin:watch": "yarn workspace plugin watch",
+    "plugin:clean": "yarn workspace plugin clean"
+  },
   "repository": "git@github.com:brainly/dreams.git",
   "author": "coderitual <skowronkow@gmail.com>"
 }
