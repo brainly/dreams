@@ -7,9 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dreams:run": "yarn workspace runner start",
-    "dreams:watch": "yarn workspace runner watch",
-    "dreams:clean": "yarn workspace runner clean",
+    "runner:start": "yarn workspace runner start",
+    "runner:watch": "yarn workspace runner watch",
+    "runner:clean": "yarn workspace runner clean",
     "plugin:build": "yarn workspace plugin build",
     "plugin:watch": "yarn workspace plugin watch",
     "plugin:clean": "yarn workspace plugin clean"
