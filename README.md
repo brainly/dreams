@@ -1,6 +1,6 @@
 <img width="100%" alt="Dreams" src ="docs/assets/dreams.svg"/>
 
-> Automatically sync your components with figma
+> Automatically sync html components with figma
 
 # Intro
 
