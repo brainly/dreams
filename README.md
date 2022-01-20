@@ -1,6 +1,6 @@
-![alt text](https://github.com/brainly/dreams/blob/master/docs/assets/Hero.png?raw=true)
+<img width="100%" alt="Dreams" src ="docs/assets/dreams.svg"/>
 
-> Collaboration between Designers and Developers made easy.
+> Link your components with figma
 
 # Intro
 
