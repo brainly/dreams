@@ -1,7 +1,7 @@
 <img width="100%" alt="Dreams" src ="docs/assets/dreams.svg"/>
 
-> Automatically sync html components with figma
+> Figma plugin to import html components into figma design system.
 
 # Intro
 
-Figma plugin to import coded components into figma design system.
+Work in Progress
