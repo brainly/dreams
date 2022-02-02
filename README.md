@@ -1,7 +1,8 @@
-![alt text](https://github.com/brainly/dreams/blob/master/docs/assets/Hero.png?raw=true)
+<img width="100%" alt="Dreams" src ="docs/assets/dreams-light.svg#gh-light-mode-only"/>
+<img width="100%" alt="Dreams" src ="docs/assets/dreams-dark.svg#gh-dark-mode-only"/>
 
-> Collaboration between Designers and Developers made easy.
+> Figma plugin to import html components into figma design system.
 
 # Intro
 
-Figma plugin to sync coded components with figma design system.
+Work in Progress
