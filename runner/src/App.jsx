@@ -29,7 +29,7 @@ const FixesLoader = React.lazy(() => import('./fixes/FixesLoader'));
 
 const App = () => (
   <div>
-    <LogoPage />
+    <ButtonsPage />
 
     {/* 
     <ColorMasksPage />

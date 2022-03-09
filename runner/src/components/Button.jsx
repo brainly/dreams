@@ -4,7 +4,7 @@ import Button, {
   BUTTON_SIZE,
 } from 'brainly-style-guide/src/components/buttons/Button';
 import Icon from 'brainly-style-guide/src/components/icons/Icon';
-import {getValues} from '../utils/getValues';
+import { getValues } from '../utils/getValues';
 
 const noToggleTypes = [
   'solid',
@@ -15,17 +15,23 @@ const noToggleTypes = [
   'facebook',
 ];
 
+// Limit scope to only one button type
+// filter BUTTON_TYPE object and leave only solid-blue
+// TODO: use all types after initial phase
+const BUTTON_TYPE_ONLY = Object.keys(BUTTON_TYPE)
+  .filter((key) => BUTTON_TYPE[key] === 'solid-blue')
+  .reduce((acc, val) => ({ ...acc, [key]: BUTTON_TYPE[val] }), {});
+
 const ButtonsPage = () => {
   const buttonsVariations = [];
 
-  getValues(BUTTON_TYPE, false).forEach(type => {
-    getValues(BUTTON_SIZE, false).forEach(size => {
-      [null, 'peach', 'mustard', 'blue', 'default'].forEach(toggle => {
-        [false, true].forEach(disabled => {
-          [false, true, 'reversed-order', 'icon-only'].forEach(icon => {
+  getValues(BUTTON_TYPE_ONLY, false).forEach((type) => {
+    getValues(BUTTON_SIZE, false).forEach((size) => {
+      [null, 'peach', 'mustard', 'blue', 'default'].forEach((toggle) => {
+        [false, true].forEach((disabled) => {
+          [false, true, 'reversed-order', 'icon-only'].forEach((icon) => {
             if (
-              (toggle &&
-                noToggleTypes.includes(type)) ||
+              (toggle && noToggleTypes.includes(type)) ||
               (toggle === 'peach' && type === 'transparent-mustard') ||
               (toggle === 'blue' && type === 'transparent-mustard') ||
               (toggle === 'default' && type === 'transparent-mustard') ||
@@ -74,15 +80,21 @@ const ButtonsPage = () => {
               iconVariant = '_default';
             }
 
-            const name = `Button/${type}/${size}/${iconVariant}/${togglableName}${disabled ? 'disabled' : '_default'}`;
+            const name = `Button/${type}/${size}/${iconVariant}/${togglableName}${
+              disabled ? 'disabled' : '_default'
+            }`;
 
             buttonsVariations.push(
-              <div title={name} className='inline-item'>
+              <div title={name} className="inline-item">
                 <Button
                   icon={
-                    icon ?
-                      <Icon type={toggle ? 'heart' : 'heart_outlined'} color='adaptive' size={iconSize} /> :
-                      null
+                    icon ? (
+                      <Icon
+                        type={toggle ? 'heart' : 'heart_outlined'}
+                        color="adaptive"
+                        size={iconSize}
+                      />
+                    ) : null
                   }
                   toggle={toggle}
                   type={type}
