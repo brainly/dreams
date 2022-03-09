@@ -1,23 +1,25 @@
 import { FrameNode } from './frame';
 
-export class ComponentNode extends FrameNode {
+export class InstanceNode extends FrameNode {
   //@ts-ignore
-  readonly type = 'COMPONENT';
+  readonly type = 'INSTANCE';
 
   constructor() {
     super();
   }
 
+  componentId: string;
   variantProperties: { [property: string]: string } | null;
 
   toJSON() {
     return {
       ...super.toJSON(),
+      componentId: this.componentId,
       variantProperties: this.variantProperties,
     };
   }
 }
 
-export function createComponent() {
-  return new ComponentNode();
+export function createInstance() {
+  return new InstanceNode();
 }
