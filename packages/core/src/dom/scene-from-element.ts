@@ -86,6 +86,9 @@ export async function createSceneNodeFromElement(element) {
   sceneNode.width = width;
   sceneNode.height = height;
 
+  // blending
+  sceneNode.opacity = parseFloat(styles.opacity);
+
   // background color
   const backgroundColor = getRgba(styles.backgroundColor);
 
