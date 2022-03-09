@@ -1,6 +1,5 @@
 {
   "extends": "../tsconfig.base.json",
-  "lib": ["DOM", "DOM.Iterable", "ES2015.Iterable"],
   "include": ["src/**/*", "./types"],
   "references": [{ "path": "../packages/core" }]
 }

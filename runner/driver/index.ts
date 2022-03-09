@@ -56,17 +56,19 @@ export async function getFigmaDocument() {
       height,
     } = componentNode.getBoundingClientRect();
 
-    const frame = await createSceneNodeFromElement(componentNode);
-    if (!frame) {
+    const component = await createSceneNodeFromElement(componentNode, {
+      component: true,
+    });
+    if (!component) {
       return;
     }
-    frame.x = x;
-    frame.y = y;
-    frame.width = width;
-    frame.height = height;
+    component.x = x;
+    component.y = y;
+    component.width = width;
+    component.height = height;
 
-    frame.id = name;
-    frame.name = name;
+    component.id = name;
+    component.name = name;
 
     const componentChildren = [
       // @ts-ignore
@@ -76,10 +78,10 @@ export async function getFigmaDocument() {
     for (const node of componentChildren) {
       const scene = await createSceneNodeFromElement(node);
       //scene.name = buildNameFromBEM(node.classList);
-      frame.appendChild(scene);
+      component.appendChild(scene);
     }
 
-    page.appendChild(frame);
+    page.appendChild(component);
   }
 
   return figmaDocument.toJSON();

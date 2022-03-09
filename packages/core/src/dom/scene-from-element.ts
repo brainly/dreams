@@ -1,5 +1,7 @@
 import { createFrame } from '../nodes/frame';
 import type { FrameNode } from '../nodes/frame';
+import { createComponent } from '../nodes/component';
+import type { ComponentNode } from '../nodes/component';
 import { createSvg } from '../nodes/svg';
 import type { SvgNode } from '../nodes/svg';
 import { createText } from '../nodes/text';
@@ -51,7 +53,10 @@ function parseFontWeight(fontWeight) {
   return parseInt(fontWeight, 10);
 }
 
-export async function createSceneNodeFromElement(element) {
+export async function createSceneNodeFromElement(
+  element,
+  options: { component: boolean } = { component: false }
+) {
   const bcr = element.getBoundingClientRect();
   const { x, y, width, height } = bcr;
   const styles = getComputedStyle(element);
@@ -67,15 +72,17 @@ export async function createSceneNodeFromElement(element) {
   const isSVG = element.nodeName === 'svg';
   const isImage = element.nodeName === 'IMG' && element.currentSrc;
 
-  let sceneNode: FrameNode | SvgNode;
+  let sceneNode: FrameNode | ComponentNode | SvgNode;
 
   if (isSVG) {
-    console.log('SVG!!!');
     sceneNode = createSvg();
     sceneNode.content = getSVGString(element);
   } else {
-    console.log('NO SVG!!!');
-    sceneNode = createFrame();
+    if (options.component) {
+      sceneNode = createComponent();
+    } else {
+      sceneNode = createFrame();
+    }
   }
 
   sceneNode.name = createXPathFromElement(element);
