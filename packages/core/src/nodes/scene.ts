@@ -54,6 +54,8 @@ export class SceneNode {
   visible: boolean;
   locked: boolean;
 
+  meta: JSONValue;
+
   toJSON() {
     return {
       id: this.id,
@@ -73,6 +75,7 @@ export class SceneNode {
       },
       visible: this.visible,
       locked: this.locked,
+      meta: this.meta,
     };
   }
 }
