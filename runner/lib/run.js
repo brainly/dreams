@@ -7,7 +7,7 @@ const webpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 const config = require('../webpack.config.js');
 
-const saveToJson = require('../lib/save');
+const saveToJson = require('./save');
 
 const opts = {
   chromeFlags: ['--headless', '--disable-web-security'],
