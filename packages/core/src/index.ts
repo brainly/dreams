@@ -3,6 +3,7 @@ export { DocumentNode, createDocument } from './nodes/document';
 export { PageNode, createPage } from './nodes/page';
 export { FrameNode, createFrame } from './nodes/frame';
 export { ComponentNode, createComponent } from './nodes/component';
+export { ComponentSetNode, createComponentSet } from './nodes/componentset';
 export { InstanceNode, createInstance } from './nodes/instance';
 export { GroupNode, createGroup } from './nodes/group';
 export { TextNode, createText } from './nodes/text';

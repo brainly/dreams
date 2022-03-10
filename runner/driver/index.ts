@@ -3,10 +3,18 @@ import {
   createSceneNodeFromElement,
   createDocument,
   createPage,
+  createComponentSet,
+  ComponentNode,
 } from '@packages/core';
 
 function bemClassToText(bemClass) {
   return bemClass.replace('sg-', '').replace('-', ' ');
+}
+
+function getPropertiesString(object) {
+  return Object.keys(object)
+    .map((key) => `${key}=${object[key]}`)
+    .join(', ');
 }
 
 function buildNameFromBEM(classes) {
@@ -46,19 +54,26 @@ export async function getFigmaDocument() {
     )
   );
 
+  const componentSetMap = new Map();
+
   for (const metaNode of metaNodes) {
-    const componentNode = metaNode.firstChild as Element;
+    const componentMetaNode = metaNode.firstChild as Element;
     const name = metaNode.title;
+    const componentSetName = metaNode.dataset.component;
+
     const {
       left: x,
       top: y,
       width,
       height,
-    } = componentNode.getBoundingClientRect();
+    } = componentMetaNode.getBoundingClientRect();
 
-    const component = await createSceneNodeFromElement(componentNode, {
-      component: true,
-    });
+    const component: ComponentNode = (await createSceneNodeFromElement(
+      componentMetaNode,
+      {
+        component: true,
+      }
+    )) as ComponentNode;
 
     if (!component) {
       return;
@@ -71,18 +86,34 @@ export async function getFigmaDocument() {
     component.id = name;
     component.name = name;
 
-    const componentChildren = [
+    const componentMetaChildren = [
       // @ts-ignore
-      ...componentNode.querySelectorAll('*'),
+      ...componentMetaNode.querySelectorAll('*'),
     ];
 
-    for (const node of componentChildren) {
+    for (const node of componentMetaChildren) {
       const scene = await createSceneNodeFromElement(node);
       //scene.name = buildNameFromBEM(node.classList);
       component.appendChild(scene);
     }
 
-    page.appendChild(component);
+    if (componentSetName) {
+      if (!componentSetMap.has(componentSetName)) {
+        const componentSet = createComponentSet();
+        componentSet.name = componentSetName;
+
+        // const componentProperties = JSON.parse(metaNode.dataset.properties);
+        // component.variantProperties = componentProperties;
+
+        page.appendChild(componentSet);
+        componentSetMap.set(componentSetName, componentSet);
+      }
+
+      const componentSet = componentSetMap.get(componentSetName);
+      componentSet.appendChild(component);
+    } else {
+      page.appendChild(component);
+    }
   }
 
   return figmaDocument.toJSON();

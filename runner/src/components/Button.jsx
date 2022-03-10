@@ -88,8 +88,8 @@ const ButtonsPage = () => {
             const component = `button/${type}`;
             const properties = {
               size,
-              state: disabled ? 'disabled' : 'default',
               icon: iconVariant,
+              state: disabled ? 'disabled' : 'default',
             };
 
             buttonsVariations.push(
