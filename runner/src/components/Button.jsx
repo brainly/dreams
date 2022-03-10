@@ -71,21 +71,34 @@ const ButtonsPage = () => {
             let iconVariant;
 
             if (icon === 'reversed-order') {
-              iconVariant = 'icon right';
+              iconVariant = 'icon_right';
             } else if (icon === 'icon-only') {
-              iconVariant = 'icon only';
+              iconVariant = 'icon_only';
             } else if (icon) {
-              iconVariant = 'icon left';
+              iconVariant = 'icon_left';
             } else {
-              iconVariant = '_default';
+              iconVariant = 'default';
             }
 
-            const name = `Button/${type}/${size}/${iconVariant}/${togglableName}${
+            const name = `button/${type}/${size}/${iconVariant}/${togglableName}${
               disabled ? 'disabled' : '_default'
             }`;
 
+            // Variants specific properties
+            const component = `button/${type}`;
+            const properties = {
+              size,
+              state: disabled ? 'disabled' : 'default',
+              icon: iconVariant,
+            };
+
             buttonsVariations.push(
-              <div title={name} className="inline-item">
+              <div
+                title={name}
+                data-component={component}
+                data-properties={JSON.stringify(properties)}
+                className="inline-item"
+              >
                 <Button
                   icon={
                     icon ? (

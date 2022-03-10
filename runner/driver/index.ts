@@ -59,6 +59,7 @@ export async function getFigmaDocument() {
     const component = await createSceneNodeFromElement(componentNode, {
       component: true,
     });
+
     if (!component) {
       return;
     }
