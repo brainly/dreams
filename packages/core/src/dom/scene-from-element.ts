@@ -19,8 +19,8 @@ const DEFAULT_VALUES = {
   boxShadow: 'none',
 };
 
-function hasOnlyDefaultStyles(styles) {
-  return Object.keys(DEFAULT_VALUES).every((key) => {
+function hasVisualStyles(styles) {
+  return !Object.keys(DEFAULT_VALUES).every((key) => {
     const defaultValue = DEFAULT_VALUES[key];
     const value = styles[key];
 
@@ -177,9 +177,12 @@ export async function createSceneNodeFromElement(
     const borderLeftWidthFloat = parseFloat(styles.borderLeftWidth);
   }
 
-  // Text
   if (!isTextVisible(styles)) {
-    return sceneNode;
+    if (hasVisualStyles(styles)) {
+      return sceneNode;
+    } else {
+      return null;
+    }
   }
 
   const rangeHelper = document.createRange();
