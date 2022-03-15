@@ -321,6 +321,10 @@ export async function render(json) {
         });
 
         const baseNode = figma.combineAsVariants(children, figma.currentPage);
+
+        console.log('variant created', baseNode.type, baseNode.id);
+        baseNode.name = node.name;
+
         nodes.set(node.id, baseNode);
       } else if (node.type !== 'DOCUMENT') {
         // Create the rest types of nodes beside DOCUMENT which represent the root node.
