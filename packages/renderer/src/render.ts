@@ -311,7 +311,21 @@ export async function render(json) {
   traverse(json, {
     visit: async (node) => {
       let baseNode;
-      if (node.type !== 'DOCUMENT') {
+
+      if (node.type === 'COMPONENT_SET') {
+        // component set need to be handled separately as it is a special case
+        // where all children components need to be passed to the component set during creation.
+        const children = node.children?.map((child) => {
+          const sceneChild = nodes.get(child.id);
+          if (sceneChild) {
+            return nodes.get(child.id);
+          }
+        });
+
+        baseNode = figma.combineAsVariants(children, figma.currentPage);
+        nodes.set(node.id, baseNode);
+      } else if (node.type !== 'DOCUMENT') {
+        // Create the rest types of nodes beside DOCUMENT which represent the root node.
         baseNode = await createNode(node);
         if (!baseNode) {
           return;
