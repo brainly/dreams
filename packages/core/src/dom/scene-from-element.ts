@@ -20,11 +20,11 @@ const DEFAULT_VALUES = {
 };
 
 function hasVisualStyles(styles) {
-  return !Object.keys(DEFAULT_VALUES).every((key) => {
+  return Object.keys(DEFAULT_VALUES).some((key) => {
     const defaultValue = DEFAULT_VALUES[key];
     const value = styles[key];
 
-    return defaultValue === value;
+    return defaultValue !== value;
   });
 }
 
