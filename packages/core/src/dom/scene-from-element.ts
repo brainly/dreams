@@ -155,7 +155,8 @@ export async function createSceneNodeFromElement(
   // borders
   if (!styles.borderWidth.includes(' ')) {
     const borderColor = getRgba(styles.borderColor);
-    if (borderColor) {
+    const borderWidth = parseFloat(styles.borderWidth);
+    if (borderColor && borderWidth) {
       sceneNode.strokes = [
         {
           type: 'SOLID',
@@ -167,7 +168,7 @@ export async function createSceneNodeFromElement(
           opacity: borderColor.a || 1,
         },
       ];
-      sceneNode.strokeWeight = parseFloat(styles.borderWidth);
+      sceneNode.strokeWeight = borderWidth;
     }
   } else {
     // TODO(coderitual): one side borders using inset shadow effect
