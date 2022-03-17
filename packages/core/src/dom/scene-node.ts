@@ -5,6 +5,7 @@ import type { ComponentNode } from '../nodes/component';
 import { createSvg } from '../nodes/svg';
 import type { SvgNode } from '../nodes/svg';
 import { createText } from '../nodes/text';
+import type { TextNode } from '../nodes/text';
 import { createXPathFromElement } from '../helpers/xpath';
 import { isNodeVisible, isTextVisible } from '../helpers/visibility';
 import { getRgba } from '../helpers/color';
@@ -72,7 +73,7 @@ export async function sceneNodeFromDOM(
   const isSVG = element.nodeName === 'svg';
   const isImage = element.nodeName === 'IMG' && element.currentSrc;
 
-  let sceneNode: FrameNode | ComponentNode | SvgNode;
+  let sceneNode: FrameNode | ComponentNode | SvgNode | TextNode;
 
   if (isSVG) {
     sceneNode = createSvg();
@@ -179,9 +180,12 @@ export async function sceneNodeFromDOM(
   }
 
   if (!isTextVisible(styles)) {
+    console.log('text is not visible');
     if (hasVisualStyles(styles)) {
+      console.log('has visual styles', styles);
       return sceneNode;
     } else {
+      console.log('no visual styles', styles);
       return null;
     }
   }
@@ -256,7 +260,11 @@ export async function sceneNodeFromDOM(
         ];
       }
 
-      sceneNode.appendChild(text);
+      if (hasVisualStyles(styles)) {
+        sceneNode.appendChild(text);
+      } else {
+        sceneNode = text;
+      }
     });
 
   return sceneNode;
