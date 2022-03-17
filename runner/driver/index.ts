@@ -43,10 +43,10 @@ export async function getFigmaDocument() {
   }
 
   const figmaDocument = createDocument();
-  const page = createPage();
+  const pageNode = createPage();
 
-  figmaDocument.appendChild(page);
-  page.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
+  figmaDocument.appendChild(pageNode);
+  pageNode.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
 
   const metaNodes = Array.from(
     document.querySelectorAll<HTMLElement>(
@@ -68,21 +68,21 @@ export async function getFigmaDocument() {
       height,
     } = componentMetaNode.getBoundingClientRect();
 
-    const component: ComponentNode = (await sceneNodeFromDOM(
+    const componentNode: ComponentNode = (await sceneNodeFromDOM(
       componentMetaNode,
       'COMPONENT'
     )) as ComponentNode;
 
-    if (!component) {
+    if (!componentNode) {
       return;
     }
-    component.x = x;
-    component.y = y;
-    component.width = width;
-    component.height = height;
+    componentNode.x = x;
+    componentNode.y = y;
+    componentNode.width = width;
+    componentNode.height = height;
 
-    component.id = name;
-    component.name = name;
+    componentNode.id = name;
+    componentNode.name = name;
 
     const componentMetaChildren = [
       // @ts-ignore
@@ -90,29 +90,29 @@ export async function getFigmaDocument() {
     ];
 
     for (const node of componentMetaChildren) {
-      const scene = await sceneNodeFromDOM(node);
+      const sceneNode = await sceneNodeFromDOM(node);
       //scene.name = buildNameFromBEM(node.classList);
-      component.appendChild(scene);
+      componentNode.appendChild(sceneNode);
     }
 
     if (componentSetName) {
       const componentProperties = JSON.parse(
         metaNode.dataset.properties ?? 'null'
       );
-      component.variantProperties = componentProperties;
+      componentNode.variantProperties = componentProperties;
 
       if (!componentSetMap.has(componentSetName)) {
         const componentSet = createComponentSet();
         componentSet.name = componentSetName;
 
-        page.appendChild(componentSet);
+        pageNode.appendChild(componentSet);
         componentSetMap.set(componentSetName, componentSet);
       }
 
       const componentSet = componentSetMap.get(componentSetName);
-      componentSet.appendChild(component);
+      componentSet.appendChild(componentNode);
     } else {
-      page.appendChild(component);
+      pageNode.appendChild(componentNode);
     }
   }
 
