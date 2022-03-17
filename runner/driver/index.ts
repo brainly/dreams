@@ -96,12 +96,14 @@ export async function getFigmaDocument() {
     }
 
     if (componentSetName) {
+      const componentProperties = JSON.parse(
+        metaNode.dataset.properties ?? '{}'
+      );
+      component.variantProperties = componentProperties;
+
       if (!componentSetMap.has(componentSetName)) {
         const componentSet = createComponentSet();
         componentSet.name = componentSetName;
-
-        // const componentProperties = JSON.parse(metaNode.dataset.properties);
-        // component.variantProperties = componentProperties;
 
         page.appendChild(componentSet);
         componentSetMap.set(componentSetName, componentSet);

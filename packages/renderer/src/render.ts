@@ -68,7 +68,8 @@ async function traverse(parent, options) {
 
 async function mapDataToNodeProps(data) {
   // remove read only props
-  const { id, type, children, layoutGrids, ...writable } = data;
+  const { id, type, children, layoutGrids, variantProperties, ...writable } =
+    data;
 
   const props = {
     ...writable,
@@ -140,7 +141,7 @@ async function assignBasicProps(node, data) {
   const props = await mapDataToNodeProps(data);
   console.log({ props });
 
-  // Common props.
+  // Common properties
   Object.entries(props).forEach(([key, value]) => {
     if (key in node) {
       console.log(`set key`, key, value);
@@ -153,7 +154,20 @@ async function assignBasicProps(node, data) {
     node.resize(props.size.x, props.size.y);
   }
 
+  // Variant related properties
+  console.log('!!!', data.variantProperties);
+  if (data.variantProperties) {
+    console.log('variantProperties', data.variantProperties);
+    node.name = variantPropertiesToName(data.variantProperties);
+  }
+
   return node;
+}
+
+function variantPropertiesToName(variantProperties) {
+  return Object.entries(variantProperties)
+    .map(([key, value]) => `${key}=${value}`)
+    .join(', ');
 }
 
 async function createNode(data) {
