@@ -73,12 +73,12 @@ export async function sceneNodeFromDOM(
   const isSVG = element.nodeName === 'svg';
   const isImage = element.nodeName === 'IMG' && element.currentSrc;
 
-  let sceneNode: FrameNode | ComponentNode | SvgNode | TextNode;
+  let sceneNode: FrameNode | ComponentNode | SvgNode | TextNode | null = null;
 
   if (isSVG) {
     sceneNode = createSvg();
     sceneNode.content = getSVGString(element);
-  } else {
+  } else if (isImage || hasVisualStyles(styles)) {
     if (rootNodeType === 'COMPONENT') {
       sceneNode = createComponent();
     } else {
@@ -86,108 +86,103 @@ export async function sceneNodeFromDOM(
     }
   }
 
-  sceneNode.name = createXPathFromElement(element);
+  if (sceneNode) {
+    sceneNode.name = createXPathFromElement(element);
 
-  // layout
-  sceneNode.x = x;
-  sceneNode.y = y;
-  sceneNode.width = width;
-  sceneNode.height = height;
+    // layout
+    sceneNode.x = x;
+    sceneNode.y = y;
+    sceneNode.width = width;
+    sceneNode.height = height;
 
-  // blending
-  sceneNode.opacity = parseFloat(styles.opacity);
+    // blending
+    sceneNode.opacity = parseFloat(styles.opacity);
 
-  // background color
-  const backgroundColor = getRgba(styles.backgroundColor);
+    // background color
+    const backgroundColor = getRgba(styles.backgroundColor);
 
-  if (backgroundColor) {
-    sceneNode.fills = [
-      {
-        type: 'SOLID',
-        color: {
-          r: backgroundColor.r,
-          g: backgroundColor.g,
-          b: backgroundColor.b,
-        },
-        opacity: backgroundColor.a || 1,
-      },
-    ];
-  }
-
-  // background image
-  if (isImage) {
-    const imageUrl = new URL(element.currentSrc);
-    const imageBase64 = await toDataURL(imageUrl);
-    sceneNode.fills = [
-      {
-        type: 'IMAGE',
-        blendMode: 'NORMAL',
-        scaleMode: 'FIT',
-        imageHash: imageBase64 as string,
-      },
-    ];
-  }
-
-  // border radius
-  sceneNode.topLeftRadius = parseBorderRadius(
-    styles.borderTopLeftRadius,
-    width,
-    height
-  );
-
-  sceneNode.topRightRadius = parseBorderRadius(
-    styles.borderTopRightRadius,
-    width,
-    height
-  );
-
-  sceneNode.bottomLeftRadius = parseBorderRadius(
-    styles.borderBottomLeftRadius,
-    width,
-    height
-  );
-
-  sceneNode.bottomRightRadius = parseBorderRadius(
-    styles.borderBottomRightRadius,
-    width,
-    height
-  );
-
-  // borders
-  if (!styles.borderWidth.includes(' ')) {
-    const borderColor = getRgba(styles.borderColor);
-    const borderWidth = parseFloat(styles.borderWidth);
-    if (borderColor && borderWidth) {
-      sceneNode.strokes = [
+    if (backgroundColor) {
+      sceneNode.fills = [
         {
           type: 'SOLID',
           color: {
-            r: borderColor.r,
-            g: borderColor.g,
-            b: borderColor.b,
+            r: backgroundColor.r,
+            g: backgroundColor.g,
+            b: backgroundColor.b,
           },
-          opacity: borderColor.a || 1,
+          opacity: backgroundColor.a || 1,
         },
       ];
-      sceneNode.strokeWeight = borderWidth;
     }
-  } else {
-    // TODO(coderitual): one side borders using inset shadow effect
-    const borderTopWidthFloat = parseFloat(styles.borderTopWidth);
-    const borderRightWidthFloat = parseFloat(styles.borderRightWidth);
-    const borderBottomWidthFloat = parseFloat(styles.borderBottomWidth);
-    const borderLeftWidthFloat = parseFloat(styles.borderLeftWidth);
+
+    // background image
+    if (isImage) {
+      const imageUrl = new URL(element.currentSrc);
+      const imageBase64 = await toDataURL(imageUrl);
+      sceneNode.fills = [
+        {
+          type: 'IMAGE',
+          blendMode: 'NORMAL',
+          scaleMode: 'FIT',
+          imageHash: imageBase64 as string,
+        },
+      ];
+    }
+
+    // border radius
+    sceneNode.topLeftRadius = parseBorderRadius(
+      styles.borderTopLeftRadius,
+      width,
+      height
+    );
+
+    sceneNode.topRightRadius = parseBorderRadius(
+      styles.borderTopRightRadius,
+      width,
+      height
+    );
+
+    sceneNode.bottomLeftRadius = parseBorderRadius(
+      styles.borderBottomLeftRadius,
+      width,
+      height
+    );
+
+    sceneNode.bottomRightRadius = parseBorderRadius(
+      styles.borderBottomRightRadius,
+      width,
+      height
+    );
+
+    // borders
+    if (!styles.borderWidth.includes(' ')) {
+      const borderColor = getRgba(styles.borderColor);
+      const borderWidth = parseFloat(styles.borderWidth);
+      if (borderColor && borderWidth) {
+        sceneNode.strokes = [
+          {
+            type: 'SOLID',
+            color: {
+              r: borderColor.r,
+              g: borderColor.g,
+              b: borderColor.b,
+            },
+            opacity: borderColor.a || 1,
+          },
+        ];
+        sceneNode.strokeWeight = borderWidth;
+      }
+    } else {
+      // TODO(coderitual): one side borders using inset shadow effect
+      const borderTopWidthFloat = parseFloat(styles.borderTopWidth);
+      const borderRightWidthFloat = parseFloat(styles.borderRightWidth);
+      const borderBottomWidthFloat = parseFloat(styles.borderBottomWidth);
+      const borderLeftWidthFloat = parseFloat(styles.borderLeftWidth);
+    }
   }
 
   if (!isTextVisible(styles)) {
-    console.log('text is not visible');
-    if (hasVisualStyles(styles)) {
-      console.log('has visual styles', styles);
-      return sceneNode;
-    } else {
-      console.log('no visual styles', styles);
-      return null;
-    }
+    return sceneNode;
   }
 
   const rangeHelper = document.createRange();
@@ -260,7 +255,8 @@ export async function sceneNodeFromDOM(
         ];
       }
 
-      if (hasVisualStyles(styles)) {
+      // Scene node is null when no visual styles are present, in that case we directly return text node
+      if (sceneNode) {
         sceneNode.appendChild(text);
       } else {
         sceneNode = text;
