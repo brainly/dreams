@@ -102,15 +102,15 @@ export async function getFigmaDocument() {
       componentNode.variantProperties = componentProperties;
 
       if (!componentSetMap.has(componentSetName)) {
-        const componentSet = createComponentSet();
-        componentSet.name = componentSetName;
+        const componentSetNode = createComponentSet();
+        componentSetNode.name = componentSetName;
 
-        pageNode.appendChild(componentSet);
-        componentSetMap.set(componentSetName, componentSet);
+        pageNode.appendChild(componentSetNode);
+        componentSetMap.set(componentSetName, componentSetNode);
       }
 
-      const componentSet = componentSetMap.get(componentSetName);
-      componentSet.appendChild(componentNode);
+      const componentSetNode = componentSetMap.get(componentSetName);
+      componentSetNode.appendChild(componentNode);
     } else {
       pageNode.appendChild(componentNode);
     }
