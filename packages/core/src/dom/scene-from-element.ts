@@ -53,9 +53,9 @@ function parseFontWeight(fontWeight) {
   return parseInt(fontWeight, 10);
 }
 
-export async function createSceneNodeFromElement(
+export async function sceneNodeFromElement(
   element,
-  options: { component: boolean } = { component: false }
+  rootNodeType: 'FRAME' | 'COMPONENT' = 'FRAME'
 ) {
   const bcr = element.getBoundingClientRect();
   const { x, y, width, height } = bcr;
@@ -78,7 +78,7 @@ export async function createSceneNodeFromElement(
     sceneNode = createSvg();
     sceneNode.content = getSVGString(element);
   } else {
-    if (options.component) {
+    if (rootNodeType === 'COMPONENT') {
       sceneNode = createComponent();
     } else {
       sceneNode = createFrame();
