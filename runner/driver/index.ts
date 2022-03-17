@@ -97,7 +97,7 @@ export async function getFigmaDocument() {
 
     if (componentSetName) {
       const componentProperties = JSON.parse(
-        metaNode.dataset.properties ?? '{}'
+        metaNode.dataset.properties ?? 'null'
       );
       component.variantProperties = componentProperties;
 
