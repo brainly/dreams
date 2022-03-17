@@ -1,4 +1,4 @@
-export { sceneNodeFromElement } from './dom/scene-from-element';
+export { sceneNodeFromDOM } from './dom/scene-node';
 export { DocumentNode, createDocument } from './nodes/document';
 export { PageNode, createPage } from './nodes/page';
 export { FrameNode, createFrame } from './nodes/frame';

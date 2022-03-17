@@ -1,6 +1,6 @@
 import 'regenerator-runtime';
 import {
-  sceneNodeFromElement,
+  sceneNodeFromDOM,
   createDocument,
   createPage,
   createComponentSet,
@@ -68,7 +68,7 @@ export async function getFigmaDocument() {
       height,
     } = componentMetaNode.getBoundingClientRect();
 
-    const component: ComponentNode = (await sceneNodeFromElement(
+    const component: ComponentNode = (await sceneNodeFromDOM(
       componentMetaNode,
       'COMPONENT'
     )) as ComponentNode;
@@ -90,7 +90,7 @@ export async function getFigmaDocument() {
     ];
 
     for (const node of componentMetaChildren) {
-      const scene = await sceneNodeFromElement(node);
+      const scene = await sceneNodeFromDOM(node);
       //scene.name = buildNameFromBEM(node.classList);
       component.appendChild(scene);
     }

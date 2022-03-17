@@ -53,7 +53,7 @@ function parseFontWeight(fontWeight) {
   return parseInt(fontWeight, 10);
 }
 
-export async function sceneNodeFromElement(
+export async function sceneNodeFromDOM(
   element,
   rootNodeType: 'FRAME' | 'COMPONENT' = 'FRAME'
 ) {
