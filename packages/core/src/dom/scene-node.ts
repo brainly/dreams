@@ -95,6 +95,61 @@ export async function sceneNodeFromDOM(
     sceneNode.width = width;
     sceneNode.height = height;
 
+    // autolayout
+    if (['flex' || 'flex-inline'].includes(styles.display)) {
+      const { flexDirection, alignItems, justifyContent } = styles;
+      sceneNode.primaryAxisSizingMode = 'AUTO';
+      sceneNode.counterAxisSizingMode = 'AUTO';
+
+      let axisAlignItems: typeof sceneNode.primaryAxisAlignItems;
+      switch (alignItems) {
+        case 'flex-start':
+        case 'start':
+          axisAlignItems = 'MIN';
+          break;
+        case 'flex-end':
+        case 'end':
+          axisAlignItems = 'MAX';
+          break;
+        case 'center':
+          axisAlignItems = 'CENTER';
+          break;
+        default:
+          axisAlignItems = 'MIN';
+      }
+
+      let axisJustifyContent: typeof sceneNode.primaryAxisAlignItems;
+      switch (justifyContent) {
+        case 'flex-start':
+        case 'start':
+        case 'left':
+          axisJustifyContent = 'MIN';
+          break;
+        case 'flex-end':
+        case 'end':
+        case 'right':
+          axisJustifyContent = 'MAX';
+          break;
+        case 'center':
+          axisJustifyContent = 'CENTER';
+          break;
+        default:
+          axisJustifyContent = 'MIN';
+      }
+
+      if (['row', 'row-reverse'].includes(flexDirection)) {
+        sceneNode.layoutMode = 'HORIZONTAL';
+        sceneNode.counterAxisAlignItems = axisAlignItems;
+        sceneNode.primaryAxisAlignItems = axisJustifyContent;
+      }
+
+      if (['column', 'column-reverse'].includes(flexDirection)) {
+        sceneNode.layoutMode = 'VERTICAL';
+        sceneNode.counterAxisAlignItems = axisJustifyContent;
+        sceneNode.primaryAxisAlignItems = axisAlignItems;
+      }
+    }
+
     // blending
     sceneNode.opacity = parseFloat(styles.opacity);
 
