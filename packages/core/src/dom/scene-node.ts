@@ -96,7 +96,7 @@ export async function sceneNodeFromDOM(
     sceneNode.height = height;
 
     // autolayout
-    if (['flex' || 'flex-inline'].includes(styles.display)) {
+    if (['flex', 'flex-inline'].includes(styles.display)) {
       const { flexDirection, alignItems, justifyContent } = styles;
       sceneNode.primaryAxisSizingMode = 'AUTO';
       sceneNode.counterAxisSizingMode = 'AUTO';
