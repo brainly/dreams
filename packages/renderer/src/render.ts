@@ -73,8 +73,6 @@ async function mapDataToNodeProps(data) {
 
   const props = {
     ...writable,
-    primaryAxisSizingMode: data.primaryAxisSizingMode ?? 'AUTO',
-    counterAxisSizingMode: data.counterAxisSizingMode ?? 'AUTO',
     ...(data.constraints && {
       constraints: {
         horizontal: data.constraints.horizontal === 'LEFT' ? 'MIN' : 'MAX',
@@ -141,6 +139,12 @@ async function assignBasicProps(node, data) {
   const props = await mapDataToNodeProps(data);
   console.log({ props });
 
+  // Layout related setters
+  // It's important to set size before any other layout related props
+  if (props.size != null && props.size.x > 0 && props.size.y > 0) {
+    node.resize(props.size.x, props.size.y);
+  }
+
   // Common properties
   Object.entries(props).forEach(([key, value]) => {
     if (key in node) {
@@ -148,11 +152,6 @@ async function assignBasicProps(node, data) {
       node[key] = value;
     }
   });
-
-  // Layout related setters
-  if (props.size != null && props.size.x > 0 && props.size.y > 0) {
-    node.resize(props.size.x, props.size.y);
-  }
 
   // Variant related properties
   console.log('!!!', data.variantProperties);
