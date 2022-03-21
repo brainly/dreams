@@ -130,6 +130,9 @@ async function mapDataToNodeProps(data) {
           })),
         }
       : {}),
+    ...(data.style
+      ? { textAutoResize: data.style?.textAutoResize ?? 'NONE' }
+      : {}),
   };
   return props;
 }
