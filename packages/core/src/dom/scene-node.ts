@@ -137,12 +137,6 @@ export async function sceneNodeFromDOM(
           axisJustifyContent = 'MIN';
       }
 
-      // apply padding only for flex containers
-      sceneNode.paddingLeft = parseInt(styles.paddingLeft, 10);
-      sceneNode.paddingRight = parseInt(styles.paddingRight, 10);
-      sceneNode.paddingTop = parseInt(styles.paddingTop, 10);
-      sceneNode.paddingBottom = parseInt(styles.paddingBottom, 10);
-
       if (['row', 'row-reverse'].includes(flexDirection)) {
         sceneNode.layoutMode = 'HORIZONTAL';
         sceneNode.counterAxisAlignItems = axisAlignItems;
@@ -154,6 +148,21 @@ export async function sceneNodeFromDOM(
         sceneNode.counterAxisAlignItems = axisJustifyContent;
         sceneNode.primaryAxisAlignItems = axisAlignItems;
       }
+
+      // apply padding only for flex containers
+      sceneNode.paddingLeft = parseInt(styles.paddingLeft, 10);
+      sceneNode.paddingRight = parseInt(styles.paddingRight, 10);
+      sceneNode.paddingTop = parseInt(styles.paddingTop, 10);
+      sceneNode.paddingBottom = parseInt(styles.paddingBottom, 10);
+
+      // TODO: apply visually correct padding for flex container
+      // children may poistion themselves outside of normal flow resulting in different actual padding in container
+      // to mitigate this we can verify if bounding box of children fits into container with padding applied on CSS level
+
+      // items spacing
+      // Caluclate unified item spacing when only 2 children are present
+      // or all children have the same spacing
+      // TODO: calculate item spacing for more than 2 children with different spacing
     }
 
     // blending
