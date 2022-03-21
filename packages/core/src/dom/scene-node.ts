@@ -137,17 +137,6 @@ export async function sceneNodeFromDOM(
           axisJustifyContent = 'MIN';
       }
 
-      // apply padding only for flex containers
-      sceneNode.paddingLeft = parseInt(styles.paddingLeft, 10);
-      sceneNode.paddingRight = parseInt(styles.paddingRight, 10);
-      sceneNode.paddingTop = parseInt(styles.paddingTop, 10);
-      sceneNode.paddingBottom = parseInt(styles.paddingBottom, 10);
-
-      // TODO: Apply visually correct padding for flex container.
-      // Children may poistion themselves outside of normal flow resulting in different actual padding in container
-      // to mitigate this we can verify if bounding box of children fits into container with padding applied on CSS level
-      // and if not we can apply adjust it.
-
       // item spacing
       // Calculate unified gap between childrens using bounding client rect.
       // First we need to remove invisible childrens and sort them by their visual position to handle reverse order correctly
@@ -186,11 +175,32 @@ export async function sceneNodeFromDOM(
           };
         }, null) || {};
 
-      console.log(sceneNode.name, childrenBcr, {
-        spacingHorizontal,
-        spacingVertical,
-      });
+      // apply padding only for flex containers
+      sceneNode.paddingLeft = parseInt(styles.paddingLeft, 10);
+      sceneNode.paddingRight = parseInt(styles.paddingRight, 10);
+      sceneNode.paddingTop = parseInt(styles.paddingTop, 10);
+      sceneNode.paddingBottom = parseInt(styles.paddingBottom, 10);
 
+      // Apply visually correct padding for flex container.
+      // Children may poistion themselves outside of normal flow resulting in different actual padding in container
+      // to mitigate this we can verify if bounding box of children fits into container with padding applied on CSS level
+      // and if not we can apply adjust it.
+      const childrenGroupBcr = childrenBcr.reduce(
+        (acc, childBcr) => {
+          acc.left = Math.min(acc?.left, childBcr.left);
+          acc.right = Math.max(acc.right, childBcr.right);
+          acc.top = Math.min(acc.top, childBcr.top);
+          acc.bottom = Math.max(acc.bottom, childBcr.bottom);
+          return acc;
+        },
+        { left: Infinity, right: -Infinity, top: Infinity, bottom: -Infinity }
+      );
+      sceneNode.paddingLeft = childrenGroupBcr.left - bcr.left;
+      sceneNode.paddingRight = bcr.right - childrenGroupBcr.right;
+      sceneNode.paddingTop = childrenGroupBcr.top - bcr.top;
+      sceneNode.paddingBottom = bcr.bottom - childrenGroupBcr.bottom;
+
+      // apply autolayout props based on flex direction
       if (['row', 'row-reverse'].includes(flexDirection)) {
         sceneNode.layoutMode = 'HORIZONTAL';
         sceneNode.primaryAxisSizingMode = 'AUTO';
