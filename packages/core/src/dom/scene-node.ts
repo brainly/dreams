@@ -137,6 +137,12 @@ export async function sceneNodeFromDOM(
           axisJustifyContent = 'MIN';
       }
 
+      // apply padding only for flex containers
+      sceneNode.paddingLeft = parseInt(styles.paddingLeft, 10);
+      sceneNode.paddingRight = parseInt(styles.paddingRight, 10);
+      sceneNode.paddingTop = parseInt(styles.paddingTop, 10);
+      sceneNode.paddingBottom = parseInt(styles.paddingBottom, 10);
+
       if (['row', 'row-reverse'].includes(flexDirection)) {
         sceneNode.layoutMode = 'HORIZONTAL';
         sceneNode.counterAxisAlignItems = axisAlignItems;
