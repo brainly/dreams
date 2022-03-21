@@ -59,6 +59,20 @@ export class FrameNode extends SceneNode {
   toJSON() {
     return {
       ...super.toJSON(),
+      // Sort children visually to correctly hadnle auto layout.
+      // When autoalyout is enabled from plugin API, children are displayed in the same order as they're present in the layers tree.
+      // One one if the adjustments Figma UI applies, is to sort children visually which is not the case within Figma plugin API.
+      children: this.children
+        .sort((a, b) => {
+          if (this.layoutMode === 'HORIZONTAL') {
+            return a.x - b.x;
+          }
+          if (this.layoutMode === 'VERTICAL') {
+            return a.y - b.y;
+          }
+          return 0;
+        })
+        .map((child) => child.toJSON()),
       layoutMode: this.layoutMode,
       primaryAxisSizingMode: this.primaryAxisSizingMode,
       counterAxisSizingMode: this.counterAxisSizingMode,
