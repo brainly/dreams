@@ -137,32 +137,75 @@ export async function sceneNodeFromDOM(
           axisJustifyContent = 'MIN';
       }
 
-      if (['row', 'row-reverse'].includes(flexDirection)) {
-        sceneNode.layoutMode = 'HORIZONTAL';
-        sceneNode.counterAxisAlignItems = axisAlignItems;
-        sceneNode.primaryAxisAlignItems = axisJustifyContent;
-      }
-
-      if (['column', 'column-reverse'].includes(flexDirection)) {
-        sceneNode.layoutMode = 'VERTICAL';
-        sceneNode.counterAxisAlignItems = axisJustifyContent;
-        sceneNode.primaryAxisAlignItems = axisAlignItems;
-      }
-
       // apply padding only for flex containers
       sceneNode.paddingLeft = parseInt(styles.paddingLeft, 10);
       sceneNode.paddingRight = parseInt(styles.paddingRight, 10);
       sceneNode.paddingTop = parseInt(styles.paddingTop, 10);
       sceneNode.paddingBottom = parseInt(styles.paddingBottom, 10);
 
-      // TODO: apply visually correct padding for flex container
-      // children may poistion themselves outside of normal flow resulting in different actual padding in container
+      // TODO: Apply visually correct padding for flex container.
+      // Children may poistion themselves outside of normal flow resulting in different actual padding in container
       // to mitigate this we can verify if bounding box of children fits into container with padding applied on CSS level
+      // and if not we can apply adjust it.
 
-      // items spacing
-      // Caluclate unified item spacing when only 2 children are present
-      // or all children have the same spacing
-      // TODO: calculate item spacing for more than 2 children with different spacing
+      // item spacing
+      // Calculate unified gap between childrens using bounding client rect.
+      // First we need to remove invisible childrens and sort them by their visual position to handle reverse order correctly
+      let childrenBcr = Array.from(element.children)
+        .filter((child) => isNodeVisible(child))
+        .map((child: HTMLElement) => child.getBoundingClientRect())
+        .sort((a, b) => {
+          if (['column', 'column-reverse'].includes(flexDirection)) {
+            return a.top - b.top;
+          }
+          return a.left - b.left;
+        });
+
+      // then we can calculate spacing between childrens.
+      // This method only works for evenly spaced childrens.
+      // TODO: handle uneven spacing
+      const { spacingVertical = 0, spacingHorizontal = 0 } =
+        childrenBcr.reduce<{
+          right: number;
+          bottom: number;
+          spacingVertical: number;
+          spacingHorizontal: number;
+        } | null>((acc, childBcr) => {
+          let spacingHorizontal = 0;
+          let spacingVertical = 0;
+          if (acc) {
+            spacingHorizontal = childBcr.left - acc.right;
+            spacingVertical = childBcr.top - acc.bottom;
+          }
+
+          return {
+            right: childBcr.right,
+            bottom: childBcr.bottom,
+            spacingHorizontal: spacingHorizontal,
+            spacingVertical: spacingVertical,
+          };
+        }, null) || {};
+
+      console.log(sceneNode.name, childrenBcr, {
+        spacingHorizontal,
+        spacingVertical,
+      });
+
+      if (['row', 'row-reverse'].includes(flexDirection)) {
+        sceneNode.layoutMode = 'HORIZONTAL';
+        sceneNode.primaryAxisSizingMode = 'AUTO';
+        sceneNode.counterAxisAlignItems = axisAlignItems;
+        sceneNode.primaryAxisAlignItems = axisJustifyContent;
+        sceneNode.itemSpacing = spacingHorizontal;
+      }
+
+      if (['column', 'column-reverse'].includes(flexDirection)) {
+        sceneNode.layoutMode = 'VERTICAL';
+        sceneNode.primaryAxisSizingMode = 'AUTO';
+        sceneNode.counterAxisAlignItems = axisJustifyContent;
+        sceneNode.primaryAxisAlignItems = axisAlignItems;
+        sceneNode.itemSpacing = spacingVertical;
+      }
     }
 
     // blending
