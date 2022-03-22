@@ -90,6 +90,13 @@ const ButtonsPage = () => {
               size,
               icon: iconVariant,
               state: disabled ? 'disabled' : 'default',
+              toggle: togglableName
+                ? toggle
+                  ? toggle === 'default'
+                    ? 'black'
+                    : toggle
+                  : '-'
+                : undefined,
             };
 
             buttonsVariations.push(
