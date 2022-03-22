@@ -5,9 +5,14 @@ figma.showUI(__html__, {
   height: 248,
 });
 
-function importJson(json: unknown) {
+async function importJson(json: unknown) {
   console.log('Import json');
-  render(json);
+  const { cancel } = figma.notify('Importing components', {
+    timeout: Infinity,
+  });
+  await render(json);
+  cancel();
+  figma.notify('Finished importing components');
 }
 
 function clear() {

@@ -324,7 +324,7 @@ export async function render(json) {
   console.log('render', json);
 
   const nodes = new Map();
-  traverse(json, {
+  await traverse(json, {
     visit: async (node) => {
       if (node.type === 'COMPONENT_SET') {
         // component set need to be handled separately as it is a special case
