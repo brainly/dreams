@@ -78,12 +78,10 @@ export async function sceneNodeFromDOM(
   if (isSVG) {
     sceneNode = createSvg();
     sceneNode.content = getSVGString(element);
+  } else if (rootNodeType === 'COMPONENT') {
+    sceneNode = createComponent();
   } else if (isImage || hasVisualStyles(styles)) {
-    if (rootNodeType === 'COMPONENT') {
-      sceneNode = createComponent();
-    } else {
-      sceneNode = createFrame();
-    }
+    sceneNode = createFrame();
   }
 
   if (sceneNode) {
