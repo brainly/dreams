@@ -29,12 +29,7 @@ const IconsPage = () => {
       };
 
       variations.push(
-        <div
-          title={name}
-          className="inline-item"
-          data-component={component}
-          data-properties={JSON.stringify(properties)}
-        >
+        <div title={name} className="inline-item">
           <Icon type={type} size={size} color={ICON_COLOR.DARK} />
         </div>
       );
