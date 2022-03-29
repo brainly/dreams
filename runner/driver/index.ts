@@ -34,6 +34,7 @@ function buildNameFromBEM(classes) {
 }
 
 export async function getFigmaDocument() {
+  debugger;
   const stylesheet = document.querySelector<HTMLAnchorElement>('head > link');
   let styleGuideVersion = '';
 
@@ -74,7 +75,7 @@ export async function getFigmaDocument() {
     )) as ComponentNode;
 
     if (!componentNode) {
-      return;
+      continue;
     }
     componentNode.x = x;
     componentNode.y = y;
