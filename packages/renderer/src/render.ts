@@ -299,6 +299,9 @@ async function createNode(data) {
     }
     case 'SVG': {
       node = figma.createNodeFromSvg(data.content);
+      // if (data.flatten) {
+      //   node = figma.flatten([node]);
+      // }
       break;
     }
     default: {
