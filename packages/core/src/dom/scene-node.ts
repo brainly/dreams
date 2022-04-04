@@ -70,7 +70,8 @@ function getNameFromNodeType(nodeType) {
 
 export async function sceneNodeFromDOM(
   element,
-  rootNodeType: 'FRAME' | 'COMPONENT' = 'FRAME'
+  rootNodeType: 'FRAME' | 'COMPONENT' = 'FRAME',
+  flatVectors: boolean = false
 ) {
   const bcr = element.getBoundingClientRect();
   const { x, y, width, height } = bcr;
@@ -91,7 +92,7 @@ export async function sceneNodeFromDOM(
 
   if (isSVG) {
     sceneNode = createSvg();
-    sceneNode.content = getSVGString(element);
+    sceneNode.content = getSVGString(element, flatVectors);
   } else if (rootNodeType === 'COMPONENT') {
     sceneNode = createComponent();
   } else if (isImage || hasVisualStyles(styles)) {
