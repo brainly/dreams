@@ -66,6 +66,40 @@ async function traverse(parent, options) {
   parent.type && (await options?.visit(parent));
 }
 
+function mapDataToConstraints(constraints) {
+  let horizontal = constraints.horizontal;
+  if (horizontal === 'LEFT') {
+    horizontal = 'MIN';
+  } else if (horizontal === 'RIGHT') {
+    horizontal = 'MAX';
+  } else if (horizontal === 'CENTER') {
+    horizontal = 'CENTER';
+  } else if (horizontal === 'LEFT_RIGHT') {
+    horizontal = 'STRETCH';
+  } else if (horizontal === 'SCALE') {
+    horizontal = 'SCALE';
+  } else {
+    horizontal = 'MIN';
+  }
+
+  let vertical = constraints.vertical;
+  if (vertical === 'TOP') {
+    vertical = 'MIN';
+  } else if (vertical === 'BOTTOM') {
+    vertical = 'MAX';
+  } else if (vertical === 'CENTER') {
+    vertical = 'CENTER';
+  } else if (vertical === 'TOP_BOTTOM') {
+    vertical = 'STRETCH';
+  } else if (vertical === 'SCALE') {
+    vertical = 'SCALE';
+  } else {
+    vertical = 'MIN';
+  }
+
+  return { horizontal, vertical };
+}
+
 async function mapDataToNodeProps(data) {
   // remove read only props
   const { id, type, children, layoutGrids, variantProperties, ...writable } =
@@ -74,10 +108,7 @@ async function mapDataToNodeProps(data) {
   const props = {
     ...writable,
     ...(data.constraints && {
-      constraints: {
-        horizontal: data.constraints.horizontal === 'LEFT' ? 'MIN' : 'MAX',
-        vertical: data.constraints.vertical === 'TOP' ? 'MIN' : 'MAX',
-      },
+      constraints: mapDataToConstraints(data.constraints),
     }),
     fills: await Promise.all(
       data.fills?.map(async (fill) => {

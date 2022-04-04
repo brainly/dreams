@@ -94,6 +94,7 @@ export async function sceneNodeFromDOM(
     sceneNode = createSvg();
     sceneNode.content = getSVGString(element);
     sceneNode.flatten = flattenSVG;
+    sceneNode.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
   } else if (rootNodeType === 'COMPONENT') {
     sceneNode = createComponent();
   } else if (isImage || hasVisualStyles(styles)) {
