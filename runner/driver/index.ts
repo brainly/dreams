@@ -90,7 +90,7 @@ export async function getFigmaDocument() {
     ];
 
     for (const node of componentMetaChildren) {
-      const sceneNode = await sceneNodeFromDOM(node);
+      const sceneNode = await sceneNodeFromDOM(node, 'FRAME', true);
       componentNode.appendChild(sceneNode);
     }
 

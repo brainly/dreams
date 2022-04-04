@@ -9,11 +9,13 @@ export class SvgNode extends FrameNode {
   }
 
   content: string;
+  flatten: boolean;
 
   toJSON() {
     return {
       ...super.toJSON(),
       content: this.content,
+      flatten: this.flatten,
     };
   }
 }
