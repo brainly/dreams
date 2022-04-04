@@ -96,7 +96,7 @@ function mapDataToConstraints(constraints) {
   } else {
     vertical = 'MIN';
   }
-
+  console.log('mapDataToConstraints', { horizontal, vertical });
   return { horizontal, vertical };
 }
 
@@ -188,7 +188,6 @@ async function assignBasicProps(node, data) {
   });
 
   // Variant related properties
-  console.log('!!!', data.variantProperties);
   if (data.variantProperties) {
     console.log('variantProperties', data.variantProperties);
     node.name = variantPropertiesToName(data.variantProperties);
