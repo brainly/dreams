@@ -136,7 +136,7 @@ function getUseReplacement(node) {
 
 // NOTE: this code modifies the original node by inlining all styles
 // this is not ideal and probably fixable
-export function getSVGString(svgNode, flatVectors = false) {
+export function getSVGString(svgNode) {
   const queue = Array.from(svgNode.children);
 
   while (queue.length) {
@@ -163,14 +163,6 @@ export function getSVGString(svgNode, flatVectors = false) {
     inlineStyles(node);
 
     Array.from(node.children).forEach((child) => queue.push(child));
-  }
-
-  if (flatVectors) {
-    // return flat list of vector only nodes
-    const vectors = Array.from(
-      svgNode.querySelectorAll('path, rect, circle, ellipse')
-    ).map((node) => node.outerHTML);
-    return vectors;
   }
 
   return svgNode.outerHTML;
