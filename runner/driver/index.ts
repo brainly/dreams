@@ -91,7 +91,6 @@ export async function getFigmaDocument() {
 
     for (const node of componentMetaChildren) {
       const sceneNode = await sceneNodeFromDOM(node);
-      //scene.name = buildNameFromBEM(node.classList);
       componentNode.appendChild(sceneNode);
     }
 
