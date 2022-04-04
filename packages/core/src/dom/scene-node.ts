@@ -6,7 +6,6 @@ import { createSvg } from '../nodes/svg';
 import type { SvgNode } from '../nodes/svg';
 import { createText } from '../nodes/text';
 import type { TextNode } from '../nodes/text';
-import { createXPathFromElement } from '../helpers/xpath';
 import { isNodeVisible, isTextVisible } from '../helpers/visibility';
 import { getRgba } from '../helpers/color';
 import { getSVGString } from '../helpers/svg';
@@ -54,6 +53,21 @@ function parseFontWeight(fontWeight) {
   return parseInt(fontWeight, 10);
 }
 
+function getNameFromNodeType(nodeType) {
+  switch (nodeType) {
+    case 'FRAME':
+      return 'Frame';
+    case 'COMPONENT':
+      return 'Component';
+    case 'SVG':
+      return 'Vector';
+    case 'TEXT':
+      return 'Text';
+    default:
+      return 'Frame';
+  }
+}
+
 export async function sceneNodeFromDOM(
   element,
   rootNodeType: 'FRAME' | 'COMPONENT' = 'FRAME'
@@ -85,7 +99,7 @@ export async function sceneNodeFromDOM(
   }
 
   if (sceneNode) {
-    sceneNode.name = createXPathFromElement(element);
+    sceneNode.name = getNameFromNodeType(sceneNode.type);
 
     // layout
     sceneNode.x = x;
