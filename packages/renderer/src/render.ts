@@ -299,9 +299,6 @@ async function createNode(data) {
     }
     case 'SVG': {
       node = figma.createNodeFromSvg(data.content);
-      // if (data.flatten) {
-      //   node = figma.flatten([node]);
-      // }
       break;
     }
     default: {
@@ -311,6 +308,17 @@ async function createNode(data) {
 
   console.log('node created', node.type, node.id);
   await assignBasicProps(node, data);
+
+  if (data.flatten) {
+    try {
+      node = figma.flatten([node]);
+    } catch (error) {
+      console.error(
+        `Error while flattening Node id: ${node.id}, name: ${node.name}`,
+        error
+      );
+    }
+  }
 
   return node;
 }
