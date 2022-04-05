@@ -181,7 +181,6 @@ async function assignBasicProps(node, data) {
 
   // Common properties
   Object.entries(props).forEach(([key, value]) => {
-    console.log(`search for a key`, key, key in node, node);
     if (key in node) {
       console.log(`set key`, key, value);
       node[key] = value;
@@ -340,16 +339,29 @@ async function createNode(data) {
   console.log('node created', node.type, node.id);
   await assignBasicProps(node, data);
 
+  // SVG-generated vectos.
+  // Vector flattening is useful in the context of icon-related components because it produces a cleaner hierarchy.
   if (data.flatten) {
     try {
       console.log('flattening node', node.id);
-      node = figma.flatten([node]);
+
+      // We need to reset position of the node to 0,0 before flattening
+      // otherwise it will be offset by the parent's position twice.
+      const originalNode = node;
+      originalNode.x = 0;
+      originalNode.y = 0;
+      const vector = figma.flatten([originalNode]);
+
+      node = figma.createFrame();
+      await assignBasicProps(node, data);
+      node.appendChild(vector);
+
       // Group node generated from nested SVG has no "constraints" property.
       // We need to set it after flattening once again.
-      if (data.constraints) {
-        console.log('applying constraints', data.constraints);
-        node.constraints = data.constraints;
-      }
+      // if (data.constraints) {
+      //   console.log('applying constraints to vector', data.constraints);
+      //   vector.constraints = data.constraints;
+      // }
     } catch (error) {
       console.error(
         `Error while flattening Node id: ${node.id}, name: ${node.name}`,
