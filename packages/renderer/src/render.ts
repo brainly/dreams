@@ -181,6 +181,7 @@ async function assignBasicProps(node, data) {
 
   // Common properties
   Object.entries(props).forEach(([key, value]) => {
+    console.log(`search for a key`, key, key in node, node);
     if (key in node) {
       console.log(`set key`, key, value);
       node[key] = value;
@@ -341,7 +342,14 @@ async function createNode(data) {
 
   if (data.flatten) {
     try {
+      console.log('flattening node', node.id);
       node = figma.flatten([node]);
+      // Group nodes generated from nested SVG has no "constraints" property.
+      // We need to set it after flattening once again.
+      if (data.constraints) {
+        console.log('applying constraints', data.constraints);
+        node.constraints = data.constraints;
+      }
     } catch (error) {
       console.error(
         `Error while flattening Node id: ${node.id}, name: ${node.name}`,
