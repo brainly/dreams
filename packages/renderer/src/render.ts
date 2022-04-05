@@ -345,8 +345,8 @@ async function createNode(data) {
     try {
       console.log('flattening node', node.id);
 
-      // We need to reset position of the node to 0,0 before flattening
-      // otherwise it will be offset by the parent's position twice.
+      // We need to reset position of the originalNode to 0,0 before flattening
+      // because it will be positioned by its new parent.
       const originalNode = node;
       originalNode.x = 0;
       originalNode.y = 0;
@@ -356,12 +356,11 @@ async function createNode(data) {
       await assignBasicProps(node, data);
       node.appendChild(vector);
 
-      // Group node generated from nested SVG has no "constraints" property.
-      // We need to set it after flattening once again.
-      // if (data.constraints) {
-      //   console.log('applying constraints to vector', data.constraints);
-      //   vector.constraints = data.constraints;
-      // }
+      // Flattened vector need to scale relattive to its parent which simulates default svg behaviour.
+      vector.constraints = {
+        horizontal: 'SCALE',
+        vertical: 'SCALE',
+      };
     } catch (error) {
       console.error(
         `Error while flattening Node id: ${node.id}, name: ${node.name}`,
