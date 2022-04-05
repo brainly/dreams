@@ -21,7 +21,7 @@ const IconsPage = () => {
 
   iconTypes
     // filter only answer icon
-    .filter((iconType) => iconType === TYPE.ANSWER)
+    .filter((iconType) => iconType === TYPE.POINTS)
     .forEach((type) => {
       getValues(SIZE, false).forEach((size) => {
         const name = `icon/${getIconGroup(type)}/${type}/${size}`;
