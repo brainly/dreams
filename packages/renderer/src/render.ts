@@ -344,7 +344,7 @@ async function createNode(data) {
     try {
       console.log('flattening node', node.id);
       node = figma.flatten([node]);
-      // Group nodes generated from nested SVG has no "constraints" property.
+      // Group node generated from nested SVG has no "constraints" property.
       // We need to set it after flattening once again.
       if (data.constraints) {
         console.log('applying constraints', data.constraints);
