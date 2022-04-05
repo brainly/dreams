@@ -19,28 +19,31 @@ const IconsPage = () => {
     (mobileIconType) => !iconTypes.includes(mobileIconType)
   );
 
-  iconTypes.forEach((type) => {
-    getValues(SIZE, false).forEach((size) => {
-      const name = `icon/${getIconGroup(type)}/${type}/${size}`;
+  iconTypes
+    // filter only answer icon
+    .filter((iconType) => iconType === TYPE.ANSWER)
+    .forEach((type) => {
+      getValues(SIZE, false).forEach((size) => {
+        const name = `icon/${getIconGroup(type)}/${type}/${size}`;
 
-      const component = `icon/${type}`;
-      const properties = {
-        size,
-      };
+        const component = `icon/${type}`;
+        const properties = {
+          size,
+        };
 
-      variations.push(
-        <div
-          title={name}
-          className="inline-item"
-          data-component={component}
-          data-properties={JSON.stringify(properties)}
-        >
-          <Icon type={type} size={size} color="icon-black" />
-        </div>
-      );
-      variations.push(<br />);
+        variations.push(
+          <div
+            title={name}
+            className="inline-item"
+            data-component={component}
+            data-properties={JSON.stringify(properties)}
+          >
+            <Icon type={type} size={size} color="icon-black" />
+          </div>
+        );
+        variations.push(<br />);
+      });
     });
-  });
 
   // uniqueMobileIconTypes.forEach((type) => {
   //   getValues(SIZE, false).forEach((size) => {
