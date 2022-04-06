@@ -356,7 +356,7 @@ async function createNode(data) {
       await assignBasicProps(node, data);
       node.appendChild(vector);
 
-      // Flattened vector need to scale relattive to its parent which simulates default svg behaviour.
+      // Flattened vector need to scale relative to its parent which reflects default svg behaviour.
       vector.constraints = {
         horizontal: 'SCALE',
         vertical: 'SCALE',
