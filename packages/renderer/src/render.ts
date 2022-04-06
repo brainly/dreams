@@ -403,7 +403,7 @@ export async function render(json) {
 
         nodes.set(node.id, baseNode);
       } else if (node.type !== 'DOCUMENT') {
-        // Create the rest types of nodes beside DOCUMENT which represent the root node.
+        // Create all types of nodes beside DOCUMENT which represent the root node hadnled specificaly while traversing
         const baseNode = await createNode(node);
         if (!baseNode) {
           return;
