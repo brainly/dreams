@@ -392,6 +392,14 @@ export async function render(json) {
         const children = node.children?.map((child) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
+            if (sceneChild.type !== 'COMPONENT') {
+              console.error(
+                'Only component might be added to component set, ommiting.',
+                sceneChild
+              );
+              // TODO: return error node to mark visually that this node is not added to component set.
+              return null;
+            }
             return nodes.get(child.id);
           }
         });
