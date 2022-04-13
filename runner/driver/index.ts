@@ -81,7 +81,6 @@ export async function getFigmaDocument() {
     componentNode.width = width;
     componentNode.height = height;
 
-    componentNode.id = name;
     componentNode.name = name;
 
     const componentMetaChildren = [
