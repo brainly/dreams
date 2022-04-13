@@ -34,6 +34,40 @@ export class PageNode {
     child.parent = this;
   }
 
+  findAll(callback?: (node: SceneNode) => boolean): SceneNode[] {
+    const nodes: SceneNode[] = [];
+    if (callback) {
+      // find all children nodes that match the callback
+      for (const child of this.children) {
+        if (callback(child)) {
+          nodes.push(child);
+        }
+      }
+      for (const child of this.children) {
+        nodes.push(...child.findAll(callback));
+      }
+    }
+    return nodes;
+  }
+
+  findOne(callback?: (node: SceneNode) => boolean): SceneNode | null {
+    if (callback) {
+      // find first child node that matches the callback
+      for (const child of this.children) {
+        if (callback(child)) {
+          return child;
+        }
+      }
+      for (const child of this.children) {
+        const node = child.findOne(callback);
+        if (node) {
+          return node;
+        }
+      }
+    }
+    return null;
+  }
+
   toJSON() {
     return {
       id: this.id,
