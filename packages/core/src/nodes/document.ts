@@ -1,5 +1,7 @@
 import type { PageNode } from './page';
 import type { SceneNode } from './scene';
+import type { ComponentNode } from './component';
+import type { ComponentSetNode } from './componentset';
 
 export class DocumentNode {
   readonly type = 'DOCUMENT';
@@ -60,6 +62,18 @@ export class DocumentNode {
         name: this.name,
         children: this.children.map((child) => child.toJSON()),
       },
+      components: this.findAll((node) => node.type === 'COMPONENT').reduce(
+        (acc, node: ComponentNode) => {
+          acc[node.id] = {
+            key: '',
+            name: node.name,
+            description: node.description,
+            documentationLinks: node.documentationLinks,
+          };
+          return acc;
+        },
+        {}
+      ),
       name: 'Figma Dreams Document',
       created: new Date().toISOString(),
       editorType: 'figma',
@@ -70,12 +84,3 @@ export class DocumentNode {
 export function createDocument() {
   return new DocumentNode();
 }
-
-// example
-// "components": {
-//         "0:2575": {
-//           "key": "8935ede070ea1ce892244103695128e794ef1eb6",
-//           "name": "size=32",
-//           "description": "",
-//           "documentationLinks": []
-//         },

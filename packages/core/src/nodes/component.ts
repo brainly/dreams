@@ -9,11 +9,15 @@ export class ComponentNode extends FrameNode {
   }
 
   variantProperties: { [property: string]: string } | null;
+  description: string;
+  documentationLinks: DocumentationLink[];
 
   toJSON() {
     return {
       ...super.toJSON(),
       variantProperties: this.variantProperties,
+      description: this.description,
+      documentationLinks: this.documentationLinks,
     };
   }
 }
