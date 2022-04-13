@@ -55,6 +55,33 @@ export class DocumentNode {
   }
 
   toJSON() {
+    const components = this.findAll((node) => node.type === 'COMPONENT').reduce(
+      (acc, node: ComponentNode) => {
+        acc[node.id] = {
+          key: '',
+          name: node.name,
+          description: node.description,
+          componnetSetId:
+            node.parent?.type === 'COMPONENT_SET' ? node.parent?.id : undefined,
+          documentationLinks: node.documentationLinks,
+        };
+        return acc;
+      },
+      {}
+    );
+
+    const componentSets = this.findAll(
+      (node) => node.type === 'COMPONENT_SET'
+    ).reduce((acc, node: ComponentSetNode) => {
+      acc[node.id] = {
+        key: '',
+        name: node.name,
+        description: node.description,
+        documentationLinks: node.documentationLinks,
+      };
+      return acc;
+    }, {});
+
     return {
       document: {
         id: this.id,
@@ -62,18 +89,8 @@ export class DocumentNode {
         name: this.name,
         children: this.children.map((child) => child.toJSON()),
       },
-      components: this.findAll((node) => node.type === 'COMPONENT').reduce(
-        (acc, node: ComponentNode) => {
-          acc[node.id] = {
-            key: '',
-            name: node.name,
-            description: node.description,
-            documentationLinks: node.documentationLinks,
-          };
-          return acc;
-        },
-        {}
-      ),
+      components,
+      componentSets,
       name: 'Figma Dreams Document',
       created: new Date().toISOString(),
       editorType: 'figma',
@@ -84,3 +101,16 @@ export class DocumentNode {
 export function createDocument() {
   return new DocumentNode();
 }
+
+// "componentSets": {
+//   "80:3": {
+//     "key": "1f8f2602ea5a5f05eb9384d8c456b5c241d15be9",
+//     "name": "icon/heart_outlined",
+//     "description": "🔍  heart_outlined"
+//   },
+//   "80:172": {
+//     "key": "bfe70b9badeb90305761469666e05d450aa6a44a",
+//     "name": "button/solid-blue",
+//     "description": ""
+//   }
+// },
