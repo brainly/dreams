@@ -60,6 +60,9 @@ export class DocumentNode {
         name: this.name,
         children: this.children.map((child) => child.toJSON()),
       },
+      name: 'Figma Dreams Document',
+      created: new Date().toISOString(),
+      editorType: 'figma',
     };
   }
 }
