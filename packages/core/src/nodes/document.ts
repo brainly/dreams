@@ -101,16 +101,3 @@ export class DocumentNode {
 export function createDocument() {
   return new DocumentNode();
 }
-
-// "componentSets": {
-//   "80:3": {
-//     "key": "1f8f2602ea5a5f05eb9384d8c456b5c241d15be9",
-//     "name": "icon/heart_outlined",
-//     "description": "🔍  heart_outlined"
-//   },
-//   "80:172": {
-//     "key": "bfe70b9badeb90305761469666e05d450aa6a44a",
-//     "name": "button/solid-blue",
-//     "description": ""
-//   }
-// },
