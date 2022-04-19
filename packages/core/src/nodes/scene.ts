@@ -5,7 +5,7 @@ export class SceneNode {
   static #refcount = 0;
 
   readonly type: string;
-  id: string = `Node:${++SceneNode.#refcount}`;
+  readonly id: string = `Node:${++SceneNode.#refcount}`;
   name: string;
   parent: SceneNode | DocumentNode | PageNode | null;
   children: SceneNode[] = [];
