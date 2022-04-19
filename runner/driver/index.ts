@@ -100,7 +100,7 @@ export async function getFigmaDocument() {
       component.appendChild(scene);
     }
 
-    // Componnents which instances are part of other components
+    // Components that are part of other components
     // Icon
     // ------------
     if (component.name.startsWith('Icon/')) {
