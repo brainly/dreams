@@ -89,19 +89,27 @@ export async function getFigmaDocument() {
     for (const node of children) {
       const scene = await sceneNodeFromDOM(node, 'FRAME', true);
 
-      // Custom behaviour for specific nodes
-      // Icon
+      // Replacing instances with appropriate components
+      // Button
       // ------------
-      if (component.name.startsWith('Icon/')) {
-        const [, group, type, size] = component.name.split('/');
-        icons.push({
-          type: `icon-${type}`,
-          size: parseInt(size, 10),
-          component,
-        });
+      if (component.name.startsWith('Button/') && scene.type === 'SVG') {
+        const type = node.children[0].id;
+        const icon = icons.find((icon) => icon.type === type);
       }
 
       component.appendChild(scene);
+    }
+
+    // Componnents which instances are part of other components
+    // Icon
+    // ------------
+    if (component.name.startsWith('Icon/')) {
+      const [, group, type, size] = component.name.split('/');
+      icons.push({
+        type: `icon-${type}`,
+        size: parseInt(size, 10),
+        component,
+      });
     }
 
     // Adding component to component set when variantName is defined.
