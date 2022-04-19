@@ -84,16 +84,17 @@ export async function getFigmaDocument() {
     component.height = height;
     component.name = name;
 
-    const componentMetaChildren = [
-      // @ts-ignore
-      ...componentMetaNode.querySelectorAll('*'),
-    ];
-
-    for (const node of componentMetaChildren) {
+    // Creating content of a component from its children
+    const children = Array.from(componentNode.querySelectorAll('*'));
+    children.forEach(async (node) => {
       const scene = await sceneNodeFromDOM(node, 'FRAME', true);
       component.appendChild(scene);
-    }
+    });
 
+    // Adding component to component set when variantName is defined.
+    // The component set is created lazily for the first variant name found.
+    // This way we don't need an extra html container for variants,
+    // and each component can define the set it belongs to separately.
     if (variantsName) {
       const componentProperties = JSON.parse(
         metaNode.dataset.properties ?? 'null'
