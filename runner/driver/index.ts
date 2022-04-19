@@ -43,13 +43,13 @@ export async function getFigmaDocument() {
   }
 
   const figmaDocument = createDocument();
-  const pageNode = createPage();
+  const page = createPage();
 
-  figmaDocument.appendChild(pageNode);
-  pageNode.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
+  figmaDocument.appendChild(page);
+  page.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
 
   const icons = [];
-  const componentSetMap = new Map();
+  const variants = new Map();
 
   const metaNodes = Array.from(
     document.querySelectorAll<HTMLElement>(
@@ -58,32 +58,31 @@ export async function getFigmaDocument() {
   );
 
   for (const metaNode of metaNodes) {
-    const componentMetaNode = metaNode.firstChild as Element;
+    const componentNode = metaNode.firstChild as Element;
     const name = metaNode.title;
-    const componentSetName = metaNode.dataset.component;
+    const variantsName = metaNode.dataset.component;
 
     const {
       left: x,
       top: y,
       width,
       height,
-    } = componentMetaNode.getBoundingClientRect();
+    } = componentNode.getBoundingClientRect();
 
-    const componentNode: ComponentNode = (await sceneNodeFromDOM(
-      componentMetaNode,
+    const component: ComponentNode = (await sceneNodeFromDOM(
+      componentNode,
       'COMPONENT'
     )) as ComponentNode;
 
-    if (!componentNode) {
+    if (!component) {
       continue;
     }
 
-    componentNode.x = x;
-    componentNode.y = y;
-    componentNode.width = width;
-    componentNode.height = height;
-
-    componentNode.name = name;
+    component.x = x;
+    component.y = y;
+    component.width = width;
+    component.height = height;
+    component.name = name;
 
     const componentMetaChildren = [
       // @ts-ignore
@@ -91,28 +90,28 @@ export async function getFigmaDocument() {
     ];
 
     for (const node of componentMetaChildren) {
-      const sceneNode = await sceneNodeFromDOM(node, 'FRAME', true);
-      componentNode.appendChild(sceneNode);
+      const scene = await sceneNodeFromDOM(node, 'FRAME', true);
+      component.appendChild(scene);
     }
 
-    if (componentSetName) {
+    if (variantsName) {
       const componentProperties = JSON.parse(
         metaNode.dataset.properties ?? 'null'
       );
-      componentNode.variantProperties = componentProperties;
+      component.variantProperties = componentProperties;
 
-      if (!componentSetMap.has(componentSetName)) {
+      if (!variants.has(variantsName)) {
         const componentSetNode = createComponentSet();
-        componentSetNode.name = componentSetName;
+        componentSetNode.name = variantsName;
 
-        pageNode.appendChild(componentSetNode);
-        componentSetMap.set(componentSetName, componentSetNode);
+        page.appendChild(componentSetNode);
+        variants.set(variantsName, componentSetNode);
       }
 
-      const componentSetNode = componentSetMap.get(componentSetName);
-      componentSetNode.appendChild(componentNode);
+      const componentSetNode = variants.get(variantsName);
+      componentSetNode.appendChild(component);
     } else {
-      pageNode.appendChild(componentNode);
+      page.appendChild(component);
     }
   }
 
