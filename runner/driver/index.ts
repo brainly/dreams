@@ -89,7 +89,7 @@ export async function getFigmaDocument() {
     for (const node of children) {
       const scene = await sceneNodeFromDOM(node, 'FRAME', true);
 
-      // Replacing instances with appropriate components
+      // Replacing scene nodes with instances of nested components
       // Button
       // ------------
       if (component.name.startsWith('Button/') && scene.type === 'SVG') {
