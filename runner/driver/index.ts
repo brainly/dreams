@@ -48,13 +48,14 @@ export async function getFigmaDocument() {
   figmaDocument.appendChild(pageNode);
   pageNode.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
 
+  const icons = [];
+  const componentSetMap = new Map();
+
   const metaNodes = Array.from(
     document.querySelectorAll<HTMLElement>(
       'section > .item, section > .inline-item'
     )
   );
-
-  const componentSetMap = new Map();
 
   for (const metaNode of metaNodes) {
     const componentMetaNode = metaNode.firstChild as Element;
@@ -76,6 +77,7 @@ export async function getFigmaDocument() {
     if (!componentNode) {
       continue;
     }
+
     componentNode.x = x;
     componentNode.y = y;
     componentNode.width = width;
