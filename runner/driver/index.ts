@@ -48,7 +48,7 @@ export async function getFigmaDocument() {
   figmaDocument.appendChild(page);
   page.name = `Brainly Pencil - Style Guide ${styleGuideVersion}`;
 
-  const icons = [];
+  const icons: { type: string; size: number; component: ComponentNode }[] = [];
   const variants = new Map();
 
   const metaNodes = Array.from(
@@ -92,7 +92,7 @@ export async function getFigmaDocument() {
       // Replacing scene nodes with instances of nested components
       // Button
       // ------------
-      if (component.name.startsWith('Button/') && scene.type === 'SVG') {
+      if (component.name.startsWith('Button/') && scene?.type === 'SVG') {
         const type = node.children[0].id;
         const icon = icons.find((icon) => icon.type === type);
       }
