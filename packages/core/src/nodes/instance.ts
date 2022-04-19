@@ -19,7 +19,3 @@ export class InstanceNode extends FrameNode {
     };
   }
 }
-
-export function createInstance() {
-  return new InstanceNode();
-}

@@ -1,4 +1,5 @@
 import { FrameNode } from './frame';
+import { InstanceNode } from './instance';
 
 export class ComponentNode extends FrameNode {
   //@ts-ignore
@@ -11,6 +12,13 @@ export class ComponentNode extends FrameNode {
   variantProperties: { [property: string]: string } | null;
   description: string;
   documentationLinks: DocumentationLink[];
+
+  createInstance() {
+    const instance = new InstanceNode();
+    instance.componentId = this.id;
+    instance.variantProperties = { ...this.variantProperties };
+    return instance;
+  }
 
   toJSON() {
     return {
