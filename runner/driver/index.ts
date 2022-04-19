@@ -112,10 +112,10 @@ export async function getFigmaDocument() {
       });
     }
 
-    // Adding component to component set when variantName is defined.
-    // The component set is created lazily for the first variant name found.
+    // Adding component to component set when variantsName is defined.
+    // The component set is created lazily for the first variants name found.
     // This way we don't need an extra html container for variants,
-    // and each component can define the set it belongs to separately.
+    // and each component can define the set it belongs to using data attributes.
     if (variantsName) {
       const componentProperties = JSON.parse(
         metaNode.dataset.properties ?? 'null'
