@@ -86,10 +86,23 @@ export async function getFigmaDocument() {
 
     // Creating content of a component from its children
     const children = Array.from(componentNode.querySelectorAll('*'));
-    children.forEach(async (node) => {
+    for (const node of children) {
       const scene = await sceneNodeFromDOM(node, 'FRAME', true);
+
+      // Custom behaviour for specific nodes
+      // Icon
+      // ------------
+      if (component.name.startsWith('Icon/')) {
+        const [, group, type, size] = component.name.split('/');
+        icons.push({
+          type: `icon-${type}`,
+          size: parseInt(size, 10),
+          component,
+        });
+      }
+
       component.appendChild(scene);
-    });
+    }
 
     // Adding component to component set when variantName is defined.
     // The component set is created lazily for the first variant name found.
