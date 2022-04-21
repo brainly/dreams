@@ -91,7 +91,7 @@ export async function getFigmaDocument() {
 
       // Replacing scene nodes with instances of nested components
       // Button
-      // ------------
+      // ---
       if (component.name.startsWith('Button/') && scene?.type === 'SVG') {
         const type = node.children[0].id;
         const icon = icons.find((icon) => icon.type === type);
@@ -102,7 +102,7 @@ export async function getFigmaDocument() {
 
     // Components that are part of other components
     // Icon
-    // ------------
+    // ---
     if (component.name.startsWith('Icon/')) {
       const [, group, type, size] = component.name.split('/');
       icons.push({
