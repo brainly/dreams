@@ -6,6 +6,7 @@ import {
   createComponentSet,
   ComponentNode,
 } from '@packages/core';
+import { SceneNode } from '@packages/core/dist/nodes/scene';
 
 function bemClassToText(bemClass) {
   return bemClass.replace('sg-', '').replace('-', ' ');
@@ -86,15 +87,18 @@ export async function getFigmaDocument() {
 
     // Creating content of a component from its children
     const children = Array.from(componentNode.querySelectorAll('*'));
-    for (const node of children) {
-      const scene = await sceneNodeFromDOM(node, 'FRAME', true);
+    for (const element of children) {
+      let scene: SceneNode = await sceneNodeFromDOM(element, 'FRAME', true);
 
       // Replacing scene nodes with instances of nested components
       // Button
       // ---
-      if (component.name.startsWith('Button/') && scene?.type === 'SVG') {
-        const type = node.children[0].id;
+      if (component.name.startsWith('Button/') && node?.type === 'SVG') {
+        const type = element.children[0].id;
         const icon = icons.find((icon) => icon.type === type);
+        if (icon) {
+          scene = icon.component.createInstance();
+        }
       }
 
       component.appendChild(scene);
