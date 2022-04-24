@@ -88,14 +88,23 @@ export async function getFigmaDocument() {
     // Creating content of a component from its children
     const children = Array.from(componentNode.querySelectorAll('*'));
     for (const element of children) {
-      let scene: SceneNode = await sceneNodeFromDOM(element, 'FRAME', true);
+      let scene: SceneNode | null = await sceneNodeFromDOM(
+        element,
+        'FRAME',
+        true
+      );
 
       // Replacing scene nodes with instances of nested components
       // Button
       // ---
-      if (component.name.startsWith('Button/') && node?.type === 'SVG') {
-        const type = element.children[0].id;
-        const icon = icons.find((icon) => icon.type === type);
+      if (component.name.startsWith('button/') && scene?.type === 'SVG') {
+        const type = element.querySelector('svg')?.id;
+        const size = element.clientHeight;
+        const icon = icons.find(
+          (icon) => icon.type === type && icon.size === size
+        );
+        console.error(component.name, icon);
+
         if (icon) {
           scene = icon.component.createInstance();
         }
@@ -107,7 +116,7 @@ export async function getFigmaDocument() {
     // Components that are part of other components
     // Icon
     // ---
-    if (component.name.startsWith('Icon/')) {
+    if (component.name.startsWith('icon/')) {
       const [, group, type, size] = component.name.split('/');
       icons.push({
         type: `icon-${type}`,
