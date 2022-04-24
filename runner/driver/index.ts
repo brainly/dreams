@@ -103,7 +103,6 @@ export async function getFigmaDocument() {
         const icon = icons.find(
           (icon) => icon.type === type && icon.size === size
         );
-        console.error(component.name, icon);
 
         if (icon) {
           scene = icon.component.createInstance();
