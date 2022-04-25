@@ -5,6 +5,7 @@ import {
   createPage,
   createComponentSet,
   ComponentNode,
+  InstanceNode,
 } from '@packages/core';
 import { SceneNode } from '@packages/core/dist/nodes/scene';
 
@@ -105,7 +106,9 @@ export async function getFigmaDocument() {
         );
 
         if (icon) {
-          scene = icon.component.createInstance();
+          const instance: InstanceNode = icon.component.createInstance();
+          instance.applyOverrides(scene);
+          scene = instance;
         }
       }
 

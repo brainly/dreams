@@ -1,4 +1,6 @@
 import { FrameNode } from './frame';
+import { SceneNode } from './scene';
+import { applyOverrides } from './overrides';
 
 export class InstanceNode extends FrameNode {
   //@ts-ignore
@@ -10,6 +12,10 @@ export class InstanceNode extends FrameNode {
 
   componentId: string;
   variantProperties: { [property: string]: string } | null;
+
+  applyOverrides(node: SceneNode) {
+    applyOverrides(this, node);
+  }
 
   toJSON() {
     return {
