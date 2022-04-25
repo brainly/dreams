@@ -16,7 +16,14 @@ export class ComponentNode extends FrameNode {
   createInstance() {
     const instance = new InstanceNode();
     instance.componentId = this.id;
-    instance.variantProperties = { ...this.variantProperties };
+
+    Object.keys(this).forEach((key) => {
+      if (key === 'type' || typeof key === 'function') {
+        return;
+      }
+      instance[key] = this[key];
+    });
+
     return instance;
   }
 
