@@ -412,24 +412,26 @@ export async function render(json) {
           }
         });
 
-        const baseNode = figma.combineAsVariants(children, figma.currentPage);
+        const scene = figma.combineAsVariants(children, figma.currentPage);
 
-        console.log('variant created', baseNode.type, baseNode.id);
-        baseNode.name = node.name;
+        console.log('variant created', scene.type, scene.id);
+        scene.name = node.name;
 
-        nodes.set(node.id, baseNode);
+        nodes.set(node.id, scene);
       } else if (node.type !== 'DOCUMENT') {
         // Create all types of nodes beside DOCUMENT which represent the root node hadnled specificaly while traversing
-        const baseNode = await createNode(node, nodes);
-        if (!baseNode) {
+        const scene = await createNode(node, nodes);
+        if (!scene) {
           return;
         }
 
-        nodes.set(node.id, baseNode);
+        nodes.set(node.id, scene);
 
         if (node.children.length === 1) {
           const sceneChild = nodes.get(node.children[0].id);
         }
+
+        //
 
         node.children?.forEach((child) => {
           const sceneChild = nodes.get(child.id);
@@ -437,27 +439,28 @@ export async function render(json) {
             if (
               node.children.length === 1 &&
               sceneChild.type === 'FRAME' &&
-              sceneChild.width === baseNode.width &&
-              sceneChild.height === baseNode.height &&
+              sceneChild.width === scene.width &&
+              sceneChild.height === scene.height &&
               sceneChild.x === 0 &&
               sceneChild.y === 0
             ) {
               // Merging parent and single child frame if they share the same size (and the child has no offset)
-              // That way we can avoid creating unnecessary frames. One example of such situation is component with single svg-generated frame.
+              // That way we can avoid creating unnecessary frames. E.g. component with single svg-generated frame.
+              // Merging is done by skiping current sceneChild and adding all its children to the parent.
               console.log('merging parent and child', {
-                parent: baseNode.id,
-                child: sceneChild.id,
+                parent: scene,
+                child: sceneChild,
               });
 
               // Moving chilren of to-be-removed frame to the base
               sceneChild.children?.forEach((child) => {
-                baseNode.appendChild(child);
+                scene.appendChild(child);
               });
 
               // TODO: merge parent and child properties before removing sceneChild
               sceneChild.remove();
             } else {
-              baseNode.appendChild(sceneChild);
+              scene.appendChild(sceneChild);
             }
           }
         });
