@@ -9,6 +9,7 @@ export function applyOverrides(dest: SceneNode, source: SceneNode) {
         key === 'type' ||
         key === 'id' ||
         key === 'name' ||
+        key === 'parent' ||
         typeof source[key] === 'function'
       ) {
         continue;

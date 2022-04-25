@@ -24,6 +24,7 @@ export class ComponentNode extends FrameNode {
         key === 'relativeTransform' ||
         key === 'x' ||
         key === 'y' ||
+        key === 'parent' ||
         typeof this[key] === 'function'
       ) {
         return;
