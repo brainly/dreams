@@ -107,7 +107,7 @@ export async function getFigmaDocument() {
 
         if (icon) {
           const instance: InstanceNode = icon.component.createInstance();
-          //instance.applyOverrides(scene);
+          instance.applyOverrides(scene);
           scene = instance;
         }
       }
