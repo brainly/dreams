@@ -18,7 +18,7 @@ export class ComponentNode extends FrameNode {
     instance.componentId = this.id;
 
     Object.keys(this).forEach((key) => {
-      if (key === 'type' || typeof key === 'function') {
+      if (key === 'type' || key === 'id' || typeof key === 'function') {
         return;
       }
       instance[key] = this[key];

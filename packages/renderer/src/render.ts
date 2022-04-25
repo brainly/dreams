@@ -202,7 +202,7 @@ function variantPropertiesToName(variantProperties) {
     .join(', ');
 }
 
-async function createNode(data) {
+async function createNode(data, nodes) {
   let node;
 
   switch (data.type) {
@@ -233,6 +233,8 @@ async function createNode(data) {
       break;
     }
     case 'INSTANCE': {
+      const component = nodes.get(data.componentId);
+      console.error(data, component);
       node = figma.createFrame();
       break;
     }
@@ -412,7 +414,7 @@ export async function render(json) {
         nodes.set(node.id, baseNode);
       } else if (node.type !== 'DOCUMENT') {
         // Create all types of nodes beside DOCUMENT which represent the root node hadnled specificaly while traversing
-        const baseNode = await createNode(node);
+        const baseNode = await createNode(node, nodes);
         if (!baseNode) {
           return;
         }
