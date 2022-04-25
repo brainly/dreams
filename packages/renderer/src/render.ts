@@ -427,14 +427,16 @@ export async function render(json) {
 
         nodes.set(node.id, scene);
 
-        // We cannot add children to INSTANCE so we skip that step.
-        if (scene.type === 'INSTANCE') {
-          return;
-        }
-
         node.children?.forEach((child) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
+            // We cannot add children to INSTANCE so we need to remove previously created nodes
+            // This step is needed because we use postorder traversal (from the bottom to the top)
+            if (scene.type === 'INSTANCE') {
+              sceneChild.remove();
+              return;
+            }
+
             if (
               node.children.length === 1 &&
               sceneChild.type === 'FRAME' &&
