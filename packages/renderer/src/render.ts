@@ -427,11 +427,10 @@ export async function render(json) {
 
         nodes.set(node.id, scene);
 
-        if (node.children.length === 1) {
-          const sceneChild = nodes.get(node.children[0].id);
+        // We cannot add children to INSTANCE so we skip that step.
+        if (scene.type === 'INSTANCE') {
+          return;
         }
-
-        //
 
         node.children?.forEach((child) => {
           const sceneChild = nodes.get(child.id);
