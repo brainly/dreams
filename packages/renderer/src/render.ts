@@ -339,7 +339,7 @@ async function createNode(data) {
   console.log('node created', node.type, node.id);
   await assignBasicProps(node, data);
 
-  // SVG-generated vectos.
+  // SVG-generated vectors.
   // Vector flattening is useful in the context of icon-related components because it produces a cleaner hierarchy.
   if (data.flatten) {
     try {
