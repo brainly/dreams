@@ -210,10 +210,10 @@ async function createNode(data, nodes) {
     case 'COMPONENT_SET':
     case 'DOCUMENT':
     case 'GROUP':
+      node = figma.createFrame();
       console.error(
         `Creating ''${data.type}'' not supported! Frame created instead.`
       );
-      node = figma.createFrame();
       break;
     case 'CANVAS':
     case 'PAGE': {
@@ -234,8 +234,14 @@ async function createNode(data, nodes) {
     }
     case 'INSTANCE': {
       const component = nodes.get(data.componentId);
-      console.error(data, component);
-      node = figma.createFrame();
+      if (component) {
+        node = component.createInstance();
+      } else {
+        node = figma.createFrame();
+        console.error(
+          `Creating instance failed. Component '${data.componentId}' cannot be found! Frame created instead.`
+        );
+      }
       break;
     }
     case 'LINE': {
