@@ -6,6 +6,7 @@ import {
   createComponentSet,
   ComponentNode,
   InstanceNode,
+  SvgNode,
 } from '@packages/core';
 import { SceneNode } from '@packages/core/dist/nodes/scene';
 
@@ -109,6 +110,12 @@ export async function getFigmaDocument() {
           console.log('Replacing SVG with instance of component', icon);
           const instance: InstanceNode = icon.component.createInstance();
           instance.applyOverrides(scene);
+          const svg = instance.findOne(
+            (node) => node.type === 'SVG'
+          ) as SvgNode;
+          if (svg) {
+            svg.content = (scene as SvgNode).content;
+          }
           scene = instance;
         }
       }
