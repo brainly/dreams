@@ -1,8 +1,7 @@
-import { FrameNode } from './frame';
-import { InstanceNode } from './instance';
 import { SceneNode } from './scene';
 
 export function applyOverrides(dest: SceneNode, source: SceneNode) {
+  console.log('applyOverrides', dest, source);
   for (const key in source) {
     if (key in dest) {
       if (
@@ -14,6 +13,8 @@ export function applyOverrides(dest: SceneNode, source: SceneNode) {
         continue;
       }
 
+      console.log('applyOverrides: keys', source[key], dest[key]);
+
       // apply overrides within children nodes
       if (key === 'children') {
         dest[key] = dest[key].map((child, index) => {
@@ -24,6 +25,7 @@ export function applyOverrides(dest: SceneNode, source: SceneNode) {
           }
         });
       } else {
+        console.log('applyOverrides: assing', key, source[key], dest[key]);
         dest[key] = source[key];
       }
     }

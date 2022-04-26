@@ -106,6 +106,7 @@ export async function getFigmaDocument() {
         );
 
         if (icon) {
+          console.log('Replacing SVG with instance of component', icon);
           const instance: InstanceNode = icon.component.createInstance();
           instance.applyOverrides(scene);
           scene = instance;
