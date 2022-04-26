@@ -4,12 +4,11 @@ import { SceneNode } from './scene';
 
 export function applyOverrides(dest: SceneNode, source: SceneNode) {
   for (const key in source) {
-    if (key in dest && key in source) {
+    if (key in dest) {
       if (
         key === 'type' ||
         key === 'id' ||
         key === 'name' ||
-        key === 'parent' ||
         typeof source[key] === 'function'
       ) {
         continue;
