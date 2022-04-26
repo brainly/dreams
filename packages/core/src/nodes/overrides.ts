@@ -13,7 +13,7 @@ export function applyOverrides(dest: SceneNode, source: SceneNode) {
         continue;
       }
 
-      console.log('applyOverrides: keys', source[key], dest[key]);
+      console.log('applyOverrides - keys:', source[key], dest[key]);
 
       // apply overrides within children nodes
       if (key === 'children') {
@@ -25,7 +25,7 @@ export function applyOverrides(dest: SceneNode, source: SceneNode) {
           }
         });
       } else {
-        console.log('applyOverrides: assing', key, source[key], dest[key]);
+        console.log('applyOverrides - assign:', key, source[key], dest[key]);
         dest[key] = source[key];
       }
     }
