@@ -439,7 +439,6 @@ export async function render(json) {
 
             if (
               node.children.length === 1 &&
-              sceneChild.type === 'FRAME' &&
               sceneChild.width === scene.width &&
               sceneChild.height === scene.height &&
               sceneChild.x === 0 &&
