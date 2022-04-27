@@ -1,4 +1,4 @@
-import { SceneNode } from './scene';
+import { SceneNode } from '../nodes/scene';
 
 export function applyOverrides(dest: SceneNode, source: SceneNode) {
   console.log('applyOverrides', dest, source);
