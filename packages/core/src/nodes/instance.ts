@@ -1,6 +1,6 @@
 import { FrameNode } from './frame';
 import { SceneNode } from './scene';
-import { applyOverrides } from './overrides';
+import { applyOverrides } from '../helpers/overrides';
 
 export class InstanceNode extends FrameNode {
   //@ts-ignore
