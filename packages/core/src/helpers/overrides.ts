@@ -1,5 +1,5 @@
 import { SceneNode } from '../nodes/scene';
-
+// TODO: this is a mess, need to clean up
 export function applyOverrides(dest: SceneNode, source: SceneNode) {
   console.log('applyOverrides', dest, source);
   for (const key in source) {
