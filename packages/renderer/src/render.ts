@@ -212,7 +212,7 @@ async function createNode(data, nodes) {
     case 'GROUP':
       node = figma.createFrame();
       console.error(
-        `Creating ''${data.type}'' not supported! Frame created instead.`
+        `Creating '${data.type}' not supported! Frame created instead.`
       );
       break;
     case 'CANVAS':
