@@ -56,6 +56,30 @@ export class SceneNode {
 
   meta: JSONValue;
 
+  clone() {
+    const node = new SceneNode();
+    // copy properties from this node
+    for (const key in this as SceneNode) {
+      if (
+        key === 'type' ||
+        key === 'id' ||
+        key === 'name' ||
+        typeof this[key] === 'function'
+      ) {
+        continue;
+      }
+
+      if (key === 'children') {
+        node.children = this.children.map((child) => child.clone());
+        continue;
+      }
+
+      // structured clone is used to handle arrays and nested objects
+      node[key] = structuredClone(this[key]);
+    }
+    return node;
+  }
+
   findAll(callback?: (node: SceneNode) => boolean): SceneNode[] {
     const nodes: SceneNode[] = [];
     if (callback) {
