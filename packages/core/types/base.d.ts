@@ -14,5 +14,4 @@ type NodeType =
   | 'SVG'
   | 'COMPONENT'
   | 'TEXT'
-  | 'SCENE'
   | 'COMPONENT_SET';
