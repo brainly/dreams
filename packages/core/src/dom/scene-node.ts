@@ -91,10 +91,11 @@ export async function sceneNodeFromDOM(
   let sceneNode: FrameNode | ComponentNode | SvgNode | TextNode | null = null;
 
   if (isSVG) {
-    sceneNode = createSvg();
-    sceneNode.content = getSVGString(element);
-    sceneNode.flatten = flattenSVG;
-    sceneNode.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
+    const svg = createSvg();
+    svg.content = getSVGString(element);
+    svg.flatten = flattenSVG;
+    svg.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
+    sceneNode = svg;
   } else if (rootNodeType === 'COMPONENT') {
     sceneNode = createComponent();
   } else if (isImage || hasVisualStyles(styles)) {
