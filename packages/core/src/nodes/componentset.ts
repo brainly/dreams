@@ -1,8 +1,7 @@
 import { FrameNode } from './frame';
 
 export class ComponentSetNode extends FrameNode {
-  //@ts-ignore
-  readonly type = 'COMPONENT_SET';
+  readonly type: NodeType = 'COMPONENT_SET';
 
   constructor() {
     super();

@@ -4,7 +4,7 @@ import type { ComponentNode } from './component';
 import type { ComponentSetNode } from './componentset';
 
 export class DocumentNode {
-  readonly type = 'DOCUMENT';
+  readonly type: NodeType = 'DOCUMENT';
 
   constructor() {}
   id: string = '0:0';

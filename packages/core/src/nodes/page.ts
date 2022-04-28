@@ -3,7 +3,7 @@ import { SceneNode } from './scene';
 
 export class PageNode {
   static #refcount = 0;
-  readonly type = 'PAGE';
+  readonly type: NodeType = 'PAGE';
 
   id: string = `Page:${++PageNode.#refcount}`;
   name: string = this.id;

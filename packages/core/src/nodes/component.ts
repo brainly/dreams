@@ -2,8 +2,7 @@ import { FrameNode } from './frame';
 import { InstanceNode } from './instance';
 
 export class ComponentNode extends FrameNode {
-  //@ts-ignore
-  readonly type = 'COMPONENT';
+  readonly type: NodeType = 'COMPONENT';
 
   constructor() {
     super();
