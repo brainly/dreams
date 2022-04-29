@@ -90,11 +90,7 @@ export async function getFigmaDocument() {
     // Creating content of a component from its children
     const children = Array.from(componentNode.querySelectorAll('*'));
     for (const element of children) {
-      let scene: SceneNode | null = await sceneNodeFromDOM(
-        element,
-        'FRAME',
-        true
-      );
+      let scene = await sceneNodeFromDOM(element, 'FRAME', true);
 
       // Replacing scene nodes with instances of nested components
       // Button
