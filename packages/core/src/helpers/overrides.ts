@@ -1,5 +1,6 @@
 import { SceneNode } from '../nodes/scene';
 
+// TODO: use strucuredClone or SceneNode.clone() instead
 export function applyOverrides(dest: SceneNode, source: SceneNode) {
   for (const key in source) {
     if (
