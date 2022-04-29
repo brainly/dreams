@@ -1,7 +1,7 @@
 import { FrameNode } from './frame';
 
 export class SvgNode extends FrameNode {
-  readonly type: NodeType = 'SVG';
+  readonly type: SceneNodeType = 'SVG';
 
   constructor() {
     super();

@@ -5,7 +5,7 @@ type JSONValue =
   | { [x: string]: JSONValue }
   | Array<JSONValue>;
 
-type NodeType =
+type SceneNodeType =
   | 'DOCUMENT'
   | 'PAGE'
   | 'FRAME'

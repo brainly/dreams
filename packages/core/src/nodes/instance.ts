@@ -3,7 +3,7 @@ import { SceneNode } from './scene';
 import { applyOverrides } from '../helpers/overrides';
 
 export class InstanceNode extends FrameNode {
-  readonly type: NodeType = 'INSTANCE';
+  readonly type: SceneNodeType = 'INSTANCE';
 
   constructor() {
     super();

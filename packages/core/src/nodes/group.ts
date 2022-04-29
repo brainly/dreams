@@ -1,7 +1,7 @@
 import { SceneNode } from './scene';
 
 export class GroupNode extends SceneNode {
-  readonly type: NodeType = 'GROUP';
+  readonly type: SceneNodeType = 'GROUP';
 
   constructor() {
     super();

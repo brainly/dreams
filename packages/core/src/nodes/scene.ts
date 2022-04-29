@@ -4,7 +4,7 @@ import type { PageNode } from './page';
 export class SceneNode {
   static #refcount = 0;
 
-  readonly type: string;
+  readonly type: SceneNodeType;
   readonly id: string = `Node:${++SceneNode.#refcount}`;
   name: string;
   parent: SceneNode | DocumentNode | PageNode | null;
