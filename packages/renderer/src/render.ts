@@ -457,7 +457,7 @@ export async function render(json) {
                 scene.appendChild(child);
               });
 
-              // TODO: merge parent and child properties before removing sceneChild
+              // TODO: apply overrides from sceneChild to scene (deep merge containing children)
               sceneChild.remove();
             } else {
               scene.appendChild(sceneChild);
