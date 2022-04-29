@@ -72,7 +72,7 @@ export async function sceneNodeFromDOM(
   element,
   rootNodeType: 'FRAME' | 'COMPONENT' = 'FRAME',
   flattenSVG: boolean = false
-) {
+): Promise<FrameNode | ComponentNode | SvgNode | TextNode | null> {
   const bcr = element.getBoundingClientRect();
   const { x, y, width, height } = bcr;
   const styles = getComputedStyle(element);
