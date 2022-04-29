@@ -399,8 +399,8 @@ export async function render(json) {
     visit: async (node) => {
       if (node.type === 'COMPONENT_SET') {
         // Component set need to be handled separately since
-        // it is a special case where all children components need to
-        // be passed alltogether to the component set during creation.
+        // all children components need to be passed alltogether
+        // to the component set during creation.
         const children = node.children?.map((child) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
