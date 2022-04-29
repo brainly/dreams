@@ -16,6 +16,8 @@ export class ComponentNode extends FrameNode {
     const instance = new InstanceNode();
     instance.componentId = this.id;
 
+    const copy = this.clone();
+
     Object.keys(this).forEach((key) => {
       if (
         key === 'type' ||
@@ -28,7 +30,7 @@ export class ComponentNode extends FrameNode {
       ) {
         return;
       }
-      instance[key] = this[key];
+      instance[key] = copy[key];
     });
 
     return instance;

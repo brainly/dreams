@@ -57,30 +57,6 @@ export class SceneNode {
 
   meta: JSONValue;
 
-  clone() {
-    const node = new SceneNode();
-    // copy properties from this node
-    for (const key in this as SceneNode) {
-      if (
-        key === 'type' ||
-        key === 'id' ||
-        key === 'name' ||
-        typeof this[key] === 'function'
-      ) {
-        continue;
-      }
-
-      if (key === 'children') {
-        node.children = this.children.map((child) => child.clone());
-        continue;
-      }
-
-      // structured clone is used to handle arrays and nested objects
-      node[key] = structuredClone(this[key]);
-    }
-    return node;
-  }
-
   findAll(callback?: (node: SceneNode) => boolean): SceneNode[] {
     const nodes: SceneNode[] = [];
     if (callback) {
@@ -113,6 +89,44 @@ export class SceneNode {
       }
     }
     return null;
+  }
+
+  clone(): this {
+    const node = new (this.constructor as any)();
+    // copy properties from this node
+    console.log('cloning', this.constructor.name, this);
+    for (const key in this as SceneNode) {
+      if (
+        key === 'type' ||
+        key === 'id' ||
+        key === 'name' ||
+        key === 'parent' ||
+        typeof this[key] === 'function'
+      ) {
+        continue;
+      }
+
+      if (key === 'children') {
+        node.children = this.children.map((child) => {
+          const clonedChild = child.clone();
+          clonedChild.parent = node;
+          return clonedChild;
+        });
+        continue;
+      }
+
+      // structured clone is used to handle arrays and nested objects
+      try {
+        node[key] = structuredClone(this[key]);
+      } catch (e) {
+        console.error(
+          `Error while creating structred clone of ${key} in ${this.name}(${this.id}). Fallback to simple copy.`,
+          e
+        );
+        node[key] = this[key];
+      }
+    }
+    return node;
   }
 
   toJSON() {
