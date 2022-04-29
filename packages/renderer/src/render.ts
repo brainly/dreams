@@ -298,7 +298,8 @@ async function createNode(data, nodes) {
       node.fontSize = data.style?.fontSize ?? 14;
       node.textCase = data.style.textCase ?? 'ORIGINAL';
 
-      // We need to explicitly disable autoresize during this phase to keep correct placement after setting x,y props.
+      // We need to explicitly disable autoresize during
+      // this phase to keep correct placement after setting x, y props.
       node.textAutoResize = 'NONE';
 
       node.letterSpacing = {
@@ -348,13 +349,14 @@ async function createNode(data, nodes) {
   await assignBasicProps(node, data);
 
   // SVG-generated vectors.
-  // Vector flattening is useful in the context of icon-related components because it produces a cleaner hierarchy.
+  // Vector flattening is useful in the context of icon-related
+  // components because it produces a cleaner hierarchy.
   if (data.flatten) {
     try {
       console.log('flattening node', node.id);
 
-      // We need to reset position of the originalNode to 0,0 before flattening
-      // because it will be positioned by its new parent.
+      // We need to reset position of the originalNode to 0,0
+      // before flattening because it will be positioned by its new parent.
       const originalNode = node;
       originalNode.x = 0;
       originalNode.y = 0;
@@ -364,7 +366,8 @@ async function createNode(data, nodes) {
       await assignBasicProps(node, data);
       node.appendChild(vector);
 
-      // Flattened vector need to scale relative to its parent which reflects default svg behaviour.
+      // Flattened vector need to scale relative to
+      // its parent which reflects default svg behaviour.
       vector.constraints = {
         horizontal: 'SCALE',
         vertical: 'SCALE',
@@ -395,8 +398,9 @@ export async function render(json) {
   await traverse(json, {
     visit: async (node) => {
       if (node.type === 'COMPONENT_SET') {
-        // component set need to be handled separately as it is a special case
-        // where all children components need to be passed to the component set during creation.
+        // Component set need to be handled separately since
+        // it is a special case where all children components need to
+        // be passed alltogether to the component set during creation.
         const children = node.children?.map((child) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
@@ -405,7 +409,8 @@ export async function render(json) {
                 'Only component might be added to component set, ommiting.',
                 sceneChild
               );
-              // TODO: return error node to mark visually that this node is not added to component set.
+              // TODO: return error node to mark visually
+              // the node is not added to the component set.
               return null;
             }
             return nodes.get(child.id);
@@ -419,7 +424,8 @@ export async function render(json) {
 
         nodes.set(node.id, scene);
       } else if (node.type !== 'DOCUMENT') {
-        // Create all types of nodes beside DOCUMENT which represent the root node hadnled specificaly while traversing
+        // Create all types of nodes beside DOCUMENT which represent
+        // the root node hadnled specificaly while traversing
         const scene = await createNode(node, nodes);
         if (!scene) {
           return;
@@ -430,8 +436,10 @@ export async function render(json) {
         node.children?.forEach((child) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
-            // We cannot add children to INSTANCE so we need to remove previously created nodes
-            // This step is needed because we use postorder traversal (from the bottom to the top)
+            // We cannot add children to INSTANCE
+            // so we need to remove previously created nodes.
+            // This step is needed because we use
+            // postorder traversal(from the bottom to the top)
             if (scene.type === 'INSTANCE') {
               sceneChild.remove();
               return;
@@ -444,9 +452,12 @@ export async function render(json) {
               sceneChild.x === 0 &&
               sceneChild.y === 0
             ) {
-              // Merging parent and single child frame if they share the same size (and the child has no offset)
-              // That way we can avoid creating unnecessary frames. E.g. component with single svg-generated frame.
-              // Merging is done by skiping current sceneChild and adding all its children to the parent.
+              // Merging parent and single child frame if they
+              // share the same size(and the child has no offset).
+              // That way we can avoid creating unnecessary frames.
+              // E.g.component with single svg - generated frame.
+              // Merging is done by skiping current sceneChild
+              // and adding all its children to the parent.
               console.log('merging parent and child', {
                 parent: scene,
                 child: sceneChild,
@@ -457,7 +468,8 @@ export async function render(json) {
                 scene.appendChild(child);
               });
 
-              // TODO: apply overrides from sceneChild to scene (deep merge containing children)
+              // TODO: apply overrides from sceneChild
+              // to scene(deep merge containing children)
               sceneChild.remove();
             } else {
               scene.appendChild(sceneChild);
