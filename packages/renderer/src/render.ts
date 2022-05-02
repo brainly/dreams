@@ -357,6 +357,7 @@ async function createNode(data, nodes) {
 
       // We need to reset position of the originalNode to 0,0
       // before flattening because it will be positioned by its new parent.
+      // Positioning child relatively to the parent is happening in .appenChild.
       const originalNode = node;
       originalNode.x = 0;
       originalNode.y = 0;
