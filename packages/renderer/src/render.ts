@@ -459,7 +459,7 @@ export async function render(json) {
               // Merging parent and single child frame if they
               // share the same size(and the child has no offset).
               // That way we can avoid creating unnecessary frames.
-              // E.g.component with single svg - generated frame.
+              // E.g.component with single svg-generated frame.
               // Merging is done by skiping current sceneChild
               // and adding all its children to the parent.
               console.log('merging parent and child', {
