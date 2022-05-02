@@ -442,6 +442,9 @@ export async function render(json) {
             // This step is needed because we use
             // postorder traversal(from the bottom to the top)
             if (scene.type === 'INSTANCE') {
+              // TODO: apply overrides from sceneChild
+              // to scene(deep merge containing children)
+
               sceneChild.remove();
               return;
             }
@@ -469,8 +472,6 @@ export async function render(json) {
                 scene.appendChild(child);
               });
 
-              // TODO: apply overrides from sceneChild
-              // to scene(deep merge containing children)
               sceneChild.remove();
             } else {
               scene.appendChild(sceneChild);
