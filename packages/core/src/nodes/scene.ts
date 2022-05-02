@@ -120,7 +120,7 @@ export class SceneNode {
         node[key] = structuredClone(this[key]);
       } catch (e) {
         console.error(
-          `Error while creating structred clone of ${key} in ${this.name}(${this.id}). Fallback to simple copy.`,
+          `Error while creating structred clone of ${key} in ${this.name}(${this.id}). Fallback to copy reference.`,
           e
         );
         node[key] = this[key];
