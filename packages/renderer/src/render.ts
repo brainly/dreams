@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { applyOverrides } from './overrides';
 
 const fontWeightMap = {
   '100': 'Thin',
@@ -434,7 +435,7 @@ export async function render(json) {
 
         nodes.set(node.id, scene);
 
-        node.children?.forEach((child) => {
+        node.children?.forEach((child, index) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
             // Cannot add children to INSTANCE,
@@ -442,9 +443,10 @@ export async function render(json) {
             // This step is needed because of
             // postorder traversal(from the bottom to the top)
             if (scene.type === 'INSTANCE') {
-              // TODO: Apply overrides to scene's children (deep).
-              // Overrides on scene should be already applied
-              // in after assigning basic props.
+              // Apply overrides to scene's child (deep).
+              // Overrides on scene node has beem already applied
+              // when assigning basic props to instance node.
+              applyOverrides(scene.children[index], sceneChild);
 
               sceneChild.remove();
               return;
