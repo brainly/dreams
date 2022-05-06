@@ -20,10 +20,8 @@ export function applyOverrides(dest: SceneNode, source: SceneNode) {
     } else {
       try {
         dest[key] = source[key];
-      } catch (e) {
-        console.info(
-          `Cannot to set property ${key} on node ${dest.id}. Skiping.`
-        );
+      } catch {
+        /* ... */
       }
     }
   }

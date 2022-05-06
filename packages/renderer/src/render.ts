@@ -438,20 +438,6 @@ export async function render(json) {
         node.children?.forEach((child, index) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
-            // Cannot add children to INSTANCE,
-            // first remove previously created nodes.
-            // This step is needed because of
-            // postorder traversal(from the bottom to the top)
-            if (scene.type === 'INSTANCE') {
-              // Apply overrides to scene's child (deep).
-              // Overrides on scene node has beem already applied
-              // when assigning basic props to instance node.
-              applyOverrides(scene.children[index], sceneChild);
-
-              sceneChild.remove();
-              return;
-            }
-
             if (
               node.children.length === 1 &&
               sceneChild.width === scene.width &&
@@ -470,14 +456,38 @@ export async function render(json) {
                 child: sceneChild,
               });
 
-              // Moving chilren of to-be-removed frame to the base
-              sceneChild.children?.forEach((child) => {
-                scene.appendChild(child);
-              });
+              // Moving chilren of to-be-removed frame to the base.
+              // If the scene node is type of INSTANCE we apply ovverides insted of moving.
+              if (scene.type !== 'INSTANCE') {
+                sceneChild.children?.forEach((child) => {
+                  scene.appendChild(child);
+                });
+              } else {
+                sceneChild.children?.forEach((child) => {
+                  applyOverrides(scene.children[index], child);
+                });
+              }
 
               sceneChild.remove();
             } else {
-              scene.appendChild(sceneChild);
+              // Cannot add children to INSTANCE
+              if (scene.type !== 'INSTANCE') {
+                scene.appendChild(sceneChild);
+              } else {
+                console.log('applying overrides to instance child', {
+                  instanceChild: scene.children[index],
+                  sceneChild,
+                });
+                // Apply overrides to scene's child (deep).
+                // Overrides on scene node has beem already applied
+                // when assigning basic props to instance node.
+                applyOverrides(scene.children[index], sceneChild);
+
+                // Removing previously created sceneChild nodes,
+                // because of postorder traversal(from the bottom to the top).
+                // Otherwise the node would be left on the page without parent
+                sceneChild.remove();
+              }
             }
           }
         });
