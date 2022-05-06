@@ -106,12 +106,19 @@ export async function getFigmaDocument() {
           console.log('Replacing SVG with instance of component', icon);
           const instance: InstanceNode = icon.component.createInstance();
           instance.applyOverrides(scene);
+
+          // This specific ovveride is caused by the  way SVGs
+          // are handled in plugin (mergin invisible parent frames into one).
           const svg = instance.findOne(
             (node) => node.type === 'SVG'
           ) as SvgNode;
           if (svg) {
             svg.content = (scene as SvgNode).content;
           }
+
+          // Applying consitend name to the instance
+          // to satisfy overriding mechanism inside figma
+          instance.name = 'Icon';
           scene = instance;
         }
       }

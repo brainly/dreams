@@ -189,7 +189,7 @@ async function assignBasicProps(node, data) {
   });
 
   // Variant related properties
-  if (data.variantProperties) {
+  if (data.variantProperties && node.type === 'COMPONENT') {
     console.log('variantProperties', data.variantProperties);
     node.name = variantPropertiesToName(data.variantProperties);
   }
