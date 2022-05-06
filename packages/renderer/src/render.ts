@@ -442,8 +442,7 @@ export async function render(json) {
             // This step is needed because we use
             // postorder traversal(from the bottom to the top)
             if (scene.type === 'INSTANCE') {
-              // TODO: apply overrides from sceneChild
-              // to scene(deep merge containing children)
+              // TODO: apply overrides to scene and its children (deep)
 
               sceneChild.remove();
               return;
