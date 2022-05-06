@@ -437,12 +437,14 @@ export async function render(json) {
         node.children?.forEach((child) => {
           const sceneChild = nodes.get(child.id);
           if (sceneChild) {
-            // We cannot add children to INSTANCE
-            // so we need to remove previously created nodes.
-            // This step is needed because we use
+            // Cannot add children to INSTANCE,
+            // first remove previously created nodes.
+            // This step is needed because of
             // postorder traversal(from the bottom to the top)
             if (scene.type === 'INSTANCE') {
-              // TODO: apply overrides to scene and its children (deep)
+              // TODO: Apply overrides to scene's children (deep).
+              // Overrides on scene should be already applied
+              // in after assigning basic props.
 
               sceneChild.remove();
               return;
@@ -455,10 +457,10 @@ export async function render(json) {
               sceneChild.x === 0 &&
               sceneChild.y === 0
             ) {
-              // Merging parent and single child frame if they
-              // share the same size(and the child has no offset).
-              // That way we can avoid creating unnecessary frames.
-              // E.g.component with single svg-generated frame.
+              // Merge parent and single child frame if they
+              // share the same size(and the child has no offset)
+              // to avoid creating unnecessary frames.
+              // E.g. component with single svg-generated frame.
               // Merging is done by skiping current sceneChild
               // and adding all its children to the parent.
               console.log('merging parent and child', {
