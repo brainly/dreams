@@ -22,7 +22,9 @@ const IconsPage = () => {
   iconTypes
     .filter(
       (iconType) =>
-        iconType === TYPE.HEART_OUTLINED || iconType === TYPE.ANSWERS
+        iconType === TYPE.HEART_OUTLINED ||
+        iconType === TYPE.HEART ||
+        iconType === TYPE.ANSWERS
     )
     .forEach((type) => {
       getValues(SIZE, false).forEach((size) => {

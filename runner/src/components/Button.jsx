@@ -19,7 +19,7 @@ const noToggleTypes = [
 // filter BUTTON_TYPE object and leave only solid-blue
 // TODO: use all types after initial phase
 const BUTTON_TYPE_ONLY = Object.keys(BUTTON_TYPE)
-  .filter((key) => BUTTON_TYPE[key] === 'solid-blue')
+  .filter((key) => BUTTON_TYPE[key] === 'solid-light')
   .reduce((acc, val) => ({ ...acc, [val]: BUTTON_TYPE[val] }), {});
 
 const ButtonsPage = () => {

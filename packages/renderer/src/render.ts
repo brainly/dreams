@@ -401,6 +401,7 @@ export async function render(json) {
   const nodes = new Map();
   await traverse(json, {
     visit: async (node) => {
+      let scene;
       if (node.type === 'COMPONENT_SET') {
         // Component set need to be handled separately since
         // all children components need to be passed alltogether
@@ -421,7 +422,7 @@ export async function render(json) {
           }
         });
 
-        const scene = figma.combineAsVariants(children, figma.currentPage);
+        scene = figma.combineAsVariants(children, figma.currentPage);
 
         console.log('variant created', scene.type, scene.id);
         scene.name = node.name;
@@ -430,7 +431,7 @@ export async function render(json) {
       } else if (node.type !== 'DOCUMENT') {
         // Create all types of nodes beside DOCUMENT which represent
         // the root node hadnled specificaly while traversing
-        const scene = await createNode(node, nodes);
+        scene = await createNode(node, nodes);
         if (!scene) {
           return;
         }
@@ -494,7 +495,15 @@ export async function render(json) {
           }
         });
       }
-      await sleep(50);
+
+      // Sleep is needed for production mode to keep UI repsponsive
+      // (prevent plugin from freezing)
+      //await sleep(50);
+
+      if (scene.type === 'PAGE') {
+        figma.currentPage = scene;
+        figma.viewport.scrollAndZoomIntoView(scene.children);
+      }
     },
   });
 }
