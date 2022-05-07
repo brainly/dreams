@@ -497,7 +497,6 @@ export async function render(json) {
       }
 
       // Sleep is needed for production mode to keep UI repsponsive
-      // (prevent plugin from freezing)
       //await sleep(50);
 
       if (scene.type === 'PAGE') {
