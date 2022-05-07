@@ -15,6 +15,8 @@ const fontWeightMap = {
 
 const loadedFonts = new Set();
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 async function createImageHash(base64string) {
   figma.ui.postMessage({ type: 'createImageFromString', data: base64string });
 
@@ -492,6 +494,7 @@ export async function render(json) {
           }
         });
       }
+      await sleep(50);
     },
   });
 }
