@@ -20,7 +20,6 @@ const IconsPage = () => {
   );
 
   iconTypes
-    // filter only answer icon
     .filter(
       (iconType) =>
         iconType === TYPE.HEART_OUTLINED || iconType === TYPE.ANSWERS
