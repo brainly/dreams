@@ -27,20 +27,15 @@ const ButtonsPage = () => {
 
   getValues(BUTTON_TYPE_ONLY, false).forEach((type) => {
     getValues(BUTTON_SIZE, false).forEach((size) => {
-      [null, 'peach', 'mustard', 'blue', 'default'].forEach((toggle) => {
+      [null, 'red', 'yellow', 'default'].forEach((toggle) => {
         [false, true].forEach((disabled) => {
           [false, true, 'reversed-order', 'icon-only'].forEach((icon) => {
             if (
               (toggle && noToggleTypes.includes(type)) ||
-              (toggle === 'peach' && type === 'transparent-mustard') ||
-              (toggle === 'blue' && type === 'transparent-mustard') ||
-              (toggle === 'default' && type === 'transparent-mustard') ||
-              (toggle === 'mustard' && type === 'transparent-peach') ||
-              (toggle === 'blue' && type === 'transparent-peach') ||
-              (toggle === 'default' && type === 'transparent-peach') ||
-              (toggle === 'mustard' && type === 'transparent-blue') ||
-              (toggle === 'peach' && type === 'transparent-blue') ||
-              (toggle === 'default' && type === 'transparent-blue') ||
+              (toggle === 'yellow' && type === 'transparent-yellow') ||
+              (toggle === 'default' && type === 'transparent-yellow') ||
+              (toggle === 'yellow' && type === 'transparent-yellow') ||
+              (toggle === 'default' && type === 'transparent-yellow') ||
               (toggle === 'default' && !icon)
             ) {
               return;

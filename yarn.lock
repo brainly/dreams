@@ -1771,10 +1771,10 @@ braces@^3.0.2, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-brainly-style-guide@^209.0.0:
-  version "209.2.0"
-  resolved "https://registry.yarnpkg.com/brainly-style-guide/-/brainly-style-guide-209.2.0.tgz#470521b22c7cedae0b7b3a89f649bb98376834fc"
-  integrity sha512-mBd7I8iER0MICGz/b7BGE3XHpJCkKxO+WcQlw4JgXoCrkw0A8VgZkao96LK+HJCRosSepO+rVFwfVdwZQ/ySrQ==
+brainly-style-guide@^214.0.0-beta.3:
+  version "214.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/brainly-style-guide/-/brainly-style-guide-214.0.0-beta.3.tgz#ceea8edc1f5fd4ae411f13de7a7351ed59c2837c"
+  integrity sha512-xMIHSVGBLmA/RZVSfybG5lcpxCxch0w90ol5I6ZXo7Vi6KlX8+OIrb9LJ69FHZCgtI06x8aqPVRXuUNesheqew==
   dependencies:
     chalk "4.1.2"
     classnames "^2.2.5"
@@ -5698,10 +5698,10 @@ type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-typescript@^4.3.5:
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.3.tgz#eefeafa6afdd31d725584c67a0eaba80f6fc6c6c"
-  integrity sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==
+typescript@^4.6.3:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.4.tgz#caa78bbc3a59e6a5c510d35703f6a09877ce45e9"
+  integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
 
 unbzip2-stream@1.3.3:
   version "1.3.3"
