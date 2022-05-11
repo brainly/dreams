@@ -499,7 +499,7 @@ export async function render(json) {
       // Sleep is needed for production mode to keep UI repsponsive
       //await sleep(50);
 
-      if (scene.type === 'PAGE') {
+      if (scene?.type === 'PAGE') {
         figma.currentPage = scene;
         figma.viewport.scrollAndZoomIntoView(scene.children);
       }
