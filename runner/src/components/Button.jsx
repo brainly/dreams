@@ -9,10 +9,12 @@ import { getValues } from '../utils/getValues';
 const noToggleTypes = [
   'solid',
   'solid-inverted',
-  'solid-blue',
-  'solid-mint',
+  'solid-indigo',
+  'solid-indigo-inverted',
   'transparent-inverted',
   'facebook',
+  'google',
+  'apple',
 ];
 
 // Limit scope to only one button type
@@ -25,17 +27,15 @@ const BUTTON_TYPE_ONLY = Object.keys(BUTTON_TYPE)
 const ButtonsPage = () => {
   const buttonsVariations = [];
 
-  getValues(BUTTON_TYPE_ONLY, false).forEach((type) => {
+  getValues(BUTTON_TYPE, false).forEach((type) => {
     getValues(BUTTON_SIZE, false).forEach((size) => {
       [null, 'red', 'yellow', 'default'].forEach((toggle) => {
         [false, true].forEach((disabled) => {
           [false, true, 'reversed-order', 'icon-only'].forEach((icon) => {
             if (
               (toggle && noToggleTypes.includes(type)) ||
-              (toggle === 'yellow' && type === 'transparent-yellow') ||
-              (toggle === 'default' && type === 'transparent-yellow') ||
-              (toggle === 'yellow' && type === 'transparent-yellow') ||
-              (toggle === 'default' && type === 'transparent-yellow') ||
+              (toggle === 'yellow' && type === 'transparent-red') ||
+              (toggle === 'default' && type === 'transparent-red') ||
               (toggle === 'default' && !icon)
             ) {
               return;
