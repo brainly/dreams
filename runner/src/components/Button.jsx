@@ -21,21 +21,29 @@ const noToggleTypes = [
 // filter BUTTON_TYPE object and leave only solid-blue
 // TODO: use all types after initial phase
 const BUTTON_TYPE_ONLY = Object.keys(BUTTON_TYPE)
-  .filter((key) => BUTTON_TYPE[key] === 'solid-light')
+  .filter((key) => BUTTON_TYPE[key] === 'outline')
   .reduce((acc, val) => ({ ...acc, [val]: BUTTON_TYPE[val] }), {});
 
 const ButtonsPage = () => {
   const buttonsVariations = [];
 
-  getValues(BUTTON_TYPE, false).forEach((type) => {
+  getValues(BUTTON_TYPE_ONLY, false).forEach((type) => {
     getValues(BUTTON_SIZE, false).forEach((size) => {
       [null, 'red', 'yellow', 'default'].forEach((toggle) => {
         [false, true].forEach((disabled) => {
           [false, true, 'reversed-order', 'icon-only'].forEach((icon) => {
             if (
               (toggle && noToggleTypes.includes(type)) ||
+              (toggle === 'yellow' && type === 'outline-indigo') ||
+              (toggle === 'red' && type === 'outline-indigo') ||
+              (toggle === 'yellow' && type === 'outline-inverted') ||
+              (toggle === 'red' && type === 'outline-inverted') ||
+              (toggle === 'yellow' && type === 'outline-indigo') ||
+              (toggle === 'red' && type === 'outline-indigo') ||
               (toggle === 'yellow' && type === 'transparent-red') ||
               (toggle === 'default' && type === 'transparent-red') ||
+              (toggle === 'yellow' && type === 'transparent-inverted') ||
+              (toggle === 'default' && type === 'transparent-inverted') ||
               (toggle === 'default' && !icon)
             ) {
               return;
