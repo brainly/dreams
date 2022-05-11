@@ -20,7 +20,7 @@ export function applyOverrides(dest: SceneNode, source: SceneNode) {
     } else {
       try {
         // This is a workaround for the fact that overriding 'fills'
-        // doesn't work correctly if when applying to instance with 'fillStyleId' defined
+        // doesn't work correctly when applying to instance with 'fillStyleId' defined
         // and 'fillStyleId' within overrides wasn't set before.
         console.log('overriding', key, source[key], dest[key]);
         if (key === 'fills') {
