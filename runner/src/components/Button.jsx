@@ -27,7 +27,7 @@ const BUTTON_TYPE_ONLY = Object.keys(BUTTON_TYPE)
 const ButtonsPage = () => {
   const buttonsVariations = [];
 
-  getValues(BUTTON_TYPE_ONLY, false).forEach((type) => {
+  getValues(BUTTON_TYPE, false).forEach((type) => {
     getValues(BUTTON_SIZE, false).forEach((size) => {
       [null, 'red', 'yellow', 'default'].forEach((toggle) => {
         [false, true].forEach((disabled) => {
