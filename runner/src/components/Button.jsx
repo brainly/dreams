@@ -38,8 +38,6 @@ const ButtonsPage = () => {
               (toggle === 'red' && type === 'outline-indigo') ||
               (toggle === 'yellow' && type === 'outline-inverted') ||
               (toggle === 'red' && type === 'outline-inverted') ||
-              (toggle === 'yellow' && type === 'outline-indigo') ||
-              (toggle === 'red' && type === 'outline-indigo') ||
               (toggle === 'yellow' && type === 'transparent-red') ||
               (toggle === 'default' && type === 'transparent-red') ||
               (toggle === 'yellow' && type === 'transparent-inverted') ||
@@ -48,6 +46,8 @@ const ButtonsPage = () => {
             ) {
               return;
             }
+
+            if (type === 'icon-only') {
 
             if (icon === 'iconOnly' && !icon) {
               return;
