@@ -5,6 +5,7 @@ import Button, {
 } from 'brainly-style-guide/src/components/buttons/Button';
 import Icon from 'brainly-style-guide/src/components/icons/Icon';
 import { getValues } from '../utils/getValues';
+import { TYPE as ICON_TYPE } from 'brainly-style-guide/src/components/icons/Icon';
 
 const noToggleTypes = [
   'solid',
@@ -39,15 +40,13 @@ const ButtonsPage = () => {
               (toggle === 'yellow' && type === 'outline-inverted') ||
               (toggle === 'red' && type === 'outline-inverted') ||
               (toggle === 'yellow' && type === 'transparent-red') ||
-              (toggle === 'default' && type === 'transparent-red') ||
+              (toggle === 'red' && type === 'transparent-red') ||
               (toggle === 'yellow' && type === 'transparent-inverted') ||
-              (toggle === 'default' && type === 'transparent-inverted') ||
+              (toggle === 'red' && type === 'transparent-inverted') ||
               (toggle === 'default' && !icon)
             ) {
               return;
             }
-
-            if (type === 'icon-only') {
 
             if (icon === 'iconOnly' && !icon) {
               return;
@@ -83,6 +82,16 @@ const ButtonsPage = () => {
               iconVariant = 'default';
             }
 
+            let iconType = toggle ? 'heart' : 'heart_outlined';
+            console.log(type, size, toggle, disabled, icon, iconVariant);
+            if (type === BUTTON_TYPE.APPLE) {
+              iconType = ICON_TYPE.APPLE;
+            } else if (type === BUTTON_TYPE.GOOGLE) {
+              iconType = ICON_TYPE.GOOGLE;
+            } else if (type === BUTTON_TYPE.FACEBOOK) {
+              iconType = ICON_TYPE.FACEBOOK;
+            }
+
             const name = `button/${type}/${size}/${iconVariant}/${togglableName}${
               disabled ? 'disabled' : '_default'
             }`;
@@ -112,11 +121,7 @@ const ButtonsPage = () => {
                 <Button
                   icon={
                     icon ? (
-                      <Icon
-                        type={toggle ? 'heart' : 'heart_outlined'}
-                        color="adaptive"
-                        size={iconSize}
-                      />
+                      <Icon type={iconType} color="adaptive" size={iconSize} />
                     ) : null
                   }
                   toggle={toggle}
