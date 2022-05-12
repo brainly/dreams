@@ -24,7 +24,9 @@ const IconsPage = () => {
       (iconType) =>
         iconType === TYPE.HEART_OUTLINED ||
         iconType === TYPE.HEART ||
-        iconType === TYPE.ANSWERS
+        iconType === TYPE.GOOGLE ||
+        iconType === TYPE.FACEBOOK ||
+        iconType === TYPE.APPLE
     )
     .forEach((type) => {
       getValues(SIZE, false).forEach((size) => {

@@ -83,7 +83,7 @@ const ButtonsPage = () => {
             }
 
             let iconType = toggle ? 'heart' : 'heart_outlined';
-            console.log(type, size, toggle, disabled, icon, iconVariant);
+
             if (type === BUTTON_TYPE.APPLE) {
               iconType = ICON_TYPE.APPLE;
             } else if (type === BUTTON_TYPE.GOOGLE) {
