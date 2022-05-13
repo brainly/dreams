@@ -12,7 +12,6 @@ const noToggleTypes = [
   'solid-inverted',
   'solid-indigo',
   'solid-indigo-inverted',
-  'transparent-inverted',
   'facebook',
   'google',
   'apple',
@@ -52,6 +51,16 @@ const ButtonsPage = () => {
               return;
             }
 
+            let iconType = toggle ? 'heart' : 'heart_outlined';
+
+            if (type === BUTTON_TYPE.APPLE) {
+              iconType = ICON_TYPE.APPLE;
+            } else if (type === BUTTON_TYPE.GOOGLE) {
+              iconType = ICON_TYPE.GOOGLE;
+            } else if (type === BUTTON_TYPE.FACEBOOK) {
+              iconType = ICON_TYPE.FACEBOOK;
+            }
+
             let iconSize;
 
             if (size === 'l') {
@@ -62,12 +71,29 @@ const ButtonsPage = () => {
               iconSize = 24;
             }
 
+            // Be careful here
             let togglableName;
+            if (!noToggleTypes.includes(type)) {
+              togglableName = toggle;
 
-            if (noToggleTypes.includes(type) && !toggle) {
-              togglableName = '';
-            } else {
-              togglableName = `${toggle ? `toggle-${toggle}` : '_default'}/`;
+              if (toggle === null) {
+                togglableName = '-';
+              } else if (toggle === 'default') {
+                if (type === BUTTON_TYPE.SOLID_LIGHT) {
+                  togglableName = 'gray';
+                } else {
+                  togglableName = 'black';
+                }
+              }
+
+              if (
+                type === BUTTON_TYPE.OUTLINE_INDIGO ||
+                type === BUTTON_TYPE.OUTLINE_INVERTED ||
+                type === BUTTON_TYPE.TRANSPARENT_RED ||
+                type === BUTTON_TYPE.TRANSPARENT_INVERTED
+              ) {
+                togglableName = toggle ? 'on' : 'off';
+              }
             }
 
             let iconVariant;
@@ -82,19 +108,9 @@ const ButtonsPage = () => {
               iconVariant = 'default';
             }
 
-            let iconType = toggle ? 'heart' : 'heart_outlined';
-
-            if (type === BUTTON_TYPE.APPLE) {
-              iconType = ICON_TYPE.APPLE;
-            } else if (type === BUTTON_TYPE.GOOGLE) {
-              iconType = ICON_TYPE.GOOGLE;
-            } else if (type === BUTTON_TYPE.FACEBOOK) {
-              iconType = ICON_TYPE.FACEBOOK;
-            }
-
-            const name = `button/${type}/${size}/${iconVariant}/${togglableName}${
-              disabled ? 'disabled' : '_default'
-            }`;
+            const name = `button/${type}/${size}/${iconVariant}/${
+              togglableName ? `${togglableName}/` : ''
+            }${disabled ? 'disabled' : '_default'}`;
 
             // Variants specific properties
             const component = `button/${type}`;
@@ -102,13 +118,7 @@ const ButtonsPage = () => {
               size,
               icon: iconVariant,
               state: disabled ? 'disabled' : 'default',
-              toggle: togglableName
-                ? toggle
-                  ? toggle === 'default'
-                    ? 'black'
-                    : toggle
-                  : '-'
-                : undefined,
+              toggle: togglableName,
             };
 
             buttonsVariations.push(
@@ -143,7 +153,7 @@ const ButtonsPage = () => {
     });
   });
 
-  return <section>{buttonsVariations}</section>;
+  return <section style={{}}>{buttonsVariations}</section>;
 };
 
 export default ButtonsPage;
