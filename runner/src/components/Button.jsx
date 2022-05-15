@@ -79,7 +79,7 @@ const ButtonsPage = () => {
               if (toggle === null) {
                 togglableName = '-';
               } else if (toggle === 'default') {
-                if (type === BUTTON_TYPE.SOLID_LIGHT) {
+                if (type === BUTTON_TYPE.TRANSPARENT_LIGHT) {
                   togglableName = 'gray';
                 } else {
                   togglableName = 'black';
