@@ -1,6 +1,10 @@
 // @ts-nocheck
 import { applyOverrides } from './overrides';
 
+const SharedPluginDataNamespace = {
+  DEFAULT: 'dreams',
+} as const;
+
 const fontWeightMap = {
   '100': 'Thin',
   '200': 'ExtraLight',
@@ -383,6 +387,25 @@ async function createNode(data, nodes) {
       );
     }
   }
+
+  // Store version in shared plugin data
+  if (data.version != null) {
+    node.setSharedPluginData(
+      SharedPluginDataNamespace.DEFAULT,
+      'version',
+      data.version
+    );
+  }
+
+  // Store plugin data
+  data?.pluginData?.forEach(([key, value]) => {
+    node.setPluginData(key, value);
+  });
+
+  // Store shared plugin data
+  data?.sharedPluginData?.forEach(([key, value]) => {
+    node.setSharedPluginData(SharedPluginDataNamespace.DEFAULT, key, value);
+  });
 
   return node;
 }
