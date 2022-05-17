@@ -42,7 +42,7 @@ const ButtonsPage = () => {
               (toggle === 'red' && type === 'transparent-red') ||
               (toggle === 'yellow' && type === 'transparent-inverted') ||
               (toggle === 'red' && type === 'transparent-inverted') ||
-              (toggle === 'default' && !icon)
+              (toggle && !icon)
             ) {
               return;
             }
