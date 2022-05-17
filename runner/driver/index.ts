@@ -61,19 +61,14 @@ export async function getFigmaDocument() {
   );
 
   for (const metaNode of metaNodes) {
-    const componentNode = metaNode.firstChild as Element;
+    const element = metaNode.firstChild as Element;
     const name = metaNode.title;
     const variantsName = metaNode.dataset.component;
 
-    const {
-      left: x,
-      top: y,
-      width,
-      height,
-    } = componentNode.getBoundingClientRect();
+    const { left: x, top: y, width, height } = element.getBoundingClientRect();
 
     const component: ComponentNode = (await sceneNodeFromDOM(
-      componentNode,
+      element,
       'COMPONENT'
     )) as ComponentNode;
 
@@ -86,18 +81,19 @@ export async function getFigmaDocument() {
     component.width = width;
     component.height = height;
     component.name = name;
+    component.version = styleGuideVersion;
 
     // Creating content of a component from its children
-    const children = Array.from(componentNode.querySelectorAll('*'));
-    for (const element of children) {
-      let scene = await sceneNodeFromDOM(element, 'FRAME', true);
+    const children = Array.from(element.querySelectorAll('*'));
+    for (const child of children) {
+      let scene = await sceneNodeFromDOM(child, 'FRAME', true);
 
       // Replacing scene nodes with instances of nested components
       // Button
       // ---
       if (component.name.startsWith('button/') && scene?.type === 'SVG') {
-        const type = element.querySelector('svg')?.id;
-        const size = element.clientHeight;
+        const type = child.querySelector('svg')?.id;
+        const size = child.clientHeight;
         const icon = icons.find(
           (icon) => icon.type === type && icon.size === size
         );
@@ -151,6 +147,7 @@ export async function getFigmaDocument() {
       if (!variants.has(variantsName)) {
         const componentSetNode = createComponentSet();
         componentSetNode.name = variantsName;
+        componentSetNode.version = styleGuideVersion;
 
         page.appendChild(componentSetNode);
         variants.set(variantsName, componentSetNode);

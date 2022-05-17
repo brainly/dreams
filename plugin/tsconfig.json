@@ -1,6 +1,8 @@
 {
   "extends": "../tsconfig.base.json",
-  "lib": ["DOM"],
+  "compilerOptions": {
+    "lib": ["DOM"]
+  },
   "include": ["src/**/*", "./types"],
   "references": [{ "path": "../packages/renderer" }]
 }

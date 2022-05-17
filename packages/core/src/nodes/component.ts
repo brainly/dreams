@@ -11,6 +11,7 @@ export class ComponentNode extends FrameNode {
   variantProperties: { [property: string]: string } | null;
   description: string;
   documentationLinks: DocumentationLink[];
+  version: string;
 
   createInstance() {
     const instance = new InstanceNode();
@@ -42,6 +43,7 @@ export class ComponentNode extends FrameNode {
       variantProperties: this.variantProperties,
       description: this.description,
       documentationLinks: this.documentationLinks,
+      version: this.version,
     };
   }
 }

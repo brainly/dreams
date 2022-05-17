@@ -10,6 +10,7 @@ export class ComponentSetNode extends FrameNode {
   variantGroupProperties: { [property: string]: { values: string[] } };
   description: string;
   documentationLinks: DocumentationLink[];
+  version: string;
 
   toJSON() {
     return {
@@ -17,6 +18,7 @@ export class ComponentSetNode extends FrameNode {
       variantGroupProperties: this.variantGroupProperties,
       description: this.description,
       documentationLinks: this.documentationLinks,
+      version: this.version,
     };
   }
 }
