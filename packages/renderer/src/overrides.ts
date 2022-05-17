@@ -14,7 +14,7 @@ export function applyOverrides(dest: SceneNode, source: SceneNode) {
 
     // apply overrides within children nodes
     if (key === 'children') {
-      dest[key].forEach((child, index) => {
+      dest[key]?.forEach((child, index) => {
         applyOverrides(child, source[key][index]);
       });
     } else {
