@@ -200,7 +200,30 @@ async function assignBasicProps(node, data) {
     node.name = variantPropertiesToName(data.variantProperties);
   }
 
+  assignPluginData(node, data);
+
   return node;
+}
+
+function assignPluginData(node, data) {
+  // Store version in shared plugin data
+  if (data.version != null) {
+    node.setSharedPluginData(
+      SharedPluginDataNamespace.DEFAULT,
+      'version',
+      data.version
+    );
+  }
+
+  // Store plugin data
+  data?.pluginData?.forEach(([key, value]) => {
+    node.setPluginData(key, value);
+  });
+
+  // Store shared plugin data
+  data?.sharedPluginData?.forEach(([key, value]) => {
+    node.setSharedPluginData(SharedPluginDataNamespace.DEFAULT, key, value);
+  });
 }
 
 function variantPropertiesToName(variantProperties) {
@@ -388,25 +411,6 @@ async function createNode(data, nodes) {
     }
   }
 
-  // Store version in shared plugin data
-  if (data.version != null) {
-    node.setSharedPluginData(
-      SharedPluginDataNamespace.DEFAULT,
-      'version',
-      data.version
-    );
-  }
-
-  // Store plugin data
-  data?.pluginData?.forEach(([key, value]) => {
-    node.setPluginData(key, value);
-  });
-
-  // Store shared plugin data
-  data?.sharedPluginData?.forEach(([key, value]) => {
-    node.setSharedPluginData(SharedPluginDataNamespace.DEFAULT, key, value);
-  });
-
   return node;
 }
 
@@ -445,10 +449,12 @@ export async function render(json) {
           }
         });
 
+        // TODO: move it to the createNode?
         scene = figma.combineAsVariants(children, figma.currentPage);
 
         console.log('variant created', scene.type, scene.id);
         scene.name = node.name;
+        assignPluginData(scene, node);
 
         nodes.set(node.id, scene);
       } else if (node.type !== 'DOCUMENT') {
