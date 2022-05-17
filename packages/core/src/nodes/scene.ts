@@ -55,6 +55,33 @@ export class SceneNode {
   locked: boolean;
   expanded: boolean;
 
+  pluginData: Map<string, string> = new Map();
+  sharedPluginData: Map<string, string> = new Map();
+
+  setPluginData(key: string, value: string) {
+    this.pluginData.set(key, value);
+  }
+
+  getPluginData(key: string) {
+    return this.pluginData.get(key);
+  }
+
+  getPluginDataKeys(): string[] {
+    return Array.from(this.pluginData.keys());
+  }
+
+  setSharedPluginData(key: string, value: string) {
+    this.sharedPluginData.set(key, value);
+  }
+
+  getSharedPluginData(key: string) {
+    return this.sharedPluginData.get(key);
+  }
+
+  getSharedPluginDataKeys(): string[] {
+    return Array.from(this.sharedPluginData.keys());
+  }
+
   meta: JSONValue;
 
   findAll(callback?: (node: SceneNode) => boolean): SceneNode[] {
@@ -148,6 +175,9 @@ export class SceneNode {
       },
       visible: this.visible,
       locked: this.locked,
+      expanded: this.expanded,
+      pluginData: Array.from(this.pluginData.entries()),
+      sharedPluginData: Array.from(this.sharedPluginData.entries()),
       meta: this.meta,
     };
   }
