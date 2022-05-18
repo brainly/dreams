@@ -141,7 +141,9 @@ function update(
         'Existing component not found. New component should be addded',
         updated.name
       );
-      //currentSet.appendChild(newChild);
+
+      // TODO: this need to be implemented
+      //currentSet.appendChild(updated.clone());
     }
   });
 }
