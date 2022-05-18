@@ -81,12 +81,39 @@ function compareProperties(
   return true;
 }
 
+function compareArrays(arrayA: string[], arrayB: string[]) {
+  if (arrayA.length !== arrayB.length) {
+    return false;
+  }
+
+  for (const item of arrayA) {
+    if (!arrayB.includes(item)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 // Update current component set with the components from new component set
 function update(
   currentSet: ComponentSetNode,
   newSet: ComponentSetNode,
   propertiesMap: Record<string, Record<string, string>>
 ) {
+  // compare variant group properties
+  const currentVariantKeys = Object.keys(currentSet.variantGroupProperties);
+  const newVariantKeys = Object.keys(newSet.variantGroupProperties);
+
+  if (!compareArrays(currentVariantKeys, currentVariantKeys)) {
+    console.log(
+      'Variant group properties do not match.',
+      currentVariantKeys,
+      newVariantKeys
+    );
+    return;
+  }
+
   // iterate through new components children and update current components childrenś
   newSet.children.forEach((updated) => {
     const found = currentSet.children.find((component: ComponentNode) => {
