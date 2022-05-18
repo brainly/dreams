@@ -3,6 +3,7 @@ function updateNode(dest, source) {
     if (
       key === 'type' ||
       key === 'id' ||
+      key === 'key' ||
       key === 'name' ||
       key === 'parent' ||
       key === 'relativeTransform' ||
