@@ -19,13 +19,19 @@ function updateNode(dest, source) {
 
     // apply overrides within children nodes
     if (key === 'children') {
-      console.log('cloning', key, source[key], dest[key], dest.type);
+      console.log('Cloning children', source[key], dest[key], dest.type);
       const newChildren = source.children.map((child) => child.clone());
       dest.children.forEach((child) => child.remove());
       newChildren.forEach((child) => dest.appendChild(child));
     } else {
       try {
-        console.log('updating', key, source[key], dest[key], dest.type);
+        console.log(
+          'Updating property',
+          key,
+          source[key],
+          dest[key],
+          dest.type
+        );
         dest[key] = source[key];
       } catch {
         /* ... */
@@ -128,9 +134,13 @@ function update(
       );
     });
     if (found) {
-      console.log('updating', found.name, updated.name);
+      console.log('Updating component', found.name, updated.name);
       updateNode(found, updated);
     } else {
+      console.log(
+        'Existing component not found. New component should be addded',
+        updated.name
+      );
       //currentSet.appendChild(newChild);
     }
   });
