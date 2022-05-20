@@ -2,7 +2,7 @@
 import 'regenerator-runtime';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { decodeBase64, encode } from './canvas';
+import { decodeBase64, encode } from './utils/image';
 
 import '../styles/global.css';
 
