@@ -1,8 +1,31 @@
 import { render } from '@packages/renderer';
+import { deprecate } from './commands/deprecate';
 
-figma.showUI(__html__, {
-  width: 240,
-  height: 248,
+figma.on('run', ({ command, parameters }: RunEvent) => {
+  switch (command) {
+    case 'ui': {
+      figma.showUI(__html__, {
+        width: 240,
+        height: 248,
+      });
+      return;
+    }
+    case 'deprecate': {
+      deprecate();
+      break;
+    }
+  }
+
+  figma.closePlugin();
+});
+
+figma.parameters.on('input', ({ query, result }) => {
+  console.log('Received input', query, result);
+  result.setSuggestions(
+    ['Armadillo', 'Baboon', 'Cacatua', 'Dolphin'].filter((s) =>
+      s.includes(query)
+    )
+  );
 });
 
 async function importJson(json: unknown) {

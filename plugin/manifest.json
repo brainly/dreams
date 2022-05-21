@@ -1,8 +1,18 @@
 {
-  "name": "dreams",
+  "name": "Dreams",
   "id": "1085609023285032727",
   "api": "1.0.0",
   "main": "dist/code.js",
   "ui": "dist/ui.html",
-  "editorType": ["figma"]
+  "editorType": ["figma"],
+  "menu": [
+    {
+      "name": "Dreams",
+      "command": "ui"
+    },
+    {
+      "name": "Deprecate",
+      "command": "deprecate"
+    }
+  ]
 }
