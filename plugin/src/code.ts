@@ -11,21 +11,12 @@ figma.on('run', ({ command, parameters }: RunEvent) => {
       return;
     }
     case 'deprecate': {
-      deprecate();
+      deprecate(parameters);
       break;
     }
   }
 
   figma.closePlugin();
-});
-
-figma.parameters.on('input', ({ query, result }) => {
-  console.log('Received input', query, result);
-  result.setSuggestions(
-    ['Armadillo', 'Baboon', 'Cacatua', 'Dolphin'].filter((s) =>
-      s.includes(query)
-    )
-  );
 });
 
 async function importJson(json: unknown) {

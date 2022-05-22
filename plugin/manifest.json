@@ -12,7 +12,14 @@
     },
     {
       "name": "Deprecate",
-      "command": "deprecate"
+      "command": "deprecate",
+      "parameters": [
+        {
+          "name": "Type",
+          "key": "deprecate_type",
+          "description": "Which variant or components to deprecate"
+        }
+      ]
     }
   ]
 }
