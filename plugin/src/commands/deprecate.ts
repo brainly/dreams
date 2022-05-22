@@ -1,9 +1,6 @@
 figma.parameters.on('input', ({ key, query, result }) => {
-  console.log('Received input', query, result);
-
   switch (key) {
     case 'deprecate_type': {
-      //result.setSuggestions(numbers.filter((s) => s.includes(query)));
       const selection = figma.currentPage.selection;
       if (selection.length === 0) {
         result.setError('Select component set.');
@@ -36,7 +33,7 @@ figma.parameters.on('input', ({ key, query, result }) => {
             {
               name: 'All variants',
               data: {
-                type: 'component_set',
+                kind: 'component_set',
               },
             },
           ];
@@ -49,7 +46,7 @@ figma.parameters.on('input', ({ key, query, result }) => {
                   return {
                     name: `${key} -> ${item}`,
                     data: {
-                      type: 'variant',
+                      kind: 'variant',
                       key,
                       value: item,
                     },
@@ -76,18 +73,55 @@ figma.parameters.on('input', ({ key, query, result }) => {
 
 export async function deprecate(parameters: ParameterValues = {}) {
   const selection = figma.currentPage.selection;
-  const components = selection.filter(
-    (node) => node.type === 'COMPONENT'
-  ) as ComponentNode[];
 
-  if (components.length === 0) {
-    figma.notify(
-      'Select at least one component. Components sets are not yet supported.'
-    );
+  if (selection.length !== 1) {
+    figma.notify('Select component set.');
     return;
   }
 
-  deprecateComponents(components);
+  const type = parameters['deprecate_type'];
+
+  switch (type.kind) {
+    case 'component_set': {
+      figma.notify('All variants are not supported yet.');
+      break;
+    }
+    case 'variant': {
+      if (selection.length !== 1 && selection[0].type !== 'COMPONENT_SET') {
+        figma.notify('Select component set.');
+        return;
+      }
+
+      const componentSet = selection[0] as ComponentSetNode;
+      const variantGroupProperty =
+        componentSet.variantGroupProperties[type.key];
+
+      if (!variantGroupProperty.values.includes(type.value)) {
+        figma.notify('Variant does not exist.', { error: true });
+        return;
+      }
+
+      const components = componentSet.children.filter(
+        (component: ComponentNode): component is ComponentNode =>
+          component.variantProperties?.[type.key] === type.value
+      );
+
+      // Mark component variant property as deprecated
+      components.forEach((component) => {
+        // replace component name where applicable in a format key1=value1, key2=value2
+        component.name = component.name.replace(
+          `${type.key}=${type.value}`,
+          `${type.key}=(DEPRECATED) ${type.value}`
+        );
+      });
+
+      deprecateComponents(components);
+
+      break;
+    }
+  }
+
+  console.log('Run deprecate', parameters);
 }
 
 function deprecateComponents(components: ComponentNode[]) {
@@ -104,7 +138,7 @@ function deprecateComponents(components: ComponentNode[]) {
           g: 0,
           b: 1,
         },
-        opacity: 0.5,
+        opacity: 0.7,
         type: 'SOLID',
         visible: true,
       },
