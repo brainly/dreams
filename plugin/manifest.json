@@ -11,6 +11,22 @@
       "command": "ui"
     },
     {
+      "name": "Update",
+      "command": "update",
+      "parameters": [
+        {
+          "name": "Version",
+          "key": "update_version",
+          "description": "Select new version to update to"
+        },
+        {
+          "name": "Map variants",
+          "key": "update_map",
+          "description": "Do you want to map new names of variants?"
+        }
+      ]
+    },
+    {
       "name": "Deprecate",
       "command": "deprecate",
       "parameters": [

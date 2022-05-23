@@ -8,9 +8,8 @@ figma.parameters.on('input', ({ key, query, result }) => {
 
       if (selection.length > 1) {
         if (!selection.every((node) => node.type === 'COMPONENT')) {
-          result.setError(
-            'All selected items must be a componnet or a component set.'
-          );
+          result.setError('Select only one component set.');
+          return;
         }
       }
 
@@ -22,6 +21,7 @@ figma.parameters.on('input', ({ key, query, result }) => {
           result.setError(
             'Selected item must be a componnet or a component set.'
           );
+          return;
         }
       }
 

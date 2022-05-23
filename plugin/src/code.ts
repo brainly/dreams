@@ -1,5 +1,6 @@
 import { render } from '@packages/renderer';
 import { deprecate } from './commands/deprecate';
+import { update } from './commands/update';
 
 figma.on('run', ({ command, parameters }: RunEvent) => {
   switch (command) {
@@ -9,6 +10,10 @@ figma.on('run', ({ command, parameters }: RunEvent) => {
         height: 248,
       });
       return;
+    }
+    case 'deprecate': {
+      update(parameters);
+      break;
     }
     case 'deprecate': {
       deprecate(parameters);

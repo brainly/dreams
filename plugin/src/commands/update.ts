@@ -1,46 +1,109 @@
-function updateNode(dest, source) {
-  for (const key in source) {
-    if (
-      key === 'type' ||
-      key === 'id' ||
-      key === 'key' ||
-      key === 'name' ||
-      key === 'parent' ||
-      key === 'relativeTransform' ||
-      key === 'x' ||
-      key === 'y' ||
-      key === 'textTruncation' ||
-      key === 'horizontalPadding' ||
-      key === 'verticalPadding' ||
-      typeof source[key] === 'function'
-    ) {
-      continue;
-    }
+figma.parameters.on('input', ({ key, query, result, parameters }) => {
+  const selection = figma.currentPage.selection;
 
-    // apply overrides within children nodes
-    if (key === 'children') {
-      console.log('Cloning children', source[key], dest[key], dest.type);
-      const newChildren = source.children.map((child) => child.clone());
-      dest.children.forEach((child) => child.remove());
-      newChildren.forEach((child) => dest.appendChild(child));
-    } else {
-      try {
-        console.log(
-          'Updating property',
-          key,
-          source[key],
-          dest[key],
-          dest.type
-        );
-        dest[key] = source[key];
-      } catch {
-        /* ... */
+  switch (key) {
+    case 'update_version': {
+      if (
+        selection.filter((node) => node.type === 'COMPONENT_SET').length !== 2
+      ) {
+        result.setError('Select 2 component sets.');
+        return;
       }
+
+      const componentSetA = selection[0] as ComponentSetNode;
+      const componentSetB = selection[1] as ComponentSetNode;
+
+      const suggestions = [componentSetB, componentSetA].map((set) => {
+        const version =
+          set.getSharedPluginData('dreams', 'version') || 'unversioned';
+        const name = `-> ${version}`;
+
+        return {
+          name: name,
+          data: {
+            id: set.id,
+          },
+        };
+      });
+
+      result.setSuggestions(suggestions.filter((s) => s.name.includes(query)));
+
+      break;
+    }
+    case 'update_map': {
+      const suggestions: Array<{ name: string; data: any }> = [
+        {
+          name: 'No mapping',
+          data: {
+            type: 'none',
+          },
+        },
+      ];
+
+      const componentSetA = selection[0] as ComponentSetNode;
+      const componentSetB = selection[1] as ComponentSetNode;
+
+      let newComponentSet = componentSetA;
+      let currentComponentSet = componentSetB;
+
+      console.log(parameters);
+      if (parameters.update_version) {
+        const updateTo = parameters.update_version.id;
+        if (updateTo === componentSetB.id) {
+          newComponentSet = componentSetB;
+          currentComponentSet = componentSetA;
+        }
+      }
+
+      // const autoMap = Object.keys(
+      //   currentComponentSet.variantGroupProperties
+      // ).flatMap((key) => {
+      //   const currentVariantGroup =
+      //     currentComponentSet.variantGroupProperties[key].values;
+      //   const newVariantGroup =
+      //     newComponentSet.variantGroupProperties[key]?.values;
+
+      //   if (!newVariantGroup) {
+      //     return null;
+      //   }
+
+      //   if (compareArrays(currentVariantGroup, newVariantGroup)) {
+      //     return null;
+      //   }
+
+      //   return currentVariantGroup.map((value, index) => {
+      //     return {
+      //       description: `${key}: ${value} -> ${newVariantGroup[index]}`,
+      //       map: {
+      //         [key]: {
+      //           [value]: newVariantGroup[index],
+      //         },
+      //       },
+      //     };
+      //   });
+      // });
+
+      suggestions.push({
+        name: 'toggle: peach -> red, mustard -> yellow',
+        data: {
+          type: 'auto',
+          map: {
+            toggle: {
+              peach: 'red',
+              mustard: 'yellow',
+            },
+          },
+        },
+      });
+
+      result.setSuggestions(suggestions.filter((s) => s.name.includes(query)));
+
+      break;
     }
   }
+});
 
-  return dest;
-}
+export async function update(parameters: ParameterValues = {}) {}
 
 // compare variant properties between components and return tru if components match
 function compareProperties(
@@ -103,7 +166,7 @@ function compareArrays(arrayA: string[], arrayB: string[]) {
 }
 
 // Update current component set with the components from new component set
-function update(
+function updateVariant(
   currentSet: ComponentSetNode,
   newSet: ComponentSetNode,
   propertiesMap: Record<string, Record<string, string>>
@@ -146,4 +209,48 @@ function update(
       //currentSet.appendChild(updated.clone());
     }
   });
+}
+
+function updateNode(dest, source) {
+  for (const key in source) {
+    if (
+      key === 'type' ||
+      key === 'id' ||
+      key === 'key' ||
+      key === 'name' ||
+      key === 'parent' ||
+      key === 'relativeTransform' ||
+      key === 'x' ||
+      key === 'y' ||
+      key === 'textTruncation' ||
+      key === 'horizontalPadding' ||
+      key === 'verticalPadding' ||
+      typeof source[key] === 'function'
+    ) {
+      continue;
+    }
+
+    // apply overrides within children nodes
+    if (key === 'children') {
+      console.log('Cloning children', source[key], dest[key], dest.type);
+      const newChildren = source.children.map((child) => child.clone());
+      dest.children.forEach((child) => child.remove());
+      newChildren.forEach((child) => dest.appendChild(child));
+    } else {
+      try {
+        console.log(
+          'Updating property',
+          key,
+          source[key],
+          dest[key],
+          dest.type
+        );
+        dest[key] = source[key];
+      } catch {
+        /* ... */
+      }
+    }
+  }
+
+  return dest;
 }
