@@ -90,7 +90,20 @@ export async function deprecate(parameters: ParameterValues = {}) {
 
   switch (type.kind) {
     case 'component_set': {
-      figma.notify('All variants are not supported yet.');
+      const componentSet = selection[0] as ComponentSetNode;
+      const components = componentSet.children.filter(
+        (component: ComponentNode): component is ComponentNode =>
+          component.type === 'COMPONENT'
+      );
+
+      // Mark the component set as deprecated
+      // without changing the name of all variants
+      if (!componentSet.name.includes('DEPRECATED')) {
+        componentSet.name = `${componentSet.name} ⚠️ [DEPRECATED]`;
+      }
+      const changed = deprecateComponents(components);
+
+      figma.notify(`${changed.length} variants deprecated.`);
       break;
     }
     case 'variant': {
