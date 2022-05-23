@@ -103,7 +103,29 @@ figma.parameters.on('input', ({ key, query, result, parameters }) => {
   }
 });
 
-export async function update(parameters: ParameterValues = {}) {}
+export async function update(parameters: ParameterValues = {}) {
+  const selection = figma.currentPage.selection;
+  const componentSetA = selection[0] as ComponentSetNode;
+  const componentSetB = selection[1] as ComponentSetNode;
+
+  let newComponentSet = componentSetA;
+  let currentComponentSet = componentSetB;
+
+  console.log(parameters);
+  if (parameters.update_version) {
+    const updateTo = parameters.update_version.id;
+    if (updateTo === componentSetB.id) {
+      newComponentSet = componentSetB;
+      currentComponentSet = componentSetA;
+    }
+  }
+
+  updateVariant(
+    currentComponentSet,
+    newComponentSet,
+    parameters.update_map.map
+  );
+}
 
 // compare variant properties between components and return tru if components match
 function compareProperties(
