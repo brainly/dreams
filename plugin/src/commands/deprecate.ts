@@ -4,6 +4,7 @@ figma.parameters.on('input', ({ key, query, result }) => {
       const selection = figma.currentPage.selection;
       if (selection.length === 0) {
         result.setError('Select component set.');
+        return;
       }
 
       if (selection.length > 1) {
@@ -58,7 +59,7 @@ figma.parameters.on('input', ({ key, query, result }) => {
             )
           );
 
-          console.log(suggestions);
+          console.log('suggestions', suggestions);
 
           result.setSuggestions(
             suggestions.filter((s) => s.name.includes(query))

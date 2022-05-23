@@ -11,7 +11,7 @@ figma.on('run', ({ command, parameters }: RunEvent) => {
       });
       return;
     }
-    case 'deprecate': {
+    case 'update': {
       update(parameters);
       break;
     }
