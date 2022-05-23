@@ -98,7 +98,7 @@ export async function deprecate(parameters: ParameterValues = {}) {
         componentSet.variantGroupProperties[type.key];
 
       if (!variantGroupProperty.values.includes(type.value)) {
-        figma.notify('Variant does not exist.', { error: true });
+        figma.notify('Variant does not exist.');
         return;
       }
 
@@ -109,6 +109,11 @@ export async function deprecate(parameters: ParameterValues = {}) {
 
       // Mark component variant property as deprecated
       components.forEach((component) => {
+        // skip if component is already deprecated
+        if (component.variantProperties?.[type.key].includes('DEPRECATED')) {
+          return;
+        }
+
         // replace component name where applicable in a format key1=value1, key2=value2
         component.name = component.name.replace(
           `${type.key}=${type.value}`,
@@ -116,7 +121,8 @@ export async function deprecate(parameters: ParameterValues = {}) {
         );
       });
 
-      deprecateComponents(components);
+      const changed = deprecateComponents(components);
+      figma.notify(`${changed.length} variants deprecated.`);
 
       break;
     }
@@ -126,9 +132,18 @@ export async function deprecate(parameters: ParameterValues = {}) {
 }
 
 function deprecateComponents(components: ComponentNode[]) {
-  components.forEach((component) => {
+  const found = components.filter((component) => {
+    return !component.findOne((node) => node.name === 'Deprecated');
+  });
+
+  found.forEach((component) => {
+    // Skip if component is already deprecated
+    if (component.findOne((node) => node.name === 'Deprecated')) {
+      return;
+    }
+
     const overlay = figma.createFrame();
-    overlay.name = 'Overlay';
+    overlay.name = 'Deprecated';
     overlay.resize(component.width, component.height);
 
     overlay.fills = [
@@ -158,4 +173,6 @@ function deprecateComponents(components: ComponentNode[]) {
     overlay.x = 0;
     overlay.y = 0;
   });
+
+  return found;
 }
