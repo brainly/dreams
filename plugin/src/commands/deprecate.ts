@@ -1,3 +1,9 @@
+const DEPRECATED_IMAGE_DATA =
+  'iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACYSURBVHgB7ddLCoQwFETRu/N+O69W0Ikg/mpQg7qQqRyEJC9gTOi3LBnX4Kq44oorrrjiiiuuuOKKi8NtwFjc+vNIxq3fJRnnAg7GdNgTJOO+AgdjOjlNSMa9BQ7GdHEOk4x7ChyM6eYNRjLuLnAwpod3P8m4K+BgTC+nJpJxZ8DBmD7OmyTjjsDBmEyTOsm4HTgYk/mN8we1u6bYm03lggAAAABJRU5ErkJggg==';
+
+const deprecatedImageArray = figma.base64Decode(DEPRECATED_IMAGE_DATA);
+const deprecatedImage = figma.createImage(deprecatedImageArray);
+
 figma.parameters.on('input', ({ key, query, result }) => {
   switch (key) {
     case 'deprecate_type': {
@@ -132,30 +138,23 @@ export async function deprecate(parameters: ParameterValues = {}) {
 }
 
 function deprecateComponents(components: ComponentNode[]) {
+  const deprecatedName = '[DEPRECATED]';
   const found = components.filter((component) => {
-    return !component.findOne((node) => node.name === 'Deprecated');
+    return !component.findOne((node) => node.name === deprecatedName);
   });
 
   found.forEach((component) => {
-    // Skip if component is already deprecated
-    if (component.findOne((node) => node.name === 'Deprecated')) {
-      return;
-    }
-
     const overlay = figma.createFrame();
-    overlay.name = 'Deprecated';
+    overlay.name = deprecatedName;
     overlay.resize(component.width, component.height);
 
     overlay.fills = [
       {
         blendMode: 'NORMAL',
-        color: {
-          r: 1,
-          g: 0,
-          b: 1,
-        },
+        imageHash: deprecatedImage.hash,
+        scaleMode: 'TILE',
         opacity: 0.7,
-        type: 'SOLID',
+        type: 'IMAGE',
         visible: true,
       },
     ];
