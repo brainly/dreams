@@ -211,10 +211,23 @@ export async function sceneNodeFromDOM(
         },
         { left: Infinity, right: -Infinity, top: Infinity, bottom: -Infinity }
       );
-      sceneNode.paddingLeft = childrenGroupBcr.left - bcr.left;
-      sceneNode.paddingRight = bcr.right - childrenGroupBcr.right;
-      sceneNode.paddingTop = childrenGroupBcr.top - bcr.top;
-      sceneNode.paddingBottom = bcr.bottom - childrenGroupBcr.bottom;
+
+      // Bounding client rect contains borders so
+      // we need to subtract when calculating padding
+      const borderTop = parseFloat(styles.borderTopWidth);
+      const borderRight = parseFloat(styles.borderRightWidth);
+      const borderBottom = parseFloat(styles.borderBottomWidth);
+      const borderLeft = parseFloat(styles.borderLeftWidth);
+
+      const distanceTop = childrenGroupBcr.top - bcr.top;
+      const distanceRight = bcr.right - childrenGroupBcr.right;
+      const distanceBottom = bcr.bottom - childrenGroupBcr.bottom;
+      const distanceLeft = childrenGroupBcr.left - bcr.left;
+
+      sceneNode.paddingTop = distanceTop - borderTop;
+      sceneNode.paddingRight = distanceRight - borderRight;
+      sceneNode.paddingBottom = distanceBottom - borderBottom;
+      sceneNode.paddingLeft = distanceLeft - borderLeft;
 
       // apply autolayout props based on flex direction
       if (['row', 'row-reverse'].includes(flexDirection)) {
@@ -313,6 +326,7 @@ export async function sceneNodeFromDOM(
       }
     } else {
       // TODO(coderitual): one side borders using inset shadow effect
+      // Figma now supports single side stroke.
       const borderTopWidthFloat = parseFloat(styles.borderTopWidth);
       const borderRightWidthFloat = parseFloat(styles.borderRightWidth);
       const borderBottomWidthFloat = parseFloat(styles.borderBottomWidth);
