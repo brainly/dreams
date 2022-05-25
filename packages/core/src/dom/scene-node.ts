@@ -213,7 +213,8 @@ export async function sceneNodeFromDOM(
       );
 
       // Bounding client rect contains borders so
-      // we need to subtract when calculating padding
+      // we need to subtract when calculating padding.
+      // This only works together with strokesIncludedInLayout = true.
       const borderTop = parseFloat(styles.borderTopWidth);
       const borderRight = parseFloat(styles.borderRightWidth);
       const borderBottom = parseFloat(styles.borderBottomWidth);
@@ -228,6 +229,14 @@ export async function sceneNodeFromDOM(
       sceneNode.paddingRight = distanceRight - borderRight;
       sceneNode.paddingBottom = distanceBottom - borderBottom;
       sceneNode.paddingLeft = distanceLeft - borderLeft;
+
+      // The best is when strokes are included in layout calculations.
+      // This basicaly reflect the padding behaviour from CSS:
+      // - bounding frame of the component inside figma will contain strokes,
+      // - padding will be calculated without them.
+      // This only works when strokes are placed inside.
+      sceneNode.strokesIncludedInLayout = true;
+      sceneNode.strokeAlign = 'INSIDE';
 
       // apply autolayout props based on flex direction
       if (['row', 'row-reverse'].includes(flexDirection)) {

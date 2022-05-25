@@ -8,15 +8,19 @@ export class FrameNode extends SceneNode {
   }
 
   layoutMode: 'NONE' | 'HORIZONTAL' | 'VERTICAL';
-  primaryAxisSizingMode: 'FIXED' | 'AUTO';
-  counterAxisSizingMode: 'FIXED' | 'AUTO';
-  primaryAxisAlignItems: 'MIN' | 'MAX' | 'CENTER' | 'SPACE_BETWEEN';
-  counterAxisAlignItems: 'MIN' | 'MAX' | 'CENTER';
-  paddingLeft: number;
-  paddingRight: number;
-  paddingTop: number;
-  paddingBottom: number;
-  itemSpacing: number;
+
+  primaryAxisSizingMode: 'FIXED' | 'AUTO'; // applicable only for autolayout (layoutMode != "NONE)
+  counterAxisSizingMode: 'FIXED' | 'AUTO'; // applicable only for autolayout
+  primaryAxisAlignItems: 'MIN' | 'MAX' | 'CENTER' | 'SPACE_BETWEEN'; // applicable only for autolayout
+  counterAxisAlignItems: 'MIN' | 'MAX' | 'CENTER'; // applicable only for autolayout
+  paddingLeft: number; // applicable only for autolayout
+  paddingRight: number; // applicable only for autolayout
+  paddingTop: number; // applicable only for autolayout
+  paddingBottom: number; // applicable only for autolayout
+  itemSpacing: number; // applicable only for autolayout
+  itemReverseZIndex: boolean; // applicable only for autolayout
+  strokesIncludedInLayout: boolean; // applicable only for autolayout
+
   layoutGrids: readonly LayoutGrid[];
   gridStyleId: string;
   clipsContent: boolean;
@@ -83,6 +87,8 @@ export class FrameNode extends SceneNode {
       paddingTop: this.paddingTop,
       paddingBottom: this.paddingBottom,
       itemSpacing: this.itemSpacing,
+      itemReverseZIndex: this.itemReverseZIndex,
+      strokesIncludedInLayout: this.strokesIncludedInLayout,
       layoutGrids: this.layoutGrids,
       gridStyleId: this.gridStyleId,
       clipsContent: this.clipsContent,
