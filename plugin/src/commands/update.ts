@@ -83,18 +83,18 @@ figma.parameters.on('input', ({ key, query, result, parameters }) => {
       //   });
       // });
 
-      suggestions.push({
-        name: 'toggle: peach -> red, mustard -> yellow',
-        data: {
-          type: 'auto',
-          map: {
-            toggle: {
-              peach: 'red',
-              mustard: 'yellow',
-            },
-          },
-        },
-      });
+      // suggestions.push({
+      //   name: 'toggle: peach -> red, mustard -> yellow',
+      //   data: {
+      //     type: 'auto',
+      //     map: {
+      //       toggle: {
+      //         peach: 'red',
+      //         mustard: 'yellow',
+      //       },
+      //     },
+      //   },
+      // });
 
       result.setSuggestions(suggestions.filter((s) => s.name.includes(query)));
 
