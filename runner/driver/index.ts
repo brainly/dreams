@@ -10,6 +10,9 @@ import {
 } from '@packages/core';
 import { SceneNode } from '@packages/core/dist/nodes/scene';
 
+// Export for debugging
+export * from '@packages/core';
+
 function bemClassToText(bemClass) {
   return bemClass.replace('sg-', '').replace('-', ' ');
 }
