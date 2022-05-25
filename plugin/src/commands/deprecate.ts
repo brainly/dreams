@@ -182,6 +182,11 @@ function deprecateComponents(components: ComponentNode[]) {
       overlay.layoutPositioning = 'ABSOLUTE';
     }
 
+    overlay.constraints = {
+      horizontal: 'STRETCH',
+      vertical: 'STRETCH',
+    };
+
     overlay.x = 0;
     overlay.y = 0;
   });
