@@ -97,9 +97,16 @@ export async function deprecate(parameters: ParameterValues = {}) {
       );
 
       // Mark the component set as deprecated
+      // this will change only component set name
       // without changing the name of all variants
       if (!componentSet.name.includes('DEPRECATED')) {
-        componentSet.name = `${componentSet.name} ⚠️ [DEPRECATED]`;
+        // we want to add deprecated label as a prefix to the last part of the component name
+        // eg. button/solid-blue -> button/[DEPRECATED] solid-blue
+        const nameParts = componentSet.name.split('/');
+        const lastPart = nameParts.pop();
+        const newName = `⚠️ [DEPRECATED] ${lastPart}`;
+        nameParts.push(newName);
+        componentSet.name = nameParts.join('/');
       }
       const changed = deprecateComponents(components);
 
