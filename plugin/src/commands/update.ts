@@ -242,8 +242,6 @@ function updateNode(dest, source, nested = false) {
       key === 'name' ||
       key === 'parent' ||
       key === 'relativeTransform' ||
-      key === 'x' ||
-      key === 'y' ||
       key === 'textTruncation' ||
       key === 'horizontalPadding' ||
       key === 'verticalPadding' ||
