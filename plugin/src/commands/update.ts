@@ -233,7 +233,106 @@ function updateVariant(
   });
 }
 
-function updateNode(dest, source) {
+function updateNode(dest, source, nested = false) {
+  for (const key in source) {
+    if (
+      key === 'type' ||
+      key === 'id' ||
+      key === 'key' ||
+      key === 'name' ||
+      key === 'parent' ||
+      key === 'relativeTransform' ||
+      key === 'x' ||
+      key === 'y' ||
+      key === 'textTruncation' ||
+      key === 'horizontalPadding' ||
+      key === 'verticalPadding' ||
+      key === 'mainComponent' ||
+      key === 'masterComponent' ||
+      (!nested && key === 'x') ||
+      (!nested && key === 'y') ||
+      typeof source[key] === 'function'
+    ) {
+      continue;
+    }
+
+    // apply overrides within children nodes
+    if (key === 'children') {
+      // There mnight be 3 cases for the children:
+      // - child is added
+      // - child is removed
+      // - child is updated
+
+      // iterate through max of source and dest children
+      const max = Math.max(source.children.length, dest.children.length);
+      for (let i = 0; i < max; i++) {
+        const sourceChildIndex = i;
+        const sourceChild = source.children[i];
+
+        // If there is no child in source, it means we need to
+        // remove all dest children starting from that index.
+        if (!sourceChild) {
+          console.error('Removing children', i, dest.children.length);
+          for (let j = i; j < dest.children.length; j++) {
+            console.log('Removing children', dest.children[j]);
+            dest.children[j]?.remove();
+          }
+          break;
+        }
+
+        // find source children by name and type
+        const destChild = dest.children.find(
+          (child) =>
+            child.name === sourceChild.name && child.type === sourceChild.type
+        );
+
+        if (destChild) {
+          const destChildIndex = dest.children.indexOf(destChild);
+
+          // if dest child index is different from source child index
+          // then insert dest child at source child index
+          if (sourceChildIndex !== destChildIndex) {
+            console.log('Moving children', destChild, sourceChildIndex);
+            dest.insertChild(sourceChildIndex, destChild);
+          }
+
+          // update child
+          console.log('Updating children', destChild, sourceChild);
+          updateNode(destChild, sourceChild, true);
+        } else {
+          // add cloned desitination child to source
+          console.log(
+            'Adding children',
+            Math.min(dest.children.length - 1, sourceChildIndex),
+            sourceChild
+          );
+
+          dest.insertChild(
+            Math.min(dest.children.length - 1, sourceChildIndex),
+            sourceChild.clone()
+          );
+        }
+      }
+    } else {
+      try {
+        console.log(
+          'Updating property',
+          key,
+          source[key],
+          dest[key],
+          dest.type
+        );
+        dest[key] = source[key];
+      } catch {
+        /* ... */
+      }
+    }
+  }
+
+  return dest;
+}
+
+function updateNodeDeprecated(dest, source) {
   for (const key in source) {
     if (
       key === 'type' ||
