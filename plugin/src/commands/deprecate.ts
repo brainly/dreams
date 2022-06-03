@@ -104,7 +104,7 @@ export async function deprecate(parameters: ParameterValues = {}) {
         // eg. button/solid-blue -> button/[DEPRECATED] solid-blue
         const nameParts = componentSet.name.split('/');
         const lastPart = nameParts.pop();
-        const newName = `⚠️ [DEPRECATED] ${lastPart}`;
+        const newName = `Ω⚠️ [DEPRECATED] ${lastPart}`;
         nameParts.push(newName);
         componentSet.name = nameParts.join('/');
       }
