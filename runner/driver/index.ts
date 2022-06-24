@@ -45,7 +45,8 @@ export async function getFigmaDocument() {
 
   if (stylesheet) {
     styleGuideVersion =
-      stylesheet.href.match(/\/([0-9]+\.[0-9]+\.[0-9]+)\//)?.[1] ?? '';
+      stylesheet.href.match(/\/([0-9]+\.[0-9]+\.[0-9]+(-beta.\d*)?)\//)?.[1] ??
+      '';
   }
 
   const figmaDocument = createDocument();
