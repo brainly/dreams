@@ -1,10 +1,10 @@
 import React from 'react';
-import Checkbox from 'brainly-style-guide/src/components/form-elements/Checkbox';
+import { Checkbox } from 'brainly-style-guide';
 
 const CheckboxesPage = () => {
   const CheckboxVariations = [];
 
-  [false, true].forEach(checked => {
+  [false, true].forEach((checked) => {
     let name = 'Checkbox/';
 
     if (checked === false) {
@@ -13,15 +13,15 @@ const CheckboxesPage = () => {
       name += 'checked';
     }
 
-    CheckboxVariations.push(<div title={name} className='inline-item'>
-      <Checkbox onChange={() => ({})} checked={checked} />
-    </div>);
-    CheckboxVariations.push(<br/>);
+    CheckboxVariations.push(
+      <div title={name} className="inline-item">
+        <Checkbox onChange={() => ({})} checked={checked} />
+      </div>
+    );
+    CheckboxVariations.push(<br />);
   });
 
-  return <section>
-    {CheckboxVariations}
-  </section>;
+  return <section>{CheckboxVariations}</section>;
 };
 
 export default CheckboxesPage;
