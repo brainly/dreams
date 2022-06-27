@@ -1771,10 +1771,10 @@ braces@^3.0.2, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-brainly-style-guide@^216.0.0-beta.1:
-  version "216.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/brainly-style-guide/-/brainly-style-guide-216.0.0-beta.1.tgz#753c826a0eacb72963bcdb68eb105beb240ae0fb"
-  integrity sha512-Yf6XnCvbFNtxTl6X7LE5UZqBQY5V1yEFruSJP1hHY7Sr2kLRT3eyhGwflE83iGT1Q3kY/vAFJg1yvwFo4Ilcwg==
+brainly-style-guide@^216.0.0-beta.2:
+  version "216.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/brainly-style-guide/-/brainly-style-guide-216.0.0-beta.2.tgz#f0249de91183e162c6febe9801ec2009abdcec23"
+  integrity sha512-RJ96ZASE9FY2rt3maOK23ZDTbc+jIqmFxOBUDSBozLMEl4hvTPGRH3yV1S3lvI6rQtyvsjmOAjTripQ02+eTHw==
   dependencies:
     chalk "4.1.2"
     classnames "^2.2.5"
