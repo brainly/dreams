@@ -7,9 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "runner:build": "yarn workspace runner build",
-    "runner:dev": "yarn workspace runner dev",
-    "runner:clean": "yarn workspace runner clean",
+    "build": "yarn workspace runner build",
+    "dev": "yarn workspace runner dev",
+    "clean": "yarn workspace runner clean",
     "plugin:build": "yarn workspace plugin build",
     "plugin:dev": "yarn workspace plugin dev",
     "plugin:clean": "yarn workspace plugin clean"
