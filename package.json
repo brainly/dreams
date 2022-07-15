@@ -8,10 +8,10 @@
   ],
   "scripts": {
     "runner:start": "yarn workspace runner start",
-    "runner:watch": "yarn workspace runner watch",
+    "runner:dev": "yarn workspace runner dev",
     "runner:clean": "yarn workspace runner clean",
     "plugin:build": "yarn workspace plugin build",
-    "plugin:watch": "yarn workspace plugin watch",
+    "plugin:dev": "yarn workspace plugin dev",
     "plugin:clean": "yarn workspace plugin clean"
   },
   "repository": "git@github.com:brainly/dreams.git",
