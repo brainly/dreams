@@ -32,4 +32,4 @@ jobs:
         run: yarn
 
       - name: Execute Runner
-        run: yarn workspace runner start
+        run: yarn workspace runner build
